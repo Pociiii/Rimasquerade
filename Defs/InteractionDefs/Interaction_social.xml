@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <InteractionDef>
+        <defName>RMSQ_LingeringKissManipulation</defName>
+        <label>Lingering Kiss</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>DisciplinesIcon/Presence</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[RECIPIENT_nameDef]'s perception of [INITIATOR_nameDef] has been improved for a time.</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+    <InteractionDef>
+        <defName>RMSQ_BloodBondManipulation</defName>
+        <label>Blood Bond</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Misc/Blood Bond</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[RECIPIENT_nameDef]'s perception of [INITIATOR_nameDef] has been improved for a time.</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+    <InteractionDef>
+        <defName>RMSQ_SirenManipulation</defName>
+        <label>Siren Kiss</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Misc/Feeding</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[RECIPIENT_nameDef]'s perception of [INITIATOR_nameDef] has been improved for a time.</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+    
+    <InteractionDef>
+        <defName>RMSQ_BloodLeechManipulation</defName>
+        <label>Blood Leech</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Misc/Feeding</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[RECIPIENT_nameDef]'s perception of [INITIATOR_nameDef] has been lowered for a time.</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+</Defs>

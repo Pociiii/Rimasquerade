@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <StatDef>
+		<defName>RMSQ_Willpower</defName>
+		<label>Willpower</label>
+		<category>ISF_Sorcery</category>
+		<description>Willpower</description>
+		<defaultBaseValue>100</defaultBaseValue>
+		<showIfUndefined>false</showIfUndefined>
+		<displayPriorityInCategory>1</displayPriorityInCategory>
+	</StatDef>
+	
+</Defs>

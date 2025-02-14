@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/HediffDef[defName="RegenerationComa"]/label</xpath>
+        <value>
+            <label>Torpor</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/HediffDef[defName="RegenerationComa"]/description</xpath>
+        <value>
+            <description>Torpor is a state where vampires are dead to their surroundings and reduced to the appearance of a shriveled corpse where they cannot use Disciplines or react to other stimuli. This, however, is not Final Death</description>
+        </value>
+    </Operation>
+</Patch>

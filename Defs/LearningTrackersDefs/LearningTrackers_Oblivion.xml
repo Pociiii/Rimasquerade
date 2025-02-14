@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	<ItsSorceryFramework.LearningTreeNodeDef Name = "OblivionBase" ParentName = "DisciplineBase" Abstract="True">
+		<learningTrackerDef>RMSQ_Oblivion_LearningTrackerTree</learningTrackerDef>
+		<coordY>0</coordY>
+		<description>Oblivion has two branches. One allows the user to manipulate shadows at will and the other is through the arts of necromancy or usage of spirits, though both tap into the Abyss. Those who have this as a clan Discipline are the Hecata and Lasombra.</description>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef Name = "CeremoniesBase" ParentName = "OblivionBase" Abstract="True">
+		<coordY>2</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+	<!-- Oblivion -->
+	<!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
+		<defName>RMSQ_Node_Oblivion_One</defName>
+		<label>Oblivion 1\nAshes to Ashes</label>
+		<pointReq>1</pointReq>
+		<coordX>0</coordX>
+        <abilityGain>
+			<li>RMSQ_Ashes_to_Ashes</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
+		<defName>RMSQ_Node_Oblivion_One_Ceremonies</defName>
+		<label>Ceremony 1\nGift of False Life</label>
+		<pointReq>1</pointReq>
+		<coordX>1</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Gift_of_False_Life</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
+		<defName>RMSQ_Node_Oblivion_Two</defName>
+		<label>Oblivion 2\nShadow Cast</label>
+		<pointReq>2</pointReq>
+		<coordX>1</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Shadow_Cast</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
+		<defName>RMSQ_Node_Oblivion_Two_Amalgam</defName>
+		<label>Amalgam 2\nArms of Ahriman</label>
+		<pointReq>2</pointReq>
+		<coordX>1</coordX>
+		<coordY>1</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_One</li>
+			<li>RMSQ_Node_Potence_Two</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Arms_of_Ahriman</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
+		<defName>RMSQ_Node_Oblivion_Two_Ceremonies</defName>
+		<label>Ceremony 2\nAwaken the Homuncular Servant</label>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Two</li>
+			<li>RMSQ_Node_Oblivion_Two_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Awaken_the_Homuncular_Servant</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
+		<defName>RMSQ_Node_Oblivion_Three</defName>
+		<label>Oblivion 3\nTouch of Oblivion</label>
+		<pointReq>3</pointReq>
+		<coordX>2</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Two</li>
+			<li>RMSQ_Node_Oblivion_Two_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Touch_Of_Oblivion</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
+		<defName>RMSQ_Node_Oblivion_Three_Ceremonies</defName>
+		<label>Ceremony 3\nShambling Hordes</label>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Shambling_Hordes</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
+		<defName>RMSQ_Node_Oblivion_Four</defName>
+		<label>Oblivion 4\nStygian Shroud</label>
+		<pointReq>4</pointReq>
+		<coordX>3</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Stygian_Shroud</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
+		<defName>RMSQ_Node_Oblivion_Four_Ceremonies</defName>
+		<label>Ceremony 4\nBefoul Vessel</label>
+		<pointReq>4</pointReq>
+		<coordX>4</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Befoul_Vessel</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
+		<defName>RMSQ_Node_Oblivion_Five</defName>
+		<label>Oblivion 5\nSkuld Fulfilled</label>
+		<pointReq>5</pointReq>
+		<coordX>4</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Skuld_Fulfilled</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
+		<defName>RMSQ_Node_Oblivion_Five_Ceremonies</defName>
+		<label>Ceremony 5\n</label>
+		<pointReq>5</pointReq>
+		<coordX>5</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Oblivion_Five</li>
+		</prereqs>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+</Defs>

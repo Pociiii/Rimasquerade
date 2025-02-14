@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="DrugUse_Essential"]/requiredMemes</xpath>
+        <value>
+            <li>KindredReligionAshfinders</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="DrugUse_Essential"]/associatedMemes</xpath>
+        <value>
+            <li>KindredReligionAshfinders</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Proselytizing_Occasionally"]</xpath>
+        <value>
+            <requiredMemes>
+                <li>KindredReligionChurchofCaine</li>
+                <li>KindredReligionBahari</li>
+            </requiredMemes>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Proselytizing_Occasionally"]</xpath>
+        <value>
+            <associatedMemes>
+                <li>KindredReligionChurchofCaine</li>
+                <li>KindredReligionBahari</li>
+            </associatedMemes>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Proselytizing_Sometimes"]</xpath>
+        <value>
+            <requiredMemes>
+                <li>KindredReligionChurchofCaine</li>
+                <li>KindredReligionBahari</li>
+            </requiredMemes>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Proselytizing_Sometimes"]</xpath>
+        <value>
+            <associatedMemes>
+                <li>KindredReligionChurchofCaine</li>
+                <li>KindredReligionBahari</li>
+            </associatedMemes>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Proselytizing_Frequently"]</xpath>
+        <value>
+            <requiredMemes>
+                <li>KindredReligionChurchofCaine</li>
+                <li>KindredReligionBahari</li>
+            </requiredMemes>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Proselytizing_Frequently"]</xpath>
+        <value>
+            <associatedMemes>
+                <li>KindredReligionChurchofCaine</li>
+                <li>KindredReligionBahari</li>
+            </associatedMemes>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Pain_Idealized"]/requiredMemes</xpath>
+        <value>
+            <li>KindredReligionChurchofCaine</li>
+            <li>KindredReligionBahari</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Corpses_DontCare"]/requiredMemes</xpath>
+        <value>
+            <li>KindredReligionChurchofCaine</li>
+            <li>KindredReligionAshfinders</li>
+            <li>KindredReligionChurchofSet</li>
+            <li>KindredReligionBahari</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/PreceptDef[defName="Corpses_DontCare"]/associatedMemes</xpath>
+        <value>
+            <li>KindredReligionChurchofCaine</li>
+            <li>KindredReligionAshfinders</li>
+            <li>KindredReligionChurchofSet</li>
+            <li>KindredReligionBahari</li>
+        </value>
+    </Operation>
+</Patch>

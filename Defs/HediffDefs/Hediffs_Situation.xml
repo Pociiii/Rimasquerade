@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    
+    <!-- Third Eye -->
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_ThirdEye</defName>
+        <label>Third Eye</label>
+        <description>Each Salubri has a third eye and while it's not always human-like it's always present and cannot be obscured by supernatural powers. In addition to this, whenever they activate a Discipline, the eye weeps vitae with its intensity correlating to the level of the Discipline used</description>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+          <li>
+            <statOffsets>
+                <PawnBeauty>-1</PawnBeauty>
+                <EBSG_HemogenMaxOffset>-0.1</EBSG_HemogenMaxOffset>
+            </statOffsets>
+          </li>
+        </stages>
+		<addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+        <renderNodeProperties>
+      		<li Class="PawnRenderNodeProperties_Eye">
+      		  	<texPath>Misc/ThirdEye</texPath>
+      		  	<texPathFemale>Misc/ThirdEye</texPathFemale>
+      		  	<anchorTag>RightEye</anchorTag>
+      		  	<rotDrawMode>Fresh, Rotting</rotDrawMode>
+      		  	<parentTagDef>Head</parentTagDef>
+      		  	<drawSize>0.2</drawSize>
+      		  	<side>Right</side>
+      		  	<drawData>
+      		  	  	<defaultData>
+      		  	  	  	<layer>54</layer>
+      		  	  	  	<offset>(0, 0, -0.25)</offset>
+      		  	  	</defaultData>
+      		  	</drawData>
+      		</li>
+		</renderNodeProperties>
+    </HediffDef>
+
+    <!-- Clock -->
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Clock</defName>
+        <label>Clock</label>
+        <description>Penalties during the day</description>
+        <initialSeverity>0.9</initialSeverity>
+        <maxSeverity>1.0</maxSeverity>
+        <stages>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>night</label>
+                <statOffsets>
+                    <RestFallRateFactor>-1</RestFallRateFactor>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>1</minSeverity>
+                <label>day</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.75</postFactor>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <RestFallRateFactor>10</RestFallRateFactor>
+                </statOffsets>
+                <statFactors>
+                    <RestRateMultiplier>1.3</RestRateMultiplier>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByTimeOfDay">
+                <timeToSeverityCurve>
+                    <points>
+                        <li>(0, 0.9)</li>
+                        <li>(0.35, 1)</li>
+                        <li>(0.65, 1)</li>
+                        <li>(1, 0.9)</li>
+                    </points>
+                </timeToSeverityCurve>
+            </li>
+        </comps>
+    </HediffDef>
+
+    
+    <!-- SunDamage -->
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_SunDamage</defName>
+        <label>Sun Damage</label>
+        <description>This Hediff keep track of the Light Level your Pawn is at, if at 100% it will take Burn Damage</description>
+        <maxSeverity>1</maxSeverity>
+        <stages>
+            <li>
+                <label>No Sunlight</label>
+                <minSeverity>0</minSeverity>
+            </li>
+            <li>
+                <label>Careful</label>
+                <minSeverity>0.8</minSeverity>
+            </li>
+            <li>
+                <label>RUN!</label>
+                <minSeverity>1</minSeverity>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_HediffWhileInSeverityRange">
+                <hediffsAtSeverities>
+                    <li>
+                        <hediff>RMSQ_Fire</hediff>
+                        <minSeverity>1</minSeverity>
+                    </li>
+                </hediffsAtSeverities>
+            </li>   
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByLightLevel">
+                <lightToSeverityCurve>
+                    <points>
+                        <li>(0, 0.79)</li>
+                        <li>(0.80, 0.99)</li>
+                        <li>(0.9, 1)</li>
+                    </points>
+                </lightToSeverityCurve>
+            </li>
+            <li Class="HediffCompProperties_MessageAboveSeverity">
+                <severity>0.9</severity>
+                <messageType>NeutralEvent</messageType>
+                <message>{0_nameDef} is in a very dangerous light level!</message>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Fire</defName>
+        <label>Burning</label>
+        <description>Your undead flesh is burning</description>
+        <isBad>true</isBad>
+        <tendable>false</tendable>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+                <damage>Flame</damage>
+                <tickInterval>600</tickInterval>
+                <createFilth>true</createFilth>
+                <armorPenetration>0.5</armorPenetration>
+                <damageAttachedPart>True</damageAttachedPart>
+                <bodyParts>
+                    <li>Torso</li>
+                    <li>Neck</li>
+                    <li>Head</li>
+                    <li>Shoulder</li>
+                    <li>Arm</li>
+                    <li>Leg</li>
+                    <li>Hand</li>
+                    <li>Ear</li>
+                    <li>Nose</li>
+                    <li>Eye</li>
+                    <li>Head</li>
+                </bodyParts>
+                <damageAmount>0.5</damageAmount>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_DestroyOnDeath">
+            <thingSpawn></thingSpawn>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Generation -->
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_Generation</defName>
+        <label>Generation</label>
+        <description>Generation Tracker</description>
+        <initialSeverity>0</initialSeverity>
+        <maxSeverity>5</maxSeverity>
+        <stages>
+            <li>
+                <minSeverity>0</minSeverity>
+                <becomeVisible>true</becomeVisible>
+                <label>XV</label>
+            </li>
+            <li>
+                <minSeverity>1</minSeverity>
+                <label>XIV</label>
+                <painFactor>0.80</painFactor>
+                <socialFightChanceFactor>1.1</socialFightChanceFactor>
+                <statOffsets>
+                    <EBSG_Healthiness>0.25</EBSG_Healthiness>
+                    <EBSG_HemogenMaxOffset>0.25</EBSG_HemogenMaxOffset>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>2</minSeverity>
+                <label>XIII</label>
+                <painFactor>0.80</painFactor>
+                <socialFightChanceFactor>1.2</socialFightChanceFactor>
+                <statOffsets>
+                    <EBSG_Healthiness>0.5</EBSG_Healthiness>
+                    <EBSG_HemogenMaxOffset>0.5</EBSG_HemogenMaxOffset>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>3</minSeverity>
+                <label>XII</label>
+                <painFactor>0.70</painFactor>
+                <socialFightChanceFactor>1.3</socialFightChanceFactor>
+                <statOffsets>
+                    <EBSG_Healthiness>1</EBSG_Healthiness>
+                    <EBSG_HemogenMaxOffset>1</EBSG_HemogenMaxOffset>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>4</minSeverity>
+                <label>XI</label>
+                <painFactor>0.60</painFactor>
+                <socialFightChanceFactor>1.5</socialFightChanceFactor>
+                <statOffsets>
+                    <EBSG_Healthiness>2</EBSG_Healthiness>
+                    <EBSG_HemogenMaxOffset>2</EBSG_HemogenMaxOffset>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>5</minSeverity>
+                <label>X</label>
+                <painFactor>0.40</painFactor>
+                <socialFightChanceFactor>2</socialFightChanceFactor>
+                <statOffsets>
+                    <EBSG_Healthiness>3</EBSG_Healthiness>
+                    <EBSG_HemogenMaxOffset>3</EBSG_HemogenMaxOffset>
+				</statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_GiveAbilityAtSeverity">
+                <abilitiesAtSeverities>
+                    <li>
+                        <abilityDef>RMSQ_Embrace_XV</abilityDef>
+                        <minSeverity>0</minSeverity>
+                        <maxSeverity>0.9</maxSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>RMSQ_Embrace_XIV</abilityDef>
+                        <minSeverity>1</minSeverity>
+                        <maxSeverity>1.9</maxSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>RMSQ_Embrace_XIII</abilityDef>
+                        <minSeverity>2</minSeverity>
+                        <maxSeverity>2.9</maxSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>RMSQ_Embrace_XII</abilityDef>
+                        <minSeverity>3</minSeverity>
+                        <maxSeverity>3.9</maxSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>RMSQ_Embrace_XI</abilityDef>
+                        <minSeverity>4</minSeverity>
+                        <maxSeverity>4.9</maxSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>RMSQ_Embrace_X</abilityDef>
+                        <minSeverity>5</minSeverity>
+                    </li>
+                </abilitiesAtSeverities>
+            </li>
+            <li Class="HediffCompProperties_MessageStageIncreased">
+                <message>{0_nameDef} Generation lowered</message>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Clan Discipline -->
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Animalism</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                <label>Animalism</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Auspex</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>   
+                <label>Auspex</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Blood_Sorcery</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Blood Sorcery</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Celerity</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Celerity</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Dominate</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Dominate</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Fortitude</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Fortitude</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Obfuscate</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>   
+            <li>
+                <label>Obfuscate</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Oblivion</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Oblivion</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Potence</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Potence</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_Hediff_ClanDiscipline_Protean</defName>
+        <label>Clan Discipline</label>
+        <description>Description</description>
+        <initialSeverity>0</initialSeverity>
+        <stages>
+            <li>
+                
+                <label>Protean</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Thin Blood -->
+    <!-- <HediffDef>
+        <defName>RMSQ_Hediff_ThinBlood</defName>
+        <label>Thin Blood Generation</label>
+        <description>Generation Tracker</description>
+        <minSeverity>0</minSeverity>
+        <stages>
+            <li>
+                <minSeverity>0</minSeverity>
+                <label>XVI</label>
+            </li>
+        </stages>
+    </HediffDef> -->
+
+
+
+
+</Defs>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- 
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Name = "TBMFBase" Abstract="True">
+        <learningTrackerDef>RMSQ_Advantages_LearningTrackerTree</learningTrackerDef>
+        <pointReq>0</pointReq>
+        <prereqsHediff>
+			<li><key>RMSQ_Hediff_ThinBlood</key><value>0</value></li>
+		</prereqsHediff>
+    </ItsSorceryFramework.LearningTreeNodeDef> 
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFBase" Name = "TBMFFlawBase" Abstract="True">
+        <coordX>5</coordX>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFBase" Name = "TBMFMeritBase" Abstract="True">
+        <coordX>6</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+		    <li>RMSQ_Node_BabyTeeth</li>
+		    <li>RMSQ_Node_BestialTemper</li>
+		    <li>RMSQ_Node_MortalFrailty</li>
+	    </prereqs>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFFlawBase">
+		<defName>RMSQ_Node_BabyTeeth</defName>
+		<label>Thin-Blood Flaw\nBaby Teeth</label>
+        <description>Never developed fangs</description>
+        <coordY>3</coordY>
+		<statOffsets>
+		    <HemogenGainFactor>-0.5</HemogenGainFactor>
+	    </statOffsets>
+        <hediffRemove>
+		    <li>RMSQ_Fangs</li>
+	    </hediffRemove>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFFlawBase">
+		<defName>RMSQ_Node_BestialTemper</defName>
+		<label>Thin-Blood Flaw\nBestial Temper</label>
+        <description>Frenzy as normal vampire</description>
+        <coordY>4</coordY>
+		<statOffsets>
+		    <MentalBreakThreshold>0.18</MentalBreakThreshold>
+	    </statOffsets>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_BabyTeeth</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFFlawBase">
+		<defName>RMSQ_Node_MortalFrailty</defName>
+		<label>Thin-Blood Flaw\nMortal Frailty</label>
+        <description>Mend like a mortal, unable to rouse the blood.</description>
+        <coordY>5</coordY>
+		<abilityRemove>
+		    <li>RMSQ_Mending_Ability</li>
+	    </abilityRemove>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_BabyTeeth</li>
+		    <li>RMSQ_Node_BestialTemper</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFMeritBase">
+		<defName>RMSQ_Node_CatenatingBlood</defName>
+		<label>Thin-Blood Merit\nCatenating Blood</label>
+        <description>Can create Blood Bonds, but last shorter</description>
+        <coordY>3</coordY>
+		<abilityGain>
+			<li>RMSQ_BloodBond_TB</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFMeritBase">
+		<defName>RMSQ_Node_DayDrinker</defName>
+		<label>Thin-Blood Merit\nDay Drinker</label>
+        <description>Able to walk in the sun</description>
+        <coordY>4</coordY>
+		<hediffRemove>
+		    <li>RMSQ_SunDamage</li>
+	    </hediffRemove>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_CatenatingBlood</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFMeritBase">
+		<defName>RMSQ_Node_VampiricResilience</defName>
+		<label>Thin-Blood Merit\nVampiric Resilience</label>
+        <description>Take damage like a regular vampire.</description>
+        <coordY>5</coordY>
+		<statFactors>
+      		<IncomingDamageFactor>0.5</IncomingDamageFactor>
+    	</statFactors>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_CatenatingBlood</li>
+		    <li>RMSQ_Node_DayDrinker</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	 -->
+
+
+	
+
+</Defs>

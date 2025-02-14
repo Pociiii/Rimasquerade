@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="EnvironmentDark"]/nullifyingTraits</xpath>
+        <value>
+            <li>RMSQ_Trait_Banu_Haqim</li>
+            <li>RMSQ_Trait_Brujah</li>
+            <li>RMSQ_Trait_Gangrel</li>
+            <li>RMSQ_Trait_Hecata</li>
+            <li>RMSQ_Trait_Lasombra</li>
+            <li>RMSQ_Trait_Malkavian</li>
+            <li>RMSQ_Trait_Ministry</li>
+            <li>RMSQ_Trait_Nosferatu</li>
+            <li>RMSQ_Trait_Ravnos</li>
+            <li>RMSQ_Trait_Salubri</li>
+            <li>RMSQ_Trait_Toreador</li>
+            <li>RMSQ_Trait_Tremere</li>
+            <li>RMSQ_Trait_Tzimisce</li>
+            <li>RMSQ_Trait_Ventrue</li>
+            <li>RMSQ_Trait_Caitiff</li>
+            <!-- <li>RMSQ_Trait_Thin_Blood</li> -->
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="ProsthophobeUnhappy"]/requiredTraits</xpath>
+        <value>
+            <li>RMSQ_Trait_Banu_Haqim</li>
+            <li>RMSQ_Trait_Brujah</li>
+            <li>RMSQ_Trait_Gangrel</li>
+            <li>RMSQ_Trait_Hecata</li>
+            <li>RMSQ_Trait_Lasombra</li>
+            <li>RMSQ_Trait_Malkavian</li>
+            <li>RMSQ_Trait_Ministry</li>
+            <li>RMSQ_Trait_Nosferatu</li>
+            <li>RMSQ_Trait_Ravnos</li>
+            <li>RMSQ_Trait_Salubri</li>
+            <li>RMSQ_Trait_Toreador</li>
+            <li>RMSQ_Trait_Tremere</li>
+            <li>RMSQ_Trait_Tzimisce</li>
+            <li>RMSQ_Trait_Ventrue</li>
+            <li>RMSQ_Trait_Caitiff</li>
+            <!-- <li>RMSQ_Trait_Thin_Blood</li> -->
+        </value>
+    </Operation>
+    
+</Patch>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
+		<defName>RMSQ_Kindred_LearningTrackerProgress</defName>
+		<label>Kindred Stats</label>
+	</ItsSorceryFramework.LearningTrackerDef>
+    
+    <!-- <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
+		<defName>RMSQ_Thin_Blood_LearningTrackerProgress</defName>
+		<label>Thin Blood Stats</label>
+	</ItsSorceryFramework.LearningTrackerDef> -->
+
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+		<defName>RMSQ_Advantages_LearningTrackerTree</defName>
+		<label>Advantages</label>
+	</ItsSorceryFramework.LearningTrackerDef>
+
+    <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+		<defName>RMSQ_Disciplines_LearningTrackerTree</defName>
+		<label>Disciplines</label>
+	</ItsSorceryFramework.LearningTrackerDef>
+
+    <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+		<defName>RMSQ_BloodSorcery_LearningTrackerTree</defName>
+		<label>Blood Sorcery</label>
+	</ItsSorceryFramework.LearningTrackerDef>
+
+    <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+		<defName>RMSQ_Oblivion_LearningTrackerTree</defName>
+		<label>Oblivion</label>
+	</ItsSorceryFramework.LearningTrackerDef>
+
+    <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+		<defName>RMSQ_TBA_LearningTrackerTree</defName>
+		<label>Thin-Blood Alchemy</label>
+	</ItsSorceryFramework.LearningTrackerDef>
+
+</Defs>

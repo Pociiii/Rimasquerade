@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--Animalism -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
+		<defName>RMSQ_Node_Animalism_ClanDiscipline</defName>
+		<description>Utilized by those who desire a close and supernatural bond with the animal world as well as a vampire's own Beast.\n\nClan Discipline for: Gangrel, Nosferatu, Ravnos, Tzimisce</description>
+        <label>Clan Discipline\nANIMALISM</label>
+		<coordY>0</coordY>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_ClanDiscipline_Animalism</key><value>0</value></li>
+        </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
+		<defName>RMSQ_Node_Animalism_NonClanDiscipline</defName>
+		<description>Utilized by those who desire a close and supernatural bond with the animal world as well as a vampire's own Beast.</description>
+        <label>Non Clan Discipline\nANIMALISM</label>
+        <coordY>0.5</coordY>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Animalism_ClanDiscipline</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 1 -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_One</defName>
+		<description>Rouse your blood to get a boost at bonding with animals.\n\n- Bond Animal Chance Factor +25%</description>
+        <label>ANIMALISM 1\nBond Famulus</label>
+		<pointReq>1</pointReq>
+		<coordX>1</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+		    <li>RMSQ_Node_Animalism_ClanDiscipline</li>
+		    <li>RMSQ_Node_Animalism_NonClanDiscipline</li>
+	    </prereqs>
+		<abilityGain>
+			<li>RMSQ_Bond_Famulus</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_Two</defName>
+        <description>Rouse your blood for a two-way communication with animals\n\n- Tame Animal Chance +25%\nTrain Animal Chance +25%</description>
+		<label>ANIMALISM 2\nFeral Whispers</label>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Animalism_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Feral_Whispers</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_Two_Amalgam</defName>
+        <description>Rouse your blood to turn one animal hostile agaisnt colony enemeies</description>
+		<label>AMALGAM 2\nAnimal Messenger</label>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<coordY>0.5</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Animalism_One</li>
+			<li>RMSQ_Node_Auspex_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Animal_Messenger</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_Three</defName>
+        <description>You favorite blood comes from animals\n\n- Gain 20 Vitae upon feeding on animals</description>
+		<label>ANIMALISM 3\nAnimal Succulence</label>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+        <prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Farmer</li>
+			<li>RMSQ_Node_Animalism_Two</li>
+		</prereqs>
+		<abilityRemove>
+			<li>RMSQ_AnimalKiss_Ability</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>RMSQ_Animal_Succulence</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_Four</defName>
+        <description>Rouse your blood to influence animals to behave a certain way\n\n- Animal Gather Speed +25%\n-  Animal Gather Yield +25%</description>
+		<label>ANIMALISM 4\nSway the Flock</label>
+		<pointReq>5</pointReq>
+		<coordX>4</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Animalism_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Sway_the_Flock</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_Five</defName>
+        <description>Rouse your blood to turn a group of animals hostile agaisnt colony enemeies</description>
+		<label>ANIMALISM 5\nAnimal Dominion</label>
+		<pointReq>8</pointReq>
+		<coordX>5</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Animalism_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Animal_Dominion</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AnimalismBase">
+		<defName>RMSQ_Node_Animalism_Five_Two</defName>
+        <description>Rouse your blood to reduces your Mental Break Treshold and increase it to the target\n\n- Caster: Mental Break Threshold -20%\n- Target: Mental Break Threshold +20%</description>
+		<label>ANIMALISM 5\nDrawing Out the Beast</label>
+		<pointReq>8</pointReq>
+		<coordX>5</coordX>
+		<coordY>0.5</coordY>
+		<prereqs>
+			<li>RMSQ_Node_Animalism_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Drawing_Out_the_Beast</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+</Defs>

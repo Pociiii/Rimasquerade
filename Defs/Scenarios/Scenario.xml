@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ScenarioDef>
+    <defName>RMSQ_Rimworld_by_Night</defName>
+    <label>[RMSQ] Rimworld by Night</label>
+    <description>How you found yourself marked for a Blood Hunt remains shrouded in whispers and half-truths. Perhaps it was the audacious act of giving the Final Death to a progeny of the Prince that sealed your fate. A move bold enough to earn you enemies of unimaginable power, and yet, it also granted you a certain infamy, a dark allure within the Kindred society.
+    \n\n-- IMPORTANT --\n- Keep your non Vampire Pawn with humanlike xenotype, once in game you'll be able to make it a ghoul
+    \n- Your Vampire will take burn damage if standing at 100% light level, as soon as the game start build a roof around the column you start with, and use area restriction.</description>
+    <scenario>
+      <summary>One Kindred managed to escape the Prince together with his two humans</summary>
+      <playerFaction>
+          <def>PlayerFaction</def>
+          <factionDef>PlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+            <def>ConfigurePawnsXenotypes</def>
+            <pawnChoiceCount>8</pawnChoiceCount>
+            <customSummary>Start with one Kindred and Two human</customSummary>
+            <overrideKinds>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Banu</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Brujah</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Gangrel</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Hecata</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Lasombra</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Malkavian</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Ministry</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Nosferatu</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Ravnos</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Salubri</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Toreador</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Tremere</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Tzimisce</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Ventrue</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Caitiff</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li>
+                <!-- <li>
+                    <xenotype>RMSQ_Xenotype_ThinBlood</xenotype>
+                    <pawnKind>Kindred_Player</pawnKind>
+                </li> -->
+            </overrideKinds>
+            <xenotypeCounts>
+                <li>
+                    <xenotype>RMSQ_Xenotype_Banu</xenotype>
+                    <count>1</count>
+                    <description>Non-baby Kindred</description>
+                    <requiredAtStart>false</requiredAtStart>
+                    <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+                </li>
+                <li>
+                    <xenotype>Baseliner</xenotype>
+                    <count>2</count>
+                    <requiredAtStart>true</requiredAtStart>
+                </li>
+            </xenotypeCounts>
+        </li>
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <visible>false</visible>
+          <method>Standing</method>
+        </li>
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Now, ensconced in the relative safety of distance from those who might seek retribution, you find yourself at a crossroads. The city’s pulsating nightlife beckons, filled with opportunities and dangers in equal measure.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>2000</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>HemogenPack</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>WoodLog</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_LongSword</thingDef>
+          <quality>Masterwork</quality>
+          <stuff>Steel</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Column</thingDef>
+          <stuff>Steel</stuff>
+          <count>1</count>
+        </li>
+        <!-- Starting research -->
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

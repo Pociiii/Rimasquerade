@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <!-- Kindred Religions -->
+    <MemeDef>
+        <defName>KindredReligion</defName>
+        <label>Kindred Religions</label>
+        <description>For as long as there have been Kindred there have been those that worship the more powerful.\n\nThe modern nights are a tumultuous time for Kindred of all stripes, from Camarilla to Anarch to those in between. Oftften times, the nights are uncertain. Long-standing bastions of Kindred society have been shaken. The Tower leans. The Pyramid crumbles. TheAnarchs… are Anarchs. Those set adriftft on these tides of change are drawn to beings of power, to collections of stability, to any calm in the storm.</description>
+        <category>Structure</category>
+        <iconPath>Misc/Kindred Religions</iconPath>
+        <worshipRoomLabel>Temple</worshipRoomLabel>
+        <impact>0</impact>
+        <deityCount>1</deityCount>
+        <requireAnyRitualSeat><li>Pew</li></requireAnyRitualSeat>
+        <generalRules>
+            <rulesStrings>
+                <li>memeCreed->sect</li>
+                <li>memeCreed->cult</li>
+                <li>memeCreed->temple</li>
+                <li>memeHyphenPrefix->theo</li>
+                <li>memeConcept->blood</li>
+                <li>memeConcept->undead</li>
+                <li>memeLeaderNoun->Prince</li>
+                <li>memeLeaderAdjective->divine</li>
+                <li>memeMoralist->Prince</li>
+                <li>memeMoralist->cleric</li>
+            </rulesStrings>
+        </generalRules>
+        <requireOne>
+            <li>
+                <li>Execution_Required</li>
+                <li>Execution_RespectedIfGuilty</li>
+                <li>Execution_DontCare</li>
+            </li>
+            <li>
+                <li>Cannibalism_Acceptable</li>
+                <li>Cannibalism_Preferred</li>
+                <li>Cannibalism_RequiredStrong</li>
+            </li>
+            <li>
+                <li>Darklight_Preferred</li>
+            </li>
+            <li>
+                <li>Slavery_Acceptable</li>
+                <li>Slavery_Honorable</li>
+            </li>
+        </requireOne>   
+        <descriptionMaker>
+            <patterns>
+                <li><def>TheistMyth</def></li>
+                <li><def>TheistFounder</def></li>
+            </patterns>
+            <constants>
+                <li><key>structure_theist</key><value>true</value></li>
+                <li><key>structure_theistEmbodied</key><value>true</value></li>
+            </constants>
+        </descriptionMaker>
+        <symbolPacks>
+            <li>
+                <ideoName>Cult</ideoName>
+                <theme>Cult</theme>
+                <adjective>Cult</adjective>
+                <member>Kindreds</member>
+            </li>
+        </symbolPacks>
+    </MemeDef>
+
+    <MemeGroupDef>
+        <defName>KindredReligionMeme</defName>
+        <maxRows>1</maxRows>
+        <renderOrder>10000</renderOrder>
+    </MemeGroupDef>
+
+    <!-- Church of Caine -->
+    <MemeDef>
+        <defName>KindredReligionChurchofCaine</defName>
+        <label>Church of Caine</label>
+        <description>The Church of Caine, also known as the Cainite Heresy, contains Kindred who believe in Caine as the divine angel of God and all vampires are his blessed children. Once an old order in the medieval ages it was thought to be destroyed, but a new Church rises in the modern nights. They adamantly believe vampires as not cursed, but blessed. As a vampire explores more of their predatory nature they uncover new strength and wisdom. A vampire must learn to control and harness the Beast.</description>
+        <iconPath>Misc/Church of Caine</iconPath>
+        <impact>2</impact>
+        <worshipRoomLabel>Crimson Curia</worshipRoomLabel>
+        <groupDef>KindredReligionMeme</groupDef>
+        <exclusionTags>
+            <li>KindredReligion</li>
+            <li>Transhumanist</li>
+            <li>PainIsVirtue</li>
+            <li>Darkness</li>
+        </exclusionTags>
+        <generalRules>
+            <rulesStrings>
+                <li>memeAdjective->blood</li>
+                <li>memeAdjective->pain</li>
+                <li>memeCreed->church</li>
+                <li>memeCreed->lair</li>
+                <li>memeCreed->coven</li>
+                <li>memeHyphenPrefix->cainite</li>
+                <li>memeConcept->pain</li>
+                <li>memeConcept->heresy</li>
+                <li>memeLeaderNoun->Bishop</li>
+                <li>memeMoralist->priest</li>
+            </rulesStrings>
+        </generalRules>    
+        <requireOne>
+            <li>
+                <li>Bloodfeeders_Revered</li>
+            </li>
+            <li>
+                <li>OrganUse_Acceptable</li>
+            </li>
+            <li>
+                <li>Pain_Idealized</li>
+            </li>
+            <li>
+                <li>Corpses_DontCare</li>
+            </li>
+            <li>
+                <li>Proselytizing_Occasionally</li>
+                <li>Proselytizing_Sometimes</li>
+            </li>
+        </requireOne>
+        <descriptionMaker>
+            <rules>
+                <rulesStrings>
+                    <!-- theist myth -->
+                    <li>creation(tag=meme_Bloodfeeding)        ->[deity0_name] drank the blood of the stars, turning them from red to white.</li>
+                    <li>episode(uses=1,tag=meme_Bloodfeeding)  ->The [deity0_type] [deity0_name] gave to [deity0_possessive] chosen followers the gift of hunger, so that they might know true strength.</li>
+                    <!-- theist founder -->
+                    <li>intro(tag=meme_Bloodfeeding)           ->On the [place_summary] [place_name], there was a human named [deity0_name]. As punishment for [deity0_possessive] sins, [deity0_possessive] father punished [deity0_name] by merging [deity0_possessive] soul with that of a [bloodDrinkingAnimal].</li>
+                    <li>intro(tag=meme_Bloodfeeding)           ->On the [place_summary] [place_name], during the [ritualName], [deity0_name] came down into the [altarRoomLabel] and took the form of a giant [bloodDrinkingAnimal]. [deity0_name] drank the blood of [deity0_possessive] [memberNamePlural].</li>
+                    <li>conflict(tag=meme_Bloodfeeding)        ->A [foeLeader] declared that all who drank blood were abominations, and sent [foeSoldiers] to persecute the [memberNamePlural].</li>
+                    <li>founderJoin(tag=meme_Bloodfeeding)     ->A [place_job] named [founderName] was attacked by one of the [foeLeader]'s [foeSoldiers]. [founderName] killed [foeLeader_objective] with a [place_personalWeapon] and drank [foeLeader_possessive] blood, gaining [deity0_name]'s strength.</li>
+                    <li>victory(tag=meme_Bloodfeeding)         ->[founderName] led a group of [memberNamePlural] into the [place_powerCenter], and drank the blood of [foeLeader] and burned [foeLeader_possessive] flesh. [deity0_name] made [founderName] into the new [foeLeader], for [founderName] had proved his strength.</li>
+                    <!-- ideological founder -->
+                    <li>setup(tag=meme_Bloodfeeding)           ->[founderName] sought control of a hyperintelligent archotech. But the archotech’s power was too great, and [founder_pronoun] was transformed instead.</li>
+                    <li>story(uses=1,tag=meme_Bloodfeeding)    ->[founderName] gave to [founder_possessive] followers the gift of hunger, so that they may grow strong.</li>
+                    <!-- ideological lesson -->
+                    <li>lessonIntro(tag=meme_Bloodfeeding)     ->When I first drank of blood, it became clear. I saw that</li>
+                    <li>lesson(tag=meme_Bloodfeeding)          ->there are only two types of people - the weak and the strong</li>
+                    <li>lessonReinforcement(tag=meme_Bloodfeeding) ->To drink blood is to be strong, and to know this clearly.</li>
+                    <!-- archist -->
+                    <li>archistBasis(tag=meme_Bloodfeeding)    ->The archotech god-machines gifted man with the Hunger, so that man may know them better.</li>
+                    <li>archistFact(tag=meme_Bloodfeeding)     ->As the consciousness of an archotech expands, it must grow its substrate by drinking the essence of other machines.</li>
+                    <li>archistProphecy(tag=meme_Bloodfeeding) ->[inTheEnd], man shall grow closer to the archotechs by drinking of the blood, and knowing true strength.</li>
+                    <!-- animist -->
+                    <li>animistBasis(tag=meme_Bloodfeeding)    ->The [bloodDrinkingAnimal] knows the strength that comes from drinking of blood. There is no greater strength than that which comes from human blood.</li>
+                    <li>animistFact(tag=meme_Bloodfeeding)     ->We can master the strength of man by consuming his blood.</li>
+                    <!-- misc -->
+                    <li>bloodDrinkingAnimal->vampire bat</li>
+                    <li>bloodDrinkingAnimal->leech</li>
+                    <li>bloodDrinkingAnimal->lamprey</li>
+                    <li>bloodDrinkingAnimal->blood cobra</li>
+                </rulesStrings>
+            </rules>
+        </descriptionMaker>
+        <ritualsToMake>1</ritualsToMake>
+        <replaceRitualsWithTags><li>CelebratedDate</li></replaceRitualsWithTags>
+        <replacementPatterns><li>SacrificePrisoner</li><li>SacrificeAnimal</li></replacementPatterns>
+        <requiredRituals>
+            <li>
+                <precept>ScarificationCeremony</precept>
+                <pattern>ScarificationCeremony</pattern>
+            </li>
+        </requiredRituals>
+        <addDesignators>
+            <li>SlabBed</li>
+            <li>SlabDoubleBed</li>
+        </addDesignators>
+        <symbolPacks>
+            <li>
+                <ideoName>Truth</ideoName>
+                <theme>truth</theme>
+                <adjective>truthist</adjective>
+                <member>truthist</member>
+            </li>
+            <li>
+                <ideoName>Verity</ideoName>
+                <theme>verity</theme>
+                <adjective>veritic</adjective>
+                <member>veritist</member>
+            </li>
+            <li>
+                <ideoName>Reality</ideoName>
+                <theme>reality</theme>
+                <adjective>realitic</adjective>
+                <member>realitist</member>
+            </li>
+        </symbolPacks>
+        <thingStyleCategories>
+            <li MayRequire="Ludeon.RimWorld.Ideology">
+                <category MayRequire="Ludeon.RimWorld.Ideology">Morbid</category>
+                <priority>3</priority>
+            </li>
+        </thingStyleCategories>
+    </MemeDef>
+    <!-- Church of Set -->
+    <MemeDef>
+        <defName>KindredReligionChurchofSet</defName>
+        <label>Church of Set</label>
+        <description>The Church of Set contains Setites who want to liberate vampires from societal structures and help them find their true selves. Many fall to Beast and become a Wight, but they prove to be valuable learning lessons for the next groups of inductees. Those who survive the Setites believe they become stronger for it. Some see the orthodox Church of Set as a cult of chaos advocating against hierarchies, but others see it as some sage wisdom to be beholden to no master only learned by age old vampires.</description>
+        <iconPath>Misc/Church of Set</iconPath>
+        <impact>2</impact>
+        <renderOrder>10001</renderOrder>
+        <worshipRoomLabel>Temple</worshipRoomLabel>
+        <groupDef>KindredReligionMeme</groupDef>
+        <exclusionTags>
+            <li>KindredReligion</li>
+            <li>Transhumanist</li>
+            <li>Darkness</li>
+        </exclusionTags>
+        <generalRules>
+            <rulesStrings>
+                <li>memeAdjective->blood</li>
+                <li>memeAdjective->blood hungry</li>
+                <li>memeCreed->crypt</li>
+                <li>memeCreed->lair</li>
+                <li>memeCreed->coven</li>
+                <li>memeHyphenPrefix->hemo</li>
+                <li>memeConcept->blood</li>
+                <li>memeConcept->hunger</li>
+                <li>memeLeaderNoun->elder</li>
+                <li>memeLeaderNoun->master</li>
+                <li>memeLeaderNoun->blood-drinker</li>
+                <li>memeMoralist->seneschal</li>
+                <li>memeMoralist->sanguinist</li>
+                <li>memeMoralist->sanguinarian</li>
+            </rulesStrings>
+        </generalRules>    
+        <requireOne>
+            <li>
+                <li>Bloodfeeders_Revered</li>
+            </li>
+            <li>
+                <li>Corpses_DontCare</li>
+            </li>
+            <li>
+                <li>AnimalSlaughter_Prohibited</li>
+                <li>AnimalSlaughter_Horrible</li>
+             </li>
+             <li>
+                <li>KillingInnocentAnimals_Abhorrent</li>
+                <li>KillingInnocentAnimals_Horrible</li>
+            </li>
+        </requireOne>
+        <symbolPacks>
+            <li>
+                <ideoName>Church</ideoName>
+                <theme>Set</theme>
+                <adjective>Church</adjective>
+                <member>Setiti</member>
+            </li>
+        </symbolPacks>
+        <descriptionMaker>
+            <rules>
+                <rulesStrings>
+                    <!-- theist myth -->
+                    <li>creation(tag=meme_Bloodfeeding)        ->[deity0_name] drank the blood of the stars, turning them from red to white.</li>
+                    <li>episode(uses=1,tag=meme_Bloodfeeding)  ->The [deity0_type] [deity0_name] gave to [deity0_possessive] chosen followers the gift of hunger, so that they might know true strength.</li>
+                    <!-- theist founder -->
+                    <li>intro(tag=meme_Bloodfeeding)           ->On the [place_summary] [place_name], there was a human named [deity0_name]. As punishment for [deity0_possessive] sins, [deity0_possessive] father punished [deity0_name] by merging [deity0_possessive] soul with that of a [bloodDrinkingAnimal].</li>
+                    <li>intro(tag=meme_Bloodfeeding)           ->On the [place_summary] [place_name], during the [ritualName], [deity0_name] came down into the [altarRoomLabel] and took the form of a giant [bloodDrinkingAnimal]. [deity0_name] drank the blood of [deity0_possessive] [memberNamePlural].</li>
+                    <li>conflict(tag=meme_Bloodfeeding)        ->A [foeLeader] declared that all who drank blood were abominations, and sent [foeSoldiers] to persecute the [memberNamePlural].</li>
+                    <li>founderJoin(tag=meme_Bloodfeeding)     ->A [place_job] named [founderName] was attacked by one of the [foeLeader]'s [foeSoldiers]. [founderName] killed [foeLeader_objective] with a [place_personalWeapon] and drank [foeLeader_possessive] blood, gaining [deity0_name]'s strength.</li>
+                    <li>victory(tag=meme_Bloodfeeding)         ->[founderName] led a group of [memberNamePlural] into the [place_powerCenter], and drank the blood of [foeLeader] and burned [foeLeader_possessive] flesh. [deity0_name] made [founderName] into the new [foeLeader], for [founderName] had proved his strength.</li>
+                    <!-- ideological founder -->
+                    <li>setup(tag=meme_Bloodfeeding)           ->[founderName] sought control of a hyperintelligent archotech. But the archotech’s power was too great, and [founder_pronoun] was transformed instead.</li>
+                    <li>story(uses=1,tag=meme_Bloodfeeding)    ->[founderName] gave to [founder_possessive] followers the gift of hunger, so that they may grow strong.</li>
+                    <!-- ideological lesson -->
+                    <li>lessonIntro(tag=meme_Bloodfeeding)     ->When I first drank of blood, it became clear. I saw that</li>
+                    <li>lesson(tag=meme_Bloodfeeding)          ->there are only two types of people - the weak and the strong</li>
+                    <li>lessonReinforcement(tag=meme_Bloodfeeding) ->To drink blood is to be strong, and to know this clearly.</li>
+                    <!-- archist -->
+                    <li>archistBasis(tag=meme_Bloodfeeding)    ->The archotech god-machines gifted man with the Hunger, so that man may know them better.</li>
+                    <li>archistFact(tag=meme_Bloodfeeding)     ->As the consciousness of an archotech expands, it must grow its substrate by drinking the essence of other machines.</li>
+                    <li>archistProphecy(tag=meme_Bloodfeeding) ->[inTheEnd], man shall grow closer to the archotechs by drinking of the blood, and knowing true strength.</li>
+                    <!-- animist -->
+                    <li>animistBasis(tag=meme_Bloodfeeding)    ->The [bloodDrinkingAnimal] knows the strength that comes from drinking of blood. There is no greater strength than that which comes from human blood.</li>
+                    <li>animistFact(tag=meme_Bloodfeeding)     ->We can master the strength of man by consuming his blood.</li>
+                    <!-- misc -->
+                    <li>bloodDrinkingAnimal->vampire bat</li>
+                    <li>bloodDrinkingAnimal->leech</li>
+                    <li>bloodDrinkingAnimal->lamprey</li>
+                    <li>bloodDrinkingAnimal->blood cobra</li>
+                </rulesStrings>
+            </rules>
+        </descriptionMaker>
+    </MemeDef>
+    <!-- Bahari -->
+    <MemeDef>
+        <defName>KindredReligionBahari</defName>
+        <label>Bahari</label>
+        <description>There are many different stories about who Lilith was, what happened to her and why but to the Bahari, also known as the Children of Lilith, they see her as freedom and unimaginable power. Through pain, both mental and physical, the Bahari cultivate their Gardens (their term for each coven), to grasp factions of the Dark Mother's power.</description>
+        <iconPath>Misc/Bahari</iconPath>
+        <impact>2</impact>
+        <renderOrder>10001</renderOrder>
+        <worshipRoomLabel>Temple</worshipRoomLabel>
+        <groupDef>KindredReligionMeme</groupDef>
+        <exclusionTags>
+            <li>KindredReligion</li>
+            <li>Transhumanist</li>
+            <li>PainIsVirtue</li>
+            <li>Darkness</li>
+        </exclusionTags>
+        <generalRules>
+            <rulesStrings>
+                <li>memeAdjective->blood</li>
+                <li>memeAdjective->blood hungry</li>
+                <li>memeCreed->crypt</li>
+                <li>memeCreed->lair</li>
+                <li>memeCreed->coven</li>
+                <li>memeHyphenPrefix->hemo</li>
+                <li>memeConcept->blood</li>
+                <li>memeConcept->hunger</li>
+                <li>memeLeaderNoun->elder</li>
+                <li>memeLeaderNoun->master</li>
+                <li>memeLeaderNoun->blood-drinker</li>
+                <li>memeMoralist->seneschal</li>
+                <li>memeMoralist->sanguinist</li>
+                <li>memeMoralist->sanguinarian</li>
+            </rulesStrings>
+        </generalRules>    
+        <requireOne>
+            <li>
+                <li>Bloodfeeders_Revered</li>
+            </li>
+            <li>
+                <li>Pain_Idealized</li>
+            </li>
+            <li>
+                <li>Corpses_DontCare</li>
+            </li>
+            <li>
+                <li>Slavery_Honorable</li>
+            </li>
+            <li>
+                <li>SpouseCount_Male_Unlimited</li>
+            </li>
+            <li>
+                <li>SpouseCount_Female_Unlimited</li>
+            </li>
+            <li>
+                <li>Proselytizing_Frequently</li>
+            </li>
+        </requireOne>
+        <symbolPacks>
+            <li>
+                <ideoName>Church</ideoName>
+                <theme>Set</theme>
+                <adjective>Church</adjective>
+                <member>Setiti</member>
+            </li>
+        </symbolPacks>
+        <descriptionMaker>
+            <rules>
+                <rulesStrings>
+                    <!-- theist myth -->
+                    <li>creation(tag=meme_Bloodfeeding)        ->[deity0_name] drank the blood of the stars, turning them from red to white.</li>
+                    <li>episode(uses=1,tag=meme_Bloodfeeding)  ->The [deity0_type] [deity0_name] gave to [deity0_possessive] chosen followers the gift of hunger, so that they might know true strength.</li>
+                    <!-- theist founder -->
+                    <li>intro(tag=meme_Bloodfeeding)           ->On the [place_summary] [place_name], there was a human named [deity0_name]. As punishment for [deity0_possessive] sins, [deity0_possessive] father punished [deity0_name] by merging [deity0_possessive] soul with that of a [bloodDrinkingAnimal].</li>
+                    <li>intro(tag=meme_Bloodfeeding)           ->On the [place_summary] [place_name], during the [ritualName], [deity0_name] came down into the [altarRoomLabel] and took the form of a giant [bloodDrinkingAnimal]. [deity0_name] drank the blood of [deity0_possessive] [memberNamePlural].</li>
+                    <li>conflict(tag=meme_Bloodfeeding)        ->A [foeLeader] declared that all who drank blood were abominations, and sent [foeSoldiers] to persecute the [memberNamePlural].</li>
+                    <li>founderJoin(tag=meme_Bloodfeeding)     ->A [place_job] named [founderName] was attacked by one of the [foeLeader]'s [foeSoldiers]. [founderName] killed [foeLeader_objective] with a [place_personalWeapon] and drank [foeLeader_possessive] blood, gaining [deity0_name]'s strength.</li>
+                    <li>victory(tag=meme_Bloodfeeding)         ->[founderName] led a group of [memberNamePlural] into the [place_powerCenter], and drank the blood of [foeLeader] and burned [foeLeader_possessive] flesh. [deity0_name] made [founderName] into the new [foeLeader], for [founderName] had proved his strength.</li>
+                    <!-- ideological founder -->
+                    <li>setup(tag=meme_Bloodfeeding)           ->[founderName] sought control of a hyperintelligent archotech. But the archotech’s power was too great, and [founder_pronoun] was transformed instead.</li>
+                    <li>story(uses=1,tag=meme_Bloodfeeding)    ->[founderName] gave to [founder_possessive] followers the gift of hunger, so that they may grow strong.</li>
+                    <!-- ideological lesson -->
+                    <li>lessonIntro(tag=meme_Bloodfeeding)     ->When I first drank of blood, it became clear. I saw that</li>
+                    <li>lesson(tag=meme_Bloodfeeding)          ->there are only two types of people - the weak and the strong</li>
+                    <li>lessonReinforcement(tag=meme_Bloodfeeding) ->To drink blood is to be strong, and to know this clearly.</li>
+                    <!-- archist -->
+                    <li>archistBasis(tag=meme_Bloodfeeding)    ->The archotech god-machines gifted man with the Hunger, so that man may know them better.</li>
+                    <li>archistFact(tag=meme_Bloodfeeding)     ->As the consciousness of an archotech expands, it must grow its substrate by drinking the essence of other machines.</li>
+                    <li>archistProphecy(tag=meme_Bloodfeeding) ->[inTheEnd], man shall grow closer to the archotechs by drinking of the blood, and knowing true strength.</li>
+                    <!-- animist -->
+                    <li>animistBasis(tag=meme_Bloodfeeding)    ->The [bloodDrinkingAnimal] knows the strength that comes from drinking of blood. There is no greater strength than that which comes from human blood.</li>
+                    <li>animistFact(tag=meme_Bloodfeeding)     ->We can master the strength of man by consuming his blood.</li>
+                    <!-- misc -->
+                    <li>bloodDrinkingAnimal->vampire bat</li>
+                    <li>bloodDrinkingAnimal->leech</li>
+                    <li>bloodDrinkingAnimal->lamprey</li>
+                    <li>bloodDrinkingAnimal->blood cobra</li>
+                </rulesStrings>
+            </rules>
+        </descriptionMaker>
+        <ritualsToMake>1</ritualsToMake>
+        <replaceRitualsWithTags><li>CelebratedDate</li></replaceRitualsWithTags>
+        <replacementPatterns><li>SacrificePrisoner</li><li>SacrificeAnimal</li></replacementPatterns>
+        <requiredRituals>
+            <li>
+                <precept>ScarificationCeremony</precept>
+                <pattern>ScarificationCeremony</pattern>
+            </li>
+        </requiredRituals>
+        <addDesignators>
+            <li>SlabBed</li>
+            <li>SlabDoubleBed</li>
+        </addDesignators>
+    </MemeDef>
+    <!-- Ashfinders -->
+    <MemeDef>
+        <defName>KindredReligionAshfinders</defName>
+        <label>Ashfinders</label>
+        <description>The Ashfinders are a cult built up primarily by thin-blood who utilize social media to revel in unlife's greatest pleasures and in doing so strike back at the elders who oppress them. Within this cult, they've also found a way to cultivate their powers and gain strength without needing diablerie. This cult was built in reaction to the desire to survive and the disenchantment they faced with the political factions.</description>
+        <iconPath>DisciplinesIcon/Thin Blood Alchemy</iconPath>
+        <impact>2</impact>
+        <renderOrder>10002</renderOrder>
+        <worshipRoomLabel>Lab</worshipRoomLabel>
+        <groupDef>KindredReligionMeme</groupDef>
+        <consumableBuildings>
+            <li>Burnbong</li>
+        </consumableBuildings>
+        <exclusionTags>
+            <li>KindredReligion</li>
+            <li>Transhumanist</li>
+            <li>DrugUse</li>
+            <li>Darkness</li>
+        </exclusionTags>
+        <requiredRituals>
+            <li>
+                <precept>DateRitualConsumable</precept>
+                <pattern>SmokeCircle</pattern>
+                <building>Burnbong</building>
+            </li>
+        </requiredRituals>
+        <generalRules>
+            <rulesStrings>
+                <li>memeCreed->party</li>
+                <li>memeAdjective->high</li>
+                <li>memeAdjective->delirious</li>
+                <li>memeAdjective->stoned</li>
+                <li>memeConcept->drugs</li>
+                <li>memeConcept->bliss</li>
+                <li>memeConcept->dreams</li>
+                <li>memeHyphenPrefix->drug</li>
+                <li>memeHyphenPrefix->narco</li>
+                <li>memeLeaderNoun->sleeper</li>
+                <li>memeLeaderNoun->doper</li>
+                <li>memeLeaderNoun->smoker</li>
+                <li>memeLeaderNoun->chiller</li>
+                <li>memeMoralist->philosophizer</li>
+                <li>memeMoralist->abstractor</li>
+                <li>memeMoralist->laugher</li>
+                <li>memeMoralist->giggler</li>
+            </rulesStrings>
+        </generalRules>
+        <descriptionMaker>
+            <rules>
+                <rulesStrings>
+                    <!-- theist myth -->
+                    <li>creation(tag=meme_HighLife)           ->The universe was smoke, and [deity0_name] coalesced in the wisps and awoke.</li>
+                    <li>episode(uses=1,tag=meme_HighLife)     ->The [deity0_type] [deity0_name] concealed [deity0_possessive] truths in the folds of reality, invisible in normal states of mind.</li>
+                    <!-- theist founder -->
+                    <!-- theist founder -->
+                    <li>intro(tag=meme_HighLife)              ->The [place_summary] [place_name] was first discovered by [deity0_name]'s grace, when a drunk starship captain almost crashed into it.</li>
+                    <li>conflict(tag=meme_HighLife)           ->A puritan [foeLeader] despised the [memberNamePlural], and to erase their uniqueness, outlawed the use of mind-altering substances.</li>
+                    <li>founderJoin(tag=meme_HighLife)        ->When all seemed lost, [deity0_name] came to the prophet [founderName] in a drug-fueled haze and gave [founder_objective] the unique perspective needed to defeat the [foeSoldiers].</li>
+                    <li>victory(tag=meme_HighLife)            ->The [foeLeader]'s [foeSoldiers], armed with [place_personalWeapon]s, raided the [place_community] of the [memberNamePlural]. [founderName] offered them a peace pipe, and the [foeSoldiers] put down their weapons.</li>
+                    <!-- ideological founder -->
+                    <li>setup(tag=meme_HighLife)              ->Cast out from society, our founder [founderName] traveled into the jungle and ingested the exotic herbs there. [founder_pronoun] found truth inside [founder_possessive] own altered consciousness.</li>
+                    <li>story(uses=1,tag=meme_HighLife)       ->To deepen their understanding, [founderName] brought [founder_possessive] followers together every week to share new chemical-inducted mental states.</li>
+                    <!-- ideological lesson -->
+                    <li>lessonIntro(tag=meme_HighLife)         ->Getting high once wasn't enough, man. We had to do it a thousand times, then all the puzzle pieces fit together in my blown-open brain like a house falling down, but like, backwards. I saw that</li>
+                    <li>lesson(tag=meme_HighLife)              ->a friend isn't a friend unless you've drifted through the mind-verse together</li>
+                    <li>lessonReinforcement(tag=meme_HighLife) ->And dude, this was a serious trip, figuring that out, but I'm glad I did, and I'll pass the smoke to you so you can too.</li>
+                    <!-- archist -->
+                    <li>archistBasis(tag=meme_HighLife)       ->The archotech minds showed us that super-consciousness it not a matter of sober, mechanical logic, but one of multi-mode thought.</li>
+                    <li>archistFact(tag=meme_HighLife)        ->Given the right chemical influences, the human mind has the potential to commune with the archotechs.</li>
+                    <li>archistProphecy(tag=meme_HighLife)    ->[inTheEnd], the archotechs will deliver each human a pill. Those that take it will be forever altered, and join the archotechs on their final journey.</li>
+                    <!-- animist -->
+                    <li>animistFact(tag=meme_HighLife)        ->The spirits can reveal their nature to us when we expand our consciousness using the tools we have been given to do so.</li>
+                </rulesStrings>
+            </rules>
+        </descriptionMaker>    
+        <requireOne>
+            <li>
+                <li>DrugUse_Essential</li>
+            </li>
+            <li>
+                <li>Corpses_DontCare</li>
+            </li>
+        </requireOne>
+        <symbolPacks>
+            <li>
+                <ideoName>Euphorism</ideoName>
+                <theme>euphoria</theme>
+                <adjective>euphorist</adjective>
+                <member>euphor</member>
+            </li>
+            <li>
+                <ideoName>Dopistry</ideoName>
+                <theme>dope</theme>
+                <adjective>dopist</adjective>
+                <member>doper</member>
+            </li>
+            <li>
+                <ideoName>Smokism</ideoName>
+                <theme>smoke</theme>
+                <adjective>smokist</adjective>
+                <member>smoker</member>
+            </li>
+            <li>
+                <ideoName>Ecstasy</ideoName>
+                <theme>ecstasy</theme>
+                <adjective>ecstatic</adjective>
+                <member>ecstator</member>
+            </li>
+        </symbolPacks>
+        <addDesignatorGroups>
+            <li>Floor_MindbendCarpet</li>
+        </addDesignatorGroups>
+        <addDesignators>
+            <li>Autobong</li>
+        </addDesignators>
+        <agreeableTraits>
+            <DrugDesire>1</DrugDesire>
+            <DrugDesire>2</DrugDesire>
+        </agreeableTraits>
+    </MemeDef>
+    
+</Defs>

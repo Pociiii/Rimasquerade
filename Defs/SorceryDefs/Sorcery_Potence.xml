@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Soaring Leap -->
+	<ItsSorceryFramework.SorceryDef>
+    	<defName>RMSQ_SoaringLeap</defName>
+    	<label>Soaring Leap</label>
+		<description>Leap higher and further than usual.</description>
+    	<iconPath>DisciplinesIcon/Potence</iconPath>
+		<displayOrder>91</displayOrder>
+		<level>1</level>
+		<category>Sanguophage</category>
+		<writeCombatLog>True</writeCombatLog>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Potence</warmupMoteSocialSymbol>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    	<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityJump</verbClass>
+      		<label>Soaring Leap</label>
+      		<violent>false</violent>
+      		<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.25</warmupTime>
+      		<range>24.9</range>
+      		<requireLineOfSight>true</requireLineOfSight>
+      		<soundCast>Longjump_Jump</soundCast>
+      		<soundLanding>Longjump_Land</soundLanding>
+      		<targetParams>
+        		<canTargetLocations>true</canTargetLocations>
+        		<canTargetPawns>false</canTargetPawns>
+        		<canTargetBuildings>false</canTargetBuildings>
+      		</targetParams>
+    	</verbProperties>
+    	<jobDef>CastJump</jobDef>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+		</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Level 2 -->
+
+    <!-- Prowess -->
+	<ItsSorceryFramework.SorceryDef ParentName="PotenceBuff">
+    	<defName>RMSQ_Prowess</defName>
+    	<label>Prowess</label>
+    	<description>Improve Melee damage.</description>
+		<displayOrder>92</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ProwessHediff</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Relentless Grasp -->
+	<ItsSorceryFramework.SorceryDef ParentName="PotenceBuff">
+    	<defName>RMSQ_Relentless_Grasp</defName>
+    	<label>Relentless Grasp</label>
+    	<description>Gain supernatural grip strength\n\n Improve Carry Capacity</description>
+		<displayOrder>92.1</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_RelentlessGrasp</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 3 -->
+
+    <!-- Brutal Feed -->
+    <ItsSorceryFramework.SorceryDef ParentName="PotenceTouch">
+    	<defName>RMSQ_Brutal_Feed</defName>
+    	<label>Brutal Feed</label>
+    	<description>A messy affair that only lasts seconds and increases hemogen gained</description>
+		<displayOrder>93</displayOrder>
+		<level>3</level>
+    	<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>1</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.4</hemogenGain>                 <!--Gives a small amount of hemogen-->
+                <bloodFilthToSpawnRange>9</bloodFilthToSpawnRange>
+                <resistanceGain>0</resistanceGain>
+                <targetBloodLoss>0.6</targetBloodLoss>        <!--Applies far less blood loss than the 0.45 applied by bloodfeeding-->
+                <nutritionGain >3</nutritionGain >        <!--Applies far less blood loss than the 0.45 applied by bloodfeeding-->
+            </li>
+			<li Class="EBSGFramework.CompProperties_EBSGBlast">
+                <radius>0.9</radius> <!--This is separate from the ability radius, so your abilities can apply an effect in one area, and an explosion in a differently sized area-->
+		        <damageDef>Bite</damageDef> <!--Any DamageDef DefName should work here-->
+		        <injureSelf>false</injureSelf> <!--Default (False), while false, the caster will be on a "don't target" list-->
+		        <damageAmount>25</damageAmount>
+                <applyDamageToExplosionCellsNeighbors>False</applyDamageToExplosionCellsNeighbors> <!--Default (False), and it should probably stay that way since that can increase damage more than intended-->
+                <armorPenetration>0.8</armorPenetration><!--Default (-1) : Defaults to no penetration, so you'll need to set this manually-->
+                <extraGasType>None</extraGasType> <!--Creates a gas around the caster after casting. The options are None, Smoke, Tox, and Rot-->
+                <explosionSound>Foam_Impact</explosionSound>
+            </li>
+      		<li Class="CompProperties_AbilityFleckOnTarget">
+        		<fleckDef>BloodSplash</fleckDef>
+      		</li>
+      		<li Class="CompProperties_AbilityRequiresCapacity">
+        		<capacity>Eating</capacity>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Spark of Rage -->
+    <ItsSorceryFramework.SorceryDef ParentName="PotenceRanged">
+    	<defName>RMSQ_Spark_of_Rage</defName>
+    	<label>Spark of Rage</label>
+    	<description>Incite a person or crowd to violent actions\n\nMake the target seek a target to kill</description>
+		<displayOrder>93.1</displayOrder>
+		<level>3</level>
+		<hostile>true</hostile>
+    	<statBases>
+    	  	<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+      		<targetParams>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class="CompProperties_AbilityGiveMentalState">
+    	    	<compClass>CompAbilityEffect_GiveMentalState</compClass>
+    	    	<stateDef>MurderousRage</stateDef>
+    	    	<goodwillImpact>-75</goodwillImpact>
+    	   	 	<excludeNPCFactions>false</excludeNPCFactions>
+    	  	</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Draught of Might -->
+	<ItsSorceryFramework.SorceryDef ParentName="PotenceTouch">
+    	<defName>RMSQ_Draught_of_Migh</defName>
+    	<label>Draught of Might</label>
+    	<description>Turn their vitae into a Potence boost for others.</description>
+    	<displayOrder>94</displayOrder>
+		<level>4</level>
+		<statBases>
+			<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RMSQ_DraughtofMight</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+			</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Fist of Caine -->
+	<ItsSorceryFramework.SorceryDef ParentName="PotenceTouch">
+    	<defName>RMSQ_Fist_of_Caine</defName>
+    	<label>Fist of Caine</label>
+    	<description>Gain Caine like strength</description>
+		<displayOrder>95</displayOrder>
+		<hostile>true</hostile>
+		<targetRequired>true</targetRequired>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<level>5</level>
+    	<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+      		<targetParams>
+        		<canTargetSelf>false</canTargetSelf>
+        		<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>True</canTargetHumans>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+				<canTargetPawns>true</canTargetPawns>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+            <li Class="EBSGFramework.CompProperties_EBSGBlast">
+                <radius>0.9</radius> <!--This is separate from the ability radius, so your abilities can apply an effect in one area, and an explosion in a differently sized area-->
+		        <damageDef>Blunt</damageDef> <!--Any DamageDef DefName should work here-->
+		        <injureSelf>false</injureSelf> <!--Default (False), while false, the caster will be on a "don't target" list-->
+		        <damageAmount>25</damageAmount>
+                <applyDamageToExplosionCellsNeighbors>False</applyDamageToExplosionCellsNeighbors> <!--Default (False), and it should probably stay that way since that can increase damage more than intended-->
+                <armorPenetration>0.8</armorPenetration><!--Default (-1) : Defaults to no penetration, so you'll need to set this manually-->
+                <extraGasType>None</extraGasType> <!--Creates a gas around the caster after casting. The options are None, Smoke, Tox, and Rot-->
+                <explosionSound>Foam_Impact</explosionSound>
+            </li>
+        </comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+   
+</Defs>

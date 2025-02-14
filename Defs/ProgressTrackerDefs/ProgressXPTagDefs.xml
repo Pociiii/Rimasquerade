@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	
+
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnKill">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnKill</workerClass>
+		<defName>RMSQ_Discipline_EXPTag_OnKill</defName>
+		<fixedEXP>50</fixedEXP>
+		<damageDefs/>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnSkillEXP">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnSkillEXP</workerClass>
+		<defName>RMSQ_Discipline_EXPTag_OnSkillEXP</defName>
+		<expFactor>0.01</expFactor>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+
+    <ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_Passive">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_Passive</workerClass>
+		<defName>RMSQ_Discipline_EXPTag_Passive</defName>
+		<fixedEXP>10</fixedEXP>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+</Defs>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Bond Famulus -->
+	<ItsSorceryFramework.SorceryDef ParentName="AnimalismBuff">
+    	<defName>RMSQ_Bond_Famulus</defName>
+    	<label>Bond Famulus</label>
+    	<description>Rouse your blood to get a boost at bonding with animals.\n\n- Bond Animal Chance Factor +25%</description>
+		<displayOrder>11</displayOrder>
+		<level>1</level>
+		<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_BondFamulus</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 2 -->
+
+	<!-- Feral Whispers -->
+	<ItsSorceryFramework.SorceryDef ParentName="AnimalismBuff">
+    	<defName>RMSQ_Feral_Whispers</defName>
+    	<label>Feral Whispers</label>
+    	<description>Rouse your blood for a two-way communication with animals\n\n- Tame Animal Chance +25%\n- Train Animal Chance +25%</description>
+        <displayOrder>12</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_Feral_Whispers</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Animal Messenger -->
+	<ItsSorceryFramework.SorceryDef ParentName="AnimalismRanged">
+    	<defName>RMSQ_Animal_Messenger</defName>
+    	<label>Animal Messenger</label>
+    	<description>Rouse your blood to turn one animal hostile agaisnt colony enemeies</description>
+        <displayOrder>13</displayOrder>
+		<level>2</level>
+		<verbProperties>
+    	  	<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+    	    	<canTargetPawns>true</canTargetPawns>
+    	    	<canTargetAnimals>true</canTargetAnimals>
+				<canTargetBloodfeeders>false</canTargetBloodfeeders>
+				<canTargetHumans>false</canTargetHumans>
+    	  	</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class="CompProperties_AbilityGiveMentalState">
+    	    	<compClass>CompAbilityEffect_GiveMentalState</compClass>
+    	    	<stateDef>BerserkWarcall</stateDef>
+    	    	<goodwillImpact>-75</goodwillImpact>
+    	   	 	<casterEffect>AnimalWarcall_Cast</casterEffect>
+    	   	 	<targetEffect>AnimalWarcall_CastOnTarget</targetEffect>
+    	   	 	<excludeNPCFactions>true</excludeNPCFactions>
+    	  	</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+    
+    <!-- Level 3 -->
+
+	<!-- Animal Succulence -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_Animal_Succulence</defName>
+        <label>Animal Succulence</label>
+        <description>You favorite blood comes from animals\n\n- Gain 20 Vitae upon feeding on animals</description>
+        <verbProperties>
+            <targetParams>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.2</hemogenGain>                 <!--Gives a small amount of hemogen-->
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>0</resistanceGain>
+                <targetBloodLoss>0.2</targetBloodLoss>        <!--Applies far less blood loss than the 0.45 applied by bloodfeeding-->
+            </li>    
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+	<!-- Sway the Flock -->
+	<ItsSorceryFramework.SorceryDef ParentName="AnimalismBuff">
+    	<defName>RMSQ_Sway_the_Flock</defName>
+    	<label>Sway the Flock</label>
+    	<description>Rouse your blood to influence animals to behave a certain way\n\n- Animal Gather Speed +25%\n- Animal Gather Yield +25%</description>
+		<displayOrder>14</displayOrder>
+		<level>4</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_SwaytheFlock</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+    
+	<!-- Animal Dominion -->
+	<ItsSorceryFramework.SorceryDef ParentName="AnimalismRanged">
+    	<defName>RMSQ_Animal_Dominion</defName>
+    	<label>Animal Dominion</label>
+    	<description>Rouse your blood to turn a group of animals hostile agaisnt colony enemeies</description>
+		<displayOrder>15</displayOrder>
+		<level>5</level>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+      		<Ability_EffectRadius>1.9</Ability_EffectRadius>
+    	</statBases>
+    	<verbProperties>
+    	  	<targetParams>
+    	    	<canTargetLocations>true</canTargetLocations>
+    	    	<canTargetSelf>false</canTargetSelf>
+    	    	<canTargetPawns>true</canTargetPawns>
+    	    	<canTargetAnimals>true</canTargetAnimals>
+				<canTargetBloodfeeders>false</canTargetBloodfeeders>
+				<canTargetHumans>false</canTargetHumans>
+    	  	</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class="CompProperties_AbilityGiveMentalState">
+    	    	<compClass>CompAbilityEffect_GiveMentalState</compClass>
+    	    	<stateDef>BerserkWarcall</stateDef>
+    	    	<goodwillImpact>-75</goodwillImpact>
+    	   	 	<casterEffect>AnimalWarcall_Cast</casterEffect>
+    	   	 	<targetEffect>AnimalWarcall_CastOnTarget</targetEffect>
+    	   	 	<excludeNPCFactions>false</excludeNPCFactions>
+    	  	</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+	
+    <!-- Drawing Out the Beast -->
+	<ItsSorceryFramework.SorceryDef ParentName="AnimalismRanged">
+    	<defName>RMSQ_Drawing_Out_the_Beast</defName>
+    	<label>Drawing Out the Beast</label>
+    	<description>Rouse your blood to reduces your Mental Break Treshold and increase it to the target\n\n- Caster: Mental Break Threshold -20%\n- Target: Mental Break Threshold +20%</description>
+		<displayOrder>15.1</displayOrder>
+		<level>5</level>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+		<comps>
+    	  	<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_DrawingOuttheBeast_Bonus</hediffOnCaster>
+                <hediffOnTarget>RMSQ_DrawingOuttheBeast_Malus</hediffOnTarget>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+</Defs>	

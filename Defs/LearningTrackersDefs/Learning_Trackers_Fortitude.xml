@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Fortitude -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
+		<defName>RMSQ_Node_Fortitude_ClanDiscipline</defName>
+		<description>Strengthens the user's physical and mental resistance.\n\nClan Discipline for: Gangrel, Hecata, Salubri, Ventrue</description>
+        <label>Clan Discipline\nFORTITUDE</label>
+		<coordY>6</coordY>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_ClanDiscipline_Fortitude</key><value>0</value></li>
+        </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
+		<defName>RMSQ_Node_Fortitude_NonClanDiscipline</defName>
+		<description>Strengthens the user's physical and mental resistance.</description>
+        <label>Non Clan Discipline\nFORTITUDE</label>
+        <coordY>6.5</coordY>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Fortitude_ClanDiscipline</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
+		<defName>RMSQ_Node_Fortitude_One</defName>
+		<label>FORTITUDE 1\nUnswayable Mind</label>
+    	<description>Mind and will get stronger against supernatural forces.</description>
+		<pointReq>1</pointReq>
+		<coordX>1</coordX>
+        <prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Fortitude_ClanDiscipline</li>
+			<li>RMSQ_Node_Fortitude_NonClanDiscipline</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Unswayable_Mind</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
+		<defName>RMSQ_Node_Fortitude_Two</defName>
+		<label>FORTITUDE 2\nToughness</label>
+    	<description>The vampire suffer less physical damage</description>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Fortitude_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Toughness</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
+		<defName>RMSQ_Node_Fortitude_Three</defName>
+		<label>FORTITUDE 3\nFortify the Inner Façade</label>
+    	<description>Increasing the Difficulty of mental powers to read or pierce the mind</description>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Fortitude_Two</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Fortify_the_Inner_Facade</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
+		<defName>RMSQ_Node_Fortitude_Three_Amalgam</defName>
+		<label>AMALGAM 3\nValeren</label>
+        <description>Mend an injured human or vampire.</description>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+		<coordY>6.5</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Fortitude_Two</li>
+			<li>RMSQ_Node_Auspex_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Valeren</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
+		<defName>RMSQ_Node_Fortitude_Four</defName>
+		<label>FORTITUDE 4\nDraught of Endurance</label>
+    	<description>Turn their vitae into a Fortitude boost for others</description>
+		<pointReq>5</pointReq>
+		<coordX>4</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Fortitude_Three</li>
+			<li>RMSQ_Node_Fortitude_Three_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Draught_of_Endurance</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
+		<defName>RMSQ_Node_Fortitude_Five</defName>
+		<label>FORTITUDE 5\nProwess from Pain</label>
+    	<description>The vampire suffers less pain</description>
+		<pointReq>8</pointReq>
+		<coordX>5</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Fortitude_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Prowess_from_Pain</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+</Defs>

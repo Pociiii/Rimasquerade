@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Celerity -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
+		<defName>RMSQ_Node_Celerity_ClanDiscipline</defName>
+		<description>Powers up the movement of the user, enabling them to have unnatural quickness in their movement and supernatural reflexes.\n\nClan Discipline for: Banu Haqim, Brujah, Toreador</description>
+        <label>Clan Discipline\nCELERITY</label>
+		<coordY>3</coordY>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_ClanDiscipline_Celerity</key><value>0</value></li>
+        </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
+		<defName>RMSQ_Node_Celerity_NonClanDiscipline</defName>
+		<description>Powers up the movement of the user, enabling them to have unnatural quickness in their movement and supernatural reflexes.</description>
+        <label>Non Clan Discipline\nCELERITY</label>
+        <coordY>3.5</coordY>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Celerity_ClanDiscipline</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "Celerity">
+		<defName>RMSQ_Node_Celerity_One</defName>
+		<label>CELERITY 1\nRapid Reflexes</label>
+        <description>Faster reactions and minor actions\n\nImprove Moving</description>
+		<pointReq>1</pointReq>
+		<coordX>1</coordX>
+        <prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Celerity_ClanDiscipline</li>
+			<li>RMSQ_Node_Celerity_NonClanDiscipline</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Rapid_Reflexes</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "Celerity">
+		<defName>RMSQ_Node_Celerity_Two</defName>
+		<label>CELERITY 2\nRush Job</label>
+        <description>Perform a Skill-related task that would take a long time in mere seconds.</description>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Celerity_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Rush_Job</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "Celerity">
+		<defName>RMSQ_Node_Celerity_Three</defName>
+		<label>CELERITY 3\nBlink</label>
+        <description>Closes the distance as if teleporting.</description>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Celerity_Two</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Blink</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "Celerity">
+		<defName>RMSQ_Node_Celerity_Four</defName>
+		<label>CELERITY 4\nBlurred Momentum</label>
+        <description>Attacks against the user misses more</description>
+		<pointReq>5</pointReq>
+		<coordX>4</coordX>
+        <coordY>3</coordY>
+		<prereqs>
+			<li>RMSQ_Node_Celerity_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Blurred_Momentum</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "Celerity">
+		<defName>RMSQ_Node_Celerity_Four_Two</defName>
+		<label>CELERITY 4\nDraught of Elegance</label>
+        <description>Turn their vitae into a Celerity boost for others</description>
+		<pointReq>4</pointReq>
+		<coordX>4</coordX>
+		<coordY>3.5</coordY>
+		<prereqs>
+			<li>RMSQ_Node_Celerity_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Draught_of_Elegance</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "Celerity">
+		<defName>RMSQ_Node_Celerity_Five</defName>
+		<label>CELERITY 5\nLightning Strike</label>
+        <description>Attack with lightning speed</description>
+		<pointReq>8</pointReq>
+		<coordX>5</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Celerity_Four</li>
+			<li>RMSQ_Node_Celerity_Four_Two</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Lightning_Strike</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+</Defs>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <NeedDef>
+        <defName>RMSQ_Beast</defName>
+        <needClass>EBSGFramework.Need_Murderous</needClass>
+        <label>The Beast</label>
+        <description>Many Kindred believe that the moment they are Embraced is when the Beast grows, for fledglings, it's often a feeling of having lost a vital part of themselves and replaced with something indescribable and lingering. The Beast is a constant reminder of the tainted vampiric Blood that now runs within them. The Beast lurks within the consciousness of vampires, reminding them of the endless hunger and lust to devour more.</description>
+        <baseLevel>0</baseLevel>
+        <minIntelligence>ToolUser</minIntelligence>
+        <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
+        <onlyIfCausedByGene>true</onlyIfCausedByGene>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <increasePerKill>1</increasePerKill>
+                <fallPerDay>0.05</fallPerDay>
+                <allowMechanoids>false</allowMechanoids>
+                <allowDryads>false</allowDryads>
+                <allowInsects>false</allowInsects>
+                <allowAnimals>false</allowAnimals>
+                <allowEntities>false</allowEntities>
+                <thresholdPercentages>
+                    <li>0.25</li>
+                    <li>0.5</li>
+                    <li>0.75</li>
+                </thresholdPercentages>
+            </li>
+        </modExtensions>
+    </NeedDef>
+
+    <ThoughtDef>
+        <defName>RMSQ_Killer_Thought</defName>
+        <thoughtClass>EBSGFramework.Thought_Situational_BasicCurveNeedMood</thoughtClass>
+        <workerClass>EBSGFramework.ThoughtWorker_BasicCurveNeedMood</workerClass>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>Killer desires</label>
+                <description>I want to kill</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <need>RMSQ_Beast</need>
+                <moodOffsetCurve>
+                    <points>
+                        <li>0, -18</li>
+                        <li>0.35, -4</li>
+                        <li>0.351, 0</li>
+                    </points>
+                </moodOffsetCurve>
+            </li>
+        </modExtensions>
+    </ThoughtDef>
+</Defs>

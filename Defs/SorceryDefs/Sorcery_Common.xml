@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- The Kiss -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_Kiss_Ability</defName>
+        <label>The Kiss</label>
+        <description>For a vampire, the act of feeding becomes highly sensual, regardless of his or her gender or sexual orientation. This applies to the victim as well. It is an extremely intimate experience, perhaps the most intimate experience either participant will ever experience. For the victim, a vampire's bite brings exquisite bodily pleasure, comparable to or even greater than the height of sexual release.\n\nGain 20 Vitae upon feeding</description>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.2</hemogenGain>                
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>1</resistanceGain>
+                <targetBloodLoss>0.2</targetBloodLoss> 
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <!-- Alleycat -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_Alleycat_Ability</defName>
+        <label>The Kiss (Alleycat)</label>
+        <description>You take blood by force, often harming your targets\n\nGain 25 Vitae upon feeding</description>
+        <comps>      
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.25</hemogenGain>        
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>1</resistanceGain>
+                <targetBloodLoss>0.5</targetBloodLoss>    
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <!-- Farmer -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_AnimalKiss_Ability</defName>
+        <label>Animal Kiss</label>
+        <description>You feed from animals.\n\nGain 10 Vitae upon feeding</description>
+        <verbProperties>
+            <targetParams>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.1</hemogenGain>
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>0</resistanceGain>
+                <targetBloodLoss>0.1</targetBloodLoss>
+            </li>    
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_FarmerKiss_Ability</defName>
+        <label>The Kiss (Farmer)</label>
+        <description>You feed from animals.\nFeeding from Human cost willpower\n\nGain 20 Vitae upon feeding</description>
+        <statBases>
+			<RMSQ_Willpower>5</RMSQ_Willpower>
+		</statBases>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.2</hemogenGain>                 <!--Gives a small amount of hemogen-->
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>1</resistanceGain>
+                <targetBloodLoss>0.2</targetBloodLoss>        <!--Applies far less blood loss than the 0.45 applied by bloodfeeding-->
+            </li>        
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <!-- Graverobber -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_Graverobber_Ability</defName>
+        <label>Extract Blood</label>
+        <description>Extract blood from corpses\n\nCorpses are destroyed right after\n\nTwo Hemogen packs will appear into the Pawn inventory</description>
+        <verbProperties>
+            <targetParams>
+                <canTargetCorpses>true</canTargetCorpses>
+                <onlyTargetCorpses>true</onlyTargetCorpses>
+                <neverTargetHostileFaction>false</neverTargetHostileFaction>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_EBSGBlast">
+                <radius>0.9</radius> <!--This is separate from the ability radius, so your abilities can apply an effect in one area, and an explosion in a differently sized area-->
+		        <damageDef>Cut</damageDef> <!--Any DamageDef DefName should work here-->
+		        <injureSelf>false</injureSelf> <!--Default (False), while false, the caster will be on a "don't target" list-->
+		        <damageAmount>100</damageAmount>
+                <applyDamageToExplosionCellsNeighbors>False</applyDamageToExplosionCellsNeighbors> <!--Default (False), and it should probably stay that way since that can increase damage more than intended-->
+                <armorPenetration>1</armorPenetration><!--Default (-1) : Defaults to no penetration, so you'll need to set this manually-->
+                <extraGasType>None</extraGasType> <!--Creates a gas around the caster after casting. The options are None, Smoke, Tox, and Rot-->
+                <explosionSound>Foam_Impact</explosionSound>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AddItemToInventory">
+                <casterThing>HemogenPack</casterThing>
+                <casterCount>2</casterCount>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_GraverobberKiss_Ability</defName>
+        <label>The Kiss (Graverobber)</label>
+        <description>You don't like the taste of living meat\n\nFeeding from living cost willpower\n\nGain 20 Vitae upon feeding</description>
+        <statBases>
+			<RMSQ_Willpower>5</RMSQ_Willpower>
+		</statBases>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.2</hemogenGain>                 <!--Gives a small amount of hemogen-->
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>1</resistanceGain>
+                <targetBloodLoss>0.2</targetBloodLoss>        <!--Applies far less blood loss than the 0.45 applied by bloodfeeding-->
+            </li> 
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <!-- Siren -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_Siren_Ability</defName>
+        <label>The Kiss (Siren)</label>
+        <description>YOu like to seduce your victims\n\nGain 20 Vitae upon feeding</description>
+        <statBases>
+			<Ability_Duration>500</Ability_Duration>
+		</statBases>
+        <comps>     
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Siren_Hediff</hediffToApply>
+                <psychic>True</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_SirenManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityBloodDrain">
+                <hemogenGain>0.2</hemogenGain>                 <!--Gives a small amount of hemogen-->
+                <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+                <resistanceGain>1</resistanceGain>
+                <targetBloodLoss>0.2</targetBloodLoss>        <!--Applies far less blood loss than the 0.45 applied by bloodfeeding-->
+            </li>
+    	</comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <!-- Mending -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineAbilityBase">
+        <defName>RMSQ_Mending_Ability</defName>
+        <label>Mending</label>
+        <description>Use your own vitae to mend your wound\n\nRegenerate lost limbs</description>
+        <iconPath>Misc/Mending</iconPath>
+        <warmupMote>Mote_CoagulateStencil</warmupMote>
+        <warmupEffecter>Coagulate</warmupEffecter>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <displayOrder>701</displayOrder>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <cooldownTicksRange>120</cooldownTicksRange>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+      		<Ability_Duration>1</Ability_Duration>
+    	</statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>False</drawAimPie>
+            <warmupTime>1</warmupTime>
+      		<requireLineOfSight>False</requireLineOfSight>
+			<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+			<targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_Mending</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.2</hemogenCost>
+            </li>
+            <li Class="CompProperties_AbilityCoagulate">
+                <tendQualityRange>1</tendQualityRange>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>BloodSplash</fleckDef>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <!-- Resist Frenzy -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineAbilityBase">
+    	<defName>RMSQ_ResistFrenzy_Ability</defName>
+    	<label>Resist Frenzy</label>
+    	<description>Use your Willpower to not let The Beast take over.\n\nMental Break Threshold -50%</description>
+        <warmupMoteSocialSymbol>Misc/Willpower</warmupMoteSocialSymbol>
+        <iconPath>Misc/Willpower</iconPath>
+        <warmupEffecter>Coagulate</warmupEffecter>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <displayOrder>702</displayOrder>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <RMSQ_Willpower>10</RMSQ_Willpower>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>False</drawAimPie>
+      		<requireLineOfSight>False</requireLineOfSight>
+			<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+			<targetable>false</targetable>
+      		<targetParams>
+        		<canTargetSelf>true</canTargetSelf>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ResistFrenzy</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Blood Bond -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_BloodBond</defName>
+        <label>Blood Bond</label>
+        <description>The Blood Bond is a system of control, making the victim infatuated or obssessed with their master against their will. This practice is feared by most, though the Camarilla utilizes it against both Kindred and mortal servants. Most Anarch will refuse to use such methods, though there is the rare occasion where they view its practice as crucial for the cause's safety.\n\nImprove mood, increase opinion, give bonuses for working and combat.</description>
+        <iconPath>Misc/Blood Bond</iconPath>
+        <displayOrder>703</displayOrder>
+        <warmupMoteSocialSymbol>Misc/Blood Bond</warmupMoteSocialSymbol>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <RMSQ_Willpower>30</RMSQ_Willpower>
+      		<Ability_Duration>10000</Ability_Duration>
+    	</statBases>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase">
+        <defName>RMSQ_BloodBond_TB</defName>
+        <label>Blood Bond</label>
+        <description>The Blood Bond is a system of control, making the victim infatuated or obssessed with their master against their will. This practice is feared by most, though the Camarilla utilizes it against both Kindred and mortal servants. Most Anarch will refuse to use such methods, though there is the rare occasion where they view its practice as crucial for the cause's safety.\n\nImprove mood, increase opinion, give bonuses for working and combat.</description>
+        <iconPath>Misc/Blood Bond</iconPath>
+        <displayOrder>703</displayOrder>
+        <warmupMoteSocialSymbol>Misc/Blood Bond</warmupMoteSocialSymbol>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <RMSQ_Willpower>30</RMSQ_Willpower>
+      		<Ability_Duration>5000</Ability_Duration>
+    	</statBases>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master_TB</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul_TB</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <!-- Retainer -->
+    <ItsSorceryFramework.SorceryDef ParentName="KissBase" Name="RetainerBaseAbility" Abstract="True">
+        <description>The Blood Bond is a system of control, making the victim infatuated or obssessed with their master against their will. This practice is feared by most, though the Camarilla utilizes it against both Kindred and mortal servants. Most Anarch will refuse to use such methods, though there is the rare occasion where they view its practice as crucial for the cause's safety.\n\nImprove mood, increase opinion, give general bonuses</description>
+        <iconPath>Misc/Blood Bond</iconPath>
+        <displayOrder>703</displayOrder>
+        <warmupMoteSocialSymbol>Misc/Blood Bond</warmupMoteSocialSymbol>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <RMSQ_Willpower>30</RMSQ_Willpower>
+      		<Ability_Duration>10000</Ability_Duration>
+    	</statBases>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <ItsSorceryFramework.SorceryDef ParentName="RetainerBaseAbility">
+        <defName>RMSQ_BloodBond_Retainer_One</defName>
+        <label>Blood Bond Retainer 1</label>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul_Retainer_One</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <ItsSorceryFramework.SorceryDef ParentName="RetainerBaseAbility">
+        <defName>RMSQ_BloodBond_Retainer_Two</defName>
+        <label>Blood Bond Retainer 2</label>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul_Retainer_Two</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <ItsSorceryFramework.SorceryDef ParentName="RetainerBaseAbility">
+        <defName>RMSQ_BloodBond_Retainer_Three</defName>
+        <label>Blood Bond Retainer 3</label>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul_Retainer_Three</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <ItsSorceryFramework.SorceryDef ParentName="RetainerBaseAbility">
+        <defName>RMSQ_BloodBond_Retainer_Four</defName>
+        <label>Blood Bond Retainer 4</label>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul_Retainer_Four</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <ItsSorceryFramework.SorceryDef ParentName="RetainerBaseAbility">
+        <defName>RMSQ_BloodBond_Retainer_Five</defName>
+        <label>Blood Bond Retainer 5</label>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_BlondBond_Love</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_BloodBond_Master</hediffOnCaster>
+                <hediffOnTarget>RMSQ_BloodBond_Ghoul_Retainer_Five</hediffOnTarget>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+    <!-- Embrace -->
+    <AbilityDef ParentName="AbilityTouchBase" Name="EmbraceBasee" Abstract="True">
+        <description>The Embrace is the act of transforming a mortal into a vampire. A vampire drains and replaces a victim's blood with a bit of their own.</description>
+        <iconPath>Misc/Embrace</iconPath>
+        <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <displayOrder>500</displayOrder>
+        <showWhenDrafted>false</showWhenDrafted>
+        <category>Sanguophage</category>
+        <hostile>false</hostile>
+        <aiCanUse>False</aiCanUse>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>4</warmupTime>
+            <targetParams>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetBloodfeeders>false</canTargetBloodfeeders>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EmbraceBasee">
+        <defName>RMSQ_Embrace_XV</defName>
+        <label>Embrace (XV)</label>
+        <comps>
+            <li Class="CompProperties_AbilityReimplantXenogerm" />
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.75</hemogenCost>
+            </li>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Embrace_Love_XV</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+                <hediffsToGive>
+                    <li> 
+                        <hediffDef>RMSQ_Hediff_Generation</hediffDef>
+                        <severity>0</severity>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EmbraceBasee">
+        <defName>RMSQ_Embrace_XIV</defName>
+        <label>Embrace (XIV)</label>
+        <comps>
+            <li Class="CompProperties_AbilityReimplantXenogerm" />
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.75</hemogenCost>
+            </li>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Embrace_Love_XV</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+                <hediffsToGive> <!--List includes most mundane injuries, excluding lost parts-->
+                    <li> <!--Imaginary BuffA gives bonuses to both pawns, and starts with a severity of 10.-->
+                        <hediffDef>RMSQ_Hediff_Generation</hediffDef>
+                        <severity>0</severity>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EmbraceBasee">
+        <defName>RMSQ_Embrace_XIII</defName>
+        <label>Embrace (XIII)</label>
+        <comps>
+            <li Class="CompProperties_AbilityReimplantXenogerm" />
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.75</hemogenCost>
+            </li>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Embrace_Love_XIV</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+                <hediffsToGive> <!--List includes most mundane injuries, excluding lost parts-->
+                    <li> <!--Imaginary BuffA gives bonuses to both pawns, and starts with a severity of 10.-->
+                        <hediffDef>RMSQ_Hediff_Generation</hediffDef>
+                        <severity>1</severity>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EmbraceBasee">
+        <defName>RMSQ_Embrace_XII</defName>
+        <label>Embrace (XII)</label>
+        <comps>
+            <li Class="CompProperties_AbilityReimplantXenogerm" />
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.75</hemogenCost>
+            </li>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Embrace_Love_XIII</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+                <hediffsToGive> <!--List includes most mundane injuries, excluding lost parts-->
+                    <li> <!--Imaginary BuffA gives bonuses to both pawns, and starts with a severity of 10.-->
+                        <hediffDef>RMSQ_Hediff_Generation</hediffDef>
+                        <severity>2</severity>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EmbraceBasee">
+        <defName>RMSQ_Embrace_XI</defName>
+        <label>Embrace (XI)</label>
+        <comps>
+            <li Class="CompProperties_AbilityReimplantXenogerm" />
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.75</hemogenCost>
+            </li>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Embrace_Love_XII</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+                <hediffsToGive> <!--List includes most mundane injuries, excluding lost parts-->
+                    <li> <!--Imaginary BuffA gives bonuses to both pawns, and starts with a severity of 10.-->
+                        <hediffDef>RMSQ_Hediff_Generation</hediffDef>
+                        <severity>3</severity>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EmbraceBasee">
+        <defName>RMSQ_Embrace_X</defName>
+        <label>Embrace (X)</label>
+        <comps>
+            <li Class="CompProperties_AbilityReimplantXenogerm" />
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.75</hemogenCost>
+            </li>
+            <li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_Embrace_Love_XI</hediffToApply>
+                <psychic>false</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_BloodBondManipulation</interactionDef>
+            </li>
+            <li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+                <hediffsToGive> <!--List includes most mundane injuries, excluding lost parts-->
+                    <li> <!--Imaginary BuffA gives bonuses to both pawns, and starts with a severity of 10.-->
+                        <hediffDef>RMSQ_Hediff_Generation</hediffDef>
+                        <severity>4</severity>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </AbilityDef>
+
+</Defs>

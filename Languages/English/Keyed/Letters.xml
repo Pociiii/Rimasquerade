@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<RMSQ_Kindred_LevelUp>Kindred level up: {0}</RMSQ_Kindred_LevelUp>
+	<RMSQ_Kindred_LevelUpMessage>By the grace of the many purchases made and their excitement, this pawn has risen from level {0} to level {1}.</RMSQ_Kindred_LevelUpMessage>
+	
+</LanguageData>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Discipline Ability Base -->
+    <ItsSorceryFramework.SorceryDef ParentName="SorceryBase" Name="DisciplineAbilityBase" Abstract="True">
+        <abilityClass>ItsSorceryFramework.Sorcery</abilityClass>
+	    <gizmoClass>ItsSorceryFramework.Command_Sorcery</gizmoClass>
+	    <category>Sorcery</category>
+        <sorcerySchema>RMSQ_Kindred_Schema</sorcerySchema>
+        <writeCombatLog>True</writeCombatLog>
+        <aiCanUse>true</aiCanUse>
+        <hostile>false</hostile>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <cooldownTicksRange>300</cooldownTicksRange>
+        <showCastingProgressBar>true</showCastingProgressBar>
+    </ItsSorceryFramework.SorceryDef>
+
+	<!-- Kiss Base -->
+	<ItsSorceryFramework.SorceryDef ParentName="DisciplineAbilityBase" Name="KissBase" Abstract="True">
+        <iconPath>Misc/Feeding</iconPath>
+        <displayOrder>700</displayOrder>
+        <warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
+        <warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+        <warmupMoteSocialSymbol>Misc/Feeding</warmupMoteSocialSymbol>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <aiCanUse>False</aiCanUse>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <stunTargetWhileCasting>true</stunTargetWhileCasting>
+        <level>1</level>
+        <category>Sanguophage</category>
+        <statBases>
+			<RMSQ_Willpower>0</RMSQ_Willpower>
+		</statBases>
+    	<verbProperties>
+      		<verbClass>Verb_CastAbilityTouch</verbClass>
+      		<drawAimPie>false</drawAimPie>
+      		<range>-1</range>
+			<warmupTime>2</warmupTime>
+      		<targetParams>
+      		  	<canTargetSelf>false</canTargetSelf>
+      		  	<canTargetBuildings>false</canTargetBuildings>
+      		  	<canTargetMechs>false</canTargetMechs>
+      		  	<canTargetBloodfeeders>false</canTargetBloodfeeders>
+      		  	<canTargetAnimals>false</canTargetAnimals>
+                <neverTargetHostileFaction>True</neverTargetHostileFaction>
+            </targetParams>
+   		</verbProperties>
+        <comps>  
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>BloodSplash</fleckDef>
+            </li>
+            <li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Eating</capacity>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+	
+    <!-- Discipline Buff Base -->
+	<ItsSorceryFramework.SorceryDef Name="DisciplineBuffBase" ParentName="DisciplineAbilityBase" Abstract="True">
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<targetRequired>False</targetRequired>
+		<warmupEffecter>Coagulate</warmupEffecter>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>False</drawAimPie>
+      		<requireLineOfSight>False</requireLineOfSight>
+			<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+			<targetable>false</targetable>
+      		<targetParams>
+        		<canTargetSelf>true</canTargetSelf>
+      		</targetParams>
+    	</verbProperties>
+		<comps>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>BloodSplash</fleckDef>
+            </li>
+        </comps>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Discipline Touch Base -->
+	<ItsSorceryFramework.SorceryDef Name="DisciplineTouchBase" ParentName="DisciplineAbilityBase" Abstract="True">
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<warmupEffecter>Coagulate</warmupEffecter>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<verbProperties>
+      		<verbClass>Verb_CastAbilityTouch</verbClass>
+      		<drawAimPie>false</drawAimPie>
+      		<range>-1</range>
+			<warmupTime>0.25</warmupTime>
+      		<targetParams>
+      		  	<canTargetSelf>false</canTargetSelf>
+      		  	<canTargetBuildings>false</canTargetBuildings>
+      		  	<canTargetMechs>false</canTargetMechs>
+      		  	<canTargetBloodfeeders>true</canTargetBloodfeeders>
+      		</targetParams>
+   		</verbProperties>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Discipline Ranged Base -->
+	<ItsSorceryFramework.SorceryDef Name="DisciplineRangedBase" ParentName="DisciplineAbilityBase" Abstract="True">
+		<jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>	
+      		<range>24.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawAimPie>true</drawAimPie>
+			<warmupTime>1</warmupTime>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<targetParams>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+      		  	<canTargetMechs>false</canTargetMechs>
+				<canTargetAnimals>false</canTargetAnimals>
+      		</targetParams>
+		</verbProperties>
+		<comps>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+        </comps>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Animalism -->
+	<ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="AnimalismBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Animalism</iconPath>
+        <warmupMoteSocialSymbol>DisciplinesIcon/Animalism</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+	<ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="AnimalismRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Animalism</iconPath>
+        <warmupMoteSocialSymbol>DisciplinesIcon/Animalism</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Auspex -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="AuspexBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Auspex</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Auspex</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="AuspexTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Auspex</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Auspex</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="AuspexRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Auspex</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Auspex</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Blood Sorcery -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="BloodSorceryBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Blood Sorcery</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Blood Sorcery</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="BloodSorceryRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Blood Sorcery</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Blood Sorcery</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="BloodSorceryTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Blood Sorcery</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Blood Sorcery</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Celerity -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="CelerityBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Celerity</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Celerity</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="CelerityTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Celerity</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Celerity</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Dominate -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="DominateBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Dominate</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Dominate</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="DominateTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Dominate</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Dominate</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="DominateRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Dominate</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Dominate</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Fortitude -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="FortitudeBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Fortitude</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Fortitude</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="FortitudeTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Fortitude</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Fortitude</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="FortitudeRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Fortitude</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Fortitude</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Obfuscate -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="ObfuscateBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Obfuscate</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Obfuscate</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="ObfuscateRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Obfuscate</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Obfuscate</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="ObfuscateTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Obfuscate</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Obfuscate</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Oblivion -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="OblivionBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Oblivion</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Oblivion</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="OblivionTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Oblivion</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Oblivion</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="OblivionRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Oblivion</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Oblivion</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Potence -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="PotenceBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Potence</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Potence</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="PotenceTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Potence</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Potence</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="PotenceRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Potence</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Potence</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Presence -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="PresenceBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Presence</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Presence</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="PresenceTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Presence</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Presence</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="PresenceRanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Presence</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Presence</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Protean -->
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="ProteanBuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Protean</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Protean</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineTouchBase" Name="ProteanTouch" Abstract="True">
+		<iconPath>DisciplinesIcon/Protean</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Protean</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Thin Blood Alchemy -->
+    <!-- <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="TBABuff" Abstract="True">
+		<iconPath>DisciplinesIcon/Thin Blood Alchemy</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Thin Blood Alchemy</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="TBARanged" Abstract="True">
+		<iconPath>DisciplinesIcon/Thin Blood Alchemy</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Thin Blood Alchemy</warmupMoteSocialSymbol>
+	</ItsSorceryFramework.SorceryDef> -->
+    
+    
+</Defs>

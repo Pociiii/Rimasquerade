@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Unswayable Mind -->
+	<ItsSorceryFramework.SorceryDef ParentName="FortitudeBuff">
+    	<defName>RMSQ_Unswayable_Mind</defName>
+    	<label>Unswayable Mind</label>
+    	<description>Mind and will get stronger against supernatural forces.</description>
+		<displayOrder>62</displayOrder>
+		<level>1</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMASQ_UnswayableMind</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Level 2 -->
+
+    <!-- Toughness -->
+    <ItsSorceryFramework.SorceryDef ParentName="FortitudeBuff">
+    	<defName>RMSQ_Toughness</defName>
+    	<label>Toughness</label>
+    	<description>The vampire suffer less physical damage</description>
+		<displayOrder>62</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ToughnessHediff</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 3 -->
+
+    <!-- Fortify the Inner Façade -->
+	<ItsSorceryFramework.SorceryDef ParentName="FortitudeBuff">
+    	<defName>RMSQ_Fortify_the_Inner_Facade</defName>
+    	<label>Fortify the Inner Façade</label>
+    	<description>Increasing the Difficulty of mental powers to read or pierce the mind</description>
+		<displayOrder>63</displayOrder>
+		<level>3</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_FortifytheInnerFacade</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Valeren -->
+    <ItsSorceryFramework.SorceryDef ParentName="FortitudeTouch">
+        <defName>RMSQ_Valeren</defName>
+        <label>Valeren</label>
+        <description>Mend an injured human or vampire.</description>
+        <displayOrder>63.5</displayOrder>
+		<level>3</level>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<statBases>
+      		<Ability_Duration>90</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+			<targetParams>
+				<neverTargetHostileFaction>true</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+        <comps>
+            <li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ValerenHediff</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+            </li>
+            <li Class="CompProperties_AbilityCoagulate">
+                <tendQualityRange>1</tendQualityRange>
+            </li>
+            <li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Manipulation</capacity>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+    
+	<!-- Level 4 -->
+
+    <!-- Draught of Endurance -->
+	<ItsSorceryFramework.SorceryDef ParentName="FortitudeTouch">
+    	<defName>RMSQ_Draught_of_Endurance</defName>
+    	<label>Draught of Endurance</label>
+    	<description>Turn their vitae into a Fortitude boost for others</description>
+    	<displayOrder>64</displayOrder>
+		<level>4</level>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RMASQ_DraughtofEndurance</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+			</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Prowess from Pain -->
+	<ItsSorceryFramework.SorceryDef ParentName="FortitudeBuff">
+    	<defName>RMSQ_Prowess_from_Pain</defName>
+    	<label>Prowess from Pain</label>
+    	<description>The vampire suffers less pain</description>
+		<displayOrder>65</displayOrder>
+		<level>5</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ProwessfromPain</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+</Defs>

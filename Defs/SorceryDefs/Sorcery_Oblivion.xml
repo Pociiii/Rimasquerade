@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Ashes to Ashes -->
+    <ItsSorceryFramework.SorceryDef ParentName="OblivionTouch">
+        <defName>RMSQ_Ashes_to_Ashes</defName>
+        <label>Ashes to Ashes</label>
+        <description>Destroy a corpse by dissolving it</description>
+        <level>1</level>
+        <hostile>true</hostile>
+        <aiCanUse>false</aiCanUse>
+        <verbProperties>
+            <targetParams>
+                <canTargetCorpses>true</canTargetCorpses>
+                <onlyTargetCorpses>true</onlyTargetCorpses>
+                <neverTargetHostileFaction>false</neverTargetHostileFaction>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_EBSGBlast">
+                <radius>0.9</radius> <!--This is separate from the ability radius, so your abilities can apply an effect in one area, and an explosion in a differently sized area-->
+		        <damageDef>Cut</damageDef> <!--Any DamageDef DefName should work here-->
+		        <injureSelf>false</injureSelf> <!--Default (False), while false, the caster will be on a "don't target" list-->
+		        <damageAmount>100</damageAmount>
+                <applyDamageToExplosionCellsNeighbors>False</applyDamageToExplosionCellsNeighbors> <!--Default (False), and it should probably stay that way since that can increase damage more than intended-->
+                <armorPenetration>1</armorPenetration><!--Default (-1) : Defaults to no penetration, so you'll need to set this manually-->
+                <extraGasType>None</extraGasType> <!--Creates a gas around the caster after casting. The options are None, Smoke, Tox, and Rot-->
+                <explosionSound>Foam_Impact</explosionSound>
+            </li>
+        </comps>
+    </ItsSorceryFramework.SorceryDef>
+
+
+    <!-- Level 2 -->
+
+    <!-- Shadow Cast -->
+    <ItsSorceryFramework.SorceryDef ParentName="OblivionRanged">
+    	<defName>RMSQ_Shadow_Cast</defName>
+    	<label>Shadow Cast</label>
+    	<description>Improve Caster Social Impact while giving a debuff to a target\n\nThe bonus disapper if the caster or the target die</description>
+		<displayOrder>23.1</displayOrder>
+		<level>2</level>
+		<aiCanUse>false</aiCanUse>
+		<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+    	  	<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_ShadowCast_Caster</hediffOnCaster>
+                <hediffOnTarget>RMSQ_ShadowCast_Target</hediffOnTarget>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Arms of Ahriman -->
+    <ItsSorceryFramework.SorceryDef ParentName="OblivionRanged">
+    	<defName>RMSQ_Arms_of_Ahriman</defName>
+    	<label>Arms of Ahriman</label>
+    	<displayOrder>82</displayOrder>
+		<level>2</level>
+		<description>Conjures shadow appendages that slow the target</description>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+			<targetParams>
+      		  	<canTargetMechs>true</canTargetMechs>
+      		</targetParams>
+		</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ArmsofAhriman</hediffDef>
+        		<psychic>False</psychic>
+				<onlyBrain>False</onlyBrain>
+        		<goodwillImpact>-15</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 3 -->
+
+    <!-- Touch of oblivion -->
+    <ItsSorceryFramework.SorceryDef ParentName="OblivionTouch">
+    	<defName>RMSQ_Touch_Of_Oblivion</defName>
+    	<label>Touch of oblivion</label>
+    	<displayOrder>83</displayOrder>
+		<level>3</level>
+		<description>Weakens a random organ on touch.</description>
+	    <hostile>true</hostile>
+    	<statBases>
+      		<Ability_Duration>1</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_TouchOfOblivion</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Stygian Shroud -->
+	<ItsSorceryFramework.SorceryDef ParentName="OblivionRanged">
+    	<defName>RMSQ_Stygian_Shroud</defName>
+    	<label>Stygian Shroud</label>
+    	<displayOrder>84</displayOrder>
+		<level>4</level>
+		<description>Darkness spews out of a nearby shadow and blind the target</description>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_StygianShroud</hediffDef>
+        		<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+        		<goodwillImpact>-15</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Skuld Fulfilled -->
+	<ItsSorceryFramework.SorceryDef ParentName="OblivionTouch">
+    	<defName>RMSQ_Skuld_Fulfilled</defName>
+    	<label>Skuld Fulfilled</label>
+    	<displayOrder>85</displayOrder>
+		<level>5</level>
+		<description>Reintroduce illnesses someone has recovered from</description>
+		<hostile>true</hostile>
+    	<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_SkuldFulfilled</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Ceremonies -->
+
+    <!-- Level 1 -->
+
+    <!-- Gift of False Life -->
+	<ItsSorceryFramework.SorceryDef ParentName="OblivionRanged">
+		<defName>RMSQ_Gift_of_False_Life</defName>
+		<label>Gift of False Life</label>
+		<description>This Ceremony enables a necromancer to create hostile undead creatures out of a corpse</description>
+		<moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+		<warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<warmupSound>AnomalyAbilityWarmup</warmupSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<displayOrder>131</displayOrder>
+		<level>1</level>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<verbProperties>
+		  	<warmupTime>5</warmupTime>
+		  	<targetParams>
+		  	  	<canTargetCorpses>true</canTargetCorpses>
+		  	  	<onlyTargetCorpses>true</onlyTargetCorpses>
+		  	</targetParams>
+		</verbProperties>
+		<comps>
+		  <li Class="CompProperties_FleshbeastFromCorpse" />
+		</comps>
+	</ItsSorceryFramework.SorceryDef>  
+    <!-- Level 2 -->
+
+    <!-- Awaken the Homuncular Servant -->
+	<ItsSorceryFramework.SorceryDef ParentName="DisciplineAbilityBase">
+    	<defName>RMSQ_Awaken_the_Homuncular_Servant</defName>
+    	<label>Awaken the Homuncular Servant</label>
+		<description>This Ceremony enables a necromancer to raise a single corpse</description>
+		<iconPath>DisciplinesIcon/Oblivion</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Oblivion</warmupMoteSocialSymbol>
+    	<displayOrder>132</displayOrder>
+		<level>2</level>
+    	<hostile>false</hostile>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    	<warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<warmupSound>AnomalyAbilityWarmup</warmupSound>
+		<jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>	
+      		<range>24.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawAimPie>true</drawAimPie>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<warmupTime>5</warmupTime>
+    	  	<targetParams>
+          		<canTargetPawns>false</canTargetPawns>
+          		<canTargetHumans>true</canTargetHumans>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+      		  	<canTargetMechs>false</canTargetMechs>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetCorpses>true</canTargetCorpses>
+		  	  	<onlyTargetCorpses>true</onlyTargetCorpses>
+    	  	</targetParams>
+    	</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+       		 	<projectileDef>RMSQ_Servant_Deadlife</projectileDef>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.2</hemogenCost>
+            </li>
+        </comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<ThingDef ParentName="BaseBullet">
+    	<defName>RMSQ_Servant_Deadlife</defName>
+    	<label>deadlife capsule</label>
+    	<graphicData>
+      		<texPath>Things/Projectile/PiercingSpine</texPath>
+      		<graphicClass>Graphic_Single</graphicClass>
+    	</graphicData>
+    	<thingClass>Projectile_Explosive</thingClass>
+    	<projectile>
+    	  	<damageDef>DeadlifeDust</damageDef>
+    	  	<speed>41</speed>
+    	  	<explosionRadius>0.2</explosionRadius>
+    	  	<soundExplode>ToxicShellLanded</soundExplode>
+    	  	<postExplosionSpawnThingDef>RMSQ_Servant_Releasing</postExplosionSpawnThingDef>
+			<filth>Filth_Blood</filth>
+			<filthCount>4</filthCount>
+		</projectile>
+  	</ThingDef>
+    
+	<ThingDef>
+    	<defName>RMSQ_Servant_Releasing</defName>
+    	<label>deadlife capsule</label>
+    	<selectable>false</selectable>
+    	<tickerType>Normal</tickerType>
+    	<thingClass>ThingWithComps</thingClass>
+    	<useHitPoints>false</useHitPoints>
+    	<graphicData>
+    	  <texPath>Things/Projectile/LandedDeadlifeShell</texPath>
+    	  <graphicClass>Graphic_Single</graphicClass>
+    	  <shaderType>Transparent</shaderType>
+    	</graphicData>
+    	<rotatable>false</rotatable>
+    	<comps>
+    	  <li Class="CompProperties_ReleaseGas">
+    	    <gasType>DeadlifeDust</gasType>
+    	    <cellsToFill>0.2</cellsToFill>
+    	    <durationSeconds>10</durationSeconds>
+    	    <effecterReleasing>DeadlifeReleasing</effecterReleasing>
+    	  </li>
+    	  <li Class="CompProperties_DestroyAfterDelay">
+    	    <delayTicks>60</delayTicks>
+    	  </li>
+    	</comps>
+  	</ThingDef>
+
+    <!-- Level 3 -->
+
+    <!-- Shambling Hordes -->
+	<ItsSorceryFramework.SorceryDef ParentName="DisciplineAbilityBase">
+    	<defName>RMSQ_Shambling_Hordes</defName>
+    	<label>Shambling Hordes</label>
+		<description>This Ceremony enables a necromancer to raise a group of walking dead minions</description>
+		<iconPath>DisciplinesIcon/Oblivion</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Oblivion</warmupMoteSocialSymbol>
+    	<displayOrder>134</displayOrder>
+		<level>1</level>
+    	<hostile>false</hostile>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    	<warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<warmupSound>AnomalyAbilityWarmup</warmupSound>
+		<jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>	
+      		<range>24.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawAimPie>true</drawAimPie>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<warmupTime>5</warmupTime>
+    	  	<targetParams>
+          		<canTargetPawns>false</canTargetPawns>
+          		<canTargetHumans>true</canTargetHumans>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+      		  	<canTargetMechs>false</canTargetMechs>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetCorpses>true</canTargetCorpses>
+		  	  	<onlyTargetCorpses>true</onlyTargetCorpses>
+    	  	</targetParams>
+    	</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+       		 	<projectileDef>RMSQ_Hordes_Deadlife</projectileDef>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.3</hemogenCost>
+            </li>
+        </comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<ThingDef ParentName="BaseBullet">
+    	<defName>RMSQ_Hordes_Deadlife</defName>
+    	<label>deadlife capsule</label>
+    	<graphicData>
+      		<texPath>Things/Projectile/PiercingSpine</texPath>
+      		<graphicClass>Graphic_Single</graphicClass>
+    	</graphicData>
+    	<thingClass>Projectile_Explosive</thingClass>
+    	<projectile>
+    	  	<damageDef>DeadlifeDust</damageDef>
+    	  	<speed>41</speed>
+    	  	<explosionRadius>1.9</explosionRadius>
+    	  	<soundExplode>ToxicShellLanded</soundExplode>
+    	  	<postExplosionSpawnThingDef>RMSQ_Hordes_Releasing</postExplosionSpawnThingDef>
+			<filth>Filth_Blood</filth>
+			<filthCount>4</filthCount>
+		</projectile>
+  	</ThingDef>
+
+	<ThingDef>
+    	<defName>RMSQ_Hordes_Releasing</defName>
+    	<label>deadlife capsule</label>
+    	<selectable>false</selectable>
+    	<tickerType>Normal</tickerType>
+    	<thingClass>ThingWithComps</thingClass>
+    	<useHitPoints>false</useHitPoints>
+    	<graphicData>
+    	  <texPath>Things/Projectile/LandedDeadlifeShell</texPath>
+    	  <graphicClass>Graphic_Single</graphicClass>
+    	  <shaderType>Transparent</shaderType>
+    	</graphicData>
+    	<rotatable>false</rotatable>
+    	<comps>
+    	  <li Class="CompProperties_ReleaseGas">
+    	    <gasType>DeadlifeDust</gasType>
+    	    <cellsToFill>1.9</cellsToFill>
+    	    <durationSeconds>10</durationSeconds>
+    	    <effecterReleasing>DeadlifeReleasing</effecterReleasing>
+    	  </li>
+    	  <li Class="CompProperties_DestroyAfterDelay">
+    	    <delayTicks>60</delayTicks>
+    	  </li>
+    	</comps>
+  	</ThingDef>
+
+    <!-- Level 4 -->
+
+    <!-- Befoul Vessel -->
+	<ItsSorceryFramework.SorceryDef ParentName="OblivionTouch">
+		<defName>RMSQ_Befoul_Vessel</defName>
+		<label>Befoul Vessel</label>
+		<description>This Ceremony enables a necromancer to turn a mortal's blood into poison</description>
+		<iconPath>DisciplinesIcon/Oblivion</iconPath>
+		<warmupMoteSocialSymbol>DisciplinesIcon/Oblivion</warmupMoteSocialSymbol>
+    	<displayOrder>134</displayOrder>
+		<level>1</level>
+    	<hostile>true</hostile>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    	<warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<warmupSound>AnomalyAbilityWarmup</warmupSound>
+		<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+		  	<targetParams>
+		  	  	<canTargetBloodfeeders>false</canTargetBloodfeeders>
+		  	</targetParams>
+		</verbProperties>
+		<comps>
+		  <li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_BefoulVessel</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+		</comps>
+	</ItsSorceryFramework.SorceryDef>
+    <!-- Level 5 -->
+</Defs>

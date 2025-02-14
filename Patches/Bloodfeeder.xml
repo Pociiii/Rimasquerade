@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/EBSGFramework.EBSGRecorder[defName="EBSG_Recorder"]/bloodfeederGenes</xpath>
+        <value>
+            <li>RMSQ_Gene_Vitae</li>
+        </value>
+    </Operation>
+
+
+</Patch>

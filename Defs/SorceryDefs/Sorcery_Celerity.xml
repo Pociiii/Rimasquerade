@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Rapid Reflexes -->
+	<ItsSorceryFramework.SorceryDef ParentName="CelerityBuff">
+    	<defName>RMSQ_Rapid_Reflexes</defName>
+    	<label>Rapid Reflexes</label>
+    	<description>Faster reactions and minor actions\n\nImprove Moving</description>
+		<displayOrder>41</displayOrder>
+		<level>1</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_RapidReflexes</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Level 2 -->
+
+    <!-- Rush Job -->
+    <ItsSorceryFramework.SorceryDef ParentName="CelerityBuff">
+    	<defName>RMSQ_Rush_Job</defName>
+    	<label>Rush Job</label>
+    	<description>Perform a Skill-related task that would take a long time in mere seconds.</description>
+		<displayOrder>42</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_RushJob</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+    
+	<!-- Level 3 -->
+
+    <!-- Blink -->
+	<ItsSorceryFramework.SorceryDef ParentName="CelerityTouch">
+    	<defName>RMSQ_Blink</defName>
+    	<label>Blink</label>
+    	<description>Closes the distance as if teleporting.</description>
+		<displayOrder>43</displayOrder>
+		<level>3</level>
+		<warmupSound>PsycastCastLoop</warmupSound>
+		<verbProperties>
+    	  	<range>0.9</range>
+    	  	<targetParams>
+    	    	<canTargetSelf>true</canTargetSelf>
+    	    	<canTargetAnimals>false</canTargetAnimals>
+    	    	<canTargetItems>false</canTargetItems>
+				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+    	  	</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class = "CompProperties_AbilityTeleport">
+    	    	<compClass>CompAbilityEffect_Teleport</compClass>
+    	    	<destination>Selected</destination>
+    	    	<requiresLineOfSight>True</requiresLineOfSight>
+    	    	<range>29.9</range>
+    	   		<clamorType>Ability</clamorType>
+    	    	<clamorRadius>10</clamorRadius>
+    	    	<destClamorType>Ability</destClamorType>
+    	    	<destClamorRadius>10</destClamorRadius>
+    	    	<stunTicks>18~60</stunTicks>
+    	    	<goodwillImpact>-15</goodwillImpact>
+    	    	<applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+    	  	</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Blurred Momentum -->
+	<ItsSorceryFramework.SorceryDef ParentName="CelerityBuff">
+    	<defName>RMSQ_Blurred_Momentum</defName>
+    	<label>Blurred Momentum</label>
+    	<description>Attacks against the user misses more</description>
+		<displayOrder>44</displayOrder>
+		<level>4</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_BlurredMomentum</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Draught of Elegance -->
+    <ItsSorceryFramework.SorceryDef ParentName="CelerityTouch">
+    	<defName>RMSQ_Draught_of_Elegance</defName>
+    	<label>Draught of Elegance</label>
+    	<description>Turn their vitae into a Celerity boost for others</description>
+    	<displayOrder>44.1</displayOrder>
+		<level>4</level>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RMSQ_DraughtofElegance</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+			</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Lightning Strike -->
+	<ItsSorceryFramework.SorceryDef ParentName="CelerityBuff">
+    	<defName>RMSQ_Lightning_Strike</defName>
+    	<label>Lightning Strike</label>
+    	<description>Attack with lightning speed</description>
+		<displayOrder>45</displayOrder>
+		<level>1</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_LightningStrike</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+</Defs>

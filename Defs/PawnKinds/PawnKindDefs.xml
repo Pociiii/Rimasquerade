@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- Kindred -->
+	<PawnKindDef Name="KindredBase" Abstract="True">
+    	<label>Kindred</label>
+		<race>Human</race>
+    	<useFactionXenotypes>true</useFactionXenotypes>
+    	<combatPower>100</combatPower>
+    	<backstoryCryptosleepCommonality>0.1</backstoryCryptosleepCommonality>
+    	<chemicalAddictionChance>0.08</chemicalAddictionChance>
+    	<isFighter>true</isFighter>
+    	<chronologicalAgeRange>300~2000</chronologicalAgeRange>
+    	<initialResistanceRange>10~80</initialResistanceRange>
+    	<initialWillRange>5~15</initialWillRange>
+    	<apparelRequired>
+    	  <li>Apparel_Duster</li>
+    	  <li>Apparel_CollarShirt</li>
+    	  <li>Apparel_Pants</li>
+    	</apparelRequired>
+    	<requiredWorkTags>
+    	  <li>Social</li>
+    	  <li>Violent</li>
+    	</requiredWorkTags>
+    	<disallowedTraits>
+    	  <li>Immunity</li>
+    	</disallowedTraits>
+	</PawnKindDef>	
+
+    <!-- Kindred Player -->
+	<PawnKindDef ParentName="KindredBase">
+    	<defName>Kindred_Player</defName>
+        <modExtensions>
+            <li Class="ItsSorceryFramework.ModExtension_PawnGenSchemaSet">
+                <schemaSets>
+
+                    <li>
+                        <schemaMappings>
+                            <li>
+                                <schema>RMSQ_Kindred_Schema</schema>
+                                <requiredNodes/>
+                                <forcePoints>True</forcePoints>
+                                <points>15</points>
+                            </li>
+                        </schemaMappings>
+                    </li>
+                </schemaSets>
+            </li>
+        </modExtensions>
+    	<weaponMoney>0</weaponMoney>
+    	<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    	<apparelColor>(58,58,58)</apparelColor>
+    	<defaultFactionType>PlayerColony</defaultFactionType>
+    	<apparelMoney>350~600</apparelMoney>
+    	<apparelTags>
+      		<li>IndustrialBasic</li>
+    	</apparelTags>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="KindredBase" Name="Kindred">
+		<defName>Kindred</defName>
+    	<invNutrition>0.5</invNutrition>
+    	<invFoodDef>HemogenPack</invFoodDef>
+    	<combatEnhancingDrugsChance>0.1</combatEnhancingDrugsChance>
+    	<combatEnhancingDrugsCount>1~2</combatEnhancingDrugsCount>
+    	<apparelMoney>500~700</apparelMoney>
+    	<techHediffsChance>0.15</techHediffsChance>
+    	<techHediffsMoney>0~1800</techHediffsMoney>
+    	<techHediffsTags>
+    	  	<li>Advanced</li>
+    	</techHediffsTags>
+    	<weaponMoney>600~800</weaponMoney>
+    	<weaponTags>
+    	  	<li>Gun</li>
+    	  	<li>MedievalMeleeDecent</li>
+    	</weaponTags>
+    	<apparelAllowHeadgearChance>0.1</apparelAllowHeadgearChance>
+    	<apparelTags>
+    	  	<li>IndustrialBasic</li>
+    	</apparelTags>
+    	<apparelRequired Inherit="False">
+    	  	<li>Apparel_Pants</li>
+    	</apparelRequired>
+    	<apparelDisallowTags>
+    	  	<li>Western</li>
+    	</apparelDisallowTags>
+    	<specificApparelRequirements>
+    	  <li>
+    	    <alternateTagChoices>
+    	      <li>
+    	        <tag>Cape</tag>
+    	        <chance>0.1</chance>
+    	      </li>
+    	      <li>
+    	        <tag>BestowerHood</tag>
+    	        <chance>0.1</chance>
+    	      </li>
+    	    </alternateTagChoices>
+    	  </li>
+    	  <li>
+    	    <colorGenerator Class="ColorGenerator_Options">
+    	      <options>
+    	        <li>
+    	          <only>(58, 58, 58)</only>
+    	        </li>
+    	        <li>
+    	          <only>(74, 1, 9)</only>
+    	        </li>
+    	      </options>
+    	    </colorGenerator>
+    	  </li>
+    	</specificApparelRequirements>
+  	</PawnKindDef>
+
+	<PawnKindDef ParentName="Kindred" Name="KindredGrenadierBase" Abstract="True">
+        <itemQuality>Good</itemQuality>
+        <isFighter>true</isFighter>
+        <initialWillRange>0~1</initialWillRange>
+        <initialResistanceRange>10~17</initialResistanceRange>
+		<apparelTags>
+      		<li>IndustrialBasic</li>
+      		<li>IndustrialAdvanced</li>
+      		<li>IndustrialMilitaryBasic</li>
+      		<li>BeltDefensePop</li>
+    	</apparelTags>
+		<apparelMoney>400~700</apparelMoney>
+    	<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    	<weaponMoney>500~500</weaponMoney>
+    	<techHediffsChance>0.05</techHediffsChance>
+    	<techHediffsMoney>500~500</techHediffsMoney>
+    	<techHediffsTags>
+    	  	<li>Poor</li>
+    	  	<li>Simple</li>
+    	  	<li>ImplantEmpireCommon</li>
+    	</techHediffsTags>
+    	<disallowedTraits>
+    	  	<li>Brawler</li>
+    	</disallowedTraits>
+    	<inventoryOptions>
+    	  	<skipChance>0.95</skipChance>
+    	  	<subOptionsChooseOne>
+    	  	  	<li>
+    	  	  	  	<thingDef>MedicineIndustrial</thingDef>
+    	  	  	  	<countRange>1</countRange>
+    	  	  	</li>
+    	  	</subOptionsChooseOne>
+    	</inventoryOptions>
+  	</PawnKindDef>
+
+	<PawnKindDef ParentName="KindredGrenadierBase">
+    	<defName>Kindred_Grenadier_Destructive</defName>
+    	<label>grenadier</label>
+    	<combatPower>70</combatPower>
+    	<canBeSapper>true</canBeSapper>
+    	<isGoodBreacher>true</isGoodBreacher>
+    	<weaponTags>
+    	  <li>GrenadeDestructive</li>
+    	</weaponTags>
+    	<initialResistanceRange>10~16</initialResistanceRange>
+  	</PawnKindDef>
+
+	<PawnKindDef ParentName="KindredGrenadierBase">
+    	<defName>Kindred_Grenadier_EMP</defName>
+    	<label>EMP grenadier</label>
+    	<combatPower>55</combatPower>
+    	<weaponTags>
+    	  	<li>GrenadeEMP</li>
+    	</weaponTags>
+    	<initialResistanceRange>15~24</initialResistanceRange>
+  	</PawnKindDef>
+
+	<PawnKindDef ParentName="KindredGrenadierBase">
+    	<defName>Kindred_Grenadier_Smoke</defName>
+    	<label>smoke grenadier</label>
+    	<combatPower>55</combatPower>
+    	<weaponTags>
+    	  	<li>GrenadeSmoke</li>
+    	</weaponTags>
+    	<weaponMoney>400~400</weaponMoney>
+    	<initialResistanceRange>18~28</initialResistanceRange>
+ 	</PawnKindDef>
+
+	<PawnKindDef ParentName="Kindred">
+        <defName>Kindred_Trader</defName>
+        <label>kindred trader</label>
+        <trader>true</trader>
+        <combatPower>50</combatPower>
+        <isFighter>false</isFighter>
+        <itemQuality>Good</itemQuality>
+        <apparelTags>
+            <li>IndustrialMilitaryBasic</li>
+            <li>IndustrialMilitaryAdvanced</li>
+            <li>BeltDefensePop</li>
+        </apparelTags>
+        <techHediffsChance>0.15</techHediffsChance>
+        <techHediffsMoney>600~1500</techHediffsMoney>
+        <initialWillRange>9~10</initialWillRange>
+        <initialResistanceRange>80~90</initialResistanceRange>
+    </PawnKindDef>
+
+	<PawnKindDef ParentName="Kindred" Name="KindredMercenaryBase" Abstract="True">
+    	<chemicalAddictionChance>0.1</chemicalAddictionChance>
+    	<invNutrition>2.55</invNutrition>
+    	<backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+    	<maxGenerationAge>65</maxGenerationAge>
+    	<combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    	<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+    	<biocodeWeaponChance>0.1</biocodeWeaponChance>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="KindredMercenaryBase" Name="KindredMercenaryMidTierBase" Abstract="True">
+    	<techHediffsChance>0.15</techHediffsChance>
+    	<techHediffsMoney>700~1200</techHediffsMoney>
+    	<techHediffsTags>
+    	  <li>Simple</li>
+    	  <li>Advanced</li>
+    	  <li>ImplantEmpireCommon</li>
+    	</techHediffsTags>
+    	<biocodeWeaponChance>0.2</biocodeWeaponChance>
+    	<initialWillRange>2~4</initialWillRange>
+  	</PawnKindDef>
+
+    <PawnKindDef ParentName="KindredMercenaryMidTierBase" Name="KindredMercenaryGunnerBase" Abstract="True">
+    	<label>kindred mercenary gunner</label>
+    	<combatPower>85</combatPower>
+    	<gearHealthRange>0.7~3.2</gearHealthRange>
+    	<apparelTags>
+    	  	<li>IndustrialBasic</li>
+    	  	<li>IndustrialAdvanced</li>
+    	  	<li>IndustrialMilitaryBasic</li>
+    	  	<li>IndustrialMilitaryAdvanced</li>
+    	  	<li>BeltDefensePop</li>
+    	</apparelTags>
+    	<apparelMoney>1000~1500</apparelMoney>
+    	<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    	<weaponMoney>330~650</weaponMoney>
+    	<weaponTags>
+    	  	<li>Gun</li>
+    	</weaponTags>
+    	<disallowedTraits>
+    	  	<li>Brawler</li>
+    	</disallowedTraits>
+    	<combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
+    	<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+    	<inventoryOptions>
+    	  	<skipChance>0.9</skipChance>
+    	  	<subOptionsChooseOne>
+    	  	 	<li>
+    	  	 	  <thingDef>MedicineIndustrial</thingDef>
+    	  	 	  <countRange>1</countRange>
+    	  	 	</li>
+    	  	</subOptionsChooseOne>
+    	</inventoryOptions>
+    	<skills>
+    	 	<li>
+    	 	  	<skill>Shooting</skill>
+    	 	  	<range>4~14</range>
+    	 	</li>
+    	</skills>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenaryGunnerBase">
+    	<defName>Kindred_Mercenary_Gunner</defName>
+    	<initialResistanceRange>6~10</initialResistanceRange>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenaryGunnerBase">
+  	  	<defName>Kindred_Mercenary_Gunner_Acidifier</defName>
+  	  	<techHediffsRequired>
+  	  	  	<li>DeathAcidifier</li>
+  	  	</techHediffsRequired>
+  	  	<initialResistanceRange>10~16</initialResistanceRange>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenaryMidTierBase" Name="KindredMercenarySniperBase" Abstract="True">
+    	<label>Kindred_mercenary sniper</label>
+    	<combatPower>110</combatPower>
+    	<gearHealthRange>0.7~3.2</gearHealthRange>
+    	<apparelTags>
+    	  <li>IndustrialBasic</li>
+    	  <li>IndustrialAdvanced</li>
+    	  <li>IndustrialMilitaryBasic</li>
+    	  <li>IndustrialMilitaryAdvanced</li>
+    	</apparelTags>
+    	<apparelMoney>1000~1500</apparelMoney>
+    	<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    	<weaponMoney>600~600</weaponMoney>
+    	<weaponTags>
+    	  <li>SniperRifle</li>
+    	</weaponTags>
+    	<inventoryOptions>
+    	  <skipChance>0.9</skipChance>
+      	<subOptionsChooseOne>
+      	  <li>
+      	    <thingDef>MedicineIndustrial</thingDef>
+      	    <countRange>1</countRange>
+      	  </li>
+      	</subOptionsChooseOne>
+    	</inventoryOptions>
+    	<skills>
+    		<li>
+    	    	<skill>Shooting</skill>
+    	    	<range>8~16</range>
+    	  	</li>
+    	</skills>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenarySniperBase">
+    	<defName>Kindred_Mercenary_Sniper</defName>
+    	<initialResistanceRange>13~20</initialResistanceRange>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenarySniperBase">
+    	<defName>Kindred_Mercenary_Sniper_Acidifier</defName>
+    	<techHediffsRequired>
+      		<li>DeathAcidifier</li>
+    	</techHediffsRequired>
+    	<initialResistanceRange>14~23</initialResistanceRange>
+  	</PawnKindDef>
+	
+  	<PawnKindDef ParentName="KindredMercenaryMidTierBase" Name="KindredMercenarySlasherBase" Abstract="True">
+    	<defName>Kindred_Mercenary_Slasher</defName>
+    	<label>mercenary slasher</label>
+    	<combatPower>140</combatPower>
+    	<canBeSapper>true</canBeSapper>
+    	<gearHealthRange>0.7~3.2</gearHealthRange>
+    	<apparelTags>
+    	  	<li>IndustrialBasic</li>
+    	  	<li>IndustrialAdvanced</li>
+    	  	<li>IndustrialMilitaryBasic</li>
+    	  	<li>IndustrialMilitaryAdvanced</li>
+    	</apparelTags>
+    	<apparelRequired>
+    	  	<li>Apparel_ShieldBelt</li>
+    	</apparelRequired>
+    	<apparelMoney>300~1400</apparelMoney>
+    	<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    	<weaponMoney>200~500</weaponMoney>
+    	<weaponTags>
+    	  	<li>MedievalMeleeDecent</li>
+    	  	<li>MedievalMeleeAdvanced</li>
+    	</weaponTags>
+    	<inventoryOptions>
+    	  <skipChance>0.9</skipChance>
+    	  <subOptionsChooseOne>
+    	    <li>
+    	      <thingDef>MedicineIndustrial</thingDef>
+    	      <countRange>1</countRange>
+    	    </li>
+    	  </subOptionsChooseOne>
+    	</inventoryOptions>
+    	<initialResistanceRange>19~29</initialResistanceRange>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenarySlasherBase">
+    	<defName>Kindred_Mercenary_Slasher</defName>
+    	<initialResistanceRange>10~16</initialResistanceRange>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenarySlasherBase">
+    	<defName>Kindred_Mercenary_Slasher_Acidifier</defName>
+    	<techHediffsRequired>
+      		<li>DeathAcidifier</li>
+    	</techHediffsRequired>
+    	<initialResistanceRange>9~15</initialResistanceRange>
+  	</PawnKindDef>
+
+  	<PawnKindDef ParentName="KindredMercenaryMidTierBase" Name="KindredMercenaryHeavyBase">
+    	<defName>Kindred_Mercenary_Heavy</defName>
+    	<label>Kindred heavy mercenary</label>
+    	<labelPlural>kindreds heavy mercenaries</labelPlural>
+    	<combatPower>140</combatPower>
+    	<gearHealthRange>0.7~3.2</gearHealthRange>
+    	<apparelTags>
+      		<li>IndustrialBasic</li>
+      		<li>IndustrialAdvanced</li>
+      		<li>IndustrialMilitaryBasic</li>
+      		<li>IndustrialMilitaryAdvanced</li>
+      		<li>BeltDefensePop</li>
+    	</apparelTags>
+    	<apparelMoney>200~350</apparelMoney>
+    	<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    	<weaponMoney>1200~1200</weaponMoney>
+    	<weaponTags>
+      		<li>GunHeavy</li>
+      		<li>GunSingleUse</li>
+      		<li>Flamethrower</li>
+    	</weaponTags>
+    	<initialResistanceRange>14~23</initialResistanceRange>
+  	</PawnKindDef>
+
+	<PawnKindDef ParentName="Kindred">
+        <defName>Kindred_Boss</defName>
+        <label>prince</label>
+        <labelPlural>prince</labelPlural>
+        <factionLeader>true</factionLeader>
+		<canBeSapper>true</canBeSapper>
+        <isFighter>true</isFighter>
+        <itemQuality>Good</itemQuality>
+        <weaponMoney>200~3000</weaponMoney>
+        <apparelMoney>200~3000</apparelMoney>
+        <techHediffsChance>0.30</techHediffsChance>
+        <techHediffsMoney>600~1500</techHediffsMoney>
+        <apparelTags Inherit="False">
+      		<li>IndustrialBasic</li>
+      		<li>IndustrialAdvanced</li>
+      		<li>IndustrialMilitaryBasic</li>
+      		<li>IndustrialMilitaryAdvanced</li>
+      		<li>SpacerMilitary</li>
+    	</apparelTags>
+        <initialWillRange>17~27</initialWillRange>
+        <initialResistanceRange>40~60</initialResistanceRange>
+    </PawnKindDef>
+
+	
+</Defs>

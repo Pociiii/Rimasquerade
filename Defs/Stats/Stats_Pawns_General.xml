@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- Willpower -->
+
+	<StatDef>
+		<defName>RMSQ_MaxWillpower</defName>
+		<label>maximum Willpower</label>
+		<description>The maximum Willpower a pawn has</description>
+		<category>BasicsPawn</category>
+		<defaultBaseValue>100</defaultBaseValue>
+		<minValue>0</minValue>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>true</alwaysHide>
+		<displayPriorityInCategory>3499</displayPriorityInCategory>
+	</StatDef>
+
+	<StatDef>
+		<defName>RMSQ_MinWillpower</defName>
+		<label>minimum Willpower</label>
+		<description>The minimum Willpower a pawn has need to not become hungry</description>
+		<category>BasicsPawn</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>true</alwaysHide>
+		<displayPriorityInCategory>3499</displayPriorityInCategory>
+	</StatDef>
+
+	<StatDef>
+		<defName>RMSQ_WillpowerRecovery</defName>
+		<label>Willpower recovery rate</label>
+		<description>The rate at which a pawn recovers Willpower per second.</description>
+		<category>BasicsPawn</category>
+		<defaultBaseValue>0.01</defaultBaseValue>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>true</alwaysHide>
+		<displayPriorityInCategory>3496</displayPriorityInCategory>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<statFactors>
+			<li>RMSQ_WillpowerRecoveryFactor</li>
+		</statFactors>
+	</StatDef>
+
+	<StatDef>
+		<defName>RMSQ_WillpowerRecoveryFactor</defName>
+		<label>Willpower recovery factor</label>
+		<description>A multiplier on Willpower Recovery Rate</description>
+		<category>BasicsPawn</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>false</alwaysHide>
+		<minValue>0</minValue>
+		<displayPriorityInCategory>3494</displayPriorityInCategory>
+		<scenarioRandomizable>true</scenarioRandomizable>
+
+	</StatDef>
+
+	
+</Defs>

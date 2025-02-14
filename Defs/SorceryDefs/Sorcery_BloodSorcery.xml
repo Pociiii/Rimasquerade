@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Corrosive Vitae -->
+	<ItsSorceryFramework.SorceryDef ParentName="BloodSorceryRanged">
+		<defName>RMSQ_Corrosive_Vitae</defName>
+		<label>Corrosive Vitae</label>
+		<description>Spray Vitae over the target area</description>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<displayOrder>31</displayOrder>
+		<level>1</level>
+		<hostile>true</hostile>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+    	<verbProperties>
+      		<range>8.9</range>
+			<soundCast>AcidSpray_Resolve</soundCast>
+      		<targetParams>
+        		<canTargetLocations>true</canTargetLocations>
+				<canTargetAnimals>true</canTargetAnimals>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class="CompProperties_AbilitySprayLiquid">
+    	  	  	<projectileDef>RMSQ_ProjAcidBS</projectileDef>
+    	  	  	<numCellsToHit>9</numCellsToHit>
+    	  	  	<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+    	  	</li>
+    	</comps>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Acid -->
+	<ThingDef>
+		<defName>RMSQ_ProjAcidBS</defName>
+		<label>Acid</label>
+		<thingClass>Projectile_Liquid</thingClass>
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+			<texPath>Things/Projectile/Acid</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<shaderType>MoteGlow</shaderType>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>AcidBurn</damageDef>
+			<speed>25</speed>
+			<damageAmountBase>10</damageAmountBase>
+			<arcHeightFactor>0.4</arcHeightFactor>
+			<armorPenetrationBase>0.8</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+			<shadowSize>0</shadowSize>
+			<filth>Filth_Blood</filth>
+			<filthCount>4</filthCount>
+		</projectile>
+	</ThingDef>
+
+	<!-- Level 2 -->
+
+    <!-- Scour Secrets -->
+	<ItsSorceryFramework.SorceryDef ParentName="BloodSorceryBuff">
+    	<defName>RMSQ_Scour_Secrets</defName>
+    	<label>Scour Secrets</label>
+    	<description>Pore through a large amount of content within minutes.</description>
+		<displayOrder>32</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_ScourSecrets</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+    
+	<!-- Level 3 -->
+
+    <!-- Ripples of the Heart -->
+	<ItsSorceryFramework.SorceryDef ParentName="BloodSorceryRanged">
+    	<defName>RMSQ_Ripples_of_the_Heart</defName>
+    	<label>Ripples of the Heart</label>
+    	<description>Permanently damage the target Heart\n\nCurable only with Mending regeneration</description>
+		<warmupEffecter>Coagulate</warmupEffecter>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    	<displayOrder>33</displayOrder>
+		<level>3</level>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_RipplesoftheHeart</hediffDef>
+				<psychic>False</psychic>
+                <onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Blood Aegis -->
+	<ItsSorceryFramework.SorceryDef ParentName="BloodSorceryBuff">
+    	<defName>RMSQ_Blood_Aegis</defName>
+    	<label>Blood Aegis</label>
+    	<description>Form a protective Blood barrier</description>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<level>4</level>
+		<displayOrder>34</displayOrder>
+    	<statBases>
+            <Ability_EffectRadius>4.9</Ability_EffectRadius>
+			<Ability_Duration>180</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class="CompProperties_AbilitySpawn">
+        		<thingDef>BloodAegisThing</thingDef>
+			</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Simulacrum Gate -->
+	<ItsSorceryFramework.SorceryDef ParentName="BloodSorceryTouch">
+    	<defName>RMSQ_Simulacrum_Gate</defName>
+    	<label>Simulacrum Gate</label>
+    	<description>Teleport everyone around the caster to a selected destination</description>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<level>5</level>
+		<displayOrder>35</displayOrder>
+		<statBases>
+      		<Ability_EffectRadius>1.9</Ability_EffectRadius>
+    	</statBases>
+    	<verbProperties>
+			<range>1.9</range>
+			<targetable>true</targetable>
+			<targetParams>
+        		<canTargetSelf>True</canTargetSelf>
+				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class="CompProperties_AbilityTeleport">
+        		<compClass>CompAbilityEffect_Teleport</compClass>
+        		<destination>Selected</destination>
+        		<requiresLineOfSight>false</requiresLineOfSight>
+        		<range>29.9</range>
+    	   		<clamorType>Ability</clamorType>
+    	    	<clamorRadius>10</clamorRadius>
+    	    	<destClamorType>Ability</destClamorType>
+    	    	<destClamorRadius>10</destClamorRadius>
+    	    	<stunTicks>18~60</stunTicks>
+    	    	<goodwillImpact>-15</goodwillImpact>
+    	    	<applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+	
+    <!-- Cauldron of Blood -->
+	<ItsSorceryFramework.SorceryDef ParentName="BloodSorceryTouch">
+    	<defName>RMSQ_Cauldron_of_Blood</defName>
+    	<label>Cauldron of Blood</label>
+    	<displayOrder>35.1</displayOrder>
+		<level>5</level>
+		<description>Boil the victim's blood in their body.</description>
+	    <hostile>true</hostile>
+    	<statBases>
+      		<Ability_Duration>1</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_CauldronofBlood</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+</Defs>

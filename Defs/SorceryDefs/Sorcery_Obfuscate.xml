@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Cloak Of Shadow -->
+	<ItsSorceryFramework.SorceryDef ParentName="ObfuscateBuff">
+    	<defName>RMSQ_Cloak_Of_Shadows</defName>
+    	<label>Cloak Of Shadow</label>
+    	<description>Create a small area of fog around yourself to hide in.</description>
+		<displayOrder>71</displayOrder>
+		<level>1</level>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+		<statBases>
+      		<Ability_Duration>41</Ability_Duration>
+    	</statBases>
+		<comps>
+      		<li Class = "CompProperties_AbilitySmokepop">
+        		<smokeRadius>0.9</smokeRadius>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Level 2 -->
+
+    <!-- Unseen Passage -->
+    <ItsSorceryFramework.SorceryDef ParentName="ObfuscateBuff">
+    	<defName>RMSQ_Unseen_Passage</defName>
+    	<label>Unseen Passage</label>
+	    <description>The user can now move while remaining hidden for short time.</description>
+		<displayOrder>72</displayOrder>
+		<level>2</level>
+		<cooldownTicksRange>350</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+		<statBases>
+    	  	<Ability_Duration>5</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_UnseenPassage</hediffDef>
+        		<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Chimerstry -->
+    <ItsSorceryFramework.SorceryDef ParentName="ObfuscateRanged">
+    	<defName>RMSQ_Chimerstry</defName>
+    	<label>Chimerstry</label>
+    	<description>Create brief but realistic hallucinations</description>
+		<displayOrder>72.1</displayOrder>
+		<level>2</level>
+		<hostile>true</hostile>
+		<statBases>
+    	  	<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+      		<targetParams>
+        		<canTargetAnimals>true</canTargetAnimals>
+        		<neverTargetIncapacitated>True</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveMentalState">
+        		<compClass>CompAbilityEffect_GiveMentalState</compClass>
+        		<stateDef>WanderConfused</stateDef>
+        		<psychic>false</psychic>
+        		<goodwillImpact>-75</goodwillImpact>
+      		</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 3 -->
+
+    <!-- Mask of a Thousand Faces -->
+	<ItsSorceryFramework.SorceryDef ParentName="ObfuscateBuff">
+    	<defName>RMSQ_Mask_of_a_Thousand_Faces</defName>
+    	<label>Mask of a Thousand Faces</label>
+	    <description>Change your face</description>
+		<displayOrder>73</displayOrder>
+		<level>3</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_MaskofaThousandFaces</hediffDef>
+        		<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Mental Maze -->
+    <ItsSorceryFramework.SorceryDef ParentName="ObfuscateRanged">
+    	<defName>RMSQ_Mental_Maze</defName>
+    	<label>Mental Maze</label>
+    	<description>Make it difficult for the victim to orientate</description>
+    	<displayOrder>73.1</displayOrder>
+		<level>3</level>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_MentalMaze</hediffDef>
+				<psychic>False</psychic>
+                <onlyBrain>true</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Vanish -->
+	<ItsSorceryFramework.SorceryDef ParentName="ObfuscateBuff">
+    	<defName>RMSQ_Vanish</defName>
+    	<label>Vanish</label>
+	    <description>The Vampire can now move while remaining hidden for longer</description>
+		<displayOrder>74</displayOrder>
+		<level>4</level>
+		<cooldownTicksRange>350</cooldownTicksRange>
+		<sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+		<statBases>
+      		<Ability_Duration>10</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_VanishInvisibility</hediffDef>
+        		<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Cloak the Gathering -->
+	<ItsSorceryFramework.SorceryDef ParentName="ObfuscateTouch">
+    	<defName>RMSQ_Cloak_the_Gathering</defName>
+    	<label>Cloak the Gathering</label>
+    	<description>Shelter companions under Obfuscate.</description>
+    	<displayOrder>75</displayOrder>
+		<level>1</level>
+		<statBases>
+      		<Ability_Duration>10</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>RMSQ_CloaktheGathering</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+			</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+</Defs>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef ParentName="ProgressTrackerHediffBase"> 
+		<defName>RMSQ_ProgressTrackerRPG_Hediff_Kindred</defName>
+		<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+		<label>Kindred</label>
+		<defaultLabelColor>(1,0,0)</defaultLabelColor>
+		<description>This Hediff keep track of your progress as a Vampire. Click on the Schemas button for more.</description>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<stages>
+        </stages>
+	</HediffDef>
+
+    <ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+		<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+		<defName>RMSQ_ProgressTracker_Kindred</defName>
+		<label>Kindred</label>
+		<bgPath>UI/Discipline</bgPath>
+		<progressLevelUpKey>RMSQ_Kindred_LevelUp</progressLevelUpKey>
+		<progressLevelUpDescKey>RMSQ_Kindred_LevelUpMessage</progressLevelUpDescKey>
+		<skillPointLabelKey>RMSQ_Discipline_SkillPointLabel</skillPointLabelKey>
+		<progressHediff>RMSQ_ProgressTrackerRPG_Hediff_Kindred</progressHediff>
+        <levelRange>1~100</levelRange>
+		<scaling>1.2</scaling>
+		<levelFactors>
+			<li>
+				<level>1</level>
+                <statOffsets>
+                    <SocialImpact>0.01</SocialImpact>
+				</statOffsets>
+			</li>
+			<li>
+				<level>5</level>
+				<statOffsets>
+                    <SocialImpact>0.01</SocialImpact>
+                    <EBSG_MoodFallRate>0.01</EBSG_MoodFallRate>	
+				</statOffsets>
+			</li>
+			<li>
+				<level>10</level>
+				<statOffsets>
+                    <SocialImpact>0.01</SocialImpact>
+					<EBSG_MoodFallRate>0.02</EBSG_MoodFallRate>
+				</statOffsets>
+			</li>
+		</levelFactors>
+		<levelSpecifics>
+		</levelSpecifics>
+		<levelLabels>
+        </levelLabels>
+		<expTags>
+			<li>RMSQ_Discipline_EXPTag_OnKill</li>
+			<li>RMSQ_Discipline_EXPTag_OnSkillEXP</li>
+			<li>RMSQ_Discipline_EXPTag_Passive</li>
+		</expTags>
+	</ItsSorceryFramework.ProgressTrackerDef>
+
+</Defs>

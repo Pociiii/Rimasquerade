@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Compel -->
+	<ItsSorceryFramework.SorceryDef ParentName="DominateRanged">
+    	<defName>RMSQ_Compel</defName>
+    	<label>Compel</label>
+    	<description>Issue a single command\n\nCommand the target to approach the Vampire</description>
+		<displayOrder>51</displayOrder>
+		<level>1</level>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+      		<targetParams>
+				<canTargetAnimals>false</canTargetAnimals>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityForceJob">
+        		<compClass>CompAbilityEffect_ForceJob</compClass>
+        		<jobDef>GotoMindControlled</jobDef>
+        		<destination>Caster</destination>
+        		<psychic>true</psychic>
+      		</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Level 2 -->
+
+    <!-- Mesmerize -->
+    <ItsSorceryFramework.SorceryDef ParentName="DominateRanged">
+    	<defName>RMSQ_Mesmerize</defName>
+    	<label>Mesmerize</label>
+    	<description>Make the target enrage For short time</description>
+		<displayOrder>52</displayOrder>
+		<level>2</level>
+		<hostile>true</hostile>
+    	<statBases>
+    	  	<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+      		<targetParams>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class="CompProperties_AbilityGiveMentalState">
+    	    	<compClass>CompAbilityEffect_GiveMentalState</compClass>
+    	    	<stateDef>BerserkShort</stateDef>
+    	    	<goodwillImpact>-75</goodwillImpact>
+    	   	 	<excludeNPCFactions>false</excludeNPCFactions>
+    	  	</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+	</ItsSorceryFramework.SorceryDef>
+    
+    <!-- Dementation -->
+    <ItsSorceryFramework.SorceryDef ParentName="DominateRanged">
+    	<defName>RMSQ_Dementation</defName>
+    	<label>Dementation</label>
+    	<description>Drive others insane</description>
+		<displayOrder>52.1</displayOrder>
+		<level>2</level>
+		<hostile>true</hostile>
+		<statBases>
+    	  	<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+      		<targetParams>
+        		<canTargetAnimals>true</canTargetAnimals>
+        		<neverTargetIncapacitated>True</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveMentalState">
+        		<compClass>CompAbilityEffect_GiveMentalState</compClass>
+        		<stateDef>Tantrum</stateDef>
+        		<psychic>false</psychic>
+        		<goodwillImpact>-75</goodwillImpact>
+      		</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 3 -->
+
+    <!-- Forgetful Mind -->
+	<ItsSorceryFramework.SorceryDef ParentName="DominateTouch">
+    	<defName>RMSQ_Forgetful_Mind</defName>
+    	<label>Forgetful Mind</label>
+    	<description>Rewrite Prisoner memory</description>
+		<iconPath>DisciplinesIcon/Dominate</iconPath>
+		<displayOrder>53</displayOrder>
+		<level>3</level>
+    	<verbProperties>
+      		<targetParams>
+				<onlyTargetPrisonersOfColony>True</onlyTargetPrisonersOfColony>
+        		<neverTargetIncapacitated>True</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+		<comps>
+      		<li Class="CompProperties_AbilityOffsetPrisonerResistance">
+      		  	<offset>-12</offset>
+      		  	<psychic>True</psychic>
+      		</li>
+      		<li Class="CompProperties_AbilitySocialInteraction">
+      		  	<interactionDef>WordOfTrust</interactionDef>
+      		</li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Rationalize -->
+	<ItsSorceryFramework.SorceryDef ParentName="DominateRanged">
+    	<defName>RMSQ_Rationalize</defName>
+    	<label>Rationalize</label>
+    	<description>Make the target enrage for longer</description>
+		<displayOrder>54</displayOrder>
+		<level>4</level>
+		<hostile>true</hostile>
+    	<statBases>
+    	  	<Ability_Duration>60</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+      		<targetParams>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+    	  	<li Class="CompProperties_AbilityGiveMentalState">
+    	    	<compClass>CompAbilityEffect_GiveMentalState</compClass>
+    	    	<stateDef>Berserk</stateDef>
+    	    	<goodwillImpact>-75</goodwillImpact>
+    	   	 	<excludeNPCFactions>false</excludeNPCFactions>
+    	  	</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Talking</capacity>
+            </li>
+    	</comps>
+	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Implant Suggestion -->
+    <ItsSorceryFramework.SorceryDef ParentName="DominateTouch">
+    	<defName>RMSQ_Implant_Suggestion</defName>
+    	<label>Implant Suggestion</label>
+    	<description>Change another opinion temporarily.\n\nTry to convert someone to your Ideo</description>
+		<displayOrder>54</displayOrder>
+		<level>4</level>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    	<verbProperties>
+      		<targetParams>
+				<neverTargetHostileFaction>True</neverTargetHostileFaction>
+      		</targetParams>
+    	</verbProperties>
+		<comps>
+    		<li Class="CompProperties_AbilityConvert">
+       			<successMessage>{INITIATOR_labelShort} has converted {RECIPIENT_labelShort} to {IDEO}.</successMessage>
+       			<failMessage>{INITIATOR_labelShort} failed to convert {RECIPIENT_labelShort}. {RECIPIENT_labelShort} was upset by the attempt, but {RECIPIENT_possessive} certainty fell from {CERTAINTYBEFORE} to {CERTAINTYAFTER}.</failMessage>
+       			<failedThoughtInitiator>FailedConvertAbilityInitiator</failedThoughtInitiator>
+       			<failedThoughtRecipient>FailedConvertAbilityRecipient</failedThoughtRecipient>
+       			<convertPowerFactor>2</convertPowerFactor>
+       			<sound>MoralistAbility_Resolve</sound>
+      		</li>
+      		<li Class="CompProperties_AbilityMustBeCapableOf">
+        		<workTags>
+        	  		<li>Social</li>
+        		</workTags>
+      		</li>
+      		<li Class="CompProperties_AbilityShowTargetIdeoCertainty" />
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+		</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+
+    <!-- Mass Manipulation -->
+	<ItsSorceryFramework.SorceryDef ParentName="DominateRanged">
+    	<defName>RMSQ_Mass_Manipulation</defName>
+    	<label>Mass Manipulation</label>
+    	<displayOrder>55</displayOrder>
+		<level>5</level>
+		<description>Manipulate the mind of multiple targets</description>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<hostile>true</hostile>
+    	<statBases>
+      		<Ability_Duration>300</Ability_Duration>
+      		<Ability_EffectRadius>3.9</Ability_EffectRadius>
+    	</statBases>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveMentalState">
+        		<compClass>CompAbilityEffect_GiveMentalState</compClass>
+        		<stateDef>Berserk</stateDef>
+        		<psychic>true</psychic>
+        		<goodwillImpact>-75</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+</Defs>

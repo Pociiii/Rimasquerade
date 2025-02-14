@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<!-- Auspex -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
+		<defName>RMSQ_Node_Auspex_ClanDiscipline</defName>
+		<description>Enables users to hone their senses both physical and psychic in order to bolster their awareness, perceptions, or even see visions of the future.\n\nClan Discipline for: Hecata, Malkavian, Salubri, Toreador, Tremere</description>
+        <label>Clan Discipline\nAUSPEX</label>
+		<coordY>1.5</coordY>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_ClanDiscipline_Auspex</key><value>0</value></li>
+        </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
+		<defName>RMSQ_Node_Auspex_NonClanDiscipline</defName>
+		<description>Enables users to hone their senses both physical and psychic in order to bolster their awareness, perceptions, or even see visions of the future.</description>
+        <label>Non Clan Discipline\nAUSPEX</label>
+        <coordY>2</coordY>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Auspex_ClanDiscipline</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_One</defName>
+		<label>AUSPEX 1\nHeightened Sense</label>
+        <description>Enhance Vampiric senses\n\nImprove Sight and Hearing.</description>
+		<pointReq>1</pointReq>
+		<coordX>1</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+		    <li>RMSQ_Node_Auspex_ClanDiscipline</li>
+		    <li>RMSQ_Node_Auspex_NonClanDiscipline</li>
+	    </prereqs>
+		<abilityGain>
+			<li>RMSQ_Heightened_Sense</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Two</defName>
+		<label>AUSPEX 2\nPremonition</label>
+        <description>Visions of the future\n\nImprove Melee Dodge Chance and lower the chance of triggering traps</description>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Premonition</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Two_Amalgam</defName>
+		<label>AMALGAM 2\nPanacea</label>
+        <description>Calm nerves to you or an ally\n\nMental Break Threshold -9%\nGain a small amount of Willpoer</description>
+		<pointReq>2</pointReq>
+		<coordX>2</coordX>
+		<coordY>2</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_One</li>
+			<li>RMSQ_Node_Fortitude_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Panacea</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Three</defName>
+		<label>AUSPEX 3\nShare the Senses</label>
+        <description>Find the weakness of a target</description>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqModeMin>1</prereqModeMin>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_Two</li>
+			<li>RMSQ_Node_Auspex_Two_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Share_the_Senses</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Three_Amalgam</defName>
+		<label>AMALGAM 3\nFatal Flaw</label>
+        <description>Improve the target senses\n\nThe bonus disapper if the caster or the target die</description>
+		<pointReq>3</pointReq>
+		<coordX>3</coordX>
+		<coordY>2</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_Two</li>
+			<li>RMSQ_Node_Oblivion_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Fatal_Flaw</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Four</defName>
+		<label>AUSPEX 4\nSpirit's Touch</label>
+        <description>Gathering emotional residue from an object or location\n\nGlobal Learning Factor +50%</description>
+		<pointReq>5</pointReq>
+		<coordX>4</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqModeMin>1</prereqModeMin>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_Three</li>
+			<li>RMSQ_Node_Auspex_Three_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Spirit_Touch</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Five</defName>
+		<label>AUSPEX 5\nClairvoyance</label>
+        <description>Allows the vampire to rebuild a target tattered soul\n\nImprove mood but lower brain efficency</description>
+		<pointReq>8</pointReq>
+		<coordX>5</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Clairvoyance</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "AuspexBase">
+		<defName>RMSQ_Node_Auspex_Five_Amalgam</defName>
+		<label>AMALGAM 5\nUnburdening the Bestial Soul</label>
+        <description>Information gathering from surroundings\n\nGlobal Learning Factor x130%</description>
+		<pointReq>8</pointReq>
+		<coordX>5</coordX>
+		<coordY>2</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Auspex_Four</li>
+			<li>RMSQ_Node_Dominate_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Unburdening_the_Bestial_Soul</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+</Defs>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "FlawsBase" Abstract="True">
+        <coordX>5</coordX>
+        <pointReq>0</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "MeritsBase" Abstract="True">
+        <coordX>6</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+            <li>RMSQ_Node_Destitute</li>
+            <li>RMSQ_Node_Archaic</li>
+            <li>RMSQ_Node_Living_Past</li>
+        </prereqs>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <!-- Flaws -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "FlawsBase">
+		<defName>RMSQ_Node_Destitute</defName>
+        <description>You have hard time making some cash</description>
+		<label>Flaw\nDestitute</label>
+		<coordY>0</coordY>
+        <statFactors>
+            <TradePriceImprovement>0.5</TradePriceImprovement>
+        </statFactors>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "FlawsBase">
+		<defName>RMSQ_Node_Archaic</defName>
+        <description>It's very hard for you to get the grip with modern technology</description>
+		<label>Flaw\nArchaic</label>
+		<coordY>1</coordY>
+        <statOffsets>
+            <ResearchSpeed>-0.5</ResearchSpeed>
+		</statOffsets>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Destitute</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "FlawsBase">
+		<defName>RMSQ_Node_Living_Past</defName>
+        <description>Unable to grasp modern society's mindset</description>
+		<label>Flaw\nLiving in the Past</label>
+		<coordY>2</coordY>
+        <statOffsets>
+            <SocialImpact>-0.5</SocialImpact>
+		</statOffsets>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Destitute</li>
+		    <li>RMSQ_Node_Archaic</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <!-- Merit -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "MeritsBase">
+		<defName>RMSQ_Node_Beautiful</defName>
+        <description>You are beautiful</description>
+		<label>Merit\nBeautiful</label>
+		<coordY>0</coordY>
+        <statOffsets>
+            <PawnBeauty>2</PawnBeauty>
+        </statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "MeritsBase">
+		<defName>RMSQ_Node_Bloodhound</defName>
+        <description>You are an expert hunter, gain more blood.</description>
+		<label>Merit\nBloodhound</label>
+		<coordY>1</coordY>
+        <statFactors>
+            <HemogenGainFactor>0.25</HemogenGainFactor>
+        </statFactors>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Beautiful</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "MeritsBase">
+		<defName>RMSQ_Node_Soothed_Beast</defName>
+        <description>You got The Beast under control, kinda.</description>
+		<label>Merit\nSoothed Beast</label>
+		<coordY>2</coordY>
+        <statOffsets>
+            <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+        </statOffsets>
+        <exclusiveNodes>
+		    <li>RMSQ_Node_Beautiful</li>
+		    <li>RMSQ_Node_Bloodhound</li>
+	    </exclusiveNodes>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+</Defs>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Level 1 -->
+
+    <!-- Heightened Sense -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexBuff">
+    	<defName>RMSQ_Heightened_Sense</defName>
+    	<label>Heightened Sense</label>
+    	<description>Enhance Vampiric senses\n\nImprove Sight and Hearing.</description>
+        <displayOrder>21</displayOrder>
+		<level>1</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_HeightenedSense</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 2 -->
+
+    <!-- Premonition -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexBuff">
+    	<defName>RMSQ_Premonition</defName>
+    	<label>Premonition</label>
+    	<description>Visions of the future\n\nImprove Melee Dodge Chance and lower the chance of triggering traps</description>
+		<displayOrder>21</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_Premonition_Hediff</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Panacea -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexTouch">
+    	<defName>RMSQ_Panacea</defName>
+    	<label>Panacea</label>
+    	<description>Calm nerves to you or an ally\n\nMental Break Threshold -9%\nGain a small amount of Willpoer</description>
+		<displayOrder>22</displayOrder>
+		<level>2</level>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<statBases>
+			<RMSQ_Willpower>-1</RMSQ_Willpower>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+			<targetParams>
+        		<canTargetSelf>true</canTargetSelf>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMASQ_Panacea</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>true</onlyBrain>
+			</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 3 -->
+
+    <!-- Fatal Flaw -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexBuff">
+    	<defName>RMSQ_Fatal_Flaw</defName>
+    	<label>Fatal Flaw</label>
+    	<description>Find the weakness of a target</description>
+		<displayOrder>23</displayOrder>
+		<level>3</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMASQ_FatalFlaw</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- Share the Senses -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexRanged">
+    	<defName>RMSQ_Share_the_Senses</defName>
+    	<label>Share the Senses</label>
+    	<description>Improve the target senses\n\nThe bonus disapper if the caster or the target die</description>
+		<displayOrder>23.1</displayOrder>
+		<level>3</level>
+		<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+    	  	<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>RMSQ_SharetheSenses_Caster</hediffOnCaster>
+                <hediffOnTarget>RMSQ_SharetheSenses_Target</hediffOnTarget>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 4 -->
+
+    <!-- Spirit's Touch -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexBuff">
+    	<defName>RMSQ_Spirit_Touch</defName>
+    	<label>Spirit's Touch</label>
+    	<description>Gathering emotional residue from an object or location\n\nGlobal Learning Factor +50%</description>
+		<displayOrder>24</displayOrder>
+		<level>1</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMASQ_SpiritTouch</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<!-- Level 5 -->
+    
+    <!-- Unburdening the Bestial Soul -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexTouch">
+    	<defName>RMSQ_Unburdening_the_Bestial_Soul</defName>
+    	<label>Unburdening the Bestial Soul</label>
+    	<description>Allows the vampire to rebuild a target tattered soul\n\nImprove mood but lower brain efficency</description>
+	    <displayOrder>25</displayOrder>
+		<level>1</level>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    	<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+      		<targetParams>
+        		<neverTargetHostileFaction>true</neverTargetHostileFaction>
+        		<canTargetSelf>true</canTargetSelf>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class="CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMASQ_UnburdeningtheBestialSoul</hediffDef>
+        		<onlyBrain>True</onlyBrain>
+        		<psychic>false</psychic>
+        		<applicableToMechs>false</applicableToMechs>
+      		</li>
+      		<li Class="CompProperties_AbilitySocialInteraction">
+        		<interactionDef>WordOfJoy</interactionDef>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef> 
+
+    <!-- Clairvoyance -->
+	<ItsSorceryFramework.SorceryDef ParentName="AuspexBuff">
+    	<defName>RMSQ_Clairvoyance</defName>
+    	<label>Clairvoyance</label>
+    	<description>Information gathering from surroundings\n\nGlobal Learning Factor x130%</description>
+		<displayOrder>26</displayOrder>
+		<level>5</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMASQ_Clairvoyance</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>True</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+</Defs>

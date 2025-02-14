@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+		<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+        <defName>RMSQ_WillpowerTracker</defName>
+		<label>Willpower</label>
+		
+		<energyUnitStatDef>RMSQ_Willpower</energyUnitStatDef>
+		<energyMaxStatDef>RMSQ_MaxWillpower</energyMaxStatDef>
+		<energyMinStatDef>RMSQ_MinWillpower</energyMinStatDef>
+		<disableReasonKey>RMSQ_DisableReason_Willpower</disableReasonKey>
+        <hitLimitKey>RMSQ_Willpower_Message_HitLimit</hitLimitKey>
+		<normalBarColor>(0.1, 0.1, 0.45)</normalBarColor>
+		<underBarColor>(0.1, 0.1, 1)</underBarColor>
+		<comps>
+			<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
+				<energyRecoveryStatDef>RMSQ_WillpowerRecovery</energyRecoveryStatDef>
+				<overchargeRecoveryFactor>0</overchargeRecoveryFactor>
+				<deficitRecoveryFactor>0</deficitRecoveryFactor>
+			</li>
+		</comps>
+	</ItsSorceryFramework.EnergyTrackerDef>
+
+</Defs>

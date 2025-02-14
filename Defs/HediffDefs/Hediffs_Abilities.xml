@@ -1,0 +1,1780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Hediff Base -->
+    <HediffDef Name="RMSQHediffBase" Abstract="True">
+        <defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+    </HediffDef>
+
+    <!-- Ability Hediff Base -->
+    <HediffDef ParentName="RMSQHediffBase" Name="RMSQAbilityHediffBase" Abstract="True">
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <EffecterDef>
+        <defName>RMSQ_Aura</defName>
+        <offsetMode>Free</offsetMode> <!-- don't spawn attached, since the flecks already anchor themselves correctly, spawning attached can introduce bad offsets -->
+        <children>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+                <fleckDef>StressAura</fleckDef>
+                <ticksBetweenMotes>2500</ticksBetweenMotes>
+                <burstCount>3</burstCount>
+                <spawnLocType>OnSource</spawnLocType>
+                <positionRadius>0</positionRadius>
+                <scale>1</scale>
+                <rotation>0~0</rotation>
+                <rotationRate>0</rotationRate>
+                <absoluteAngle>True</absoluteAngle>
+                <angle>0</angle>
+                <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+                <speed>0</speed>
+            </li>
+        </children>
+    </EffecterDef>
+
+    <!-- Siren -->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>RMSQ_Siren_Hediff</defName>
+        <label>Admiration</label>
+        <description>There's nothing like a tumble between the sheets to lift the mood.</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <hediffClass>EBSGFramework.Hediff_LoveTheCaster</hediffClass>
+        <targetPrefix>for</targetPrefix>
+    </HediffDef>
+
+    <!-- Mending -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_Mending</defName>
+        <label>Mending</label>
+        <description>Use your own vitae to mend your wound</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+                <regeneration>24000</regeneration>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Resist Frenzy -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ResistFrenzy</defName>
+        <label>Resist Frenzy</label>
+        <description>Resist Frenzy</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+			        <MentalBreakThreshold>-0.5</MentalBreakThreshold>
+                 </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Blood Bond -->
+    <HediffDef Name="BondBase" ParentName="RMSQHediffBase" Abstract="True">
+        <initialSeverity>1</initialSeverity>
+        <hediffClass>HediffWithTarget</hediffClass>
+        <maxSeverity>1</maxSeverity>
+    </HediffDef>
+
+    <!-- Master -->
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_BloodBond_Master</defName>
+        <label>Blood Bond - Master</label>
+        <description>Smh</description>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+    	        </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>600000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_BloodBond_Master_TB</defName>
+        <label>Blood Bond - Master</label>
+        <description>Smh</description>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+    	        </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>300000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+    
+    <!-- Ghoul -->
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_BloodBond_Ghoul</defName>
+        <label>Blood Bond - Ghoul</label>
+        <description>Will I be ambraced?</description>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.2</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.2</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.2</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.2</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>600000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>  
+    </HediffDef>
+
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_BloodBond_Ghoul_TB</defName>
+        <label>Blood Bond - Ghoul</label>
+        <description>Will I be ambraced?</description>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.2</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.2</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.2</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.2</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>300000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>  
+    </HediffDef>
+
+    <!-- Retainer -->
+    <HediffDef ParentName="BondBase" Name="RetainerHediffBase" Abstract="True">
+        <label>Blood Bond - Ghoul</label>
+        <description>Will I be ambraced?</description>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>600000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="RetainerHediffBase">
+        <defName>RMSQ_BloodBond_Ghoul_Retainer_One</defName>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.25</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.25</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.25</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.25</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RetainerHediffBase">
+        <defName>RMSQ_BloodBond_Ghoul_Retainer_Two</defName>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.3</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.3</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.3</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.3</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.3</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RetainerHediffBase">
+        <defName>RMSQ_BloodBond_Ghoul_Retainer_Three</defName>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.4</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.4</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.35</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.35</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.35</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RetainerHediffBase">
+        <defName>RMSQ_BloodBond_Ghoul_Retainer_Four</defName>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.45</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.45</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.4</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.4</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.4</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="RetainerHediffBase">
+        <defName>RMSQ_BloodBond_Ghoul_Retainer_Five</defName>
+        <stages>
+            <li>
+                <statFactors>
+      		        <EBSG_MoodRiseRate>1.2</EBSG_MoodRiseRate>
+                    <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+                    <MeleeHitChance>1.5</MeleeHitChance>
+    	        </statFactors>
+                <statOffsets>
+                    <MeleeDamageFactor>0.45</MeleeDamageFactor>
+			        <WorkSpeedGlobal>0.45</WorkSpeedGlobal>  
+			        <GeneralLaborSpeed>0.45</GeneralLaborSpeed>  
+		        </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- BlondBond_Love -->
+    <HediffDef ParentName="PsycastHediffBase" Name="LoveBase">
+        <defName>RMSQ_BlondBond_Love</defName>
+        <label>Admiration</label>
+        <description>So much love</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <hediffClass>EBSGFramework.Hediff_LoveTheCaster</hediffClass>
+        <targetPrefix>for</targetPrefix>
+    </HediffDef>
+
+    <!-- Embrace -->
+    <HediffDef ParentName="LoveBase">
+        <defName>RMSQ_Embrace_Love_XV</defName>
+    </HediffDef>
+
+    <HediffDef ParentName="LoveBase">
+        <defName>RMSQ_Embrace_Love_XIV</defName>
+    </HediffDef>
+
+    <HediffDef ParentName="LoveBase">
+        <defName>RMSQ_Embrace_Love_XIII</defName>
+    </HediffDef>
+
+    <HediffDef ParentName="LoveBase">
+        <defName>RMSQ_Embrace_Love_XII</defName>
+    </HediffDef>
+
+    <HediffDef ParentName="LoveBase">
+        <defName>RMSQ_Embrace_Love_XI</defName>
+    </HediffDef>
+
+    <!-- Animalism -->
+    <HediffDef ParentName="RMSQAbilityHediffBase" Name="RMSQAbilityHediffBaseAnimalism" Abstract="True">
+        <defaultLabelColor>(0.133, 0.545, 0.133)</defaultLabelColor>
+    </HediffDef>
+    <!-- Bond Famulus --> 
+    <HediffDef ParentName="RMSQAbilityHediffBaseAnimalism">
+        <defName>RMSQ_BondFamulus</defName>
+        
+        <label>Bond Famulus</label>
+        <description>Make it easier for the Vampire to form bond with animals</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BondAnimalChanceFactor>0.25</BondAnimalChanceFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Feral Whispers-->
+    <HediffDef ParentName="RMSQAbilityHediffBaseAnimalism">
+        <defName>RMSQ_Feral_Whispers</defName>
+        <label>Feral Whispers</label>
+        <description>Two-way communication with animals</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <TameAnimalChance>0.25</TameAnimalChance>
+                    <TrainAnimalChance>0.25</TrainAnimalChance>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Sway the Flock-->
+    <HediffDef ParentName="RMSQAbilityHediffBaseAnimalism">
+        <defName>RMSQ_SwaytheFlock</defName>
+        <label>Sway the Flock</label>
+        <description>Influence animals within an area to behave a certain way</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <AnimalGatherSpeed>0.25</AnimalGatherSpeed>
+                    <AnimalGatherYield>0.25</AnimalGatherYield>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Drawing Out the Beast-->
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_DrawingOuttheBeast_Bonus</defName>
+        <defaultLabelColor>(0.133, 0.545, 0.133)</defaultLabelColor>
+        <label>Drawing Out the Beast</label>
+        <description>Reduces Mental Break Treshold Bonus</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MentalBreakThreshold>-0.2</MentalBreakThreshold>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>600000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_DrawingOuttheBeast_Malus</defName>
+        <defaultLabelColor>(0.133, 0.545, 0.133)</defaultLabelColor>
+        <label>Drawing Out the Beast</label>
+        <description>Reduces Mental Break Treshold Malus</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MentalBreakThreshold>0.2</MentalBreakThreshold>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>600000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+    
+    <!-- Auspex -->
+    
+    <!-- Heightened Sense -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_HeightenedSense</defName>
+        <label>Heightened Sense</label>
+        <description>Enhance Vampiric senses</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Premonition -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_Premonition_Hediff</defName>
+        <label>Premonition</label>
+        <description>Improve Melee Dodge Chance and lower the chance of triggering traps</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDodgeChance>5</MeleeDodgeChance>
+                </statOffsets>
+                <statFactors>
+                    <PawnTrapSpringChance>0.5</PawnTrapSpringChance>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Panacea-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_Panacea</defName>
+        <label>Panacea</label>
+        <description>Calm nerver to you and everyone around.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MentalBreakThreshold>-0.09</MentalBreakThreshold>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Fatal Flaw-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_FatalFlaw</defName>
+        <label>Fatal Flaw</label>
+        <description>Find the weakness of a target</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeHitChance>10</MeleeHitChance>
+                    <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Share the Senses-->
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_SharetheSenses_Caster</defName>
+        <label>Share the Senses</label>
+        <description>Improve the target senses</description>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_SharetheSenses_Target</defName>
+        <label>Share the Senses</label>
+        <description>Improve the target senses</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+    <!--Spirit's Touch-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_SpiritTouch</defName>
+        <label>Spirit's Touch</label>
+        <description>Gathering emotional residue from an object or location</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <GlobalLearningFactor>0.5</GlobalLearningFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Unburdening the Bestial Soul -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_UnburdeningtheBestialSoul</defName>
+        <label>Unburdening the Bestial Soul</label>
+        <description>Allows the vampire to rebuild a target tattered soul\n\nImprove mood but lower brain efficency</description>
+        <stages>
+            <li>
+                <partEfficiencyOffset>-0.20</partEfficiencyOffset>
+            </li>
+        </stages>
+    </HediffDef>
+    <!--Clairvoyance-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_Clairvoyance</defName>
+        <label>Clairvoyance</label>
+        <description>Gathering emotional residue from an object or location</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <GlobalLearningFactor>1.3</GlobalLearningFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- BloodSorcery -->
+
+    <!--Scour Secrets-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ScourSecrets</defName>
+        <label>Scour Secrets</label>
+        <description>Pore through a large amount of content within minutes.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <GlobalLearningFactor>0.5</GlobalLearningFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Ripples of the Heart -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_RipplesoftheHeart</defName>
+        <label>Ripples of the Heart</label>
+        <description>Permanently damage the target Heart\n\nCurable only with Mending regeneration</description>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DamageBodyParts">
+                <bodyPartsToDamage>
+                    <li>
+                        <bodyPart>Heart</bodyPart> <!--Like with removal, this should be a defName-->
+                        <damagePercentage>0.2</damagePercentage> <!--Takes away half of the hit points-->
+                    </li>
+                </bodyPartsToDamage>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_CauldronofBlood</defName>
+        <label>Touch of Oblivion</label>
+        <description>Weakens a random organ on touch.</description>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+                <tickInterval>60</tickInterval>
+                <damage>Cut</damage>
+                <createFilth>true</createFilth>
+                <damageAttachedPart>false</damageAttachedPart>
+                <armorPenetration>0.8</armorPenetration>
+                <bodyParts>
+                    <li>Heart</li>
+                </bodyParts>
+                <damageAmount>10</damageAmount>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Celerity -->
+    <!-- Rapid Reflexes -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_RapidReflexes</defName>
+        <label>Rapid Reflexes</label>
+        <description>Faster reactions and minor actions</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>1.5</MoveSpeed>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Rush Job -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_RushJob</defName>
+        <label>Rush Job</label>
+        <description>Perform a Skill-related task that would take a long time in mere seconds.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <GeneralLaborSpeed>0.5</GeneralLaborSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Blurred Momentum-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_BlurredMomentum</defName>
+        <label>Blurred Momentum</label>
+        <description>Attacks against the user misses more</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDodgeChance>10</MeleeDodgeChance>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Draught of Elegance -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_DraughtofElegance</defName>
+        <label>Draught of Elegance</label>
+        <description>Turn their vitae into a Celerity boost for others</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDodgeChance>10</MeleeDodgeChance>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Lightning Strike-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_LightningStrike</defName>
+        <label>Lightning Strike</label>
+        <description>Attack with lightning speed</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeCooldownFactor>-0.5</MeleeCooldownFactor>
+                    <RangedCooldownFactor>-0.5</RangedCooldownFactor>
+			        <AimingDelayFactor>-0.5</AimingDelayFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Fortitude -->
+    <!-- Unswayable Mind -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_UnswayableMind</defName>
+        <label>Unswayable Mind</label>
+        <description>Mind and will get stronger against supernatural forces.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+                    <PsychicSensitivity>-0.25</PsychicSensitivity>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Toughness -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ToughnessHediff</defName>
+        <label>Toughness</label>
+        <description>The vampire suffer less physical damage</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+                    <StaggerDurationFactor>-0.2</StaggerDurationFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Fortify the Inner Façade -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_FortifytheInnerFacade</defName>
+        <label>Fortify the Inner Façade</label>
+        <description>Increasing the Difficulty of mental powers to read or pierce the mind</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+                    <PsychicSensitivity>-0.25</PsychicSensitivity>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Valeren -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ValerenHediff</defName>
+        <label>Valeren</label>
+        <description>Mend an injured target using your own Vitae.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <InjuryHealingFactor>10</InjuryHealingFactor>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- Draught of Endurance -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMASQ_DraughtofEndurance</defName>
+        <label>Draught of Endurance</label>
+        <description>Turn their vitae into a Fortitude boost for others</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Prowess from Pain -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ProwessfromPain</defName>
+        <label>Prowess from Pain</label>
+        <description>The vampire suffers less pain</description>
+        <stages>
+            <li>
+                <painOffset>-0.2</painOffset>
+                <statOffsets>
+                    <PainShockThreshold>0.2</PainShockThreshold>
+                </statOffsets>
+            </li>      
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+                
+    <!-- Obfuscate -->
+    <!-- Unseen Passage -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_UnseenPassage</defName>
+        <label>Unseen Passage</label>
+        <description>The Vampire can now move while remaining hidden for short time</description>
+        <comps>
+            <li Class="HediffCompProperties_Invisibility">
+                <visibleToPlayer>true</visibleToPlayer>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Mask of a Thousand Faces -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_MaskofaThousandFaces</defName>
+        <label>Mask of a Thousand Faces</label>
+        <description>Change your face</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <PawnBeauty>1</PawnBeauty>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- Mental Maze -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_MentalMaze</defName>
+        <label>Mental Maze</label>
+        <description>Make it difficult for the victim to orientate</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- Vanish -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_VanishInvisibility</defName>
+        <label>Vanish</label>
+        <description>The Vampire can now move while remaining hidden for longer</description>
+        <comps>
+            <li Class="HediffCompProperties_Invisibility">
+                <visibleToPlayer>true</visibleToPlayer>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Cloak the Gathering-->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_CloaktheGathering</defName>
+        <label>Cloak the Gathering</label>
+        <description>Shelter companions under Obfuscate.</description>
+        <comps>
+            <li Class="HediffCompProperties_Invisibility">
+                <visibleToPlayer>true</visibleToPlayer>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Oblivion -->
+    <!-- Arms of Ahriman -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ArmsofAhriman</defName>
+        <label>Arms of Ahriman</label>
+        <description>Conjures shadow appendages that slow the target</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+    <!--Shadow Cast-->
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_ShadowCast_Caster</defName>
+        <label>Shadow Cast</label>
+        <description>Improve Social Impact</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <SocialImpact>0.2</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="BondBase">
+        <defName>RMSQ_ShadowCast_Target</defName>
+        <label>Shadow Cast</label>
+        <description>Lower Social Impact</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <SocialImpact>-0.2</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+    <!-- Touch Of Oblivion -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_TouchOfOblivion</defName>
+        <label>Touch of Oblivion</label>
+        <description>Weakens a random organ on touch.</description>
+        <isBad>true</isBad>
+        <tendable>true</tendable>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+                <tickInterval>60</tickInterval>
+                <damage>Crush</damage>
+                <createFilth>true</createFilth>
+                <damageAttachedPart>false</damageAttachedPart>
+                <armorPenetration>0.8</armorPenetration>
+                <bodyParts>
+                    <li>Heart</li>
+                    <li>Lung</li>
+                    <li>Kidney</li>
+                    <li>Liver</li>
+                    <li>Stomach</li>
+                </bodyParts>
+                <damageAmount>7</damageAmount>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Stygian Shroud -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_StygianShroud</defName>
+        <label>Stygian Shroud</label>
+        <description>Darkness spews out of a nearby shadow and blind the target</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <setMax>0</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- Skuld Fulfilled -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_SkuldFulfilled</defName>
+        <label>Skuld Fulfilled</label>
+        <description>Reintroduce illnesses someone has recovered from</description>
+        <isBad>true</isBad>
+        <initialSeverity>1</initialSeverity>
+        <stages>
+            <li>
+                <label>mild</label>
+                <minSeverity>1</minSeverity>
+                <painOffset>0.25</painOffset>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- Befoul Vessel -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_BefoulVessel</defName>
+        <label>Befoul Vessel</label>
+        <description>Poison in the bloodstream that deal costant damage</description>
+        <isBad>true</isBad>
+        <tendable>false</tendable>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+                <damage>AcidBurn</damage>
+                <tickInterval>600</tickInterval>
+                <createFilth>true</createFilth>
+                <armorPenetration>1</armorPenetration>
+                <damageAttachedPart>True</damageAttachedPart>
+                <bodyParts>
+                    <li>Torso</li>
+                    <li>Neck</li>
+                    <li>Head</li>
+                    <li>Shoulder</li>
+                    <li>Arm</li>
+                    <li>Leg</li>
+                    <li>Heart</li>
+                    <li>Lung</li>
+                    <li>Kidney</li>
+                    <li>Liver</li>
+                    <li>Stomach</li>
+                    <li>Hand</li>
+                    <li>Ear</li>
+                    <li>Nose</li>
+                    <li>Eye</li>
+                    <li>Brain</li>
+                </bodyParts>
+                <damageAmount>1</damageAmount>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Potence -->
+    <!-- Prowess -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_ProwessHediff</defName>
+        <label>Prowess</label>
+        <description>Improve Melee damage.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeHitChance>5</MeleeHitChance>
+      		        <MeleeDamageFactor>0.2</MeleeDamageFactor>
+    	        </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Prowess -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_RelentlessGrasp</defName>
+        <label>Relentless Grasp</label>
+        <description>Gain supernatural grip strength\n\n Improve Carry Capacity</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <CarryingCapacity>1.5</CarryingCapacity>
+    	        </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Draught of Might -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_DraughtofMight</defName>
+        <label>Draught of Might</label>
+        <description>Turn their vitae into a Potence boost for others.</description>
+        <stages>
+            <li>
+                <statOffsets>
+      		        <MeleeHitChance>5</MeleeHitChance>
+                    <MeleeDamageFactor>0.20</MeleeDamageFactor>
+    	        </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Presence -->
+    <!-- Awe -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_Awe_Hediff</defName>
+        <label>Awe</label>
+        <description>Improve Talking and Hearing</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods> 
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Lingering Kiss -->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>RMSQ_LingeringKiss</defName>
+        <label>Lingering Kiss</label>
+        <description>Greatly increases relations between target.</description>
+        <hediffClass>EBSGFramework.Hediff_LoveTheCaster</hediffClass>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <targetPrefix>for</targetPrefix>
+        <initialSeverity>1</initialSeverity>
+        <stages><li></li></stages>
+    </HediffDef>
+    <!-- Wingman -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_WingmanHediff</defName>
+        <label>Wingman</label>
+        <description>Extend Presence To nearby Kindred</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>  
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    
+    <!-- Protean -->
+    <!-- Eyes of the Beast -->
+    <HediffDef ParentName="RMSQHediffBase">
+        <defName>RMSQ_EyesoftheBeast</defName>
+        <label>Eyes of the Beast</label>
+        <description>Allows the user to see in total darkness.</description>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <stages />
+        <comps>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="EBSGFramework.HediffCompProperties_TemporaryGenes">
+                <genesAtSeverities>
+                    <li>
+                        <genes>
+                            <li>DarkVision</li>
+                        </genes>
+                    </li>
+                </genesAtSeverities>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="ImplantHediffBase">
+        <defName>RMSQ_Vicissitude_One</defName>
+        <label>Vicissitude</label>
+        <description>Sculpt the flesh of bodies making it more resilient</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <everCurableByItem>False</everCurableByItem>
+        <defaultInstallPart>Waist</defaultInstallPart>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>0.90</IncomingDamageFactor>
+                    <MeleeDamageFactor>1.1</MeleeDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Vicissitude</debugLabel>
+                <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_A</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_B</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_C</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_D</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_E</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_F</li>
+                </texPaths>
+                <baseLayer>65</baseLayer>
+                <texSeed>1</texSeed>
+            </li>
+            <li>
+                <debugLabel>Vicissitude</debugLabel>
+                <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_A</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_B</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_C</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_D</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_E</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_F</li>
+                </texPaths>
+                <baseLayer>65</baseLayer>
+                <texSeed>2</texSeed>
+                <flipGraphic>true</flipGraphic>
+            </li>
+        </renderNodeProperties>
+
+    </HediffDef>
+
+    <HediffDef ParentName="ImplantHediffBase">
+        <defName>RMSQ_Vicissitude_Two</defName>
+        <label>Vicissitude</label>
+        <description>Sculpt the flesh of bodies making it more resilient</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <everCurableByItem>False</everCurableByItem>
+        <defaultInstallPart>Torso</defaultInstallPart>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>0.90</IncomingDamageFactor>
+                    <MeleeDamageFactor>1.1</MeleeDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Vicissitude</debugLabel>
+                <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+                <texPaths>
+                    <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_A</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_B</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_C</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_D</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_E</li>
+                    <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_F</li>
+                </texPaths>
+                <baseLayer>60</baseLayer>
+                <texSeed>1</texSeed>
+            </li>
+        </renderNodeProperties>
+
+    </HediffDef>
+
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_EarthMeld</defName>
+        <label>Earth Meld</label>
+        <description>Sink into the earth and become one with the soil allowing to stay outside during daytime</description>
+        <stages>
+            <li>
+                <damageFactors>
+                    <Flame>0</Flame>
+                    <Burn>0</Burn>
+                </damageFactors>
+                <statFactors>
+                    <IncomingDamageFactor>0.5</IncomingDamageFactor>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                </capMods> 
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Feral Weapons -->
+    <HediffDef ParentName="AddedBodyPartBase">
+        <defName>RMSQ_FeralWeapons</defName>
+        <label>Feral Weapons</label>
+        <description>Elongate the user's nails into claws that deal more damage</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+        <defaultInstallPart>Hand</defaultInstallPart>
+        <stages>
+          <li>
+            <statOffsets>
+              <PawnBeauty>-1</PawnBeauty>
+            </statOffsets>
+          </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>claw</label>
+                        <capacities>
+                            <li>Scratch</li>
+                        </capacities>
+                        <power>10</power>
+                        <cooldownTime>2</cooldownTime>
+                        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                        <soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+                        <soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+                    </li>
+                </tools>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_HediffsOnRemoval">
+                <hediffsToGive>
+                    <li>
+                        <hediffDef>RMSQ_Regen</hediffDef>
+                    </li>
+                </hediffsToGive>
+            </li>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+        <addedPartProps>
+            <isGoodWeapon>true</isGoodWeapon>
+            <solid>true</solid>
+            <partEfficiency>1.00</partEfficiency>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+    <!-- Metamorphosis -->      
+    <HediffDef ParentName="AddedBodyPartBase">
+        <defName>RMSQ_Metamorphosis_One</defName>
+        <label>Metamorphosis</label>
+        <labelNoun>a flesh tentacle</labelNoun>
+        <description>Take monstrous shape\n\nNOTE: when the effect is over you will lose your limb, use the Mending ability to regenerate</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <defaultInstallPart>Shoulder</defaultInstallPart>
+        <countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+        <stages>
+          <li>
+            <statOffsets>
+                <PawnBeauty>-3</PawnBeauty>
+            </statOffsets>
+          </li>
+        </stages>
+        <renderNodeProperties>
+            <li Class="PawnRenderNodeProperties_Overlay">
+                <debugLabel>Shambler wounds</debugLabel>
+                <workerClass>PawnRenderNodeWorker_OverlayShambler</workerClass>
+                <overlayLayer>Body</overlayLayer>
+                <baseLayer>20</baseLayer>
+                <pawnType>HumanlikeOnly</pawnType>
+            </li>
+            <li Class="PawnRenderNodeProperties_Spastic">
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbA</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbB</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbC</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbD</li>
+                </texPaths>
+                <parentTagDef>Body</parentTagDef>
+                <overrideMeshSize>1</overrideMeshSize>
+                <drawSize>1.4</drawSize>
+                <colorType>Skin</colorType>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotationRange>-30~30</rotationRange>
+                <durationTicksRange>10~35</durationTicksRange>
+                <nextSpasmTicksRange>10~50</nextSpasmTicksRange>
+                <drawData>
+                    <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+                    <useHediffAnchor>true</useHediffAnchor>
+                    <childScale>0.7</childScale>
+                    <bodyTypeScales>
+                        <Hulk>1.2</Hulk>
+                        <Fat>1.4</Fat>
+                        <Thin>0.8</Thin>
+                    </bodyTypeScales>
+                    <defaultData>
+                        <layer>49</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <rotationOffset>310</rotationOffset>
+                        <flip>true</flip>
+                        <layer>0</layer>
+                    </dataNorth>
+                    <dataEast>
+                        <rotationOffset>270</rotationOffset>
+                        <flip>true</flip>
+                    </dataEast>
+                    <dataSouth>
+                        <rotationOffset>220</rotationOffset>
+                    </dataSouth>
+                    <dataWest>
+                        <rotationOffset>270</rotationOffset>
+                    </dataWest>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>1.50</partEfficiency>
+        </addedPartProps>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>blade</label>
+                        <capacities>
+                          <li>Cut</li>
+                        </capacities>
+                        <armorPenetration>0.6</armorPenetration>
+                        <power>22</power> 
+                        <cooldownTime>2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef ParentName="AddedBodyPartBase">
+        <defName>RMSQ_Metamorphosis_Two</defName>
+        <label>Metamorphosis</label>
+        <labelNoun>a flesh tentacle</labelNoun>
+        <description>Take monstrous shape\n\nNOTE: when the effect is over you will lose your limb, use the Mending ability to regenerate</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <defaultInstallPart>Waist</defaultInstallPart>
+        <countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+        <stages>
+          <li>
+            <statOffsets>
+                <PawnBeauty>-2</PawnBeauty>
+            </statOffsets>
+          </li>
+        </stages>
+        <renderNodeProperties>
+            <li Class="PawnRenderNodeProperties_Spastic">
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbA</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbB</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbC</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbD</li>
+                </texPaths>
+                <parentTagDef>Body</parentTagDef>
+                <overrideMeshSize>1</overrideMeshSize>
+                <drawSize>1.4</drawSize>
+                <colorType>Skin</colorType>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotationRange>-30~30</rotationRange>
+                <durationTicksRange>10~35</durationTicksRange>
+                <nextSpasmTicksRange>10~50</nextSpasmTicksRange>
+                <drawData>
+                    <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+                    <useHediffAnchor>true</useHediffAnchor>
+                    <childScale>0.7</childScale>
+                    <bodyTypeScales>
+                        <Hulk>1.2</Hulk>
+                        <Fat>1.4</Fat>
+                        <Thin>0.8</Thin>
+                    </bodyTypeScales>
+                    <defaultData>
+                        <layer>49</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <rotationOffset>310</rotationOffset>
+                        <flip>true</flip>
+                        <layer>0</layer>
+                    </dataNorth>
+                    <dataEast>
+                        <rotationOffset>270</rotationOffset>
+                        <flip>true</flip>
+                    </dataEast>
+                    <dataSouth>
+                        <rotationOffset>220</rotationOffset>
+                    </dataSouth>
+                    <dataWest>
+                        <rotationOffset>270</rotationOffset>
+                    </dataWest>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>blade</label>
+                        <capacities>
+                          <li>Cut</li>
+                        </capacities>
+                        <armorPenetration>0.6</armorPenetration>
+                        <power>20.5</power> <!-- 2.5x natural fist -->
+                        <cooldownTime>2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef ParentName="AddedBodyPartBase">
+        <defName>RMSQ_Metamorphosis_Three</defName>
+        <label>Metamorphosis</label>
+        <labelNoun>a flesh tentacle</labelNoun>
+        <description>Take monstrous shape\n\nNOTE: when the effect is over you will lose your limb, use the Mending ability to regenerate</description>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <defaultInstallPart>Leg</defaultInstallPart>
+        <countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+        <stages>
+          <li>
+            <statOffsets>
+                <PawnBeauty>-2</PawnBeauty>
+            </statOffsets>
+          </li>
+        </stages>
+        <renderNodeProperties>
+            <li Class="PawnRenderNodeProperties_Spastic">
+                <texPaths>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbA</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbB</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbC</li>
+                    <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbD</li>
+                </texPaths>
+                <parentTagDef>Body</parentTagDef>
+                <overrideMeshSize>1</overrideMeshSize>
+                <drawSize>1.4</drawSize>
+                <colorType>Skin</colorType>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotationRange>-30~30</rotationRange>
+                <durationTicksRange>10~35</durationTicksRange>
+                <nextSpasmTicksRange>10~50</nextSpasmTicksRange>
+                <drawData>
+                    <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+                    <useHediffAnchor>true</useHediffAnchor>
+                    <childScale>0.7</childScale>
+                    <bodyTypeScales>
+                        <Hulk>1.2</Hulk>
+                        <Fat>1.4</Fat>
+                        <Thin>0.8</Thin>
+                    </bodyTypeScales>
+                    <defaultData>
+                        <layer>49</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <rotationOffset>310</rotationOffset>
+                        <flip>true</flip>
+                        <layer>0</layer>
+                    </dataNorth>
+                    <dataEast>
+                        <rotationOffset>270</rotationOffset>
+                        <flip>true</flip>
+                    </dataEast>
+                    <dataSouth>
+                        <rotationOffset>220</rotationOffset>
+                    </dataSouth>
+                    <dataWest>
+                        <rotationOffset>270</rotationOffset>
+                    </dataWest>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>1.50</partEfficiency>
+        </addedPartProps>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>blade</label>
+                        <capacities>
+                          <li>Cut</li>
+                        </capacities>
+                        <armorPenetration>0.6</armorPenetration>
+                        <power>20.5</power> <!-- 2.5x natural fist -->
+                        <cooldownTime>2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_HediffsOnRemoval">
+                <hediffsToGive>
+                    <li>
+                        <hediffDef>RMSQ_Regen</hediffDef>
+                    </li>
+                </hediffsToGive>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- The Unfettered Heart -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_TheUnfetteredHeart</defName>
+        <label>The Unfettered Heart</label>
+        <description>The heart of the vampire can move freely within the chest</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+    
+    <!-- TBA -->
+    <!-- Envelop -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_EnvelopBlind</defName>
+        <label>Envelop</label>
+        <description>Create a mist that clings to a victim</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Diamond Skin -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_DiamondSkin</defName>
+        <label>Diamond Skin</label>
+        <description>Reduces physical damage to the alchemist</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+      		        <IncomingDamageFactor>0.5</IncomingDamageFactor>
+    	        </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <!--Moment of Clarity -->
+    <HediffDef ParentName="RMSQAbilityHediffBase">
+        <defName>RMSQ_MomentofClarity</defName>
+        <label>Moment of Clarity</label>
+        <description>Harness the power of the Beast to support the vampire</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <MentalBreakThreshold>-0.2</MentalBreakThreshold>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>RMSQ_Aura</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+</Defs>
