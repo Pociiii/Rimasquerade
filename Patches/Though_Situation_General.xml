@@ -19,7 +19,7 @@
             <li>RMSQ_Trait_Tzimisce</li>
             <li>RMSQ_Trait_Ventrue</li>
             <li>RMSQ_Trait_Caitiff</li>
-            <!-- <li>RMSQ_Trait_Thin_Blood</li> -->
+            <li>RMSQ_Trait_Thin_Blood</li>
         </value>
     </Operation>
 
@@ -41,8 +41,33 @@
             <li>RMSQ_Trait_Tzimisce</li>
             <li>RMSQ_Trait_Ventrue</li>
             <li>RMSQ_Trait_Caitiff</li>
-            <!-- <li>RMSQ_Trait_Thin_Blood</li> -->
+            <li>RMSQ_Trait_Thin_Blood</li>
         </value>
     </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="NoxiousHaze"]/nullifyingGenes</xpath>
+        <value>
+            <li>RMSQ_Gene_GiftoftheBlood</li>
+            <li>RMSQ_Gene_Daydrinker</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="ToxicFallout"]/nullifyingGenes</xpath>
+        <value>
+            <li>RMSQ_Gene_GiftoftheBlood</li>
+            <li>RMSQ_Gene_Daydrinker</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="BloodTorch"]/requiredGenes</xpath>
+        <value>
+            <li>RMSQ_Gene_Vitae</li>
+        </value>
+    </Operation>
+
+
     
 </Patch>

@@ -3,24 +3,21 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Name = "DisciplineBase" Abstract="True">
     	<learningTrackerDef>RMSQ_Disciplines_LearningTrackerTree</learningTrackerDef>
-		<!-- <prereqsHediff>
-			<li><key>RMSQ_Hediff_Generation</key><value>0</value></li>
-		</prereqsHediff> -->
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-    <ItsSorceryFramework.LearningTreeNodeDef Name = "ClanDisciplineBase" ParentName = "DisciplineBase" Abstract="True">
-		<coordX>0</coordX>
-        <pointReq>0</pointReq>
-        
-	</ItsSorceryFramework.LearningTreeNodeDef>
-
-    <ItsSorceryFramework.LearningTreeNodeDef Name = "NonClanDisciplineBase" ParentName = "DisciplineBase" Abstract="True">
-		<coordX>0</coordX>
-        <pointReq>3</pointReq>
+    <ItsSorceryFramework.LearningTreeNodeDef Name = "CaitiffDisciplineBase" Abstract="True">
+        <learningTrackerDef>RMSQ_Unlocks_LearningTrackerTree</learningTrackerDef>
+        <description>This node unlock the relative Discipline</description>
+        <pointReq>2</pointReq>
+        <coordX>5</coordX>
+        <prereqs>
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
     
 	<ItsSorceryFramework.LearningTreeNodeDef Name = "AnimalismBase" ParentName = "DisciplineBase" Abstract="True">
 		<coordY>0</coordY>
+        <prereqMode>Or</prereqMode>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef Name = "AuspexBase" ParentName = "DisciplineBase" Abstract="True">
@@ -44,17 +41,14 @@
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef Name = "PotenceBase" ParentName = "DisciplineBase" Abstract="True">
-		<coordY>12</coordY>
-		<description>Potence strengthens the user's physical prowess. Those who have this as a clan Discipline are the Brujah, Nosferatu and Lasombra.</description>
+		<coordY>9</coordY>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef Name = "PresenceBase" ParentName = "DisciplineBase" Abstract="True">
-		<coordY>14</coordY>
-		<description>Presence enables to user to use subtle manipulation, control and swaying of emotions to guide others towards a goal. Those who have this as a clan Discipline are the Brujah, Ravnos, Toreador, The Ministry and Ventrue.</description>
+		<coordY>10.5</coordY>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef Name = "ProteanBase" ParentName = "DisciplineBase" Abstract="True">
-		<coordY>16</coordY>
-		<description>Protean grants the ability to change one's shape, grow claws, meld into the earth or become fog. Those who have this as a clan Discipline are the Gangrel, The Ministry and Tzimisce.</description>
+		<coordY>12</coordY>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 </Defs>

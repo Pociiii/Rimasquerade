@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
     <!-- Level 1 -->
 
     <!-- Bond Famulus -->
@@ -45,6 +46,9 @@
     	<description>Rouse your blood to turn one animal hostile agaisnt colony enemeies</description>
         <displayOrder>13</displayOrder>
 		<level>2</level>
+        <statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
 		<verbProperties>
     	  	<targetParams>
 				<canTargetSelf>false</canTargetSelf>
@@ -120,6 +124,7 @@
 		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
 		<statBases>
       		<Ability_EffectRadius>1.9</Ability_EffectRadius>
+            <Ability_Duration>1000</Ability_Duration>
     	</statBases>
     	<verbProperties>
     	  	<targetParams>

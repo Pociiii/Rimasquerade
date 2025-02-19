@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
     <!-- Kindred -->
 	<PawnKindDef Name="KindredBase" Abstract="True">
     	<label>Kindred</label>
@@ -26,13 +27,13 @@
     	</disallowedTraits>
 	</PawnKindDef>	
 
-    <!-- Kindred Player -->
+<!-- Kindred Player -->
+
 	<PawnKindDef ParentName="KindredBase">
     	<defName>Kindred_Player</defName>
         <modExtensions>
             <li Class="ItsSorceryFramework.ModExtension_PawnGenSchemaSet">
                 <schemaSets>
-
                     <li>
                         <schemaMappings>
                             <li>
@@ -55,7 +56,10 @@
       		<li>IndustrialBasic</li>
     	</apparelTags>
 	</PawnKindDef>
-	
+    
+<!-- Kindred Player -->
+
+<!-- FACTIONS -->
 	<PawnKindDef ParentName="KindredBase" Name="Kindred">
 		<defName>Kindred</defName>
     	<invNutrition>0.5</invNutrition>
@@ -411,5 +415,6 @@
         <initialResistanceRange>40~60</initialResistanceRange>
     </PawnKindDef>
 
+<!-- FACTIONS -->
 	
 </Defs>

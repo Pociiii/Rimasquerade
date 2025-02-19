@@ -12,7 +12,7 @@
             <li>Deathless</li>
             <li>RMSQ_Gene_Vitae</li>
             <li>RMSQ_Gene_GiftoftheBlood</li>
-            <li>RMSQ_Gene_DangeroftheBlood</li>
+            <li>RMSQ_Gene_PricesoftheBlood</li>
 		</genes>
 	</XenotypeDef>
 
@@ -196,7 +196,7 @@
 		</genes>
 	</XenotypeDef>
 
-    <!-- <XenotypeDef>
+    <XenotypeDef>
         <defName>RMSQ_Xenotype_ThinBlood</defName>
         <description>Thin-bloods are neither entirely vampire nor mortal, the ever changing nature of the Duskborn evokes pity, jealousy, and fear in equal measure. Considered little more than trash by most vampires, the thin-bloods are banding together, leveraging their resistance to sunlight and the strange, mercurial adaptability of their powers against their oppressors.</description>
         <descriptionShort>With the thickness of vitae dwindling, the Duskborn are too far removed from Caine to share his curse or reap the full benefits of vampirism. Thrust into the world of the night and disliked by True Kindred, they must survive the night by finding a way in or a way out. </descriptionShort>
@@ -216,6 +216,6 @@
             <li>RMSQ_Gene_Daydrinker</li>
             <li>RMSQ_Gene_ThinBlood</li>
 		</genes>
-	</XenotypeDef> -->
+	</XenotypeDef>
 
 </Defs>

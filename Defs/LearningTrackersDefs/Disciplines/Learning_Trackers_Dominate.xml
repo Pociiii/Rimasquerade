@@ -1,38 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<!-- Dominate -->
-    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
-		<defName>RMSQ_Node_Dominate_ClanDiscipline</defName>
-		<description>Allows the user to use mind control through eye contact and spoken word as well as manipulate memories of their victims.\n\nClan Discipline for: Lasombra, Malkavian, Salubri, Tremere, Tzimisce, Ventrue</description>
-        <label>Clan Discipline\nDOMINATE</label>
-		<coordY>4.5</coordY>
-        <prereqsHediff>
-		    <li><key>RMSQ_Hediff_ClanDiscipline_Dominate</key><value>0</value></li>
-        </prereqsHediff>
-	</ItsSorceryFramework.LearningTreeNodeDef>
-
-    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
-		<defName>RMSQ_Node_Dominate_NonClanDiscipline</defName>
-		<description>Allows the user to use mind control through eye contact and spoken word as well as manipulate memories of their victims.</description>
-        <label>Non Clan Discipline\nDOMINATE</label>
-        <coordY>5</coordY>
-        <exclusiveNodes>
-		    <li>RMSQ_Node_Dominate_ClanDiscipline</li>
-	    </exclusiveNodes>
-	</ItsSorceryFramework.LearningTreeNodeDef>
+    
 
 	<!-- 1 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_One</defName>
     	<description>Issue a single command\n\nCommand the target to approach the Vampire</description>
-		<label>DOMINATE 1\nCompel</label>
-		<pointReq>1</pointReq>
-		<coordX>1</coordX>
+		<label>DOMINATE I\nCompel</label>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
         <prereqMode>Or</prereqMode>
 		<prereqs>
-			<li>RMSQ_Node_Dominate_ClanDiscipline</li>
-			<li>RMSQ_Node_Dominate_NonClanDiscipline</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Salubri</li>
+			<li>RMSQ_Node_Tremere</li>
+			<li>RMSQ_Node_Tzimisce</li>
+			<li>RMSQ_Node_Ventrue</li>
+			<li>RMSQ_Node_Dominate_Caitiff</li>
 		</prereqs>
 		<abilityGain>
 			<li>RMSQ_Compel</li>
@@ -42,10 +28,10 @@
 	<!-- 2 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_Two</defName>
-		<label>DOMINATE 2\nMesmerize</label>
+		<label>DOMINATE II\nMesmerize</label>
     	<description>Make the target enrage For short time</description>
-		<pointReq>2</pointReq>
-		<coordX>2</coordX>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Dominate_One</li>
 		</prereqs>
@@ -56,10 +42,10 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_Two_Amalgam</defName>
-		<label>AMALGAM 2\nDementation</label>
+		<label>AMALGAM II\nDementation</label>
     	<description>Drive others insane</description>
-		<pointReq>2</pointReq>
-		<coordX>2</coordX>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
 		<coordY>5</coordY>
 		<prereqMode>All</prereqMode>
 		<prereqs>
@@ -74,10 +60,10 @@
 	<!-- 3 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_Three</defName>
-		<label>DOMINATE 3\nForgetful Mind</label>
+		<label>DOMINATE III\nForgetful Mind</label>
     	<description>Rewrite Prisoner memory</description>
-		<pointReq>3</pointReq>
-		<coordX>3</coordX>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
 			<li>RMSQ_Node_Dominate_Two</li>
@@ -91,10 +77,10 @@
 	<!-- 4 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_Four</defName>
-		<label>DOMINATE 4\nRationalize</label>
+		<label>DOMINATE IV\nRationalize</label>
     	<description>Make the target enrage for longer</description>
 		<pointReq>5</pointReq>
-		<coordX>4</coordX>
+		<coordX>3</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Dominate_Three</li>
 		</prereqs>
@@ -105,10 +91,10 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_Four_Amalgam</defName>
-		<label>AMALGAM 4\nImplant Suggestion</label>
+		<label>AMALGAM IV\nImplant Suggestion</label>
     	<description>Change another opinion temporarily.\n\nTry to convert someone to your Ideo</description>
 		<pointReq>5</pointReq>
-		<coordX>4</coordX>
+		<coordX>3</coordX>
 		<coordY>5</coordY>
 		<prereqMode>All</prereqMode>
 		<prereqs>
@@ -123,10 +109,10 @@
 	<!-- 5 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "DominateBase">
 		<defName>RMSQ_Node_Dominate_Five</defName>
-		<label>DOMINATE 5\nMass Manipulation</label>
+		<label>DOMINATE V\nMass Manipulation</label>
 		<description>Manipulate the mind of multiple targets</description>
-		<pointReq>8</pointReq>
-		<coordX>5</coordX>
+		<pointReq>6</pointReq>
+		<coordX>4</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
 			<li>RMSQ_Node_Dominate_Four</li>

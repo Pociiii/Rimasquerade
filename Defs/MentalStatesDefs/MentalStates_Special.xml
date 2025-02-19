@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <MentalBreakDef>
+        <defName>RMSQ_TerrorFrenzy</defName>
+        <label>Terror Frenzy</label>
+        <intensity>Minor</intensity>
+        <workerClass>MentalBreakWorker_FireTerror</workerClass>
+        <mentalState>RMSQ_PanicFleeFire</mentalState>
+        <requiredGene>RMSQ_Gene_PricesoftheBlood</requiredGene>
+    </MentalBreakDef>
+
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>RMSQ_PanicFleeFire</defName>
+        <label>panic-fleeing fire</label>
+        <stateClass>MentalState_PanicFleeFire</stateClass>
+        <category>Misc</category>
+        <nameColor>(0.65, 0.9, 0.93)</nameColor>
+        <beginLetterLabel>Terror Frenzy</beginLetterLabel>
+        <beginLetter>{0} is in Terror Frenzy because of fire.</beginLetter>
+        <recoveryMessage>{0} recovered.</recoveryMessage>
+        <baseInspectLine>Mental state: Fleeing fire</baseInspectLine>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <minTicksBeforeRecovery>60</minTicksBeforeRecovery>
+    </MentalStateDef>
+
+</Defs>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_One</defName>
+		<label>PRESENCE I\nAwe</label>
+    	<description>Improve Talking and Hearing</description>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Ravnos</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Ventrue</li>
+			<li>RMSQ_Node_Presence_Caitiff</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Awe</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_One_Amalgam</defName>
+		<label>AMALGAM I\nEyes of the Serpent</label>
+		<description>Immobilize a victim by making eye contact.</description>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
+		<coordY>11</coordY>
+		<prereqs>
+			<li>RMSQ_Node_Protean_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Eyes_of_the_Serpent</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_Two</defName>
+		<label>PRESENCE II\nLingering Kiss</label>
+		<description>Improve target opinion</description>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Presence_One</li>
+			<li>RMSQ_Node_Presence_One_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Lingering_Kiss</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_Three</defName>
+		<label>PRESENCE III\nDread Gazed</label>
+    	<description>Instill fear into a target to make them flee.</description>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Presence_Two</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Dread_Gaze</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_Three_Amalgam</defName>
+		<label>AMALGAM III\nClear the Field</label>
+    	<description>Clear a space in a calm and orderly manner.</description>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
+		<coordY>11</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Presence_Two</li>
+			<li>RMSQ_Node_Dominate_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Clear_the_Field</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_Four</defName>
+		<label>PRESENCE IV\nWingman</label>
+    	<description>Extend Presence to nearby Kindred</description>
+		<pointReq>5</pointReq>
+		<coordX>3</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Presence_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Wingman</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PresenceBase">
+		<defName>RMSQ_Node_Presence_Five</defName>
+		<label>PRESENCE V\nMajesty</label>
+		<description>Everyone who looks at the user is dumbstruck for short time</description>
+		<pointReq>6</pointReq>
+		<coordX>4</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Presence_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Majesty</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+</Defs>

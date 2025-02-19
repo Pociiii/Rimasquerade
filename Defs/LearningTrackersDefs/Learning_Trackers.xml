@@ -3,43 +3,58 @@
     <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
 		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
 		<defName>RMSQ_Kindred_LearningTrackerProgress</defName>
-		<label>Kindred Stats</label>
+		<label>Summary</label>
 	</ItsSorceryFramework.LearningTrackerDef>
     
-    <!-- <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
-		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass>
-		<defName>RMSQ_Thin_Blood_LearningTrackerProgress</defName>
-		<label>Thin Blood Stats</label>
-	</ItsSorceryFramework.LearningTrackerDef> -->
+    <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
+		<defName>RMSQ_Unlocks_LearningTrackerTree</defName>
+		<label>Unlocks</label>
+	</ItsSorceryFramework.LearningTrackerDef>
 
 	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 		<defName>RMSQ_Advantages_LearningTrackerTree</defName>
 		<label>Advantages</label>
+        <defaultLocked>true</defaultLocked>
+		<lockedLabel>Unknown</lockedLabel>
+		<unlockTip>Select your Clan to unlock</unlockTip>
 	</ItsSorceryFramework.LearningTrackerDef>
 
     <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 		<defName>RMSQ_Disciplines_LearningTrackerTree</defName>
 		<label>Disciplines</label>
+        <defaultLocked>true</defaultLocked>
+		<lockedLabel>Unknown</lockedLabel>
+		<unlockTip>Select your Predator Type to unlock</unlockTip>
 	</ItsSorceryFramework.LearningTrackerDef>
 
     <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 		<defName>RMSQ_BloodSorcery_LearningTrackerTree</defName>
 		<label>Blood Sorcery</label>
+        <defaultLocked>true</defaultLocked>
+		<lockedLabel>Unknown</lockedLabel>
+		<unlockTip>Select your Predator Type to unlock</unlockTip>
 	</ItsSorceryFramework.LearningTrackerDef>
 
     <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 		<defName>RMSQ_Oblivion_LearningTrackerTree</defName>
 		<label>Oblivion</label>
+        <defaultLocked>true</defaultLocked>
+		<lockedLabel>Unknown</lockedLabel>
+		<unlockTip>Select your Predator Type to unlock</unlockTip>
 	</ItsSorceryFramework.LearningTrackerDef>
 
     <ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
 		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass>
 		<defName>RMSQ_TBA_LearningTrackerTree</defName>
 		<label>Thin-Blood Alchemy</label>
+        <defaultLocked>true</defaultLocked>
+		<lockedLabel>Unknown</lockedLabel>
+		<unlockTip>Select one Thin Blood Merit to unlock</unlockTip>
 	</ItsSorceryFramework.LearningTrackerDef>
 
 </Defs>

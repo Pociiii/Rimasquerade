@@ -14,30 +14,33 @@
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<!-- Blood Sorcery -->
+
 	<!-- 1 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryBase">
 		<defName>RMSQ_Node_BloodSorcery_One</defName>
-		<label>Blood Sorcery 1\nCorrosive Vitae</label>
-		<pointReq>1</pointReq>
+		<label>Blood Sorcery I\nCorrosive Vitae</label>
+		<pointReq>2</pointReq>
 		<coordX>0</coordX>
 		<abilityGain>
 			<li>RMSQ_Corrosive_Vitae</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryRitualsBase">
 		<defName>RMSQ_Node_BloodSorcery_One_Ritual</defName>
-		<label>Ritual 1\n</label>
+		<label>Ritual I\n</label>
 		<pointReq>1</pointReq>
 		<coordX>1</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_One</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<!-- 2 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryBase">
 		<defName>RMSQ_Node_BloodSorcery_Two</defName>
-		<label>Blood Sorcery 2\nScour Secrets</label>
-		<pointReq>2</pointReq>
+		<label>Blood Sorcery II\nScour Secrets</label>
+		<pointReq>3</pointReq>
 		<coordX>1</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
@@ -47,20 +50,22 @@
 			<li>RMSQ_Scour_Secrets</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryRitualsBase">
 		<defName>RMSQ_Node_BloodSorcery_Two_Ritual</defName>
-		<label>Ritual 2\n</label>
+		<label>Ritual II\n</label>
 		<pointReq>2</pointReq>
 		<coordX>2</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_Two</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<!-- 3 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryBase">
 		<defName>RMSQ_Node_BloodSorcery_Three</defName>
-		<label>Blood Sorcery 3\nRipples of the Heart</label>
-		<pointReq>3</pointReq>
+		<label>Blood Sorcery III\nRipples of the Heart</label>
+		<pointReq>4</pointReq>
 		<coordX>2</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_Two</li>
@@ -69,20 +74,22 @@
 			<li>RMSQ_Ripples_of_the_Heart</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryRitualsBase">
 		<defName>RMSQ_Node_BloodSorcery_Three_Ritual</defName>
-		<label>Ritual 3\n</label>
+		<label>Ritual III\n</label>
 		<pointReq>3</pointReq>
 		<coordX>3</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_Three</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<!-- 4 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryBase">
 		<defName>RMSQ_Node_BloodSorcery_Four</defName>
-		<label>Blood Sorcery 4\nBlood Aegis</label>
-		<pointReq>4</pointReq>
+		<label>Blood Sorcery IV\nBlood Aegis</label>
+		<pointReq>5</pointReq>
 		<coordX>3</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_Three</li>
@@ -91,20 +98,22 @@
 			<li>RMSQ_Blood_Aegis</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryRitualsBase">
 		<defName>RMSQ_Node_BloodSorcery_Four_Ritual</defName>
-		<label>Ritual 4\n</label>
+		<label>Ritual IV\n</label>
 		<pointReq>4</pointReq>
 		<coordX>4</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_Four</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
 	<!-- 5 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryBase">
 		<defName>RMSQ_Node_BloodSorcery_Five</defName>
-		<label>Blood Sorcery 5\nCauldron of Blood</label>
-		<pointReq>5</pointReq>
+		<label>Blood Sorcery V\nCauldron of Blood</label>
+		<pointReq>6</pointReq>
 		<coordX>4</coordX>
 		<prereqs>
 			<li>RMSQ_Node_BloodSorcery_Four</li>
@@ -113,9 +122,10 @@
 			<li>RMSQ_Cauldron_of_Blood</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
+
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BloodSorceryRitualsBase">
 		<defName>RMSQ_Node_BloodSorcery_Five_Ritual</defName>
-		<label>Ritual 5\nSimulacrum Gate</label>
+		<label>Ritual V\nSimulacrum Gate</label>
 		<pointReq>5</pointReq>
 		<coordX>5</coordX>
 		<prereqs>

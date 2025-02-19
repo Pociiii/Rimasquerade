@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <!-- 
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Name = "TBABase" Abstract="True">
     	<learningTrackerDef>RMSQ_TBA_LearningTrackerTree</learningTrackerDef>
 		<description>Thin-blood Alchemy is the creation of mixtures of blood, emotions and other varied ingredients to activate unique effects or even copy other Disciplines. Only thin-bloods have this as a clan Discipline.</description>
-		<prereqsHediff>
-			<li><key>RMSQ_Hediff_ThinBlood</key><value>0</value></li>
-		</prereqsHediff>
+		
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-
+    <!-- 1 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABase">
 		<defName>RMSQ_Node_TBA_One</defName>
-		<label>TBA 1\nHaze</label>
+		<label>TBA I\nHaze</label>
 		<coordX>0</coordX>
-		<coordY>3</coordY>
+		<coordY>0</coordY>
 		<pointReq>1</pointReq>
+        <prereqs>
+		    <li>RMSQ_Node_Thin_Blood</li>
+	    </prereqs>
 		<abilityGain>
 			<li>RMSQ_Haze</li>
 		</abilityGain>
@@ -24,18 +24,23 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABase">
 		<defName>RMSQ_Node_TBA_One_Two</defName>
-		<label>TBA 1\nFar Reach</label>
+		<label>TBA I\nFar Reach</label>
 		<coordX>0</coordX>
-		<coordY>8</coordY>
+		<coordY>0.5</coordY>
 		<pointReq>1</pointReq>
-
+        <prereqs>
+		    <li>RMSQ_Node_Thin_Blood</li>
+	    </prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
+    <!-- 2 -->
 
+    <!-- BASE -->
 	<ItsSorceryFramework.LearningTreeNodeDef Name="TBABaseTwo" ParentName = "TBABase" Abstract="True">
-		<coordX>2</coordX>
+		<coordX>1</coordX>
 		<pointReq>2</pointReq>
 		<prereqMode>Or</prereqMode>
+        <description>Counterfeit a Level I Discipline</description>
 		<prereqs>
 			<li>RMSQ_Node_TBA_One</li>
 			<li>RMSQ_Node_TBA_One_Two</li>
@@ -44,7 +49,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two</defName>
-		<label>TBA 2\nEnvelop</label>
+		<label>TBA II\nEnvelop</label>
+        <description>description</description>
 		<coordY>0</coordY>
 		<abilityGain>
 			<li>RMSQ_Envelop</li>
@@ -53,9 +59,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Animalism</defName>
-		<label>Counterfeit 1\nBond Famulus</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>1</coordY>
+		<label>COUNTERFEIT I\nBond Famulus</label>
+		<coordY>0.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Bond_Famulus</li>
 		</abilityGain>
@@ -63,9 +68,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Auspex</defName>
-		<label>Counterfeit 1\nHeightened Sense</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>2</coordY>
+		<label>COUNTERFEIT I\nHeightened Sense</label>
+		<coordY>1</coordY>
 		<abilityGain>
 			<li>RMSQ_Heightened_Sense</li>
 		</abilityGain>
@@ -73,9 +77,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_BloodSorcery</defName>
-		<label>Counterfeit 1\nCorrosive Vitae</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>3</coordY>
+		<label>COUNTERFEIT I\nCorrosive Vitae</label>
+		<coordY>1.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Corrosive_Vitae</li>
 		</abilityGain>
@@ -83,9 +86,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Celerity</defName>
-		<label>Counterfeit 1\nRapid Reflexes</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>4</coordY>
+		<label>COUNTERFEIT I\nRapid Reflexes</label>
+		<coordY>2</coordY>
 		<abilityGain>
 			<li>RMSQ_Rapid_Reflexes</li>
 		</abilityGain>
@@ -93,9 +95,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Dominate</defName>
-		<label>Counterfeit 1\nCompel</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>5</coordY>
+		<label>COUNTERFEIT I\nCompel</label>
+		<coordY>2.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Compel</li>
 		</abilityGain>
@@ -103,9 +104,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Fortitude</defName>
-		<label>Counterfeit 1\nUnswayable Mind</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>6</coordY>
+		<label>COUNTERFEIT I\nUnswayable Mind</label>
+		<coordY>3</coordY>
 		<abilityGain>
 			<li>RMSQ_Unswayable_Mind</li>
 		</abilityGain>
@@ -113,9 +113,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Obfuscate</defName>
-		<label>Counterfeit 1\nCloak of Shadows</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>7</coordY>
+		<label>COUNTERFEIT I\nCloak of Shadows</label>
+		<coordY>3.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Cloak_Of_Shadows</li>
 		</abilityGain>
@@ -123,9 +122,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Oblivion</defName>
-		<label>Counterfeit 1\nAshes to Ashes</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>8</coordY>
+		<label>COUNTERFEIT I\nAshes to Ashes</label>
+		<coordY>4</coordY>
 		<abilityGain>
 			<li>RMSQ_Ashes_to_Ashes</li>
 		</abilityGain>
@@ -133,9 +131,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Potence</defName>
-		<label>Counterfeit 1\nSoaring Leap</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>9</coordY>
+		<label>COUNTERFEIT I\nSoaring Leap</label>
+		<coordY>4.5</coordY>
 		<abilityGain>
 			<li>RMSQ_SoaringLeap</li>
 		</abilityGain>
@@ -143,9 +140,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Presence</defName>
-		<label>Counterfeit 1\nAwe</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>10</coordY>
+		<label>COUNTERFEIT I\nAwe</label>
+		<coordY>5</coordY>
 		<abilityGain>
 			<li>RMSQ_Awe</li>
 		</abilityGain>
@@ -153,19 +149,21 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseTwo">
 		<defName>RMSQ_Node_TBA_Two_Protean</defName>
-		<label>Counterfeit 1\nEyes of the Beast</label>
-		<description>Counterfeit a one-dot Discipline</description>
-		<coordY>11</coordY>
+		<label>COUNTERFEIT I\nEyes of the Beast</label>
+		<coordY>5.5</coordY>
 		<hediffAdd>
 		    <li><hediffDef>RMSQ_EyesoftheBeast</hediffDef><severity>1</severity></li>
 	    </hediffAdd>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
+    <!-- 3 -->
 
+    <!-- BASE -->
     <ItsSorceryFramework.LearningTreeNodeDef Name="TBABaseThree" ParentName = "TBABase" Abstract="True">
-		<coordX>4</coordX>
+		<coordX>2</coordX>
 		<pointReq>3</pointReq>
 		<prereqMode>Or</prereqMode>
+        <description>Counterfeit a Level II Discipline</description>
 		<prereqs>
 			<li>RMSQ_Node_TBA_Two</li>
 			<li>RMSQ_Node_TBA_Two_Animalism</li>
@@ -184,7 +182,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three</defName>
-		<label>TBA 3\nDiamond Skin</label>
+		<label>TBA III\nDiamond Skin</label>
+        <description>Diamond Skin</description>
 		<coordY>0</coordY>
 		<abilityGain>
 			<li>RMSQ_Diamond_Skin</li>
@@ -193,9 +192,8 @@
 
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Animalism</defName>
-		<label>Counterfeit 2\nFeral Whispers</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>1</coordY>
+		<label>COUNTERFEIT II\nFeral Whispers</label>
+		<coordY>0.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Feral_Whispers</li>
 		</abilityGain>
@@ -203,9 +201,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Auspex</defName>
-		<label>Counterfeit 2\nPremonition</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>2</coordY>
+		<label>COUNTERFEIT II\nPremonition</label>
+		<coordY>1</coordY>
 		<abilityGain>
 			<li>RMSQ_Premonition</li>
 		</abilityGain>
@@ -213,9 +210,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_BloodSorcery</defName>
-		<label>Counterfeit 2\nScour Secrets</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>3</coordY>
+		<label>COUNTERFEIT II\nScour Secrets</label>
+		<coordY>1.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Scour_Secrets</li>
 		</abilityGain>
@@ -223,9 +219,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Celerity</defName>
-		<label>Counterfeit 2\nRush Job</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>4</coordY>
+		<label>COUNTERFEIT II\nRush Job</label>
+		<coordY>2</coordY>
 		<abilityGain>
 			<li>RMSQ_Rush_Job</li>
 		</abilityGain>
@@ -233,9 +228,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Dominate</defName>
-		<label>Counterfeit 2\nMesmerize</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>5</coordY>
+		<label>COUNTERFEIT II\nMesmerize</label>
+		<coordY>2.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Mesmerize</li>
 		</abilityGain>
@@ -243,9 +237,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Fortitude</defName>
-		<label>Counterfeit 2\nToughness</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>6</coordY>
+		<label>COUNTERFEIT II\nToughness</label>
+		<coordY>3</coordY>
 		<abilityGain>
 			<li>RMSQ_Toughness</li>
 		</abilityGain>
@@ -253,9 +246,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Obfuscate</defName>
-		<label>Counterfeit 2\nUnseen Passage</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>7</coordY>
+		<label>COUNTERFEIT II\nUnseen Passage</label>
+		<coordY>3.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Unseen_Passage</li>
 		</abilityGain>
@@ -263,9 +255,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Oblivion</defName>
-		<label>Counterfeit 2\nShadow Cast</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>8</coordY>
+		<label>COUNTERFEIT II\nShadow Cast</label>
+		<coordY>4</coordY>
 		<abilityGain>
 			<li>RMSQ_Shadow_Cast</li>
 		</abilityGain>
@@ -273,9 +264,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Potence</defName>
-		<label>Counterfeit 2\nProwess</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>9</coordY>
+		<label>COUNTERFEIT II\nProwess</label>
+		<coordY>4.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Prowess</li>
 		</abilityGain>
@@ -283,9 +273,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Presence</defName>
-		<label>Counterfeit 2\nLingering Kiss</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>10</coordY>
+		<label>COUNTERFEIT II\nLingering Kiss</label>
+		<coordY>5</coordY>
 		<abilityGain>
 			<li>RMSQ_Lingering_Kiss</li>
 		</abilityGain>
@@ -293,17 +282,19 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseThree">
 		<defName>RMSQ_Node_TBA_Three_Protean</defName>
-		<label>Counterfeit 2\nFeral Weapons</label>
-		<description>Counterfeit a two-dot Discipline</description>
-		<coordY>11</coordY>
+		<label>COUNTERFEIT II\nFeral Weapons</label>
+		<coordY>5.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Feral_Weapons</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
     
+    <!-- 4 -->
 
+    <!-- BASE -->
     <ItsSorceryFramework.LearningTreeNodeDef Name="TBABaseFour" ParentName = "TBABase" Abstract="True">
-		<coordX>6</coordX>
+		<coordX>3</coordX>
+        <description>Counterfeit a Level III Discipline</description>
 		<pointReq>4</pointReq>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
@@ -324,7 +315,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four</defName>
-		<label>TBA 4\nToxic Personality</label>
+		<label>TBA IV\nToxic Personality</label>
 		<coordY>0</coordY>
 		<abilityGain>
 			<li>RMSQ_Toxic_Personality</li>
@@ -333,9 +324,8 @@
 
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Animalism</defName>
-		<label>Counterfeit 3\nAnimal Succulence</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>1</coordY>
+		<label>COUNTERFEIT III\nAnimal Succulence</label>
+		<coordY>0.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Animal_Succulence</li>
 		</abilityGain>
@@ -343,9 +333,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Auspex</defName>
-		<label>Counterfeit 3\nShare the Senses</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>2</coordY>
+		<label>COUNTERFEIT III\nShare the Senses</label>
+		<coordY>1</coordY>
 		<abilityGain>
 			<li>RMSQ_Share_the_Senses</li>
 		</abilityGain>
@@ -353,9 +342,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_BloodSorcery</defName>
-		<label>Counterfeit 3\nRipples of the Heart</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>3</coordY>
+		<label>COUNTERFEIT III\nRipples of the Heart</label>
+		<coordY>1.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Ripples_of_the_Heart</li>
 		</abilityGain>
@@ -363,9 +351,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Celerity</defName>
-		<label>Counterfeit 3\nBlink</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>4</coordY>
+		<label>COUNTERFEIT III\nBlink</label>
+		<coordY>2</coordY>
 		<abilityGain>
 			<li>RMSQ_Blink</li>
 		</abilityGain>
@@ -373,9 +360,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Dominate</defName>
-		<label>Counterfeit 3\nForgetful Mind</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>5</coordY>
+		<label>COUNTERFEIT III\nForgetful Mind</label>
+		<coordY>2.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Forgetful_Mind</li>
 		</abilityGain>
@@ -383,9 +369,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Fortitude</defName>
-		<label>Counterfeit 3\nFortify the Inner Façade</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>6</coordY>
+		<label>COUNTERFEIT III\nFortify the Inner Façade</label>
+		<coordY>3</coordY>
 		<abilityGain>
 			<li>RMSQ_Fortify_the_Inner_Facade</li>
 		</abilityGain>
@@ -393,9 +378,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Obfuscate</defName>
-		<label>Counterfeit 3\nMask of a Thousand Faces</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>7</coordY>
+		<label>COUNTERFEIT III\nMask of a Thousand Faces</label>
+		<coordY>3.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Mask_of_a_Thousand_Faces</li>
 		</abilityGain>
@@ -403,9 +387,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Oblivion</defName>
-		<label>Counterfeit 3\nTouch Of Oblivion</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>8</coordY>
+		<label>COUNTERFEIT III\nTouch Of Oblivion</label>
+		<coordY>4</coordY>
 		<abilityGain>
 			<li>RMSQ_Touch_Of_Oblivion</li>
 		</abilityGain>
@@ -413,9 +396,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Potence</defName>
-		<label>Counterfeit 3\nBrutal Feed</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>9</coordY>
+		<label>COUNTERFEIT III\nBrutal Feed</label>
+		<coordY>4.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Brutal_Feed</li>
 		</abilityGain>
@@ -423,9 +405,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Presence</defName>
-		<label>Counterfeit 3\nDread Gazed</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>10</coordY>
+		<label>COUNTERFEIT III\nDread Gazed</label>
+		<coordY>5</coordY>
 		<abilityGain>
 			<li>RMSQ_Dread_Gaze</li>
 		</abilityGain>
@@ -433,17 +414,19 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFour">
 		<defName>RMSQ_Node_TBA_Four_Protean</defName>
-		<label>Counterfeit 3\nEarth Meld</label>
-		<description>Counterfeit a three-dot Discipline</description>
-		<coordY>11</coordY>
+		<label>COUNTERFEIT III\nEarth Meld</label>
+		<coordY>5.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Earth_Meld</li>
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
+    <!-- 5 -->
 
+    <!-- BASE -->
     <ItsSorceryFramework.LearningTreeNodeDef Name="TBABaseFive" ParentName = "TBABase" Abstract="True">
-		<coordX>8</coordX>
+		<coordX>4</coordX>
+        <description>Counterfeit a Level IV Discipline</description>
 		<pointReq>5</pointReq>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
@@ -464,7 +447,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five</defName>
-		<label>TBA 5\nMoment of Clarity</label>
+		<label>TBA V\nMoment of Clarity</label>
 		<coordY>0</coordY>
 		<abilityGain>
 			<li>RMSQ_Moment_of_Clarity</li>
@@ -473,9 +456,8 @@
 
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Animalism</defName>
-		<label>Counterfeit 4\nSway the Flock</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>1</coordY>
+		<label>COUNTERFEIT IV\nSway the Flock</label>
+		<coordY>0.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Sway_the_Flock</li>
 		</abilityGain>
@@ -483,9 +465,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Auspex</defName>
-		<label>Counterfeit 4\nSpirit_Touch</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>2</coordY>
+		<label>COUNTERFEIT IV\nSpirit Touch</label>
+		<coordY>1</coordY>
 		<abilityGain>
 			<li>RMSQ_Spirit_Touch</li>
 		</abilityGain>
@@ -493,9 +474,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_BloodSorcery</defName>
-		<label>Counterfeit 4\nBlood Aegis</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>3</coordY>
+		<label>COUNTERFEIT IV\nBlood Aegis</label>
+		<coordY>1.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Blood_Aegis</li>
 		</abilityGain>
@@ -503,9 +483,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Celerity</defName>
-		<label>Counterfeit 4\nBlurred Momentum</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>4</coordY>
+		<label>COUNTERFEIT IV\nBlurred Momentum</label>
+		<coordY>2</coordY>
 		<abilityGain>
 			<li>RMSQ_Blurred_Momentum</li>
 		</abilityGain>
@@ -513,9 +492,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Dominate</defName>
-		<label>Counterfeit 4\nRationalize</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>5</coordY>
+		<label>COUNTERFEIT IV\nRationalize</label>
+		<coordY>2.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Rationalize</li>
 		</abilityGain>
@@ -523,9 +501,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Fortitude</defName>
-		<label>Counterfeit 4\nDraught of Endurance</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>6</coordY>
+		<label>COUNTERFEIT IV\nDraught of Endurance</label>
+		<coordY>3</coordY>
 		<abilityGain>
 			<li>RMSQ_Draught_of_Endurance</li>
 		</abilityGain>
@@ -533,9 +510,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Obfuscate</defName>
-		<label>Counterfeit 4\nVanish</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>7</coordY>
+		<label>COUNTERFEIT IV\nVanish</label>
+		<coordY>3.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Vanish</li>
 		</abilityGain>
@@ -543,9 +519,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Oblivion</defName>
-		<label>Counterfeit 4\nStygian Shroud</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>8</coordY>
+		<label>COUNTERFEIT IV\nStygian Shroud</label>
+		<coordY>4</coordY>
 		<abilityGain>
 			<li>RMSQ_Stygian_Shroud</li>
 		</abilityGain>
@@ -553,9 +528,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Potence</defName>
-		<label>Counterfeit 4\nDraught of Migh</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>9</coordY>
+		<label>COUNTERFEIT IV\nDraught of Migh</label>
+		<coordY>4.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Draught_of_Migh</li>
 		</abilityGain>
@@ -563,9 +537,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Presence</defName>
-		<label>Counterfeit 4\nRMSQ_Wingman</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>10</coordY>
+		<label>COUNTERFEIT IV\nWingman</label>
+		<coordY>5</coordY>
 		<abilityGain>
 			<li>RMSQ_Wingman</li>
 		</abilityGain>
@@ -573,11 +546,10 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBABaseFive">
 		<defName>RMSQ_Node_TBA_Five_Protean</defName>
-		<label>Counterfeit 4\nMetamorphosis</label>
-		<description>Counterfeit a Four-dot Discipline</description>
-		<coordY>11</coordY>
+		<label>COUNTERFEIT IV\nMetamorphosis</label>
+		<coordY>5.5</coordY>
 		<abilityGain>
 			<li>RMSQ_Metamorphosis</li>
 		</abilityGain>
-	</ItsSorceryFramework.LearningTreeNodeDef> -->
+	</ItsSorceryFramework.LearningTreeNodeDef>
 </Defs>

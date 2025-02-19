@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- KINDRED -->
+
+    <!-- FLAWS -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "FlawsBase" Abstract="True">
+            <coordX>5</coordX>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- DESTITUTE -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "FlawsBase">
+            <defName>RMSQ_Node_Destitute</defName>
+            <description>You have hard time making some cash</description>
+            <label>Flaw\nDESTITUTE</label>
+            <coordY>0</coordY>
+            <statFactors>
+                <TradePriceImprovement>0.5</TradePriceImprovement>
+            </statFactors>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- ARCHAIC -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "FlawsBase">
+            <defName>RMSQ_Node_Archaic</defName>
+            <description>It's very hard for you to get the grip with modern technology</description>
+            <label>Flaw\nARCHAIC</label>
+            <coordY>1</coordY>
+            <statOffsets>
+                <ResearchSpeed>-0.5</ResearchSpeed>
+            </statOffsets>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- LIVING IN THE PAST -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "FlawsBase">
+            <defName>RMSQ_Node_Living_Past</defName>
+            <description>Unable to grasp modern society's mindset</description>
+            <label>Flaw\nLIVING IN THE PAST</label>
+            <coordY>2</coordY>
+            <statOffsets>
+                <SocialImpact>-0.5</SocialImpact>
+            </statOffsets>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <!-- FLAWS -->
+
+    <!-- MERITS -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "MeritsBase" Abstract="True">
+            <coordX>6</coordX>
+            
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- BEAUTIFUL -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "MeritsBase">
+            <defName>RMSQ_Node_Beautiful</defName>
+            <description>You are beautiful</description>
+            <label>Merit\nBEAUTIFUL</label>
+            <coordY>0</coordY>
+            <prereqMode>Or</prereqMode>
+            <prereqs>
+                <li>RMSQ_Node_Destitute</li>
+                <li>RMSQ_Node_Archaic</li>
+                <li>RMSQ_Node_Living_Past</li>
+            </prereqs>
+            <statOffsets>
+                <PawnBeauty>1</PawnBeauty>
+            </statOffsets>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- BLOODHUND -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "MeritsBase">
+            <defName>RMSQ_Node_Bloodhound</defName>
+            <description>You are an expert hunter, gain more blood.</description>
+            <label>Merit\nBLOODHUND</label>
+            <coordY>1</coordY>
+            <prereqMode>Min</prereqMode>
+            <prereqModeMin>3</prereqModeMin>
+            <prereqs>
+                <li>RMSQ_Node_Destitute</li>
+                <li>RMSQ_Node_Archaic</li>
+                <li>RMSQ_Node_Living_Past</li>
+            </prereqs>
+            <statFactors>
+                <HemogenGainFactor>0.25</HemogenGainFactor>
+            </statFactors>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- SOOTHED BEAST -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "MeritsBase">
+            <defName>RMSQ_Node_Soothed_Beast</defName>
+            <description>You got The Beast under control, kinda.</description>
+            <label>Merit\nSOOTHED BEAST</label>
+            <coordY>2</coordY>
+            <prereqMode>Min</prereqMode>
+            <prereqModeMin>2</prereqModeMin>
+            <prereqs>
+                <li>RMSQ_Node_Destitute</li>
+                <li>RMSQ_Node_Archaic</li>
+                <li>RMSQ_Node_Living_Past</li>
+            </prereqs>
+            <statOffsets>
+                <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+            </statOffsets>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+    <!-- MERITS -->
+
+<!-- KINDRED -->
+
+<!-- THIN BLOOD -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Name = "TBMFBase" Abstract="True">
+        <learningTrackerDef>RMSQ_Advantages_LearningTrackerTree</learningTrackerDef>
+        <pointReq>0</pointReq>
+    </ItsSorceryFramework.LearningTreeNodeDef> 
+
+    <!-- FLAWS -->
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFBase" Name = "TBMFFlawBase" Abstract="True">
+            <coordX>5</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Thin_Blood</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- BABY TEETH -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFFlawBase">
+            <defName>RMSQ_Node_BabyTeeth</defName>
+            <label>Thin-Blood Flaw\nBABY TEETH</label>
+            <description>Never developed fangs</description>
+            <coordY>3</coordY>
+            <statOffsets>
+                <HemogenGainFactor>-0.5</HemogenGainFactor>
+            </statOffsets>
+            <hediffRemove>
+                <li>RMSQ_Fangs</li>
+            </hediffRemove>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- BESTIAL TEMPER -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFFlawBase">
+            <defName>RMSQ_Node_BestialTemper</defName>
+            <label>Thin-Blood Flaw\nBESTIAL TEMPER</label>
+            <description>Frenzy as normal vampire</description>
+            <coordY>4</coordY>
+            <statOffsets>
+                <MentalBreakThreshold>0.05</MentalBreakThreshold>
+            </statOffsets>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- MORTAL FRAILTY -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFFlawBase">
+            <defName>RMSQ_Node_MortalFrailty</defName>
+            <label>Thin-Blood Flaw\nMORTAL FRAILTY</label>
+            <description>Mend like a mortal, unable to rouse the blood.</description>
+            <coordY>5</coordY>
+            <abilityRemove>
+                <li>RMSQ_Mending_Ability</li>
+            </abilityRemove>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <!-- FLAWS -->
+
+    <!-- MERITS -->
+    
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFBase" Name = "TBMFMeritBase" Abstract="True">
+            <coordX>6</coordX>
+            <unlocks>
+                <li>RMSQ_TBA_LearningTrackerTree</li>
+            </unlocks>
+            <prereqMode>Or</prereqMode>
+            <prereqs>
+                <li>RMSQ_Node_BabyTeeth</li>
+                <li>RMSQ_Node_BestialTemper</li>
+                <li>RMSQ_Node_MortalFrailty</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- CATENING BLOOD -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFMeritBase">
+            <defName>RMSQ_Node_CatenatingBlood</defName>
+            <label>Thin-Blood Merit\nCATENING BLOOD</label>
+            <description>Can create Blood Bonds, but last shorter</description>
+            <coordY>3</coordY>
+            <abilityGain>
+                <li>RMSQ_BloodBond_TB</li>
+            </abilityGain>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- DAY WALKER -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFMeritBase">
+            <defName>RMSQ_Node_DayWalker</defName>
+            <label>Thin-Blood Merit\nDAY WALKER</label>
+            <description>Able to walk in the sun</description>
+            <coordY>4</coordY>
+            <hediffRemove>
+                <li>RMSQ_SunDamage</li>
+            </hediffRemove>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <!-- VAMPIRIC RESILIENCE -->
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "TBMFMeritBase">
+            <defName>RMSQ_Node_VampiricResilience</defName>
+            <label>Thin-Blood Merit\nVAMPIRIC RESILIENCE</label>
+            <description>Take damage like a regular vampire.</description>
+            <coordY>5</coordY>
+            <statFactors>
+                <IncomingDamageFactor>0.5</IncomingDamageFactor>
+            </statFactors>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+	<!-- MERITS -->
+    
+<!-- THIN BLOOD -->
+
+</Defs>

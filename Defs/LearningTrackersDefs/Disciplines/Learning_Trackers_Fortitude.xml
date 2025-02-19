@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<!-- Fortitude -->
-    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
-		<defName>RMSQ_Node_Fortitude_ClanDiscipline</defName>
-		<description>Strengthens the user's physical and mental resistance.\n\nClan Discipline for: Gangrel, Hecata, Salubri, Ventrue</description>
-        <label>Clan Discipline\nFORTITUDE</label>
-		<coordY>6</coordY>
-        <prereqsHediff>
-		    <li><key>RMSQ_Hediff_ClanDiscipline_Fortitude</key><value>0</value></li>
-        </prereqsHediff>
-	</ItsSorceryFramework.LearningTreeNodeDef>
-
-    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
-		<defName>RMSQ_Node_Fortitude_NonClanDiscipline</defName>
-		<description>Strengthens the user's physical and mental resistance.</description>
-        <label>Non Clan Discipline\nFORTITUDE</label>
-        <coordY>6.5</coordY>
-        <exclusiveNodes>
-		    <li>RMSQ_Node_Fortitude_ClanDiscipline</li>
-	    </exclusiveNodes>
-	</ItsSorceryFramework.LearningTreeNodeDef>
+    
 
 	<!-- 1 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
 		<defName>RMSQ_Node_Fortitude_One</defName>
-		<label>FORTITUDE 1\nUnswayable Mind</label>
+		<label>FORTITUDE I\nUnswayable Mind</label>
     	<description>Mind and will get stronger against supernatural forces.</description>
-		<pointReq>1</pointReq>
-		<coordX>1</coordX>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
         <prereqMode>Or</prereqMode>
 		<prereqs>
-			<li>RMSQ_Node_Fortitude_ClanDiscipline</li>
-			<li>RMSQ_Node_Fortitude_NonClanDiscipline</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Salubri</li>
+			<li>RMSQ_Node_Ventrue</li>
+			<li>RMSQ_Node_Fortitude_Caitiff</li>
 		</prereqs>
 		<abilityGain>
 			<li>RMSQ_Unswayable_Mind</li>
@@ -42,10 +26,10 @@
 	<!-- 2 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
 		<defName>RMSQ_Node_Fortitude_Two</defName>
-		<label>FORTITUDE 2\nToughness</label>
+		<label>FORTITUDE II\nToughness</label>
     	<description>The vampire suffer less physical damage</description>
-		<pointReq>2</pointReq>
-		<coordX>2</coordX>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Fortitude_One</li>
 		</prereqs>
@@ -57,10 +41,10 @@
 	<!-- 3 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
 		<defName>RMSQ_Node_Fortitude_Three</defName>
-		<label>FORTITUDE 3\nFortify the Inner Façade</label>
+		<label>FORTITUDE III\nFortify the Inner Façade</label>
     	<description>Increasing the Difficulty of mental powers to read or pierce the mind</description>
-		<pointReq>3</pointReq>
-		<coordX>3</coordX>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Fortitude_Two</li>
 		</prereqs>
@@ -71,10 +55,10 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
 		<defName>RMSQ_Node_Fortitude_Three_Amalgam</defName>
-		<label>AMALGAM 3\nValeren</label>
+		<label>AMALGAM III\nValeren</label>
         <description>Mend an injured human or vampire.</description>
-		<pointReq>3</pointReq>
-		<coordX>3</coordX>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
 		<coordY>6.5</coordY>
 		<prereqMode>All</prereqMode>
 		<prereqs>
@@ -89,10 +73,10 @@
 	<!-- 4 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
 		<defName>RMSQ_Node_Fortitude_Four</defName>
-		<label>FORTITUDE 4\nDraught of Endurance</label>
+		<label>FORTITUDE IV\nDraught of Endurance</label>
     	<description>Turn their vitae into a Fortitude boost for others</description>
 		<pointReq>5</pointReq>
-		<coordX>4</coordX>
+		<coordX>3</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
 			<li>RMSQ_Node_Fortitude_Three</li>
@@ -106,10 +90,10 @@
 	<!-- 5 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "FortitudeBase">
 		<defName>RMSQ_Node_Fortitude_Five</defName>
-		<label>FORTITUDE 5\nProwess from Pain</label>
+		<label>FORTITUDE V\nProwess from Pain</label>
     	<description>The vampire suffers less pain</description>
-		<pointReq>8</pointReq>
-		<coordX>5</coordX>
+		<pointReq>6</pointReq>
+		<coordX>4</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
 			<li>RMSQ_Node_Fortitude_Four</li>

@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Name = "ClanNodesBase" Abstract="True">
+    	<learningTrackerDef>RMSQ_Unlocks_LearningTrackerTree</learningTrackerDef>
+        <description>This node is used for various check</description>
+        <pointReq>0</pointReq>
+        <coordX>0</coordX>
+        <unlocks>
+		    <li>RMSQ_Advantages_LearningTrackerTree</li>
+	    </unlocks>
+        <abilityGain>
+			<li>RMSQ_Mending_Ability</li>
+      		<li>RMSQ_ResistFrenzy_Ability</li>
+      		<li>RMSQ_BloodBond</li>
+      		<li>RMSQ_Kiss_Ability</li> 
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+<!-- CLANS -->
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Banu</defName>
+        <label>Banu Haquim</label>
+        <coordY>0</coordY>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Banu</key><value>0</value></li>
+	    </prereqsHediff>
+        <abilityRemove>
+			<li>RMSQ_Mending_Ability</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>RMSQ_MendingBanu_Ability</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Brujah</defName>
+        <label>Bruja</label>
+        <coordY>0.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Brujah</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Gangrel</defName>
+        <label>Gangrel</label>
+		<coordY>1</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Gangrel</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Hecata</defName>
+        <label>Hecata</label>
+		<coordY>1.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Hecata</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Lasombra</defName>
+        <label>Lasombra</label>
+		<coordY>2</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Lasombra</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Malkavian</defName>
+        <label>Malkavian</label>
+		<coordY>2.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Malkavian</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Ministry</defName>
+        <label>Ministry</label>
+		<coordY>3</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Ministry</key><value>0</value></li>
+	    </prereqsHediff>
+        <hediffRemove>
+		    <li>RMSQ_SunDamage</li>
+	    </hediffRemove>
+        <hediffAdd>
+		    <li><hediffDef>RMSQ_SunDamage_Ministry</hediffDef><severity>0</severity></li>
+	    </hediffAdd>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Nosferatu</defName>
+        <label>Nosferatu</label>
+        <coordY>3.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Nosferatu</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Ravnos</defName>
+        <label>Ravnos</label>
+		<coordY>4</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Ravnos</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Salubri</defName>
+        <label>Salubri</label>
+		<coordY>4.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Salubri</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Toreador</defName>
+        <label>Toreador</label>
+		<coordY>5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Toreador</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Tremere</defName>
+        <label>Tremere</label>
+		<coordY>5.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+			<li>RMSQ_Node_Toreador</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Tremere</key><value>0</value></li>
+	    </prereqsHediff>
+        <abilityRemove>
+			<li>RMSQ_BloodBond</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>RMSQ_BloodBond_Tremere</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Tzimisce</defName>
+        <label>Tzimisce</label>
+		<coordY>6</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+			<li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Tzimisce</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Ventrue</defName>
+        <label>Ventrue</label>
+		<coordY>6.5</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+			<li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li>                    
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Ventrue</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanNodesBase">
+		<defName>RMSQ_Node_Caitiff</defName>
+        <label>Caitiff</label>
+		<coordY>7</coordY>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+            <li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_Caitiff</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef>
+        <learningTrackerDef>RMSQ_Unlocks_LearningTrackerTree</learningTrackerDef>
+		<defName>RMSQ_Node_Thin_Blood</defName>
+        <label>Thin Blood</label>
+        <description>This node is used for various check</description>
+        <pointReq>0</pointReq>
+        <coordX>0</coordX>
+        <coordY>7.5</coordY>
+        <unlocks>
+		    <li>RMSQ_Advantages_LearningTrackerTree</li>
+	    </unlocks>
+        <abilityGain>
+			<li>RMSQ_Mending_Ability</li>
+      		<li>RMSQ_ResistFrenzy_Ability</li>
+      		<li>RMSQ_Kiss_Ability</li> 
+		</abilityGain>
+        <exclusiveNodes>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+			<li>RMSQ_Node_Caitiff</li> 
+		</exclusiveNodes>
+        <prereqsHediff>
+		    <li><key>RMSQ_ClanCurse_ThinBlood</key><value>0</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+<!-- CLANS -->
+
+<!-- NON CLAN DISCIPLINE -->
+    
+    <!-- ANIMALISM -->
+
+        <ItsSorceryFramework.LearningTreeNodeDef Name = "NonClanAnimalism" ParentName = "LearningTreeNodeBase" Abstract="True">
+            <learningTrackerDef>RMSQ_Unlocks_LearningTrackerTree</learningTrackerDef>
+            <description>This node unlock the relative Discipline level</description>
+            <coordY>0</coordY>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAnimalism">
+            <defName>RMSQ_Node_Non_Clan_Animalism_One</defName>
+            <label>Non Clan Discipline\nANIMALISM I</label>
+            <pointReq>1</pointReq>
+            <coordX>1</coordX>
+            <prereqMode>Or</prereqMode>
+            <prereqs>
+                <li>RMSQ_Node_Banu</li>
+                <li>RMSQ_Node_Brujah</li>
+                <li>RMSQ_Node_Hecata</li>
+                <li>RMSQ_Node_Lasombra</li>
+                <li>RMSQ_Node_Malkavian</li>
+                <li>RMSQ_Node_Ministry</li>
+                <li>RMSQ_Node_Salubri</li>
+                <li>RMSQ_Node_Toreador</li>
+                <li>RMSQ_Node_Tremere</li>            
+                <li>RMSQ_Node_Ventrue</li> 
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAnimalism">
+            <defName>RMSQ_Node_Non_Clan_Animalism_Two</defName>
+            <label>Non Clan Discipline\nANIMALISM II</label>
+            <coordX>1.75</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Animalism_One</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAnimalism">
+            <defName>RMSQ_Node_Non_Clan_Animalism_Three</defName>
+            <label>Non Clan Discipline\nANIMALISM III</label>
+            <coordX>2.5</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Animalism_Two</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAnimalism">
+            <defName>RMSQ_Node_Non_Clan_Animalism_Four</defName>
+            <label>Non Clan Discipline\nANIMALISM IV</label>
+            <coordX>3.25</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Animalism_Three</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAnimalism">
+            <defName>RMSQ_Node_Non_Clan_Animalism_Five</defName>
+            <label>Non Clan Discipline\nANIMALISM V</label>
+            <coordX>4</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Animalism_Four</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <!-- ANIMALISM -->
+    
+    <!-- AUSPEX -->
+
+        <ItsSorceryFramework.LearningTreeNodeDef Name = "NonClanAuspex" ParentName = "LearningTreeNodeBase" Abstract="True">
+            <learningTrackerDef>RMSQ_Unlocks_LearningTrackerTree</learningTrackerDef>
+            <description>This node unlock the relative Discipline level</description>
+            <coordY>0.5</coordY>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAuspex">
+            <defName>RMSQ_Node_Non_Clan_Auspex_One</defName>
+            <label>Non Clan Discipline\nAUSPEX I</label>
+            <pointReq>1</pointReq>
+            <coordX>1</coordX>
+            <prereqMode>Or</prereqMode>
+            <prereqs>
+                <li>RMSQ_Node_Banu</li>
+                <li>RMSQ_Node_Brujah</li>
+                <li>RMSQ_Node_Gangrel</li>
+                <li>RMSQ_Node_Lasombra</li>
+                <li>RMSQ_Node_Ministry</li>
+                <li>RMSQ_Node_Nosferatu</li>
+                <li>RMSQ_Node_Ravnos</li>
+                <li>RMSQ_Node_Tzimisce</li> 
+                <li>RMSQ_Node_Ventrue</li> 
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAuspex">
+            <defName>RMSQ_Node_Non_Clan_Auspex_Two</defName>
+            <label>Non Clan Discipline\nAUSPEX II</label>
+            <coordX>1.75</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Auspex_One</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAuspex">
+            <defName>RMSQ_Node_Non_Clan_Auspex_Three</defName>
+            <label>Non Clan Discipline\nAUSPEX III</label>
+            <coordX>2.5</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Auspex_Two</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAuspex">
+            <defName>RMSQ_Node_Non_Clan_Auspex_Four</defName>
+            <label>Non Clan Discipline\nAUSPEX IV</label>
+            <coordX>3.25</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Auspex_Three</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+        <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanAuspex">
+            <defName>RMSQ_Node_Non_Clan_Auspex_Five</defName>
+            <label>Non Clan Discipline\nAUSPEX V</label>
+            <coordX>4</coordX>
+            <prereqs>
+                <li>RMSQ_Node_Non_Clan_Auspex_Four</li>
+            </prereqs>
+        </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <!-- AUSPEX -->
+
+<!-- NON CLAN DISCIPLINE -->
+
+<!-- CAITIFF DISCIPLINES -->
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+        <defName>RMSQ_Node_Animalism_Caitiff</defName>
+        <label>Caitiff\nANIMALISM</label>
+    </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+        <defName>RMSQ_Node_Auspex_Caitiff</defName>
+        <label>Caitiff\nAUSPEX</label>
+        <coordY>0.5</coordY>
+    </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+        <defName>RMSQ_Node_Blood_Sorcery_Caitiff</defName>
+        <label>Caitiff\nBLOOD SORCERY</label>
+        <coordY>1</coordY>
+    </ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Celerity_Caitiff</defName>
+        <label>Caitiff\nCELERITY</label>
+        <coordY>1.5</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Dominate_Caitiff</defName>
+        <label>Caitiff\nDOMINATE</label>
+        <coordY>2</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Fortitude_Caitiff</defName>
+        <label>Caitiff\nFORTITUDE</label>
+        <coordY>2.5</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Obfuscate_Caitiff</defName>
+        <label>Caitiff\nOBFUSCATE</label>
+        <coordY>3</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Oblivion_Caitiff</defName>
+        <label>Caitiff\nOBLIVION</label>
+        <coordY>3.5</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Potence_Caitiff</defName>
+        <label>Caitiff\nPOTENCE</label>
+        <coordY>4</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Presence_Caitiff</defName>
+        <label>Caitiff\nPRESENCE</label>
+        <coordY>4.5</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+    
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "CaitiffDisciplineBase">
+		<defName>RMSQ_Node_Protean_Caitiff</defName>
+        <label>Caitiff\nPROTEAN</label>
+        <coordY>5</coordY>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+<!-- CAITIFF DISCIPLINES -->
+
+<!-- THIN BLOOD DISCIPLINES -->
+
+<!-- THIN BLOOD DISCIPLINES -->
+
+</Defs>

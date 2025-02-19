@@ -1,190 +1,251 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>   
-    <ThoughtDef>
-        <defName>RMSQ_VampireDuringTheDay</defName>
-        <workerClass>ThoughtWorker_IsDayForNightOwl</workerClass>
-        <requiredTraits>
-            <li>RMSQ_Trait_Banu_Haqim</li>
-            <li>RMSQ_Trait_Brujah</li>
-            <li>RMSQ_Trait_Gangrel</li>
-            <li>RMSQ_Trait_Hecata</li>
-            <li>RMSQ_Trait_Lasombra</li>
-            <li>RMSQ_Trait_Malkavian</li>
-            <li>RMSQ_Trait_Ministry</li>
-            <li>RMSQ_Trait_Nosferatu</li>
-            <li>RMSQ_Trait_Ravnos</li>
-            <li>RMSQ_Trait_Salubri</li>
-            <li>RMSQ_Trait_Toreador</li>
-            <li>RMSQ_Trait_Tremere</li>
-            <li>RMSQ_Trait_Tzimisce</li>
-            <li>RMSQ_Trait_Ventrue</li>
-            <li>RMSQ_Trait_Caitiff</li>
-            <!-- <li>RMSQ_Trait_Thin_Blood</li> -->
-        </requiredTraits>
-        <stages>
-            <li>
-                <label>Vampire during day</label>
-                <description>It's day i must hide and sleep</description>
-                <baseMoodEffect>-10</baseMoodEffect>
-            </li>
-        </stages>
-    </ThoughtDef>
-  
-    <ThoughtDef>
-        <defName>RMSQ_VampireDuringTheNight</defName>
-        <workerClass>ThoughtWorker_IsNightForNightOwl</workerClass>
-        <requiredTraits>
-            <li>RMSQ_Trait_Banu_Haqim</li>
-            <li>RMSQ_Trait_Brujah</li>
-            <li>RMSQ_Trait_Gangrel</li>
-            <li>RMSQ_Trait_Hecata</li>
-            <li>RMSQ_Trait_Lasombra</li>
-            <li>RMSQ_Trait_Malkavian</li>
-            <li>RMSQ_Trait_Ministry</li>
-            <li>RMSQ_Trait_Nosferatu</li>
-            <li>RMSQ_Trait_Ravnos</li>
-            <li>RMSQ_Trait_Salubri</li>
-            <li>RMSQ_Trait_Toreador</li>
-            <li>RMSQ_Trait_Tremere</li>
-            <li>RMSQ_Trait_Tzimisce</li>
-            <li>RMSQ_Trait_Ventrue</li>
-            <li>RMSQ_Trait_Caitiff</li>
-            <!-- <li>RMSQ_Trait_Thin_Blood</li> -->
-        </requiredTraits>
-        <stages>
-            <li>
-                <label>Vampire during night</label>
-                <description>Night. Good.</description>
-                <baseMoodEffect>16</baseMoodEffect>
-            </li>
-        </stages>
-    </ThoughtDef>
+
+    <!-- DAY NIGHT  -->
+
+        <ThoughtDef>
+            <defName>RMSQ_VampireDuringTheDay</defName>
+            <workerClass>ThoughtWorker_IsDayForNightOwl</workerClass>
+            <requiredTraits>
+                <li>RMSQ_Trait_Banu_Haqim</li>
+                <li>RMSQ_Trait_Brujah</li>
+                <li>RMSQ_Trait_Gangrel</li>
+                <li>RMSQ_Trait_Hecata</li>
+                <li>RMSQ_Trait_Lasombra</li>
+                <li>RMSQ_Trait_Malkavian</li>
+                <li>RMSQ_Trait_Ministry</li>
+                <li>RMSQ_Trait_Nosferatu</li>
+                <li>RMSQ_Trait_Ravnos</li>
+                <li>RMSQ_Trait_Salubri</li>
+                <li>RMSQ_Trait_Toreador</li>
+                <li>RMSQ_Trait_Tremere</li>
+                <li>RMSQ_Trait_Tzimisce</li>
+                <li>RMSQ_Trait_Ventrue</li>
+                <li>RMSQ_Trait_Caitiff</li>
+                <li>RMSQ_Trait_Thin_Blood</li>
+            </requiredTraits>
+            <stages>
+                <li>
+                    <label>Vampire during day</label>
+                    <description>It's day i must hide and sleep</description>
+                    <baseMoodEffect>-10</baseMoodEffect>
+                </li>
+            </stages>
+        </ThoughtDef>
     
+        <ThoughtDef>
+            <defName>RMSQ_VampireDuringTheNight</defName>
+            <workerClass>ThoughtWorker_IsNightForNightOwl</workerClass>
+            <requiredTraits>
+                <li>RMSQ_Trait_Banu_Haqim</li>
+                <li>RMSQ_Trait_Brujah</li>
+                <li>RMSQ_Trait_Gangrel</li>
+                <li>RMSQ_Trait_Hecata</li>
+                <li>RMSQ_Trait_Lasombra</li>
+                <li>RMSQ_Trait_Malkavian</li>
+                <li>RMSQ_Trait_Ministry</li>
+                <li>RMSQ_Trait_Nosferatu</li>
+                <li>RMSQ_Trait_Ravnos</li>
+                <li>RMSQ_Trait_Salubri</li>
+                <li>RMSQ_Trait_Toreador</li>
+                <li>RMSQ_Trait_Tremere</li>
+                <li>RMSQ_Trait_Tzimisce</li>
+                <li>RMSQ_Trait_Ventrue</li>
+                <li>RMSQ_Trait_Caitiff</li>
+                <li>RMSQ_Trait_Thin_Blood</li>
+            </requiredTraits>
+            <stages>
+                <li>
+                    <label>Vampire during night</label>
+                    <description>Night. Good.</description>
+                    <baseMoodEffect>16</baseMoodEffect>
+                </li>
+            </stages>
+        </ThoughtDef>
+    
+    <!-- DAY NIGHT  -->
+
     <!-- Siren -->
-    <ThoughtDef>
-        <defName>RMSQ_Siren_Thought</defName>
-        <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
-        <hediff>RMSQ_Siren_Hediff</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-            <li>
-                <label>Siren Kiss</label>
-                <baseOpinionOffset>3</baseOpinionOffset>
-            </li>
-        </stages>
-    </ThoughtDef>
+        <ThoughtDef>
+            <defName>RMSQ_Siren_Thought</defName>
+            <thoughtClass>Thought_SituationalSocial</thoughtClass>
+            <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
+            <hediff>RMSQ_Siren_Hediff</hediff>
+            <validWhileDespawned>true</validWhileDespawned>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <stages>
+                <li>
+                    <label>Siren Kiss</label>
+                    <baseOpinionOffset>3</baseOpinionOffset>
+                </li>
+            </stages>
+        </ThoughtDef>
+    
     <!-- Blood Bond -->
-    <ThoughtDef>
-        <defName>RMSQ_Blood_Bond_Master</defName>
-        <hediff>RMSQ_BloodBond_Master</hediff>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <validWhileDespawned>true</validWhileDespawned>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <stages>
-            <li>
-                <label>Master</label>
-                <description>Got myself a bloodbag</description>
-                <baseMoodEffect>8</baseMoodEffect>
-            </li>
-        </stages>
-    </ThoughtDef>
 
-    <ThoughtDef>
-        <defName>RMSQ_Blood_Bond</defName>
-        <hediff>RMSQ_BloodBond_Ghoul</hediff>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <validWhileDespawned>true</validWhileDespawned>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <stages>
-            <li>
-                <label>Ghoul</label>
-                <description>Will they embrace me soon?</description>
-                <baseMoodEffect>8</baseMoodEffect>
-            </li>
-        </stages>
-    </ThoughtDef>
+        <ThoughtDef>
+            <defName>RMSQ_Blood_Bond_Master</defName>
+            <hediff>RMSQ_BloodBond_Master</hediff>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <validWhileDespawned>true</validWhileDespawned>
+            <workerClass>ThoughtWorker_Hediff</workerClass>
+            <stages>
+                <li>
+                    <label>Master</label>
+                    <description>Got myself a bloodbag</description>
+                    <baseMoodEffect>8</baseMoodEffect>
+                </li>
+            </stages>
+        </ThoughtDef>
 
-    <ThoughtDef>
-        <defName>RMSQ_Blood_Bond_Opinion</defName>
-        <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
-        <hediff>RMSQ_BlondBond_Love</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-            <li>
-                <label>Blond Bond</label>
-                <baseOpinionOffset>5</baseOpinionOffset>
-            </li>
-        </stages>
-    </ThoughtDef>
+        <ThoughtDef>
+            <defName>RMSQ_Blood_Bond</defName>
+            <hediff>RMSQ_BloodBond_Ghoul</hediff>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <validWhileDespawned>true</validWhileDespawned>
+            <workerClass>ThoughtWorker_Hediff</workerClass>
+            <stages>
+                <li>
+                    <label>Ghoul</label>
+                    <description>Will they embrace me soon?</description>
+                    <baseMoodEffect>8</baseMoodEffect>
+                </li>
+            </stages>
+        </ThoughtDef>
+
+        <ThoughtDef>
+            <defName>RMSQ_Blood_Bond_Opinion</defName>
+            <thoughtClass>Thought_SituationalSocial</thoughtClass>
+            <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
+            <hediff>RMSQ_BlondBond_Love</hediff>
+            <validWhileDespawned>true</validWhileDespawned>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <stages>
+                <li>
+                    <label>Blond Bond</label>
+                    <baseOpinionOffset>5</baseOpinionOffset>
+                </li>
+            </stages>
+        </ThoughtDef>
+    <!-- Blood Bond -->
 
     <!-- Embrace -->
-    <ThoughtDef Name="LoveBaseThought">
-        <defName>RMSQ_Embrace_Opinion_Neonate</defName>
-        <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
-        <hediff>RMSQ_BlondBond_Love</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-            <li>
-                <label>Blond Bond</label>
-                <baseOpinionOffset>10</baseOpinionOffset>
-            </li>
-        </stages>
-    </ThoughtDef>
 
-    <ThoughtDef ParentName="LoveBaseThought">
-        <defName>RMSQ_Embrace_Opinion_Ancilla</defName>
-    </ThoughtDef>
+        <ThoughtDef Name="LoveBaseThought">
+            <defName>RMSQ_Embrace_Opinion_Neonate</defName>
+            <thoughtClass>Thought_SituationalSocial</thoughtClass>
+            <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
+            <hediff>RMSQ_BlondBond_Love</hediff>
+            <validWhileDespawned>true</validWhileDespawned>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <stages>
+                <li>
+                    <label>Blond Bond</label>
+                    <baseOpinionOffset>10</baseOpinionOffset>
+                </li>
+            </stages>
+        </ThoughtDef>
 
-    <ThoughtDef ParentName="LoveBaseThought">
-        <defName>RMSQ_Embrace_Opinion_Elder</defName>
-    </ThoughtDef>
+        <ThoughtDef ParentName="LoveBaseThought">
+            <defName>RMSQ_Embrace_Opinion_Ancilla</defName>
+        </ThoughtDef>
 
-    <ThoughtDef ParentName="LoveBaseThought">
-        <defName>RMSQ_Embrace_Opinion_Methuselah</defName>
-    </ThoughtDef>
+        <ThoughtDef ParentName="LoveBaseThought">
+            <defName>RMSQ_Embrace_Opinion_Elder</defName>
+        </ThoughtDef>
 
-    <ThoughtDef ParentName="LoveBaseThought">
-        <defName>RMSQ_Embrace_Opinion_Antediluvian</defName>
-    </ThoughtDef>
+        <ThoughtDef ParentName="LoveBaseThought">
+            <defName>RMSQ_Embrace_Opinion_Methuselah</defName>
+        </ThoughtDef>
+
+        <ThoughtDef ParentName="LoveBaseThought">
+            <defName>RMSQ_Embrace_Opinion_Antediluvian</defName>
+        </ThoughtDef>
+
+    <!-- Embrace -->
+
+    <!-- DISCIPLINES -->
+
+        <!-- Auspex -->
+        <ThoughtDef>
+            <defName>RMSQ_UnburdeningBestialSoul</defName>
+            <workerClass>ThoughtWorker_Hediff</workerClass>
+            <hediff>RMASQ_UnburdeningtheBestialSoul</hediff>
+            <validWhileDespawned>true</validWhileDespawned>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <stages>
+                <li>
+                    <label>Unburdening the Bestial Soul</label>
+                    <description>The beast is calm now</description>
+                    <baseMoodEffect>30</baseMoodEffect>
+                </li>
+            </stages>
+        </ThoughtDef>
     
-    <!-- Auspex -->
-    <ThoughtDef>
-        <defName>RMSQ_UnburdeningBestialSoul</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>RMASQ_UnburdeningtheBestialSoul</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-            <li>
-                <label>Unburdening the Bestial Soul</label>
-                <description>The beast is calm now</description>
-                <baseMoodEffect>30</baseMoodEffect>
-            </li>
-        </stages>
-    </ThoughtDef>
-  
-    <!-- Presence -->
-    <ThoughtDef>
-        <defName>RMSQ_LingeringKissThought</defName>
-        <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
-        <hediff>RMSQ_LingeringKiss</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <stages>
-            <li>
-                <label>Lingering Kiss</label>
-                <description>So much Lovin</description>
-                <baseOpinionOffset>30</baseOpinionOffset>
-                <baseMoodEffect>30</baseMoodEffect>
-            </li>
-        </stages>
-    </ThoughtDef>
+        <!-- Presence -->
+        <ThoughtDef>
+            <defName>RMSQ_LingeringKissThought</defName>
+            <thoughtClass>Thought_SituationalSocial</thoughtClass>
+            <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
+            <hediff>RMSQ_LingeringKiss</hediff>
+            <validWhileDespawned>true</validWhileDespawned>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <stages>
+                <li>
+                    <label>Lingering Kiss</label>
+                    <description>So much Lovin</description>
+                    <baseOpinionOffset>30</baseOpinionOffset>
+                    <baseMoodEffect>30</baseMoodEffect>
+                </li>
+            </stages>
+        </ThoughtDef>
+
+    <!-- DISCIPLINES -->
+
+    <!-- CLANS  -->
+
+        <ThoughtDef>
+            <defName>RMSQ_Dislike_Thinblood</defName>
+            <thoughtClass>Thought_SituationalSocial</thoughtClass>
+            <workerClass>EBSGFramework.ThoughtWorker_Gene_GeneSocial</workerClass>
+            <validWhileDespawned>true</validWhileDespawned>
+            <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+            <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+            <stages>
+                <li>
+                    <label>I hate Thin Blood</label>
+                    <baseOpinionOffset>-25</baseOpinionOffset>
+                </li>
+            </stages>
+            <modExtensions>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <checkedGenes>
+                        <li>RMSQ_Gene_ThinBlood</li>
+                    </checkedGenes>
+                    <nullifyingGenes>
+                        <li>RMSQ_Gene_ThinBlood</li>
+                    </nullifyingGenes>
+                    <requiredGenes>
+                        <li>RMSQ_Gene_Banu</li>
+                        <li>RMSQ_Gene_Brujah</li>
+                        <li>RMSQ_Gene_Gangrel</li>
+                        <li>RMSQ_Gene_Hecata</li>
+                        <li>RMSQ_Gene_Lasombra</li>
+                        <li>RMSQ_Gene_Malkavian</li>
+                        <li>RMSQ_Gene_Ministry</li>
+                        <li>RMSQ_Gene_Nosferatu</li>
+                        <li>RMSQ_Gene_Ravnos</li>
+                        <li>RMSQ_Gene_Salubri</li>
+                        <li>RMSQ_Gene_Toreador</li>
+                        <li>RMSQ_Gene_Tremere</li>           
+                        <li>RMSQ_Gene_Tzimisce</li> 
+                        <li>RMSQ_Gene_Ventrue</li> 
+                        <li>RMSQ_Gene_Caitiff</li>
+                    </requiredGenes>
+                </li>
+            </modExtensions>
+        </ThoughtDef>
+
+    <!-- CLANS  -->
 
 </Defs>

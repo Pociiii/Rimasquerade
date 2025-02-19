@@ -79,10 +79,10 @@
                     <xenotype>RMSQ_Xenotype_Caitiff</xenotype>
                     <pawnKind>Kindred_Player</pawnKind>
                 </li>
-                <!-- <li>
+                <li>
                     <xenotype>RMSQ_Xenotype_ThinBlood</xenotype>
                     <pawnKind>Kindred_Player</pawnKind>
-                </li> -->
+                </li>
             </overrideKinds>
             <xenotypeCounts>
                 <li>

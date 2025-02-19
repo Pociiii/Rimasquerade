@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- 1 -->
+    <ItsSorceryFramework.SorceryDef ParentName="PresenceBuff">
+    	<defName>RMSQ_Awe</defName>
+    	<label>Awe</label>
+    	<description>Improve Talking and Hearing</description>
+		<displayOrder>101</displayOrder>
+		<level>1</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_Awe_Hediff</hediffDef>
+				<psychic>false</psychic>
+				<onlyBrain>true</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<ItsSorceryFramework.SorceryDef ParentName="PresenceRanged">
+    	<defName>RMSQ_Eyes_of_the_Serpent</defName>
+    	<label>Eyes of the Serpent</label>
+    	<displayOrder>101.1</displayOrder>
+		<level>1</level>
+		<description>Immobilize a victim by making eye contact.</description>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>3</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+      		<targetParams>
+        		<canTargetAnimals>True</canTargetAnimals>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityEffectWithDuration">
+        		<compClass>CompAbilityEffect_Stun</compClass>
+				<psychic>false</psychic>
+        		<goodwillImpact>-15</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 2 -->
+	<ItsSorceryFramework.SorceryDef ParentName="PresenceRanged">
+    	<defName>RMSQ_Lingering_Kiss</defName>
+    	<label>Lingering Kiss</label>
+    	<displayOrder>102</displayOrder>
+		<level>2</level>
+		<description>Improve target opinion</description>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+		<verbProperties>
+      		<targetParams>
+				<canTargetAnimals>False</canTargetAnimals>
+				<onlyTargetColonistsOrPrisonersOrSlaves>true</onlyTargetColonistsOrPrisonersOrSlaves>
+      		</targetParams>
+   		</verbProperties>
+		<comps>
+      		<li Class="EBSGFramework.CompProperties_LoveTheCaster">
+                <hediffToApply>RMSQ_LingeringKiss</hediffToApply>
+				<psychic>True</psychic>
+            </li>
+            <li Class="CompProperties_AbilitySocialInteraction"> <!--This creates the log-->
+                <interactionDef>RMSQ_LingeringKissManipulation</interactionDef>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 3 -->
+	<ItsSorceryFramework.SorceryDef ParentName="PresenceRanged">
+    	<defName>RMSQ_Dread_Gaze</defName>
+    	<label>Dread Gaze</label>
+    	<description>Instill fear into a target to make them flee.</description>
+		<displayOrder>103</displayOrder>
+		<level>3</level>
+		<hostile>true</hostile>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+    	</statBases>
+    	<verbProperties>
+      		<targetParams>
+        		<canTargetPawns>false</canTargetPawns>
+        		<neverTargetIncapacitated>True</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveMentalState">
+        		<compClass>CompAbilityEffect_GiveMentalState</compClass>
+        		<stateDef>PanicFlee</stateDef>
+        		<psychic>false</psychic>
+        		<goodwillImpact>-75</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+	<ItsSorceryFramework.SorceryDef ParentName="PresenceRanged">
+    	<defName>RMSQ_Clear_the_Field</defName>
+    	<label>Clear the Field</label>
+    	<description>Clear a space in a calm and orderly manner.</description>
+		<displayOrder>103.1</displayOrder>
+		<level>3</level>
+		<hostile>true</hostile>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+      		<Ability_Duration>30</Ability_Duration>
+			<Ability_EffectRadius>3.9</Ability_EffectRadius>
+    	</statBases>
+    	<verbProperties>
+      		<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+        		<neverTargetIncapacitated>True</neverTargetIncapacitated>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveMentalState">
+        		<compClass>CompAbilityEffect_GiveMentalState</compClass>
+        		<stateDef>PanicFlee</stateDef>
+        		<psychic>false</psychic>
+        		<goodwillImpact>-75</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 4 -->
+	<ItsSorceryFramework.SorceryDef ParentName="PresenceTouch">
+    	<defName>RMSQ_Wingman</defName>
+    	<label>Wingman</label>
+    	<description>Extend Presence to nearby Kindred</description>
+    	<displayOrder>104</displayOrder>
+		<level>4</level>
+		<statBases>
+			<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+			<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_WingmanHediff</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+			<li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 5 -->
+	<ItsSorceryFramework.SorceryDef ParentName="PresenceRanged">
+    	<defName>RMSQ_Majesty</defName>
+    	<label>Majesty</label>
+    	<displayOrder>105</displayOrder>
+		<level>5</level>
+		<description>Everyone who looks at the user is dumbstruck for short time</description>
+		<hostile>true</hostile>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+      		<Ability_Duration>3</Ability_Duration>
+      		<Ability_EffectRadius>2.9</Ability_EffectRadius>
+    	</statBases>
+    	<verbProperties>
+      		<targetParams>
+        		<canTargetAnimals>True</canTargetAnimals>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+				<canTargetLocations>true</canTargetLocations>
+      		</targetParams>
+    	</verbProperties>
+    	<comps>
+      		<li Class = "CompProperties_AbilityEffectWithDuration">
+        		<compClass>CompAbilityEffect_Stun</compClass>
+				<psychic>false</psychic>
+        		<goodwillImpact>-15</goodwillImpact>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+</Defs>

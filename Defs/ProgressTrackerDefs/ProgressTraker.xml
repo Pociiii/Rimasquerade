@@ -5,12 +5,15 @@
 		<defName>RMSQ_ProgressTrackerRPG_Hediff_Kindred</defName>
 		<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
 		<label>Kindred</label>
-		<defaultLabelColor>(1,0,0)</defaultLabelColor>
+		<defaultLabelColor>(255, 215, 0)</defaultLabelColor>
 		<description>This Hediff keep track of your progress as a Vampire. Click on the Schemas button for more.</description>
 		<initialSeverity>1</initialSeverity>
 		<minSeverity>0</minSeverity>
 		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
 		<stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
         </stages>
 	</HediffDef>
 
@@ -36,15 +39,19 @@
 				<level>5</level>
 				<statOffsets>
                     <SocialImpact>0.01</SocialImpact>
-                    <EBSG_MoodFallRate>0.01</EBSG_MoodFallRate>	
 				</statOffsets>
+				<statFactorOffsets>
+                    <EBSG_MoodFallRate>0.01</EBSG_MoodFallRate>	
+				</statFactorOffsets>
 			</li>
 			<li>
 				<level>10</level>
 				<statOffsets>
                     <SocialImpact>0.01</SocialImpact>
-					<EBSG_MoodFallRate>0.02</EBSG_MoodFallRate>
 				</statOffsets>
+				<statFactorOffsets>
+                    <EBSG_MoodFallRate>0.02</EBSG_MoodFallRate>	
+				</statFactorOffsets>
 			</li>
 		</levelFactors>
 		<levelSpecifics>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
 	<GeneCategoryDef>
 		<defName>RMSQ_Category_Clans</defName>
 		<label>Clans</label>
@@ -12,794 +13,940 @@
 		<displayPriorityInXenotype>990</displayPriorityInXenotype>
 	</GeneCategoryDef>
 
-	<GeneDef Name="VampireGeneBase" Abstract="true">
+    <GeneDef Name="ThinBlood" Abstract="true">
 		<displayCategory>RMSQ_Category_Vitae</displayCategory>
 		<iconPath>Misc/Blood</iconPath>
 		<minAgeActive>3</minAgeActive>
-		<biostatCpx>13</biostatCpx>
-		<biostatArc>2</biostatArc>
-		<biostatMet>-5</biostatMet>
+		<biostatCpx>12</biostatCpx>
+		<biostatArc>1</biostatArc>
 		<selectionWeight>0</selectionWeight>
 		<marketValueFactor>2</marketValueFactor>
 	</GeneDef>
 
-	<!-- Vitae -->
-	<GeneDef ParentName="VampireGeneBase">
-		<defName>RMSQ_Gene_Vitae</defName>
-		<label>Vitae</label>
-		<displayOrderInCategory>1</displayOrderInCategory>
-		<description>Vitae, in vampire terminology, is blood. The blood is what sustains an undead body, although it doesn't produce it by itself, thus the reason vampires must take the blood of others in the form of feeding.</description>
-		<geneClass>Gene_Hemogen</geneClass>
-		<resourceGizmoType>GeneGizmo_ResourceHemogen</resourceGizmoType>
-    	<resourceLabel>Vitae</resourceLabel>
-    	<resourceGizmoThresholds>
-      		<li>0.25</li>
-      		<li>0.5</li>
-      		<li>0.75</li>
-    	</resourceGizmoThresholds>
-    	<showGizmoOnWorldView>true</showGizmoOnWorldView>
-    	<showGizmoWhenDrafted>true</showGizmoWhenDrafted>
-    	<resourceDescription>Vitae is the primal essence and energy of the Cainites, and also, for kindred, a source of immeasurable pleasure. The amount of Blood a vampire can absorb into his body, as well as the power he can drain from it in short notice, is determined by the vampire's generation. However, one thing is true among all: their undead bodies use a little amount of Blood each and every night to animate itself - when the Blood becomes scarce, a vampire becomes more inhumane and prone to Frenzy, giving way to their inner Beast</resourceDescription>
-		<resourceLossPerDay>0.1</resourceLossPerDay>
-		<neverGrayHair>true</neverGrayHair>
-		<skinColorOverride>(250, 250, 250)</skinColorOverride>
-		<biologicalAgeTickFactorFromAgeCurve>
-      		<points>
-       			<li>(13, 1)</li>
-       			<li>(18.5, 0)</li>
-      		</points>
-    	</biologicalAgeTickFactorFromAgeCurve>
-		<immuneToToxGasExposure>true</immuneToToxGasExposure>
-		<statOffsets>
-      		<ToxicResistance>1</ToxicResistance>
-    	</statOffsets>
-		<renderNodeProperties>
-      		<li Class="PawnRenderNodeProperties_Eye">
-      		  	<texPath>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Male/RedEyes_Male</texPath>
-      		  	<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Female/RedEyes_Female</texPathFemale>
-      		  	<anchorTag>RightEye</anchorTag>
-      		  	<rotDrawMode>Fresh, Rotting</rotDrawMode>
-      		  	<parentTagDef>Head</parentTagDef>
-      		  	<drawSize>0.2</drawSize>
-      		  	<side>Right</side>
-      		  	<drawData>
-      		  	  	<defaultData>
-      		  	  	  	<layer>54</layer>
-      		  	  	  	<offset>(0, 0, -0.25)</offset>
-      		  	  	</defaultData>
-      		  	</drawData>
-      		</li>
-      		<li Class="PawnRenderNodeProperties_Eye">
-      		  	<texPath>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Male/RedEyes_Male</texPath>
-      		  	<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Female/RedEyes_Female</texPathFemale>
-      		  	<anchorTag>LeftEye</anchorTag>
-      		  	<rotDrawMode>Fresh, Rotting</rotDrawMode>
-      		  	<parentTagDef>Head</parentTagDef>
-      		  	<drawSize>0.2</drawSize>
-      		  	<side>Left</side>
-      		  	<drawData>
-      		  	  	<defaultData>
-      		  	  	  <layer>54</layer>
-      		  	  	  <offset>(0, 0, -0.25)</offset>
-      		  	  	  <flip>true</flip>
-      		  	  	</defaultData>
-      		  	  	<dataWest>
-      		  	  	  <flip>false</flip>
-      		  	  	</dataWest>
-      		  	</drawData>
-      		</li>
-    	</renderNodeProperties>
-		<suppressedTraits>
-      		<li>
-        		<def>Pyromaniac</def>
-      		</li>
-      		<li>
-        		<def>Transhumanist</def>
-      		</li>
-      		<li>
-        		<def>Wimp</def>
-      		</li>
-      		<li>
-        		<def>Kind</def>
-      		</li>
-      		<li>
-        		<def>NightOwl</def>
-      		</li>
-      		<li>
-        		<def>Gourmand</def>
-      		</li>
-    	</suppressedTraits>
-		<symbolPack>
-			<wholeNameSymbols>
-        		<li><symbol>immortal</symbol></li>
-        		<li><symbol>methuselah</symbol></li>
-				<li><symbol>bloodfeeder</symbol></li>
-      		</wholeNameSymbols>
-			<prefixSymbols>
-				<li>
-          			<symbol>tox</symbol>
-          			<weight>3</weight>
-        		</li>
-				<li><symbol>hot</symbol></li>
-        		<li><symbol>heat</symbol></li>
-        		<li><symbol>sun</symbol></li>
-        		<li><symbol>sweat</symbol></li>
-        		<li><symbol>bake</symbol></li>
-				<li><symbol>cold</symbol></li>
-        		<li><symbol>cool</symbol></li>
-				<li><symbol>aggro</symbol></li>
-        		<li><symbol>hate</symbol></li>
-        		<li><symbol>fight</symbol></li>
-        		<li><symbol>destro</symbol></li>
-        		<li><symbol>barb</symbol></li>
-				<li><symbol>death</symbol></li>
-        		<li><symbol>dead</symbol></li>
-        		<li><symbol>still</symbol></li>
-        		<li><symbol>dark</symbol></li>
-        		<li><symbol>tunnel</symbol></li>
-        		<li><symbol>under</symbol></li>
-        		<li><symbol>cave</symbol></li>
-        		<li><symbol>crypt</symbol></li>
-        		<li><symbol>dim</symbol></li>
-        		<li><symbol>night</symbol></li>
-				<li><symbol>hemo</symbol></li>
-				<li><symbol>god</symbol></li>
-        		<li><symbol>deo</symbol></li>
-        		<li><symbol>deu</symbol></li>
-        		<li><symbol>methu</symbol></li>
-				<li><symbol>tough</symbol></li>
-        		<li><symbol>stout</symbol></li>
-        		<li><symbol>rough</symbol></li>
-        		<li><symbol>lump</symbol></li>
-        		<li><symbol>bruise</symbol></li>
-        		<li><symbol>stiff</symbol></li>
-        		<li><symbol>hard</symbol></li>
-        		<li><symbol>vigo</symbol></li>
-				<li><symbol>deaf</symbol></li>
-        		<li><symbol>blank</symbol></li>
-        		<li><symbol>null</symbol></li>
-        		<li><symbol>vac</symbol></li>
-        		<li><symbol>void</symbol></li>
-        		<li><symbol>nego</symbol></li>
-        		<li><symbol>nullo</symbol></li>
-            </prefixSymbols>
-            <suffixSymbols>
-                <li><symbol>life</symbol></li>
-                <li><symbol>clotter</symbol></li>
-                <li><symbol>tender</symbol></li>
-				<li><symbol>god</symbol></li>
-        		<li><symbol>deus</symbol></li>
-				<li><symbol>rester</symbol></li>
-				<li><symbol>fighter</symbol></li>
-            </suffixSymbols>
-        </symbolPack>
-		<customEffectDescriptions>
-			<li>Gives hemogen supply.</li>
-			<li>Tox gas immunity</li>
-			<li>Deep red-pigmented eyes</li>
-			<li>Sheer white skin</li>
-			<li>No age-related gray hair.</li>
-    	</customEffectDescriptions>
+    <GeneDef Name="Blood" Abstract="true">
+		<displayCategory>RMSQ_Category_Vitae</displayCategory>
+		<iconPath>Misc/Blood</iconPath>
+		<minAgeActive>3</minAgeActive>
+		<biostatCpx>12</biostatCpx>
+		<biostatArc>1</biostatArc>
+		<selectionWeight>0</selectionWeight>
+		<marketValueFactor>2</marketValueFactor>
 	</GeneDef>
 
-	<!-- Danger of the Blood -->
-	<GeneDef ParentName="VampireGeneBase">
-		<defName>RMSQ_Gene_DangeroftheBlood</defName>
-    	<label>Danger of the Blood</label>
-		<labelShortAdj>pyrophobic</labelShortAdj>
-		<description>Bullets merely bruise Kindred; swords crease their flesh. Even should they contract a disease from infected human blood, they pass it on to the kine they feed upon, while the germs die in their own system. However, a few means yet remain that inflict genuine harm upon a vampire.</description>
-		<prerequisite>RMSQ_Gene_Vitae</prerequisite>
-		<displayOrderInCategory>2</displayOrderInCategory>
-		<geneClass>EBSGFramework.HediffAdder</geneClass>
-		<socialFightChanceFactor>2</socialFightChanceFactor>
-		<aggroMentalBreakSelectionChanceFactor>999</aggroMentalBreakSelectionChanceFactor>
-		<prisonBreakMTBFactor>2</prisonBreakMTBFactor>
-		<causesNeed>RMSQ_Beast</causesNeed>
-		<dislikesSunlight>true</dislikesSunlight>
-		<mentalBreakMtbDays>0.1</mentalBreakMtbDays>
-		<mentalBreakDef>FireTerror</mentalBreakDef>
-		<exclusionTags>
-      		<li>Aggressive</li>
-    	</exclusionTags>
-		<statOffsets>
-            <MentalBreakThreshold>0.05</MentalBreakThreshold>
-        </statOffsets>
-		<statFactors>
-      		<Fertility>0</Fertility>
-    	</statFactors>
-		<damageFactors>
-      		<Flame>2</Flame>
-    	</damageFactors>
-		<disabledWorkTags>
-      		<li>Firefighting</li>
-    	</disabledWorkTags>
-		<customEffectDescriptions>
-      		<li>May have a mental breakdown when near fires.</li>
-      		<li>Take Fire damge if light level is 100%</li>
-    	</customEffectDescriptions>
-		<modExtensions>
-            <li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply>
-					<!--
-                    <li>
-						<hediff>RMSQ_Clock</hediff>
-					</li>
-                    -->
-					<li>
-						<hediff>RMSQ_Fangs</hediff>
-					</li>
-					<li>
-						<hediff>RMSQ_SunDamage</hediff>
-					</li>
-				</hediffsToApply>
-            </li>
-        </modExtensions>
-	</GeneDef>
-
-	<!-- Gift of the Blood -->
-	<GeneDef ParentName="VampireGeneBase">
-    	<defName>RMSQ_Gene_GiftoftheBlood</defName>
-    	<label>Gift of the Blood</label>
-    	<labelShortAdj>draining</labelShortAdj>
-    	<description>A vampire gains more than unlife from the blood they consume.\n\nVampiric Blood grants a number of abilities, Blush of life, Blood Surge, Mending and Discipline but must be cautious when employing these gifts, lest they be consumed by their Hunger.</description>
-		<displayOrderInCategory>3</displayOrderInCategory>
-    	<prerequisite>RMSQ_Gene_DangeroftheBlood</prerequisite>
-		<geneClass>EBSGFramework.Gene_CustomizableClotting</geneClass>
-		<preventPermanentWounds>true</preventPermanentWounds>
-		<statFactors>
-      		<IncomingDamageFactor>0.5</IncomingDamageFactor>
-    	</statFactors>
-		<statOffsets>
-			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
-			<ComfyTemperatureMax>50</ComfyTemperatureMax>
-    	</statOffsets>
-		<hediffGiversCannotGive>
-      		<li>Carcinoma</li>
-      		<li>HeartAttack</li>
-      		<li>BadBack</li>
-      		<li>Frail</li>
-      		<li>Cataract</li>
-      		<li>Dementia</li>
-      		<li>Alzheimers</li>
-      		<li>Asthma</li>
-      		<li>HeartArteryBlockage</li>
-    	</hediffGiversCannotGive>
-		<makeImmuneTo>
-      		<li>Flu</li>
-      		<li>Malaria</li>
-      		<li>SleepingSickness</li>
-      		<li>Plague</li>
-      		<li>WoundInfection</li>
-      		<li>LungRot</li>
-      		<li>GutWorms</li>
-      		<li>MuscleParasites</li>
-      		<li>OrganDecay</li>
-    	</makeImmuneTo>
-		<customEffectDescriptions>
-			<li>Bleeding wounds close very quickly</li>
-    	</customEffectDescriptions>
-		<modExtensions>
-            <li Class="EBSGFramework.EBSGExtension">
-                <clotCheckInterval>2500</clotCheckInterval>
-                <minTendQuality>0.8</minTendQuality>
-                <maxTendQuality>0.99</maxTendQuality>
-            </li>
-        </modExtensions>
-		<abilities>
-      		<li>RMSQ_Mending_Ability</li>
-      		<li>RMSQ_ResistFrenzy_Ability</li>
-      		<li>RMSQ_BloodBond</li>
-      		<li>RMSQ_Kiss_Ability</li> 
-    	</abilities>
-    	<descriptionHyperlinks>
-      		<AbilityDef>RMSQ_Mending_Ability</AbilityDef>
-      		<AbilityDef>RMSQ_ResistFrenzy_Ability</AbilityDef>
-      		<AbilityDef>RMSQ_BloodBond</AbilityDef>
-            <AbilityDef>RMSQ_Kiss_Ability</AbilityDef>
-    	</descriptionHyperlinks>
-  	</GeneDef>
-
-	<!-- Duskborn Origin -->
-	<!-- <GeneDef ParentName="VampireGeneBase">
-		<defName>RMSQ_Gene_DuskbornOrigin</defName>
-		<label>Duskborn Origin</label>
-		<description>Vampires with Thin Blood Syndrome possess exceptionally diluted vitae. This weakness however, manifests differently for each Thinblood, independant of generation, a 14th generation thin-blood may be too weak to even Blood Bond with a mortal, while a 15th might still retain the ability to Embrace, and vice versa. Among the dusk-born, the lines are blurred.</description>
-		<prerequisite>RMSQ_Gene_Vitae</prerequisite>
-		<displayOrderInCategory>4</displayOrderInCategory>
-		<geneClass>EBSGFramework.Gene_HemoHediffAdder</geneClass>
-		<resourceLabel>Vitae</resourceLabel>
-		<dislikesSunlight>true</dislikesSunlight>
-		<resourceLossPerDay>0.1</resourceLossPerDay>
-		<mentalBreakMtbDays>0.1</mentalBreakMtbDays>
-		<mentalBreakDef>FireTerror</mentalBreakDef>
-		<socialFightChanceFactor>2</socialFightChanceFactor>
-		<prisonBreakMTBFactor>0.4</prisonBreakMTBFactor>
-		<damageFactors>
-      		<Flame>2</Flame>
-    	</damageFactors>
-		<statFactors>
-      		<Fertility>0.01</Fertility>
-    	</statFactors>
-		<disabledWorkTags>
-      		<li>Firefighting</li>
-    	</disabledWorkTags>
-		<customEffectDescriptions>
-      		<li>May have a mental breakdown when near fires.</li>
-			<li>Take Fire damge if light level is 100%</li>
-			<li>Legend says some are still able to have childs</li>
-    	</customEffectDescriptions>
-		<modExtensions>
-            <li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply>
-					<li>
-						<hediff>RMSQ_Clock</hediff>
-					</li>
-					<li>
-						<hediff>RMSQ_Fangs</hediff>
-					</li>
-					<li>
-						<hediff>RMSQ_SunDamage</hediff>
-					</li>
-				</hediffsToApply>
-            </li>
-        </modExtensions>
-	</GeneDef> -->
-
-	<!-- Daydrinker -->
-	<!-- <GeneDef ParentName="VampireGeneBase">
-		<defName>RMSQ_Gene_Daydrinker</defName>
-		<label>Daydrinker</label>
-		<description>These vampires feel some aspects of the curse less acutely than other Kindred. They are less affected by sunlight, both physically and psychologically; they find it easier to wake during the day, and may survive exposure to dim sunlight unharmed, however many lack the natural resilience of vampires. They can hold down food for longer periods of time and even digest it as sustenance with a great deal of effort. Their bodies display some signs of true life; sometimes their hair or nails will grow, or they will feel the beat of their heart. A very small number have even fathered or, more rarely, given birth to children. Such offspring are known as dhampirs, and their nature is not well understood.</description>
-		<prerequisite>RMSQ_Gene_DuskbornOrigin</prerequisite>
-		<displayOrderInCategory>5</displayOrderInCategory>
-		<geneClass>EBSGFramework.Gene_CustomizableClotting</geneClass>
-		<preventPermanentWounds>true</preventPermanentWounds>
-		<statOffsets>
-			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
-			<ComfyTemperatureMax>50</ComfyTemperatureMax>
-    	</statOffsets>
-		<hediffGiversCannotGive>
-      		<li>Carcinoma</li>
-      		<li>HeartAttack</li>
-      		<li>BadBack</li>
-      		<li>Frail</li>
-      		<li>Cataract</li>
-      		<li>Dementia</li>
-      		<li>Alzheimers</li>
-      		<li>Asthma</li>
-      		<li>HeartArteryBlockage</li>
-    	</hediffGiversCannotGive>
-		<makeImmuneTo>
-      		<li>Flu</li>
-      		<li>Malaria</li>
-      		<li>SleepingSickness</li>
-      		<li>Plague</li>
-      		<li>WoundInfection</li>
-      		<li>LungRot</li>
-      		<li>GutWorms</li>
-      		<li>MuscleParasites</li>
-      		<li>OrganDecay</li>
-    	</makeImmuneTo>
-		<modExtensions>
-            <li Class="EBSGFramework.EBSGExtension">
-                <clotCheckInterval>5000</clotCheckInterval>
-                <minTendQuality>0.8</minTendQuality>
-                <maxTendQuality>0.99</maxTendQuality>
-            </li>
-        </modExtensions>
-		<customEffectDescriptions>
-			<li>Bleeding wounds close very quickly</li>
-    	</customEffectDescriptions>
-		<abilities>
-      		<li>RMSQ_Mending_Ability</li>
-      		<li>RMSQ_ResistFrenzy_Ability</li>
-      		<li>RMSQ_Kiss_Ability</li>
-    	</abilities>
-    	<descriptionHyperlinks>
-      		<AbilityDef>RMSQ_Mending_Ability</AbilityDef>
-      		<AbilityDef>RMSQ_ResistFrenzy_Ability</AbilityDef>
-            <AbilityDef>RMSQ_Kiss_Ability</AbilityDef>
-    	</descriptionHyperlinks>
-	</GeneDef> -->
-
-	<!-- Clans -->
-	<GeneDef ParentName="VampireGeneBase" Name="ClanGene" Abstract="true">
+    <GeneDef Name="Clans" Abstract="true">
 		<displayCategory>RMSQ_Category_Clans</displayCategory>
+        <minAgeActive>3</minAgeActive>
+        <biostatCpx>14</biostatCpx>
+		<biostatArc>1</biostatArc>
+		<biostatMet>-5</biostatMet>
+		<selectionWeight>0</selectionWeight>
+		<marketValueFactor>2</marketValueFactor>
 		<geneClass>EBSGFramework.Gene_HemoHediffAdder</geneClass>
-		<resourceLossPerDay>0.1</resourceLossPerDay>
+		<resourceLossPerDay>0.05</resourceLossPerDay>
 		<resourceLabel>Vitae</resourceLabel>
 		<prerequisite>RMSQ_Gene_GiftoftheBlood</prerequisite>
 		<exclusionTags>
-			<li>ClanGeneBase</li>
-			<li>Toughness</li>
+			<li>Clans</li>
+			<li>Fertility</li>
+			<li>Hemogenic</li>
+			<li>UVSensitivity</li>
+            <li>PsychicAbility</li>
+            <li>Toughness</li>
+            <li>MeleeDamage</li>
 			<li>Pain</li>
 			<li>Aggression</li>
 			<li>Sleep</li>
-			<li>MeleeDamage</li>
-			<li>UVSensitivity</li>
 			<li>MoveSpeed</li>
 			<li>FireResistant</li>
 			<li>KillThirst</li>
-			<li>Fertility</li>
-			<li>FireResistant</li>
-			<li>Hemogenic</li>
 		</exclusionTags>
-		<disabledWorkTags>
-      		<li>ManualDumb</li>
-    	</disabledWorkTags>
 		<customEffectDescriptions>
-      		<li>Food Need is disabled</li>
-      		<li>IMPORTANT: to change Clan select the desired premade Xenotype, DO NOT change the Gene manually!</li>
+      		<li>Is not affected by psychic phenomena</li>
+      		<li>!IMPORTANT! Change Clan by selsecting the premade xenotype, DO NOT change the gene</li>
     	</customEffectDescriptions>
-        <!-- <modExtensions>
-			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-        		<schema>RMSQ_Kindred_Schema</schema>
-      		</li>
-            <li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply>
-					<li>
-						<hediff>RMSQ_Hediff_Generation</hediff>
-					</li>
-				</hediffsToApply>
-            </li>
-        </modExtensions> -->
 	</GeneDef>
 
-	<!-- Banu Haqim -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Banu</defName>
-		<label>Banu Haqim</label>
-		<displayOrderInCategory>1</displayOrderInCategory>
-		<description>The Banu Haqim are a vampire clan torn between their thirst for Kindred blood and their passion for justice. As strict enforcers of laws and traditions, they Embrace mortals skilled in assessing threats and punishing transgressors. Each follows a strict code—whether moral, legal, or personal—often as a means to control their own hunger. Their instinct to judge and punish is innate, sometimes leading to diablerie. While historically tied to certain cultures, modern Banu Haqim come from diverse backgrounds, guided by various beliefs rather than a singular faith.</description>
-		<iconPath>ClansIcon/Banu Haqim</iconPath>
-		<statFactors>
-            <ResearchSpeed>1.2</ResearchSpeed>
-            <ArrestSuccessChance>1.2</ArrestSuccessChance>
-			<ReadingSpeed>1.2</ReadingSpeed>
-		</statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Banu_Haqim</def></li>
-    	</forcedTraits>
-        <modExtensions>
-            <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-        		<schema>RMSQ_Kindred_Schema</schema>
-      		</li>
-            <li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply>
+    <!-- VITAE GENES --> 
+
+        <!-- Vitae -->
+        <GeneDef>
+            <defName>RMSQ_Gene_Vitae</defName>
+            <label>Vitae</label>
+            <displayCategory>RMSQ_Category_Vitae</displayCategory>
+            <iconPath>Misc/Blood</iconPath>
+            <minAgeActive>3</minAgeActive>
+            <biostatMet>5</biostatMet>
+            <biostatCpx>12</biostatCpx>
+            <biostatArc>1</biostatArc>
+            <selectionWeight>0</selectionWeight>
+            <marketValueFactor>2</marketValueFactor>
+            <displayOrderInCategory>1</displayOrderInCategory>
+            <description>Vitae, in vampire terminology, is blood. The blood is what sustains an undead body, although it doesn't produce it by itself, thus the reason vampires must take the blood of others in the form of feeding.</description>
+            <geneClass>Gene_Hemogen</geneClass>
+            <resourceGizmoType>GeneGizmo_ResourceHemogen</resourceGizmoType>
+            <resourceLabel>Vitae</resourceLabel>
+            <neverGrayHair>true</neverGrayHair>
+            <resourceGizmoThresholds>
+                <li>0.25</li>
+                <li>0.5</li>
+                <li>0.75</li>
+            </resourceGizmoThresholds>
+            <showGizmoOnWorldView>true</showGizmoOnWorldView>
+            <showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+            <resourceDescription>Vitae is the primal essence and energy of the Cainites, and also, for kindred, a source of immeasurable pleasure. The amount of Blood a vampire can absorb into his body, as well as the power he can drain from it in short notice, is determined by the vampire's generation. However, one thing is true among all: their undead bodies use a little amount of Blood each and every night to animate itself - when the Blood becomes scarce, a vampire becomes more inhumane and prone to Frenzy, giving way to their inner Beast</resourceDescription>
+            <resourceLossPerDay>0.05</resourceLossPerDay>
+            <biologicalAgeTickFactorFromAgeCurve>
+                <points>
+                    <li>(13, 1)</li>
+                    <li>(18.5, 0)</li>
+                </points>
+            </biologicalAgeTickFactorFromAgeCurve>
+            <suppressedTraits>
+                <li><def>Pyromaniac</def></li>
+                <li><def>Transhumanist</def></li>
+                <li><def>Wimp</def></li>
+                <li><def>Kind</def></li>
+                <li><def>NightOwl</def></li>
+            </suppressedTraits>
+            <symbolPack>
+                <wholeNameSymbols>
+                    <li><symbol>bloodfeeder</symbol></li>
+                    <li><symbol>immortal</symbol></li>
+                    <li><symbol>methuselah</symbol></li>
+                </wholeNameSymbols>
+                <prefixSymbols>
+                    <li><symbol>god</symbol></li>
+                    <li><symbol>deo</symbol></li>
+                    <li><symbol>deu</symbol></li>
+                    <li><symbol>methu</symbol></li>
+                    <li><symbol>hemo</symbol></li>
+                    <li><symbol>blood</symbol></li>
+                    <li><symbol>vamp</symbol></li>
+                    <li><symbol>fang</symbol></li>
+                </prefixSymbols>
+                <suffixSymbols>
+                    <li><symbol>god</symbol></li>
+                    <li><symbol>deus</symbol></li>
+                    <li><symbol>fang</symbol></li>
+                    <li><symbol>eater</symbol></li>
+                    <li><symbol>ubus</symbol></li>
+                </suffixSymbols>
+            </symbolPack>
+            <customEffectDescriptions>
+                <li>Gives hemogen supply.</li>
+                <li>No age-related gray hair.</li>
+            </customEffectDescriptions>
+        </GeneDef>
+
+        <!-- Prices of the Blood -->
+        <GeneDef ParentName="Blood">
+            <defName>RMSQ_Gene_PricesoftheBlood</defName>
+            <label>Prices of the Blood</label>
+            <biostatMet>5</biostatMet>
+            <description>Bullets merely bruise Kindred; swords crease their flesh. Even should they contract a disease from infected human blood, they pass it on to the kine they feed upon, while the germs die in their own system. However, a few means yet remain that inflict genuine harm upon a vampire.</description>
+            <prerequisite>RMSQ_Gene_Vitae</prerequisite>
+            <displayOrderInCategory>2</displayOrderInCategory>
+            <geneClass>EBSGFramework.HediffAdder</geneClass>
+            <socialFightChanceFactor>2</socialFightChanceFactor>
+            <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+            <prisonBreakMTBFactor>0.2</prisonBreakMTBFactor>
+            <causesNeed>RMSQ_Beast</causesNeed>
+            <mentalBreakMtbDays>0.1</mentalBreakMtbDays>
+            <mentalBreakDef>RMSQ_TerrorFrenzy</mentalBreakDef>
+            <dislikesSunlight>true</dislikesSunlight>
+            <skinColorOverride>(250, 240, 240)</skinColorOverride>
+            <randomBrightnessFactor>0</randomBrightnessFactor>
+            <conditionalStatAffecters>
+                <li Class="ConditionalStatAffecter_InSunlight">
+                    <statFactors>
+                        <MoveSpeed>0.8</MoveSpeed>
+                    </statFactors>
+                </li>
+            </conditionalStatAffecters>
+            <statOffsets>
+                <MentalBreakThreshold>0.08</MentalBreakThreshold>
+            </statOffsets>
+            <statFactors>
+                <Fertility>0</Fertility>
+            </statFactors>
+            <damageFactors>
+                <Flame>4</Flame>
+            </damageFactors>
+            <disabledWorkTags>
+                <li>Firefighting</li>
+            </disabledWorkTags>
+            <customEffectDescriptions>
+                <li>May be subject to Terror Frenzy when near fires.</li>
+                <li>Take Burn damge if light level is 100%</li>
+                <li>Corpse-like skin</li>
+            </customEffectDescriptions>
+            <modExtensions>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Fangs</hediff>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_SunDamage</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+            <symbolPack>
+                <prefixSymbols>
+                    <li><symbol>white</symbol></li>
+                    <li><symbol>pale</symbol></li>
+                    <li><symbol>snow</symbol></li>
+                    <li><symbol>glow</symbol></li>
+                    <li><symbol>shine</symbol></li>
+                    <li><symbol>ala</symbol></li>
+                    <li><symbol>bleach</symbol></li>
+                    <li><symbol>pearl</symbol></li>
+                    <li><symbol>frost</symbol></li>
+                    <li><symbol>ice</symbol></li>
+                    <li><symbol>milk</symbol></li>
+                    <li><symbol>chalk</symbol></li>
+                    <li><symbol>salt</symbol></li>
+                    <li><symbol>dry</symbol></li>
+                    <li><symbol>tinder</symbol></li>
+                    <li><symbol>kindle</symbol></li>
+                    <li><symbol>dark</symbol></li>
+                    <li><symbol>tunnel</symbol></li>
+                    <li><symbol>under</symbol></li>
+                    <li><symbol>cave</symbol></li>
+                    <li><symbol>crypt</symbol></li>
+                    <li><symbol>dim</symbol></li>
+                    <li><symbol>night</symbol></li>
+                    <li><symbol>aggro</symbol></li>
+                    <li><symbol>hate</symbol></li>
+                    <li><symbol>fight</symbol></li>
+                    <li><symbol>destro</symbol></li>
+                    <li><symbol>barb</symbol></li>
+                </prefixSymbols>
+                <suffixSymbols>
+                    <li><symbol>ghost</symbol></li>
+                    <li><symbol>fighter</symbol></li>
+                </suffixSymbols>
+            </symbolPack>
+        </GeneDef>
+        
+        <!-- Gift of the Blood -->
+        <GeneDef ParentName="Blood">
+            <defName>RMSQ_Gene_GiftoftheBlood</defName>
+            <label>Gift of the Blood</label>
+            <labelShortAdj>draining</labelShortAdj>
+            <description>A vampire gains more than unlife from the blood they consume.\n\nVampiric Blood grants a number of abilities, Blush of life, Blood Surge, Mending and Discipline but must be cautious when employing these gifts, lest they be consumed by their Hunger.</description>
+            <displayOrderInCategory>3</displayOrderInCategory>
+            <prerequisite>RMSQ_Gene_PricesoftheBlood</prerequisite>
+            <geneClass>EBSGFramework.Gene_CustomizableClotting</geneClass>
+            <immuneToToxGasExposure>true</immuneToToxGasExposure>
+            <preventPermanentWounds>true</preventPermanentWounds>
+            <biostatMet>-5</biostatMet>
+            <statFactors>
+                <IncomingDamageFactor>0.5</IncomingDamageFactor>
+            </statFactors>
+            <statOffsets>
+                <ToxicResistance>1</ToxicResistance>
+                <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+                <ComfyTemperatureMax>50</ComfyTemperatureMax>
+            </statOffsets>
+            <hediffGiversCannotGive>
+                <li>Carcinoma</li>
+                <li>HeartAttack</li>
+                <li>BadBack</li>
+                <li>Frail</li>
+                <li>Cataract</li>
+                <li>Dementia</li>
+                <li>Alzheimers</li>
+                <li>Asthma</li>
+                <li>HeartArteryBlockage</li>
+            </hediffGiversCannotGive>
+            <makeImmuneTo>
+                <li>Flu</li>
+                <li>Malaria</li>
+                <li>SleepingSickness</li>
+                <li>Plague</li>
+                <li>WoundInfection</li>
+                <li>LungRot</li>
+                <li>GutWorms</li>
+                <li>MuscleParasites</li>
+                <li>OrganDecay</li>
+            </makeImmuneTo>
+            <customEffectDescriptions>
+                <li>Tox gas immunity</li>
+                <li>Bleeding wounds close very quickly</li>
+            </customEffectDescriptions>
+            <modExtensions>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <clotCheckInterval>2500</clotCheckInterval>
+                    <minTendQuality>0.8</minTendQuality>
+                    <maxTendQuality>0.99</maxTendQuality>
+                </li>
+            </modExtensions>
+            <symbolPack>
+                <prefixSymbols>
                     <li>
-						<hediff>RMSQ_Hediff_Generation</hediff>
-					</li>
-					<li>
-						<hediff>RMSQ_Hediff_ClanDiscipline_Blood_Sorcery</hediff>
-					</li>
-					<li>
-						<hediff>RMSQ_Hediff_ClanDiscipline_Celerity</hediff>
-					</li>
-					<li>
-						<hediff>RMSQ_Hediff_ClanDiscipline_Obfuscate</hediff>
-					</li>
-				</hediffsToApply>
-            </li>
-        </modExtensions>
-	</GeneDef>
-
-	<!-- Brujah -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Brujah</defName>
-		<label>Brujah</label>
-		<displayOrderInCategory>2</displayOrderInCategory>
-		<description>The Brujah are a clan of passionate rebels, embracing those who challenge the status quo and fight for their ideals. Guided by strength and conviction, they seek out fighters, thinkers, and troublemakers who refuse to back down. Often mistaken for mere anarchists, they are driven by a deeper purpose, whether revolution, justice, or personal freedom.</description>
-		<iconPath>ClansIcon/Brujah</iconPath>
-		<statFactors>
-            <SocialImpact>1.2</SocialImpact>
-            <SocialIdeoSpreadFrequencyFactor>1.2</SocialIdeoSpreadFrequencyFactor>
-        </statFactors>
-		<statOffsets>
-            <CertaintyLossFactor>2</CertaintyLossFactor>
-        </statOffsets>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Brujah</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Gangrel -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Gangrel</defName>
-		<label>Gangrel</label>
-		<displayOrderInCategory>3</displayOrderInCategory>
-		<description>The Gangrel are a clan of fierce survivors, styling themselves as apex predators. Equally at home in the wild and the city, they excel at endurance, adaptability, and shapeshifting. Embracing those who prove their strength, they foster a culture of rivalry without needless bloodshed. Often outcasts, they thrive in harsh conditions, valuing action over status and refusing to bow to authority.</description>
-		<iconPath>ClansIcon/Gangrel</iconPath>
-		<statFactors>
-            <PlantWorkSpeed>1.2</PlantWorkSpeed>
-            <PlantHarvestYield>1.2</PlantHarvestYield>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Gangrel</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Hecata -->
-    <GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Hecata</defName>
-		<label>Hecata</label>
-		<displayOrderInCategory>4</displayOrderInCategory>
-		<description>The Hecata are a clan of necromantic vampires obsessed with death, uniting various bloodlines under a single purpose. Masters of necromancy, they communicate with spirits and sell their services to the highest bidder. They prefer Embracing mortals from their own families or those with valuable connections. Due to their unification, all Hecata share the same core Disciplines, though some bloodlines may have unique variations. Their bane forces them to adopt alternative feeding methods, relying on blood bags, corpses, or their own kin—often leading to internal strife. Recently, they’ve allied with the Circulatory System to secure silent, compliant vessels.</description>
-		<iconPath>ClansIcon/Hecata</iconPath>
-		<statFactors>
-            <EntityStudyRate MayRequire="Ludeon.RimWorld.Anomaly">1.2</EntityStudyRate>
-            <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.2</StudyEfficiency>
-			<ReadingSpeed>1.2</ReadingSpeed>
-		</statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Hecata</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Lasombra -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Lasombra</defName>
-		<label>Lasombra</label>
-		<displayOrderInCategory>5</displayOrderInCategory>
-		<description>The Lasombra are ruthless manipulators who believe victory justifies any means. Preferring to operate from the shadows, they Embrace those who excel against the odds—survivors, power-seekers, and cunning leaders. Rejecting weakness and morality, they favor progeny who thrive in high-stakes environments, including those who rose to power in religious institutions for control rather than faith.</description>
-		<iconPath>ClansIcon/Lasombra</iconPath>
-		<statFactors>
-           	<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">1.2</ActivitySuppressionRate>
-            <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">1.2</ConversionPower>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Lasombra</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Malkavian -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Malkavian</defName>
-		<label>Malkavian</label>
-		<displayOrderInCategory>6</displayOrderInCategory>
-		<description>The Malkavians, known as Lunatics, perceive hidden truths through their fractured perspective. Their Embrace spans all walks of life, favoring those with "Second Sight," deep insight, or minds shaped by trauma. Often scholars, doctors, or visionaries, they unsettle other Kindred with their unpredictability. Some claim they share a psychic link called the Cobweb, binding them in unseen ways.</description>
-		<iconPath>ClansIcon/Malkavian</iconPath>
-		<statFactors>
-            <ResearchSpeed>1.2</ResearchSpeed>
-            <GeneralLaborSpeed>1.2</GeneralLaborSpeed>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Malkavian</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Ministry -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Ministry</defName>
-		<label>The Ministry</label>
-		<displayOrderInCategory>7</displayOrderInCategory>
-		<description>The Ministry, formerly the Followers of Set, are tempters and tricksters who use seduction, subterfuge, and liberation as weapons. They Embrace those skilled in persuasion, seeking to entrap and transform their targets. Rejected by the Camarilla, many joined the Anarchs, playing all sides in conflicts. Some collect ancient knowledge, while others patiently lead individuals to forbidden desires, believing everything has a price.</description>
-		<iconPath>ClansIcon/Ministry</iconPath>
-		<statFactors>
-            <DrugSellPriceImprovement>1.2</DrugSellPriceImprovement>
-            <ConversionPower>1.2</ConversionPower>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Ministry</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Nosferatu -->
-    <GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Nosferatu</defName>
-		<label>Nosferatu</label>
-		<displayOrderInCategory>8</displayOrderInCategory>
-		<description>The Nosferatu bear their curse outwardly, their bodies twisted by the Embrace. Shunned by society, they thrive as spies and information brokers, using animals and Obfuscate to remain unseen. Despite their monstrous looks, many are surprisingly compassionate. They blend in with disguises or retreat underground, avoiding attention from hunters and the Camarilla alike. After the fall of SchreckNET, they now rely on coded messages and dead languages to stay hidden.</description>
-		<iconPath>ClansIcon/Nosferatu</iconPath>
-		<statFactors>
-            <PawnBeauty>0.1</PawnBeauty>
-            <DeepDrillingSpeed>1.2</DeepDrillingSpeed>
-			<HackingSpeed>1.2</HackingSpeed>
-			<MiningSpeed>1.2</MiningSpeed>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Nosferatu</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Ravnos -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Ravnos</defName>
-		<label>Ravnos</label>
-		<displayOrderInCategory>9</displayOrderInCategory>
-		<description>The Ravnos are masters of deception, preferring trickery over brute force. They charm, mislead, and vanish before their true nature is revealed. Always on the move, their curse prevents them from resting in one place too long. Nearly wiped out during the Week of Nightmares, they are slowly rebuilding. Skilled at blending in, some pose as Caitiff to avoid suspicion, while others remain outsiders, selling their talents. To survive, they maintain multiple identities and havens, staying ahead of enemies and their own burning blood.</description>
-		<iconPath>ClansIcon/Ravnos</iconPath>
-		<statFactors>
-            <AnimalProductsSellImprovement>1.2</AnimalProductsSellImprovement>
-            <TradePriceImprovement>1.2</TradePriceImprovement>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Ravnos</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Salubri -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Salubri</defName>
-		<label>Salubri</label>
-		<displayOrderInCategory>10</displayOrderInCategory>
-		<description>The Salubri, once revered for their wisdom, now barely survive, their lineage marked by tragedy. They Embrace rarely, choosing childer with deep personal struggles, often seeking Golconda themselves. Their progenitor, Saulot, was devoured by the Tremere, leaving his descendants hunted and mistrusted. Recognizable by their third eye, they strive to heal and guide others, though rumors persist of soul-stealing powers. Shunned by both Camarilla and Anarchs, they face constant persecution, yet many remain devoted to helping others or hunting those consumed by the Beast.</description>
-		<iconPath>ClansIcon/Salubri</iconPath>
-		<statFactors>
-            <MedicalSurgerySuccessChance>1.2</MedicalSurgerySuccessChance>
-            <ResearchSpeed>1.2</ResearchSpeed>
-			<ReadingSpeed>1.2</ReadingSpeed>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Salubri</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Toreador -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Toreador</defName>
-		<label>Toreador</label>
-		<displayOrderInCategory>11</displayOrderInCategory>
-		<description>The Toreador are alluring and passionate vampires, drawn to beauty and artistic excellence. They Embrace artists, lovers, and visionaries, seeking inspiration to stir their deadened hearts. Masters of charm and seduction, they wield love as a weapon, influencing those around them. While they prize artistic brilliance, some impulsively Embrace out of fleeting obsession. Their ranks include painters, poets, actors, and anyone who redefines aesthetics, making the clan a diverse mix of talent, beauty, and ambition.</description>
-		<iconPath>ClansIcon/Toreador</iconPath>
-    	<missingGeneRomanceChanceFactor>1.2</missingGeneRomanceChanceFactor>
-		<statFactors>
-            <PawnBeauty>1.2</PawnBeauty>
-            <SocialImpact>1.2</SocialImpact>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Toreador</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Tremere -->
-    <GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Tremere</defName>
-		<label>Tremere</label>
-		<displayOrderInCategory>12</displayOrderInCategory>
-		<description>The Tremere, once powerful mages, became vampires through dark experiments seeking immortality. Masters of Blood Sorcery, they built a rigid hierarchy known as the Pyramid, enforcing loyalty through Blood Bonds. Their dominance crumbled in 2008 when the Second Inquisition destroyed their Prime Chantry, severing their Blood Bond and shattering their unity. Now fragmented, Tremere compete for lost power, serving other clans, the Camarilla, or their own ambitions. Obsessed with knowledge, they hoard secrets and trade occult expertise, believing true power lies not in rulership but in mastering the unseen forces that shape the world.</description>
-		<iconPath>ClansIcon/Tremere</iconPath>
-		<statFactors>
-            <ResearchSpeed>1.2</ResearchSpeed>
-            <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.2</StudyEfficiency>
-			<ReadingSpeed>1.2</ReadingSpeed>
-		</statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Tremere</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Tzimisce -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Tzimisce</defName>
-		<label>Tzimisce</label>
-		<displayOrderInCategory>13</displayOrderInCategory>
-		<description>The Tzimisce are possessive and domineering, obsessed with ownership—whether of land, mortals, or even their own flesh. Masters of Vicissitude, they reshape bodies and stretch the limits of vampirism, sometimes merging with their domains. Once key figures in the Anarch Revolt and Sabbat, their elders cling to power while younger members seek new identities, often aligning with Anarchs or, occasionally, the Camarilla. Feared for their cunning and transformative abilities, the Dragons remain enigmatic and unsettling figures in Kindred society.</description>
-		<iconPath>ClansIcon/Tzimisce</iconPath>
-		<statFactors>
-            <ButcheryFleshSpeed>1.2</ButcheryFleshSpeed>
-            <ButcheryFleshEfficiency>1.2</ButcheryFleshEfficiency>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Tzimisce</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Ventrue -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Ventrue</defName>
-		<label>Ventrue</label>
-		<displayOrderInCategory>14</displayOrderInCategory>
-		<description>The Ventrue, known as the Clan of Kings, see themselves as the rightful rulers of Kindred society. Selecting progeny from the powerful and influential, they have long dominated leadership, from ancient god-kings to modern financiers. Though their grip is slipping, they fight fiercely to maintain control. As the backbone of the Camarilla, they enforce order from the shadows, ensuring the Masquerade endures. Viewed as tyrants by some and saviors by others, the Ventrue remain the establishment that holds vampire society together.</description>
-		<iconPath>ClansIcon/Ventrue</iconPath>
-		<statFactors>
-            <SocialImpact>1.2</SocialImpact>
-            <NegotiationAbility>1.2</NegotiationAbility>
-            <TradePriceImprovement>1.2</TradePriceImprovement>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Ventrue</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Caitiff -->
-	<GeneDef ParentName="ClanGene">
-		<defName>RMSQ_Gene_Caitiff</defName>
-		<label>Caitiff</label>
-		<displayOrderInCategory>15</displayOrderInCategory>
-		<description>Caitiff, the clanless vampires, are scorned for their lack of lineage yet feared for their unpredictability. Free from ancestry and expectations, they carve their own path as survivors and outcasts. While often abandoned, some are deliberately Embraced for their resilience. Highly individualistic, they lack a shared identity, yet their growing numbers make them an undeniable force in modern nights—ranked just above the Thin-bloods in Kindred society.</description>
-		<iconPath>ClansIcon/Caitiff</iconPath>
-		<statFactors>
-            <GlobalLearningFactor>1.2</GlobalLearningFactor>
-            <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Caitiff</def></li>
-    	</forcedTraits>
-	</GeneDef>
-
-	<!-- Thin Blood -->
-	<!-- <GeneDef ParentName="VampireGeneBase">
-		<defName>RMSQ_Gene_ThinBlood</defName>
-		<label>Thin Blood</label>
-		<displayCategory>RMSQ_Category_Clans</displayCategory>
-		<geneClass>EBSGFramework.Gene_HemoHediffAdder</geneClass>
-		<resourceLossPerDay>0.1</resourceLossPerDay>
-		<resourceLabel>Vitae</resourceLabel>
-		<exclusionTags>
-			<li>ClanGeneBase</li>
-			<li>Toughness</li>
-			<li>Pain</li>
-			<li>Aggression</li>
-			<li>Sleep</li>
-			<li>MeleeDamage</li>
-			<li>UVSensitivity</li>
-			<li>MoveSpeed</li>
-			<li>FireResistant</li>
-			<li>KillThirst</li>
-			<li>Fertility</li>
-			<li>FireResistant</li>
-			<li>Hemogenic</li>
-		</exclusionTags>
-		<disabledWorkTags>
-      		<li>ManualDumb</li>
-    	</disabledWorkTags>
-		<customEffectDescriptions>
-      		<li>Food Need is disabled</li>
-      		<li>IMPORTANT: to change Clan select the desired premade Xenotype, DO NOT change the Gene manually!</li>
-    	</customEffectDescriptions>
-        <displayOrderInCategory>16</displayOrderInCategory>
-		<description>Thin-bloods, caught between vampire and mortal, are pitied, feared, and despised. Clanless and of high generation, they are seen as mistakes and threats to the Masquerade, often hunted or branded by the Camarilla. Yet, they adapt—banding together, resisting sunlight, and wielding unpredictable powers. Some seek to escape their fate, either through diablerie to become full vampires or by reclaiming mortality, though both paths carry great risk. Despite their low status, the Duskborn are growing in number, challenging the very foundations of Kindred society.</description>
-		<iconPath>ClansIcon/Thin Blood</iconPath>
-		<prerequisite>RMSQ_Gene_Daydrinker</prerequisite>
-		<statFactors>
-            <DrugSynthesisSpeed>1.2</DrugSynthesisSpeed>
-            <DrugCookingSpeed>1.2</DrugCookingSpeed>
-        </statFactors>
-        <forcedTraits>
-      		<li><def>RMSQ_Trait_Thin_Blood</def></li>
-    	</forcedTraits>
-    	<modExtensions>
-			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-        		<schema>RMSQ_Thin_Blood_Schema</schema>
-      		</li>
-            <li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply>
-					<li>
-						<hediff>RMSQ_Hediff_ThinBlood</hediff>
-					</li>
-				</hediffsToApply>
-            </li>
-        </modExtensions>
-	</GeneDef> -->
-
-	<HediffDef ParentName="AddedBodyPartBase">
-        <defName>RMSQ_Fangs</defName>
-        <label>Fangs</label>
-        <description>Add a bite attack using your fangs\n\nUsed automatically while using the default Melee Attack</description>
-        <defaultInstallPart>Jaw</defaultInstallPart>
-		<defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
-		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
-		<addedPartProps>
-            <solid>true</solid>
-        </addedPartProps>
-        <comps>
-            <li Class="HediffCompProperties_DisappearsOnDeath"/>
-            <li Class="HediffCompProperties_VerbGiver">
-                <tools>
-                    <li> 
-                        <label>fangs</label>
-                        <capacities>
-                            <li>Bite</li>
-                        </capacities>
-                        <power>15</power>
-                        <cooldownTime>2</cooldownTime>
-                        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <symbol>tox</symbol>
+                    <weight>3</weight>
                     </li>
-                </tools>
-            </li>
-        </comps>
-    </HediffDef>
-	
+                    <li><symbol>dull</symbol></li>
+                    <li><symbol>flat</symbol></li>
+                </prefixSymbols>
+            </symbolPack>
+        </GeneDef>
+
+        <!-- Duskborn Origin -->
+        <GeneDef ParentName="ThinBlood">
+            <defName>RMSQ_Gene_DuskbornOrigin</defName>
+            <label>Duskborn Origin</label>
+            <description>Vampires with Thin Blood Syndrome possess exceptionally diluted vitae. This weakness however, manifests differently for each Thinblood, independant of generation.</description>
+            <biostatMet>5</biostatMet>
+            <prerequisite>RMSQ_Gene_Vitae</prerequisite>
+            <displayOrderInCategory>4</displayOrderInCategory>
+            <geneClass>EBSGFramework.Gene_HemoHediffAdder</geneClass>
+            <resourceLabel>Vitae</resourceLabel>
+            <dislikesSunlight>true</dislikesSunlight>
+            <resourceLossPerDay>0.05</resourceLossPerDay>
+            <mentalBreakMtbDays>0.1</mentalBreakMtbDays>
+            <mentalBreakDef>RMSQ_TerrorFrenzy</mentalBreakDef>
+            <socialFightChanceFactor>2</socialFightChanceFactor>
+            <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+            <prisonBreakMTBFactor>0.2</prisonBreakMTBFactor>
+            <skinColorOverride>(250, 240, 240)</skinColorOverride>
+            <randomBrightnessFactor>0</randomBrightnessFactor>
+            <conditionalStatAffecters>
+                <li Class="ConditionalStatAffecter_InSunlight">
+                    <statFactors>
+                        <MoveSpeed>0.9</MoveSpeed>
+                    </statFactors>
+                </li>
+            </conditionalStatAffecters>
+            <damageFactors>
+                <Flame>2</Flame>
+            </damageFactors>
+            <statFactors>
+                <Fertility>0.01</Fertility>
+            </statFactors>
+            <disabledWorkTags>
+                <li>Firefighting</li>
+            </disabledWorkTags>
+            <customEffectDescriptions>
+                <li>May be subject to Terror Frenzy when near fires.</li>
+                <li>Take Fire damge if light level is 100%</li>
+                <li>Legend says some are still able to have childs</li>
+                <li>Corpse-like skin</li>
+            </customEffectDescriptions>
+            <modExtensions>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Fangs</hediff>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_SunDamage</hediff>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_ThinBlood</hediff>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>0</severity>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+            <symbolPack>
+                <prefixSymbols>
+                    <li><symbol>white</symbol></li>
+                    <li><symbol>pale</symbol></li>
+                    <li><symbol>snow</symbol></li>
+                    <li><symbol>glow</symbol></li>
+                    <li><symbol>shine</symbol></li>
+                    <li><symbol>ala</symbol></li>
+                    <li><symbol>bleach</symbol></li>
+                    <li><symbol>pearl</symbol></li>
+                    <li><symbol>frost</symbol></li>
+                    <li><symbol>ice</symbol></li>
+                    <li><symbol>milk</symbol></li>
+                    <li><symbol>chalk</symbol></li>
+                    <li><symbol>salt</symbol></li>
+                    <li><symbol>dry</symbol></li>
+                    <li><symbol>tinder</symbol></li>
+                    <li><symbol>kindle</symbol></li>
+                    <li><symbol>dark</symbol></li>
+                    <li><symbol>tunnel</symbol></li>
+                    <li><symbol>under</symbol></li>
+                    <li><symbol>cave</symbol></li>
+                    <li><symbol>crypt</symbol></li>
+                    <li><symbol>dim</symbol></li>
+                    <li><symbol>night</symbol></li>
+                    <li><symbol>aggro</symbol></li>
+                    <li><symbol>hate</symbol></li>
+                    <li><symbol>fight</symbol></li>
+                    <li><symbol>destro</symbol></li>
+                    <li><symbol>barb</symbol></li>
+                </prefixSymbols>
+                <suffixSymbols>
+                    <li><symbol>ghost</symbol></li>
+                    <li><symbol>fighter</symbol></li>
+                </suffixSymbols>
+            </symbolPack>
+        </GeneDef>
+
+        <!-- Daydrinker -->
+        <GeneDef ParentName="ThinBlood">
+            <defName>RMSQ_Gene_Daydrinker</defName>
+            <label>Daydrinker</label>
+            <description>These vampires feel some aspects of the curse less acutely than other Kindred. They are less affected by sunlight, both physically and psychologically; they find it easier to wake during the day, and may survive exposure to dim sunlight unharmed, however many lack the natural resilience of vampires.</description>
+            <biostatMet>-5</biostatMet>
+            <prerequisite>RMSQ_Gene_DuskbornOrigin</prerequisite>
+            <displayOrderInCategory>5</displayOrderInCategory>
+            <geneClass>EBSGFramework.Gene_CustomizableClotting</geneClass>
+            <preventPermanentWounds>true</preventPermanentWounds>
+            <statOffsets>
+                <ToxicResistance>1</ToxicResistance>
+                <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+                <ComfyTemperatureMax>50</ComfyTemperatureMax>
+            </statOffsets>
+            <hediffGiversCannotGive>
+                <li>Carcinoma</li>
+                <li>HeartAttack</li>
+                <li>BadBack</li>
+                <li>Frail</li>
+                <li>Cataract</li>
+                <li>Dementia</li>
+                <li>Alzheimers</li>
+                <li>Asthma</li>
+                <li>HeartArteryBlockage</li>
+            </hediffGiversCannotGive>
+            <makeImmuneTo>
+                <li>Flu</li>
+                <li>Malaria</li>
+                <li>SleepingSickness</li>
+                <li>Plague</li>
+                <li>WoundInfection</li>
+                <li>LungRot</li>
+                <li>GutWorms</li>
+                <li>MuscleParasites</li>
+                <li>OrganDecay</li>
+            </makeImmuneTo>
+            <modExtensions>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <clotCheckInterval>5000</clotCheckInterval>
+                    <minTendQuality>0.8</minTendQuality>
+                    <maxTendQuality>0.99</maxTendQuality>
+                </li>
+            </modExtensions>
+            <customEffectDescriptions>
+                <li>Tox gas immunity</li>
+                <li>Bleeding wounds close very quickly</li>
+            </customEffectDescriptions>
+        </GeneDef>
+
+    <!-- VITAE GENES -->
+
+    <!-- CLANS GENES -->
+
+        <!-- Banu Haqim -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Banu</defName>
+            <label>Banu Haqim</label>
+            <displayOrderInCategory>1</displayOrderInCategory>
+            <description>The Banu Haqim are a vampire clan torn between their thirst for Kindred blood and their passion for justice. As strict enforcers of laws and traditions, they Embrace mortals skilled in assessing threats and punishing transgressors. Each follows a strict code—whether moral, legal, or personal—often as a means to control their own hunger. Their instinct to judge and punish is innate, sometimes leading to diablerie. While historically tied to certain cultures, modern Banu Haqim come from diverse backgrounds, guided by various beliefs rather than a singular faith.</description>
+            <iconPath>ClansIcon/Banu Haqim</iconPath>
+            <statFactors>
+                <ResearchSpeed>1.25</ResearchSpeed>
+                <ArrestSuccessChance>1.25</ArrestSuccessChance>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Banu_Haqim</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Banu</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Brujah -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Brujah</defName>
+            <label>Brujah</label>
+            <displayOrderInCategory>2</displayOrderInCategory>
+            <description>The Brujah are a clan of passionate rebels, embracing those who challenge the status quo and fight for their ideals. Guided by strength and conviction, they seek out fighters, thinkers, and troublemakers who refuse to back down. Often mistaken for mere anarchists, they are driven by a deeper purpose, whether revolution, justice, or personal freedom.</description>
+            <iconPath>ClansIcon/Brujah</iconPath>
+            <statFactors>
+                <SocialImpact>1.25</SocialImpact>
+                <SocialIdeoSpreadFrequencyFactor>1.25</SocialIdeoSpreadFrequencyFactor>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Brujah</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Brujah</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Gangrel -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Gangrel</defName>
+            <label>Gangrel</label>
+            <displayOrderInCategory>3</displayOrderInCategory>
+            <description>The Gangrel are a clan of fierce survivors, styling themselves as apex predators. Equally at home in the wild and the city, they excel at endurance, adaptability, and shapeshifting. Embracing those who prove their strength, they foster a culture of rivalry without needless bloodshed. Often outcasts, they thrive in harsh conditions, valuing action over status and refusing to bow to authority.</description>
+            <iconPath>ClansIcon/Gangrel</iconPath>
+            <statFactors>
+                <PlantWorkSpeed>1.25</PlantWorkSpeed>
+                <PlantHarvestYield>1.25</PlantHarvestYield>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Gangrel</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Gangrel</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Hecata -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Hecata</defName>
+            <label>Hecata</label>
+            <displayOrderInCategory>4</displayOrderInCategory>
+            <description>The Hecata are a clan of necromantic vampires obsessed with death, uniting various bloodlines under a single purpose. Masters of necromancy, they communicate with spirits and sell their services to the highest bidder. They prefer Embracing mortals from their own families or those with valuable connections. Due to their unification, all Hecata share the same core Disciplines, though some bloodlines may have unique variations. Their bane forces them to adopt alternative feeding methods, relying on blood bags, corpses, or their own kin—often leading to internal strife. Recently, they’ve allied with the Circulatory System to secure silent, compliant vessels.</description>
+            <iconPath>ClansIcon/Hecata</iconPath>
+            <statFactors>
+                <EntityStudyRate>1.25</EntityStudyRate>
+                <StudyEfficiency>1.25</StudyEfficiency>
+                
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Hecata</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Hecata</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Lasombra -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Lasombra</defName>
+            <label>Lasombra</label>
+            <displayOrderInCategory>5</displayOrderInCategory>
+            <description>The Lasombra are ruthless manipulators who believe victory justifies any means. Preferring to operate from the shadows, they Embrace those who excel against the odds—survivors, power-seekers, and cunning leaders. Rejecting weakness and morality, they favor progeny who thrive in high-stakes environments, including those who rose to power in religious institutions for control rather than faith.</description>
+            <iconPath>ClansIcon/Lasombra</iconPath>
+            <statFactors>
+                <ActivitySuppressionRate>1.25</ActivitySuppressionRate>
+                <ConversionPower>1.25</ConversionPower>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Lasombra</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Lasombra</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Malkavian -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Malkavian</defName>
+            <label>Malkavian</label>
+            <displayOrderInCategory>6</displayOrderInCategory>
+            <description>The Malkavians, known as Lunatics, perceive hidden truths through their fractured perspective. Their Embrace spans all walks of life, favoring those with "Second Sight," deep insight, or minds shaped by trauma. Often scholars, doctors, or visionaries, they unsettle other Kindred with their unpredictability. Some claim they share a psychic link called the Cobweb, binding them in unseen ways.</description>
+            <iconPath>ClansIcon/Malkavian</iconPath>
+            <statFactors>
+                <ResearchSpeed>1.25</ResearchSpeed>
+                <GeneralLaborSpeed>1.25</GeneralLaborSpeed>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Malkavian</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Malkavian</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Ministry -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Ministry</defName>
+            <label>The Ministry</label>
+            <displayOrderInCategory>7</displayOrderInCategory>
+            <description>The Ministry, formerly the Followers of Set, are tempters and tricksters who use seduction, subterfuge, and liberation as weapons. They Embrace those skilled in persuasion, seeking to entrap and transform their targets. Rejected by the Camarilla, many joined the Anarchs, playing all sides in conflicts. Some collect ancient knowledge, while others patiently lead individuals to forbidden desires, believing everything has a price.</description>
+            <iconPath>ClansIcon/Ministry</iconPath>
+            <statFactors>
+                <DrugSellPriceImprovement>1.25</DrugSellPriceImprovement>
+                <ConversionPower>1.25</ConversionPower>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Ministry</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Ministry</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Nosferatu -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Nosferatu</defName>
+            <label>Nosferatu</label>
+            <displayOrderInCategory>8</displayOrderInCategory>
+            <description>The Nosferatu bear their curse outwardly, their bodies twisted by the Embrace. Shunned by society, they thrive as spies and information brokers, using animals and Obfuscate to remain unseen. Despite their monstrous looks, many are surprisingly compassionate. They blend in with disguises or retreat underground, avoiding attention from hunters and the Camarilla alike. After the fall of SchreckNET, they now rely on coded messages and dead languages to stay hidden.</description>
+            <iconPath>ClansIcon/Nosferatu</iconPath>
+            <statFactors>
+                <AnimalGatherSpeed>1.25</AnimalGatherSpeed>
+                <MiningSpeed>1.25</MiningSpeed>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Nosferatu</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Nosferatu</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Ravnos -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Ravnos</defName>
+            <label>Ravnos</label>
+            <displayOrderInCategory>9</displayOrderInCategory>
+            <description>The Ravnos are masters of deception, preferring trickery over brute force. They charm, mislead, and vanish before their true nature is revealed. Always on the move, their curse prevents them from resting in one place too long. Nearly wiped out during the Week of Nightmares, they are slowly rebuilding. Skilled at blending in, some pose as Caitiff to avoid suspicion, while others remain outsiders, selling their talents. To survive, they maintain multiple identities and havens, staying ahead of enemies and their own burning blood.</description>
+            <iconPath>ClansIcon/Ravnos</iconPath>
+            <statFactors>
+                <AnimalProductsSellImprovement>1.25</AnimalProductsSellImprovement>
+                <TradePriceImprovement>1.25</TradePriceImprovement>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Ravnos</def></li>
+            </forcedTraits>
+        </GeneDef>
+
+        <!-- Salubri -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Salubri</defName>
+            <label>Salubri</label>
+            <displayOrderInCategory>10</displayOrderInCategory>
+            <description>The Salubri, once revered for their wisdom, now barely survive, their lineage marked by tragedy. They Embrace rarely, choosing childer with deep personal struggles, often seeking Golconda themselves. Their progenitor, Saulot, was devoured by the Tremere, leaving his descendants hunted and mistrusted. Recognizable by their third eye, they strive to heal and guide others, though rumors persist of soul-stealing powers. Shunned by both Camarilla and Anarchs, they face constant persecution, yet many remain devoted to helping others or hunting those consumed by the Beast.</description>
+            <iconPath>ClansIcon/Salubri</iconPath>
+            <statFactors>
+                <MedicalSurgerySuccessChance>1.25</MedicalSurgerySuccessChance>
+                <ResearchSpeed>1.25</ResearchSpeed>
+                
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Salubri</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Salubri</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Toreador -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Toreador</defName>
+            <label>Toreador</label>
+            <displayOrderInCategory>11</displayOrderInCategory>
+            <description>The Toreador are alluring and passionate vampires, drawn to beauty and artistic excellence. They Embrace artists, lovers, and visionaries, seeking inspiration to stir their deadened hearts. Masters of charm and seduction, they wield love as a weapon, influencing those around them. While they prize artistic brilliance, some impulsively Embrace out of fleeting obsession. Their ranks include painters, poets, actors, and anyone who redefines aesthetics, making the clan a diverse mix of talent, beauty, and ambition.</description>
+            <iconPath>ClansIcon/Toreador</iconPath>
+            <missingGeneRomanceChanceFactor>1.2</missingGeneRomanceChanceFactor>
+            <statFactors>
+                <PawnBeauty>1.25</PawnBeauty>
+                <SocialImpact>1.25</SocialImpact>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Toreador</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Toreador</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Tremere -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Tremere</defName>
+            <label>Tremere</label>
+            <displayOrderInCategory>12</displayOrderInCategory>
+            <description>The Tremere, once powerful mages, became vampires through dark experiments seeking immortality. Masters of Blood Sorcery, they built a rigid hierarchy known as the Pyramid, enforcing loyalty through Blood Bonds. Their dominance crumbled in 2008 when the Second Inquisition destroyed their Prime Chantry, severing their Blood Bond and shattering their unity. Now fragmented, Tremere compete for lost power, serving other clans, the Camarilla, or their own ambitions. Obsessed with knowledge, they hoard secrets and trade occult expertise, believing true power lies not in rulership but in mastering the unseen forces that shape the world.</description>
+            <iconPath>ClansIcon/Tremere</iconPath>
+            <statFactors>
+                <ResearchSpeed>1.25</ResearchSpeed>
+                <StudyEfficiency>1.25</StudyEfficiency>
+                
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Tremere</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Tremere</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Tzimisce -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Tzimisce</defName>
+            <label>Tzimisce</label>
+            <displayOrderInCategory>13</displayOrderInCategory>
+            <description>The Tzimisce are possessive and domineering, obsessed with ownership—whether of land, mortals, or even their own flesh. Masters of Vicissitude, they reshape bodies and stretch the limits of vampirism, sometimes merging with their domains. Once key figures in the Anarch Revolt and Sabbat, their elders cling to power while younger members seek new identities, often aligning with Anarchs or, occasionally, the Camarilla. Feared for their cunning and transformative abilities, the Dragons remain enigmatic and unsettling figures in Kindred society.</description>
+            <iconPath>ClansIcon/Tzimisce</iconPath>
+            <statFactors>
+                <ButcheryFleshSpeed>1.25</ButcheryFleshSpeed>
+                <ButcheryFleshEfficiency>1.25</ButcheryFleshEfficiency>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Tzimisce</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Tzimisce</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Ventrue -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Ventrue</defName>
+            <label>Ventrue</label>
+            <displayOrderInCategory>14</displayOrderInCategory>
+            <description>The Ventrue, known as the Clan of Kings, see themselves as the rightful rulers of Kindred society. Selecting progeny from the powerful and influential, they have long dominated leadership, from ancient god-kings to modern financiers. Though their grip is slipping, they fight fiercely to maintain control. As the backbone of the Camarilla, they enforce order from the shadows, ensuring the Masquerade endures. Viewed as tyrants by some and saviors by others, the Ventrue remain the establishment that holds vampire society together.</description>
+            <iconPath>ClansIcon/Ventrue</iconPath>
+            <statFactors>
+                <SocialImpact>1.25</SocialImpact>
+                <NegotiationAbility>1.25</NegotiationAbility>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Ventrue</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Ventrue</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Caitiff -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_Caitiff</defName>
+            <label>Caitiff</label>
+            <displayOrderInCategory>15</displayOrderInCategory>
+            <description>Caitiff, the clanless vampires, are scorned for their lack of lineage yet feared for their unpredictability. Free from ancestry and expectations, they carve their own path as survivors and outcasts. While often abandoned, some are deliberately Embraced for their resilience. Highly individualistic, they lack a shared identity, yet their growing numbers make them an undeniable force in modern nights—ranked just above the Thin-bloods in Kindred society.</description>
+            <iconPath>ClansIcon/Caitiff</iconPath>
+            <statFactors>
+                <GlobalLearningFactor>1.25</GlobalLearningFactor>
+                <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Caitiff</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+                <li Class="EBSGFramework.EBSGExtension">
+                    <hediffsToApply>
+                        <li>
+                            <hediff>RMSQ_Hediff_Generation</hediff>
+                            <severity>1</severity>
+                        </li>
+                        <li>
+                            <hediff>RMSQ_ClanCurse_Caitiff</hediff>
+                        </li>
+                    </hediffsToApply>
+                </li>
+            </modExtensions>
+        </GeneDef>
+
+        <!-- Thin Blood -->
+        <GeneDef ParentName="Clans">
+            <defName>RMSQ_Gene_ThinBlood</defName>
+            <label>Thin Blood</label>
+            <description>Thin-bloods, caught between vampire and mortal, are pitied, feared, and despised. Clanless and of high generation, they are seen as mistakes and threats to the Masquerade, often hunted or branded by the Camarilla. Yet, they adapt—banding together, resisting sunlight, and wielding unpredictable powers. Some seek to escape their fate, either through diablerie to become full vampires or by reclaiming mortality, though both paths carry great risk. Despite their low status, the Duskborn are growing in number, challenging the very foundations of Kindred society.</description>
+            <iconPath>ClansIcon/Thin Blood</iconPath>
+            <displayOrderInCategory>16</displayOrderInCategory>
+            <prerequisite>RMSQ_Gene_Daydrinker</prerequisite>
+            <geneClass>EBSGFramework.Gene_HemoHediffAdder</geneClass>
+            <resourceLossPerDay>0.1</resourceLossPerDay>
+            <resourceLabel>Vitae</resourceLabel>
+            <statFactors>
+                <DrugSynthesisSpeed>1.25</DrugSynthesisSpeed>
+                <DrugCookingSpeed>1.25</DrugCookingSpeed>
+            </statFactors>
+            <forcedTraits>
+                <li><def>RMSQ_Trait_Thin_Blood</def></li>
+            </forcedTraits>
+            <modExtensions>
+                <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+                    <schema>RMSQ_Kindred_Schema</schema>
+                </li>
+            </modExtensions>
+            <customEffectDescriptions>
+                <li>Thin Blood are not considered Bloodfeeder</li>
+            </customEffectDescriptions>
+        </GeneDef>
+
+
+    <!-- CLANS GENES -->
+
+
 	<!--Random Camarilla-->
 	<!--<GeneDef ParentName="VampireGeneBase">
     	<defName>RMSQ_VampireGeneBase_Random_Cam</defName>

@@ -5,34 +5,20 @@
 		<defName>RMSQ_Kindred_Schema</defName>
 		<label>Kindred Sheet</label>
 		<description>But supposing that there be any reality in the fact of these apparitions of vampires, shall they be attributed to God, to angels, to the spirits of these ghosts, or to the devil? In this last case, will it be said that the devil will subtilize these bodies, and give them power to penetrate through the ground without disturbing, to glide through the cracks and joints of a door, to pass through a keyhole, to lengthen or shorten themselves, to reduce themselves to the nature of air, or water, to evaporate through the ground…\nABBÉ AUGUSTIN CALMET, TREATISE ON APPARITIONS</description>
-	
+
 		<energyTrackerDefs>
 			<li>RMSQ_WillpowerTracker</li>
 		</energyTrackerDefs>
 		<learningTrackerDefs>
 			<li>RMSQ_Kindred_LearningTrackerProgress</li>
+			<li>RMSQ_Unlocks_LearningTrackerTree</li>
 			<li>RMSQ_Advantages_LearningTrackerTree</li>
 			<li>RMSQ_Disciplines_LearningTrackerTree</li>
 			<li>RMSQ_BloodSorcery_LearningTrackerTree</li>
 			<li>RMSQ_Oblivion_LearningTrackerTree</li>
+			<li>RMSQ_TBA_LearningTrackerTree</li>
 		</learningTrackerDefs>
 		<progressTrackerDef>RMSQ_ProgressTracker_Kindred</progressTrackerDef>
 	</ItsSorceryFramework.SorcerySchemaDef>
-
-    <!-- <ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
-		<defName>RMSQ_Thin_Blood_Schema</defName>
-		<label>Thin-Blood</label>
-		<description>But supposing that there be any reality in the fact of these apparitions of vampires, shall they be attributed to God, to angels, to the spirits of these ghosts, or to the devil? In this last case, will it be said that the devil will subtilize these bodies, and give them power to penetrate through the ground without disturbing, to glide through the cracks and joints of a door, to pass through a keyhole, to lengthen or shorten themselves, to reduce themselves to the nature of air, or water, to evaporate through the ground…\nABBÉ AUGUSTIN CALMET, TREATISE ON APPARITIONS</description>
-	
-		<energyTrackerDefs>
-			<li>RMSQ_WillpowerTracker</li>
-		</energyTrackerDefs>
-		<learningTrackerDefs>
-			<li>RMSQ_Thin_Blood_LearningTrackerProgress</li>
-			<li>RMSQ_Advantages_LearningTrackerTree</li>
-			<li>RMSQ_TBA_LearningTrackerTree</li>
-		</learningTrackerDefs>
-		<progressTrackerDef>RMSQ_ProgressTracker_Thin_Blood</progressTrackerDef>
-	</ItsSorceryFramework.SorcerySchemaDef> -->
 
 </Defs>

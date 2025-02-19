@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- 2 -->
+   	<ItsSorceryFramework.SorceryDef ParentName="ProteanBuff">
+    	<defName>RMSQ_Feral_Weapons</defName>
+    	<label>Feral Weapons</label>
+    	<description>Elongate the user's nails into claws that deal more damage</description>
+		<displayOrder>102</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_FeralWeapons</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+
+    <ItsSorceryFramework.SorceryDef ParentName="ProteanBuff">
+    	<defName>RMSQ_Vicissitude</defName>
+    	<label>Vicissitude</label>
+    	<description>Sculpt the flesh of bodies making it more resilient</description>
+    	<displayOrder>102.1</displayOrder>
+		<level>2</level>
+    	<comps>
+      		<li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+        		<hediffsToGive>
+					<li>	
+						<hediffDef>RMSQ_Vicissitude_One</hediffDef>
+						<applyToSelf>true</applyToSelf>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>	
+                    <li>	
+						<hediffDef>RMSQ_Vicissitude_Two</hediffDef>
+						<applyToSelf>true</applyToSelf>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>	
+				</hediffsToGive>
+            </li>	
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 3 -->
+	<ItsSorceryFramework.SorceryDef ParentName="ProteanBuff">
+    	<defName>RMSQ_Earth_Meld</defName>
+    	<label>Earth Meld</label>
+    	<description>Sink into the earth and become one with the soil allowing to stay outside during daytime</description>
+		<displayOrder>103</displayOrder>
+		<level>3</level>
+    	<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_EarthMeld</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <ItsSorceryFramework.SorceryDef ParentName="ProteanTouch">
+    	<defName>RMSQ_Fleshcrafting</defName>
+    	<label>Fleshcrafting</label>
+    	<description>Extends the mastery over the flesh to be used on others</description>
+    	<displayOrder>103.1</displayOrder>
+		<level>3</level>
+        <statBases>
+      		<Ability_Duration>1000</Ability_Duration>
+    	</statBases>
+    	<comps>
+      		<li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+        		<hediffsToGive>
+					<li>	
+						<hediffDef>RMSQ_Vicissitude_One</hediffDef>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>	
+                    <li>	
+						<hediffDef>RMSQ_Vicissitude_Two</hediffDef>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>	
+				</hediffsToGive>
+            </li>
+            <li Class="CompProperties_AbilityHemogenCost">
+                <hemogenCost>0.1</hemogenCost>
+            </li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 4 -->
+	<ItsSorceryFramework.SorceryDef ParentName="ProteanBuff">
+    	<defName>RMSQ_Metamorphosis</defName>
+    	<label>Metamorphosis</label>
+    	<description>Take  monstrous shape</description>
+    	<displayOrder>114</displayOrder>
+		<level>4</level>
+    	<comps>
+      		<li Class="EBSGFramework.CompProperties_AbilityGiveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_GiveMultipleHediffs</compClass>
+        		<hediffsToGive>
+					<li>	
+						<hediffDef>RMSQ_Metamorphosis_One</hediffDef>
+						<applyToSelf>true</applyToSelf>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>	
+					<li>	
+						<hediffDef>RMSQ_Metamorphosis_Two</hediffDef>
+						<applyToSelf>true</applyToSelf>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>	
+					<li>	
+						<hediffDef>RMSQ_Metamorphosis_Three</hediffDef>
+						<applyToSelf>true</applyToSelf>
+						<psychic>False</psychic>
+						<onlyBrain>false</onlyBrain>
+						<replaceExisting>false</replaceExisting>
+					</li>
+				</hediffsToGive>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+
+    <!-- 5 -->
+	<ItsSorceryFramework.SorceryDef ParentName="ProteanBuff">
+    	<defName>RMSQ_The_Unfettered_Heart</defName>
+    	<label>The Unfettered Heart</label>
+    	<displayOrder>115</displayOrder>
+		<level>5</level>
+		<description>The heart of the vampire can move freely within the chest</description>
+		<comps>
+      		<li Class = "CompProperties_AbilityGiveHediff">
+        		<compClass>CompAbilityEffect_GiveHediff</compClass>
+        		<hediffDef>RMSQ_TheUnfetteredHeart</hediffDef>
+				<psychic>False</psychic>
+				<onlyBrain>false</onlyBrain>
+      		</li>
+    	</comps>
+  	</ItsSorceryFramework.SorceryDef>
+	
+	<HediffDef>
+        <defName>RMSQ_Regen</defName>
+        <label>Regen</label>
+        <description>Use your own vitae to mend your wound</description>
+        <isBad>false</isBad>
+        <defaultLabelColor>(1, 0.0, 0.0)</defaultLabelColor>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+                <regeneration>2400000</regeneration>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>240</disappearsAfterTicks>
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+
+
+</Defs>

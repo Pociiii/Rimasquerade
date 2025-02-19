@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_One</defName>
+		<label>POTENCE I\nSoaring Leap</label>
+		<description>Leap higher and further than usual.</description>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Potence_Caitiff</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_SoaringLeap</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_Two</defName>
+		<label>POTENCE II\nProwess</label>
+    	<description>Improve Melee damage.</description>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Potence_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Prowess</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_Two_Two</defName>
+		<label>POTENCE II\nRelentless Grasp</label>
+    	<description>Gain supernatural grip strength\n\n Improve Carry Capacity</description>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
+		<coordY>9.5</coordY>
+		<prereqs>
+			<li>RMSQ_Node_Potence_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Relentless_Grasp</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_Three</defName>
+		<label>POTENCE III\nBrutal Feed</label>
+    	<description>A messy affair that only lasts seconds and increases hemogen gained</description>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Potence_Two</li>
+			<li>RMSQ_Node_Potence_Two_Two</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Brutal_Feed</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_Three_Amalgam</defName>
+		<label>AMALGAM III\nSpark of Rage</label>
+    	<description>Incite a person or crowd to violent actions\n\nMake the target seek a target to kill</description>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
+		<coordY>9.5</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Potence_Two</li>
+			<li>RMSQ_Node_Presence_Three</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Spark_of_Rage</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_Four</defName>
+		<label>POTENCE IV\nDraught of Might</label>
+    	<description>Turn their vitae into a Potence boost for others.</description>
+		<pointReq>5</pointReq>
+		<coordX>3</coordX>
+		<prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Potence_Three</li>
+			<li>RMSQ_Node_Potence_Three_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Draught_of_Migh</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PotenceBase">
+		<defName>RMSQ_Node_Potence_Five</defName>
+		<label>POTENCE V\nFist of Caine</label>
+    	<description>Gain Caine like strength</description>
+		<pointReq>6</pointReq>
+		<coordX>4</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Potence_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Fist_of_Caine</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+</Defs>

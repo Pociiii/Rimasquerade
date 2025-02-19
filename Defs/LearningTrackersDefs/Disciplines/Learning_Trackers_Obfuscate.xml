@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<!-- Obfuscate -->
-    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "ClanDisciplineBase">
-		<defName>RMSQ_Node_Obfuscate_ClanDiscipline</defName>
-		<description>The art of not being seen even in crowds either through being wholly unseen or by blending in.\n\nClan Discipline for: Banu Haqim, Malkavian, The Ministry, Nosferatu, Ravnos</description>
-        <label>Clan Discipline\nOBFUSCATE</label>
-		<coordY>7.5</coordY>
-        <prereqsHediff>
-		    <li><key>RMSQ_Hediff_ClanDiscipline_Obfuscate</key><value>0</value></li>
-        </prereqsHediff>
-	</ItsSorceryFramework.LearningTreeNodeDef>
-
-    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "NonClanDisciplineBase">
-		<defName>RMSQ_Node_Obfuscate_NonClanDiscipline</defName>
-		<description>The art of not being seen even in crowds either through being wholly unseen or by blending in. </description>
-        <label>Non Clan Discipline\nOBFUSCATE</label>
-        <coordY>8</coordY>
-        <exclusiveNodes>
-		    <li>RMSQ_Node_Obfuscate_ClanDiscipline</li>
-	    </exclusiveNodes>
-	</ItsSorceryFramework.LearningTreeNodeDef>
+    
 
 	<!-- 1 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_One</defName>
-		<label>OBFUSCATE 1\nCloak of Shadows</label>
+		<label>OBFUSCATE I\nCloak of Shadows</label>
     	<description>Create a small area of fog around yourself to hide in.</description>
-		<pointReq>1</pointReq>
-		<coordX>1</coordX>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
         <prereqMode>Or</prereqMode>
 		<prereqs>
-			<li>RMSQ_Node_Obfuscate_ClanDiscipline</li>
-			<li>RMSQ_Node_Obfuscate_NonClanDiscipline</li>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Obfuscate_Caitiff</li>
 		</prereqs>
 		<abilityGain>
 			<li>RMSQ_Cloak_Of_Shadows</li>
@@ -42,10 +27,10 @@
 	<!-- 2 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_Two</defName>
-		<label>OBFUSCATE 2\nUnseen Passage</label>
+		<label>OBFUSCATE II\nUnseen Passage</label>
 	    <description>The user can now move while remaining hidden for short time.</description>
-		<pointReq>2</pointReq>
-		<coordX>2</coordX>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Obfuscate_One</li>
 		</prereqs>
@@ -56,10 +41,10 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_Two_Amalgam</defName>
-		<label>AMALGAM 2\nChimerstry</label>
+		<label>AMALGAM II\nChimerstry</label>
     	<description>Create brief but realistic hallucinations</description>
-		<pointReq>2</pointReq>
-		<coordX>2</coordX>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
 		<coordY>8</coordY>
 		<prereqMode>All</prereqMode>
 		<prereqs>
@@ -74,10 +59,10 @@
 	<!-- 3 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_Three</defName>
-		<label>OBFUSCATE 3\nMask of a Thousand Faces</label>
+		<label>OBFUSCATE III\nMask of a Thousand Faces</label>
 	    <description>Change your face</description>
-		<pointReq>3</pointReq>
-		<coordX>3</coordX>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
 			<li>RMSQ_Node_Obfuscate_Two</li>
@@ -90,10 +75,10 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_Three_Amalgam</defName>
-		<label>AMALGAM 3\nMental Maze</label>
+		<label>AMALGAM III\nMental Maze</label>
     	<description>Make it difficult for the victim to orientate</description>
-		<pointReq>3</pointReq>
-		<coordX>3</coordX>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
 		<coordY>8</coordY>
 		<prereqMode>All</prereqMode>
 		<prereqs>
@@ -108,10 +93,10 @@
 	<!-- 4 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_Four</defName>
-		<label>OBFUSCATE 4\nVanish</label>
+		<label>OBFUSCATE IV\nVanish</label>
 	    <description>The Vampire can now move while remaining hidden for longer</description>
 		<pointReq>5</pointReq>
-		<coordX>4</coordX>
+		<coordX>3</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
 			<li>RMSQ_Node_Obfuscate_Three</li>
@@ -128,10 +113,10 @@
 	<!-- 5 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ObfuscateBase">
 		<defName>RMSQ_Node_Obfuscate_Five</defName>
-		<label>OBFUSCATE 5\nCloak the Gathering</label>
+		<label>OBFUSCATE V\nCloak the Gathering</label>
     	<description>Shelter companions under Obfuscate.</description>
-		<pointReq>8</pointReq>
-		<coordX>5</coordX>
+		<pointReq>6</pointReq>
+		<coordX>4</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Obfuscate_Four</li>
 		</prereqs>

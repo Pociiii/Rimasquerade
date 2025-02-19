@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- 1 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_One</defName>
+		<label>PROTEAN I\nEyes of the Beast</label>
+    	<description>Allow the Vampire to see in the dark</description>
+		<pointReq>2</pointReq>
+		<coordX>0</coordX>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Protean_Caitiff</li>
+		</prereqs>
+		<hediffAdd>
+		    <li><hediffDef>RMSQ_EyesoftheBeast</hediffDef><severity>1</severity></li>
+	    </hediffAdd>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 2 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_Two</defName>
+		<label>PROTEAN II\nFeral Weapons</label>
+     	<description>Elongate the user's nails into claws that deal more damage</description>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Protean_One</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Feral_Weapons</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_Two_Amalgam</defName>
+		<label>AMALGAM II\nVicissitude</label>
+     	<description>Sculpt the flesh of bodies making it more resilient</description>
+		<pointReq>3</pointReq>
+		<coordX>1</coordX>
+		<coordY>12.5</coordY>
+		<prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Protean_One</li>
+			<li>RMSQ_Node_Dominate_Two</li>
+		</prereqs>
+        <abilityGain>
+			<li>RMSQ_Vicissitude</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 3 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_Three</defName>
+		<label>PROTEAN III\nEarth Meld</label>
+    	<description>Sink into the earth and become one with the soil allowing to stay outside during daytime</description>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
+        <prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Protean_Two</li>
+			<li>RMSQ_Node_Protean_Two_Amalgam</li>
+		</prereqs>
+        <abilityGain>
+			<li>RMSQ_Earth_Meld</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_Three_Amalgam</defName>
+		<label>AMALGAM III\nFleshcrafting</label>
+    	<description>Extends the mastery over the flesh to be used on others</description>
+		<pointReq>4</pointReq>
+		<coordX>2</coordX>
+        <coordY>12.5</coordY>
+        <prereqMode>All</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Protean_Two_Amalgam</li>
+			<li>RMSQ_Node_Dominate_Three</li>
+		</prereqs>
+        <abilityGain>
+			<li>RMSQ_Fleshcrafting</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 4 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_Four</defName>
+		<label>PROTEAN IV\nMetamorphosis</label>
+    	<description>Take  monstrous shape</description>
+		<pointReq>5</pointReq>
+		<coordX>3</coordX>
+        <prereqMode>Or</prereqMode>
+		<prereqs>
+			<li>RMSQ_Node_Protean_Three</li>
+			<li>RMSQ_Node_Protean_Three_Amalgam</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_Metamorphosis</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- 5 -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ProteanBase">
+		<defName>RMSQ_Node_Protean_Five</defName>
+		<label>PROTEAN V\nThe Unfettered Heart</label>
+		<description>The heart of the vampire can move freely within the chest</description>
+		<pointReq>6</pointReq>
+		<coordX>4</coordX>
+		<prereqs>
+			<li>RMSQ_Node_Protean_Four</li>
+		</prereqs>
+		<abilityGain>
+			<li>RMSQ_The_Unfettered_Heart</li>
+		</abilityGain>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+</Defs>

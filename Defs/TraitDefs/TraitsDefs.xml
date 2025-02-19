@@ -16,9 +16,7 @@
                 <label>Banu Haqim</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Melee>4</Melee>
                     <Shooting>4</Shooting>
@@ -49,9 +47,7 @@
                 <label>Brujah</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Melee>4</Melee>
                     <Shooting>4</Shooting>
@@ -82,9 +78,7 @@
                 <label>Gangrel</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Animals>4</Animals>
                     <Plants>4</Plants>
@@ -114,9 +108,7 @@
                 <label>Hecata</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Medicine>4</Medicine>
                     <Intellectual>4</Intellectual>
@@ -146,9 +138,7 @@
                 <label>Lasombra</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Social>4</Social>
                     <Melee>4</Melee>
@@ -171,7 +161,7 @@
         <commonality>0</commonality>
         <forcedPassions>
             <li>Social</li>
-            <li>Medicine</li>
+            <li>Intellectual</li>
             <li>Artistic</li>
         </forcedPassions>
         <degreeDatas>
@@ -179,11 +169,9 @@
                 <label>Malkavian</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
-                    <Medicine>4</Medicine>
+                    <Intellectual>4</Intellectual>
                     <Artistic>4</Artistic>
                 </skillGains>
                 <statOffsets>
@@ -210,9 +198,7 @@
                 <label>Ministry</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Animals>4</Animals>
                     <Social>4</Social>
@@ -242,9 +228,7 @@
                 <label>Nosferatu</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Animals>4</Animals>
                     <Mining>4</Mining>
@@ -273,9 +257,7 @@
                 <label>Ravnos</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Animals>4</Animals>
                     <Social>4</Social>
@@ -305,9 +287,7 @@
                 <label>Salubri</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Medicine>4</Medicine>
                     <Intellectual>4</Intellectual>
@@ -336,9 +316,7 @@
                 <label>Toreador</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Social>4</Social>
                     <Artistic>4</Artistic>
@@ -367,9 +345,7 @@
                 <label>Tremere</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Intellectual>4</Intellectual>
                     <Social>4</Social>
@@ -398,9 +374,7 @@
                 <label>Tzimisce</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Crafting>4</Crafting>
                     <Social>4</Social>
@@ -429,9 +403,7 @@
                 <label>Ventrue</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Social>4</Social>
                     <Intellectual>4</Intellectual>
@@ -461,11 +433,8 @@
                 <label>Caitiff</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
-                    <Social>3</Social>
                     <Melee>3</Melee>
                     <Shooting>3</Shooting>
                 </skillGains>
@@ -481,7 +450,7 @@
     </TraitDef>
     
     <!-- Thin Blood -->
-    <!-- <TraitDef>
+    <TraitDef>
         <defName>RMSQ_Trait_Thin_Blood</defName>
         <commonality>0</commonality>
         <forcedPassions>
@@ -493,9 +462,7 @@
                 <label>Thin Blood</label>
                 <description>{PAWN_nameDef} doesn't have basic needs like eating\n\n{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.\n\n{PAWN_nameDef} mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.</description>
                 <marketValueFactorOffset>2</marketValueFactorOffset>
-                <disablesNeeds>
-                    <li>Food</li>
-                </disablesNeeds>
+                
                 <skillGains>
                     <Cooking>4</Cooking>
                     <Crafting>4</Crafting>
@@ -509,6 +476,6 @@
             <li>Violent</li>
             <li>Social</li>
         </requiredWorkTags>
-    </TraitDef> -->
+    </TraitDef>
 
 </Defs>

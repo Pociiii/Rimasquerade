@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase" Name = "BackgroundBase" Abstract="True">
     	<learningTrackerDef>RMSQ_Advantages_LearningTrackerTree</learningTrackerDef>
-        <pointReq>1</pointReq>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-    <!-- Influence -->
+<!-- GENERATION  -->
+    <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "GenerationBase" Abstract="True">
+        <description>You were Embraced by a low Generation Vampire or you did commit Diablerie in your early Nights, either way your Generation is lower than it should have.\n\n Lower your Generation by 1, don't mind the +1 you see below</description>
+        <coordY>1</coordY>
+        <pointReq>2</pointReq>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
+        <hediffAdjust>
+		    <li><hediffDef>RMSQ_Hediff_Generation</hediffDef><severity>1</severity></li>
+	    </hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "GenerationBase">
+		<defName>RMSQ_Node_Generation</defName>
+		<label>Background\nGENERATION I</label>
+		<coordX>0</coordX>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_Generation</key><value>1</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "GenerationBase">
+		<defName>RMSQ_Node_Generation_Two</defName>
+		<label>Background\nGENERATION II</label>
+		<coordX>1</coordX>
+        <prereqs>
+			<li>RMSQ_Node_Generation</li>
+		</prereqs>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_Generation</key><value>2</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "GenerationBase">
+		<defName>RMSQ_Node_Generation_Three</defName>
+		<label>Background\nGENERATION III</label>
+		<coordX>2</coordX>
+        <prereqs>
+			<li>RMSQ_Node_Generation_Two</li>
+		</prereqs>
+        <prereqsHediff>
+		    <li><key>RMSQ_Hediff_Generation</key><value>3</value></li>
+	    </prereqsHediff>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+<!-- GENERATION  -->
+
+<!-- INFLUENCE -->
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "InfluenceBase" Abstract="True">
         <description>The ability to influence how other groups react or act</description>
-        <coordY>1</coordY>
+        <coordY>2</coordY>
         <statOffsets>
 		    <SocialImpact>0.04</SocialImpact>
 	    </statOffsets>
@@ -16,13 +79,13 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "InfluenceBase">
 		<defName>RMSQ_Node_Influence</defName>
-		<label>Background\nInfluence 1</label>
+		<label>Background\nINFLUENCE I</label>
 		<coordX>0</coordX>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "InfluenceBase">
 		<defName>RMSQ_Node_Influence_Two</defName>
-		<label>Background\nInfluence 2</label>
+		<label>Background\nINFLUENCE II</label>
 		<coordX>1</coordX>
         <prereqs>
 			<li>RMSQ_Node_Influence</li>
@@ -31,7 +94,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "InfluenceBase">
 		<defName>RMSQ_Node_Influence_Three</defName>
-		<label>Background\nInfluence 3</label>
+		<label>Background\nINFLUENCE III</label>
 		<coordX>2</coordX>
         <prereqs>
 			<li>RMSQ_Node_Influence_Two</li>
@@ -40,7 +103,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "InfluenceBase">
 		<defName>RMSQ_Node_Influence_Four</defName>
-		<label>Background\nInfluence 4</label>
+		<label>Background\nINFLUENCE IV</label>
 		<coordX>3</coordX>
         <prereqs>
 			<li>RMSQ_Node_Influence_Three</li>
@@ -49,17 +112,19 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "InfluenceBase">
 		<defName>RMSQ_Node_Influence_Five</defName>
-		<label>Background\nInfluence 5</label>
+		<label>Background\nINFLUENCE V</label>
 		<coordX>4</coordX>
         <prereqs>
 			<li>RMSQ_Node_Influence_Four</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!-- Herd -->
+<!-- INFLUENCE -->
+
+<!-- HERD -->
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "HerdBase" Abstract="True">
         <description>A group of vessels that the character may feed from without concern, though they are less loyal than retainers</description>
-        <coordY>2</coordY>
+        <coordY>3</coordY>
         <statFactors>
 		    <HemogenGainFactor>0.15</HemogenGainFactor>
 	    </statFactors>
@@ -67,13 +132,13 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "HerdBase">
 		<defName>RMSQ_Node_Herd</defName>
-		<label>Background\nHerd 1</label>
+		<label>Background\nHERD I</label>
 		<coordX>0</coordX>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "HerdBase">
 		<defName>RMSQ_Node_Herd_Two</defName>
-		<label>Background\nHerd 2</label>
+		<label>Background\nHERD II</label>
 		<coordX>1</coordX>
         <prereqs>
 			<li>RMSQ_Node_Herd</li>
@@ -82,7 +147,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "HerdBase">
 		<defName>RMSQ_Node_Herd_Three</defName>
-		<label>Background\nHerd 3</label>
+		<label>Background\nHERD III</label>
 		<coordX>2</coordX>
         <prereqs>
 			<li>RMSQ_Node_Herd_Two</li>
@@ -91,7 +156,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "HerdBase">
 		<defName>RMSQ_Node_Herd_Four</defName>
-		<label>Background\nHerd 4</label>
+		<label>Background\nHERD IV</label>
 		<coordX>3</coordX>
         <prereqs>
 			<li>RMSQ_Node_Herd_Three</li>
@@ -100,17 +165,19 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "HerdBase">
 		<defName>RMSQ_Node_Herd_Five</defName>
-		<label>Background\nHerd 5</label>
+		<label>Background\nHERD V</label>
 		<coordX>4</coordX>
         <prereqs>
 			<li>RMSQ_Node_Herd_Four</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!-- Resources -->
+<!-- HERD -->
+
+<!-- RESOURCES -->
     <ItsSorceryFramework.LearningTreeNodeDef ParentName = "BackgroundBase" Name = "ResourcesBase" Abstract="True">
         <description>Cash flow, be it from stock trading or inheritance to working as a barista at night.</description>
-        <coordY>3</coordY>
+        <coordY>4</coordY>
         <statFactors>
 		    <TradePriceImprovement>0.1</TradePriceImprovement>
 	    </statFactors>
@@ -121,13 +188,13 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ResourcesBase">
 		<defName>RMSQ_Node_Resources</defName>
-		<label>Background\nResources 1</label>
+		<label>Background\nRESOURCES I</label>
 		<coordX>0</coordX>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ResourcesBase">
 		<defName>RMSQ_Node_Resources_Two</defName>
-		<label>Background\nResources 2</label>
+		<label>Background\nRESOURCES I</label>
 		<coordX>1</coordX>
         <prereqs>
 			<li>RMSQ_Node_Resources</li>
@@ -136,7 +203,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ResourcesBase">
 		<defName>RMSQ_Node_Resources_Three</defName>
-		<label>Background\nResources 3</label>
+		<label>Background\nRESOURCES III</label>
 		<coordX>2</coordX>
         <prereqs>
 			<li>RMSQ_Node_Resources_Two</li>
@@ -145,7 +212,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ResourcesBase">
 		<defName>RMSQ_Node_Resources_Four</defName>
-		<label>Background\nResources 4</label>
+		<label>Background\nRESOURCES IV</label>
 		<coordX>3</coordX>
         <prereqs>
 			<li>RMSQ_Node_Resources_Three</li>
@@ -154,25 +221,28 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "ResourcesBase">
 		<defName>RMSQ_Node_Resources_Five</defName>
-		<label>Background\nResources 5</label>
+		<label>Background\nRESOURCES V</label>
 		<coordX>4</coordX>
         <prereqs>
 			<li>RMSQ_Node_Resources_Four</li>
 		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!-- Retainer -->
+<!-- RESOURCES -->
+
+<!-- RETAINER -->
     <ItsSorceryFramework.LearningTreeNodeDef ParentName= "BackgroundBase" Name= "RetainerBase" Abstract="True">
         <description>Your Ghouls are stronger than usual</description>
-        <coordY>4</coordY>
+        <coordY>5</coordY>
         <prereqsHediff>
 			<li><key>RMSQ_Hediff_Generation</key><value>1</value></li>
 		</prereqsHediff>
+
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "RetainerBase">
 		<defName>RMSQ_Node_Retainer</defName>
-		<label>Background\nRetainer 1</label>
+		<label>Background\nRETAINER I</label>
 		<coordX>0</coordX>
         <abilityRemove>
 			<li>RMSQ_BloodBond</li>
@@ -180,11 +250,29 @@
 		<abilityGain>
 			<li>RMSQ_BloodBond_Retainer_One</li>
 		</abilityGain>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "RetainerBase">
 		<defName>RMSQ_Node_Retainer_Two</defName>
-		<label>Background\nRetainer 2</label>
+		<label>Background\nRETAINER II</label>
 		<coordX>1</coordX>
         <prereqs>
 			<li>RMSQ_Node_Retainer</li>
@@ -199,7 +287,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "RetainerBase">
 		<defName>RMSQ_Node_Retainer_Three</defName>
-		<label>Background\nRetainer 3</label>
+		<label>Background\nRETAINER III</label>
 		<coordX>2</coordX>
         <prereqs>
 			<li>RMSQ_Node_Retainer_Two</li>
@@ -214,7 +302,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "RetainerBase">
 		<defName>RMSQ_Node_Retainer_Four</defName>
-		<label>Background\nRetainer 4</label>
+		<label>Background\nRETAINER IV</label>
 		<coordX>3</coordX>
         <prereqs>
 			<li>RMSQ_Node_Retainer_Three</li>
@@ -229,7 +317,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "RetainerBase">
 		<defName>RMSQ_Node_Retainer_Five</defName>
-		<label>Background\nRetainer 5</label>
+		<label>Background\nRETAINER V</label>
 		<coordX>4</coordX>
         <prereqs>
 			<li>RMSQ_Node_Retainer_Four</li>
@@ -242,4 +330,6 @@
 		</abilityGain>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-    </Defs>
+<!-- RETAINER -->
+
+</Defs>

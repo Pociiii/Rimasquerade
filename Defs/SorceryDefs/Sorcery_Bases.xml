@@ -13,6 +13,7 @@
         <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
         <cooldownTicksRange>300</cooldownTicksRange>
         <showCastingProgressBar>true</showCastingProgressBar>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     </ItsSorceryFramework.SorceryDef>
 
 	<!-- Kiss Base -->
@@ -24,7 +25,6 @@
         <warmupMoteSocialSymbol>Misc/Feeding</warmupMoteSocialSymbol>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <aiCanUse>False</aiCanUse>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <stunTargetWhileCasting>true</stunTargetWhileCasting>
         <level>1</level>
         <category>Sanguophage</category>
@@ -57,7 +57,6 @@
 	
     <!-- Discipline Buff Base -->
 	<ItsSorceryFramework.SorceryDef Name="DisciplineBuffBase" ParentName="DisciplineAbilityBase" Abstract="True">
-		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<targetRequired>False</targetRequired>
 		<warmupEffecter>Coagulate</warmupEffecter>
 		<jobDef>CastAbilityOnThing</jobDef>
@@ -131,7 +130,7 @@
         </comps>
 	</ItsSorceryFramework.SorceryDef>
 
-    <!-- Animalism -->
+<!-- Animalism -->
 	<ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="AnimalismBuff" Abstract="True">
 		<iconPath>DisciplinesIcon/Animalism</iconPath>
         <warmupMoteSocialSymbol>DisciplinesIcon/Animalism</warmupMoteSocialSymbol>
@@ -141,8 +140,9 @@
 		<iconPath>DisciplinesIcon/Animalism</iconPath>
         <warmupMoteSocialSymbol>DisciplinesIcon/Animalism</warmupMoteSocialSymbol>
 	</ItsSorceryFramework.SorceryDef>
+<!-- Animalism -->
 
-    <!-- Auspex -->
+<!-- Auspex -->
     <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="AuspexBuff" Abstract="True">
 		<iconPath>DisciplinesIcon/Auspex</iconPath>
 		<warmupMoteSocialSymbol>DisciplinesIcon/Auspex</warmupMoteSocialSymbol>
@@ -157,8 +157,9 @@
 		<iconPath>DisciplinesIcon/Auspex</iconPath>
 		<warmupMoteSocialSymbol>DisciplinesIcon/Auspex</warmupMoteSocialSymbol>
 	</ItsSorceryFramework.SorceryDef>
+<!-- Auspex -->
 
-    <!-- Blood Sorcery -->
+<!-- Blood Sorcery -->
     <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="BloodSorceryBuff" Abstract="True">
 		<iconPath>DisciplinesIcon/Blood Sorcery</iconPath>
 		<warmupMoteSocialSymbol>DisciplinesIcon/Blood Sorcery</warmupMoteSocialSymbol>
@@ -173,6 +174,7 @@
 		<iconPath>DisciplinesIcon/Blood Sorcery</iconPath>
 		<warmupMoteSocialSymbol>DisciplinesIcon/Blood Sorcery</warmupMoteSocialSymbol>
 	</ItsSorceryFramework.SorceryDef>
+<!-- Blood Sorcery -->
 
     <!-- Celerity -->
     <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="CelerityBuff" Abstract="True">
@@ -293,7 +295,7 @@
 	</ItsSorceryFramework.SorceryDef>
 
     <!-- Thin Blood Alchemy -->
-    <!-- <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="TBABuff" Abstract="True">
+    <ItsSorceryFramework.SorceryDef ParentName="DisciplineBuffBase" Name="TBABuff" Abstract="True">
 		<iconPath>DisciplinesIcon/Thin Blood Alchemy</iconPath>
 		<warmupMoteSocialSymbol>DisciplinesIcon/Thin Blood Alchemy</warmupMoteSocialSymbol>
 	</ItsSorceryFramework.SorceryDef>
@@ -301,7 +303,7 @@
     <ItsSorceryFramework.SorceryDef ParentName="DisciplineRangedBase" Name="TBARanged" Abstract="True">
 		<iconPath>DisciplinesIcon/Thin Blood Alchemy</iconPath>
 		<warmupMoteSocialSymbol>DisciplinesIcon/Thin Blood Alchemy</warmupMoteSocialSymbol>
-	</ItsSorceryFramework.SorceryDef> -->
+	</ItsSorceryFramework.SorceryDef>
     
     
 </Defs>

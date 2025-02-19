@@ -12,13 +12,11 @@
 		<coordY>2</coordY>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-
-	<!-- Oblivion -->
 	<!-- 1 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
 		<defName>RMSQ_Node_Oblivion_One</defName>
-		<label>Oblivion 1\nAshes to Ashes</label>
-		<pointReq>1</pointReq>
+		<label>OBLIVION I\nAshes to Ashes</label>
+		<pointReq>2</pointReq>
 		<coordX>0</coordX>
         <abilityGain>
 			<li>RMSQ_Ashes_to_Ashes</li>
@@ -27,7 +25,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
 		<defName>RMSQ_Node_Oblivion_One_Ceremonies</defName>
-		<label>Ceremony 1\nGift of False Life</label>
+		<label>CEREMONY I\nGift of False Life</label>
 		<pointReq>1</pointReq>
 		<coordX>1</coordX>
 		<prereqs>
@@ -41,8 +39,8 @@
 	<!-- 2 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
 		<defName>RMSQ_Node_Oblivion_Two</defName>
-		<label>Oblivion 2\nShadow Cast</label>
-		<pointReq>2</pointReq>
+		<label>OBLIVION II\nShadow Cast</label>
+		<pointReq>3</pointReq>
 		<coordX>1</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Oblivion_One</li>
@@ -54,8 +52,8 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
 		<defName>RMSQ_Node_Oblivion_Two_Amalgam</defName>
-		<label>Amalgam 2\nArms of Ahriman</label>
-		<pointReq>2</pointReq>
+		<label>AMALGAM II\nArms of Ahriman</label>
+		<pointReq>3</pointReq>
 		<coordX>1</coordX>
 		<coordY>1</coordY>
 		<prereqMode>All</prereqMode>
@@ -70,7 +68,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
 		<defName>RMSQ_Node_Oblivion_Two_Ceremonies</defName>
-		<label>Ceremony 2\nAwaken the Homuncular Servant</label>
+		<label>CEREMONY II\nAwaken the Homuncular Servant</label>
 		<pointReq>2</pointReq>
 		<coordX>2</coordX>
 		<prereqMode>Or</prereqMode>
@@ -86,8 +84,8 @@
 	<!-- 3 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
 		<defName>RMSQ_Node_Oblivion_Three</defName>
-		<label>Oblivion 3\nTouch of Oblivion</label>
-		<pointReq>3</pointReq>
+		<label>OBLIVION III\nTouch of Oblivion</label>
+		<pointReq>4</pointReq>
 		<coordX>2</coordX>
 		<prereqMode>Or</prereqMode>
 		<prereqs>
@@ -101,7 +99,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
 		<defName>RMSQ_Node_Oblivion_Three_Ceremonies</defName>
-		<label>Ceremony 3\nShambling Hordes</label>
+		<label>CEREMONY III\nShambling Hordes</label>
 		<pointReq>3</pointReq>
 		<coordX>3</coordX>
 		<prereqs>
@@ -115,8 +113,8 @@
 	<!-- 4 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
 		<defName>RMSQ_Node_Oblivion_Four</defName>
-		<label>Oblivion 4\nStygian Shroud</label>
-		<pointReq>4</pointReq>
+		<label>OBLIVION IV\nStygian Shroud</label>
+		<pointReq>5</pointReq>
 		<coordX>3</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Oblivion_Three</li>
@@ -128,7 +126,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
 		<defName>RMSQ_Node_Oblivion_Four_Ceremonies</defName>
-		<label>Ceremony 4\nBefoul Vessel</label>
+		<label>CEREMONY IV\nBefoul Vessel</label>
 		<pointReq>4</pointReq>
 		<coordX>4</coordX>
 		<prereqs>
@@ -142,8 +140,8 @@
 	<!-- 5 -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "OblivionBase">
 		<defName>RMSQ_Node_Oblivion_Five</defName>
-		<label>Oblivion 5\nSkuld Fulfilled</label>
-		<pointReq>5</pointReq>
+		<label>OBLIVION V\nSkuld Fulfilled</label>
+		<pointReq>6</pointReq>
 		<coordX>4</coordX>
 		<prereqs>
 			<li>RMSQ_Node_Oblivion_Four</li>
@@ -155,7 +153,7 @@
 
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "CeremoniesBase">
 		<defName>RMSQ_Node_Oblivion_Five_Ceremonies</defName>
-		<label>Ceremony 5\n</label>
+		<label>CEREMONY V\n</label>
 		<pointReq>5</pointReq>
 		<coordX>5</coordX>
 		<prereqs>

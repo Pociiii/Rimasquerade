@@ -8,35 +8,46 @@
         <abilityRemove>
 			<li>RMSQ_Kiss_Ability</li>
 		</abilityRemove>
-		<prereqsHediff>
-			<li><key>RMSQ_Hediff_Generation</key><value>0</value></li>
-		</prereqsHediff>
+        <unlocks>
+		    <li>RMSQ_Disciplines_LearningTrackerTree</li>
+		    <li>RMSQ_BloodSorcery_LearningTrackerTree</li>
+		    <li>RMSQ_Oblivion_LearningTrackerTree</li>
+	    </unlocks>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!--Alleycat -->
+	<!-- ALLEYCAT -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PredatorTypesBase">
 		<defName>RMSQ_Node_Alleycat</defName>
-		<label>Predator Type\nAlleycat</label>
+		<label>Predator Type\nALLEYCAT</label>
 		<description>Those who find violence to be the quickest way to get what they want might gravitate towards this hunting style. Alleycats are a vampire who feeds by brute force and outright attack and feeds from whomever they can when they can. Intimidation is a route easily taken to make their victims cower or even Dominating the victims to not report the attack or mask it as something else entirely.</description>
 		<coordX>0</coordX>
 		<abilityGain>
 			<li>RMSQ_Alleycat_Ability</li>
 		</abilityGain>
-		<prereqsSkills>
-			<li>
-				<mode>GreaterEqual</mode>
-				<skillReqs>
-					<li><skillDef>Melee</skillDef><level>10</level></li>
-					<li><skillDef>Shooting</skillDef><level>10</level></li>
-				</skillReqs>
-			</li>
-		</prereqsSkills>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!-- Farmer -->
+	<!-- FARMER -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PredatorTypesBase">
 		<defName>RMSQ_Node_Farmer</defName>
-		<label>Predator Type\nFarmer</label>
+		<label>Predator Type\nFARMER</label>
 		<description>Perhaps this vampire was once someone who worked as an activist or an aid worker, regardless of their reasoning the Farmer only feed from animals as their primary source of blood. The beast may gnaw at them with its throes of hunger, but they've successfully managed to avoid killing mortals except on the occasional bad night.</description>
 		<coordX>1</coordX>
 		<abilityGain>
@@ -46,20 +57,29 @@
 		<exclusiveNodes>
 			<li>RMSQ_Node_Alleycat</li>
 		</exclusiveNodes>
-		<prereqsSkills>
-			<li>
-				<mode>GreaterEqual</mode>
-				<skillReqs>
-					<li><skillDef>Animals</skillDef><level>10</level></li>
-				</skillReqs>
-			</li>
-		</prereqsSkills>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!-- Graverobber -->
+	<!-- GRAVEROBBER -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PredatorTypesBase">
 		<defName>RMSQ_Node_Graverobber</defName>
-		<label>Predator Type\nGraverobber</label>
+		<label>Predator Type\nGRAVEROBBER</label>
 		<description>These kindred understand there's no good in wasting good blood, even if others cannot consume it. Often they find themselves digging up corpses or working or mortuaries to obtain their bodies, yet regardless of what the name suggests, they prefer feeding from mourners at a gravesite or a hospital.</description>
 		<coordX>2</coordX>
 		<abilityGain>
@@ -70,20 +90,30 @@
 			<li>RMSQ_Node_Alleycat</li>
 			<li>RMSQ_Node_Farmer</li>
 		</exclusiveNodes>
-		<prereqsSkills>
-			<li>
-				<mode>GreaterEqual</mode>
-				<skillReqs>
-					<li><skillDef>Medicine</skillDef><level>10</level></li>
-				</skillReqs>
-			</li>
-		</prereqsSkills>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 
-	<!-- Siren -->
+	<!-- SIREN -->
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "PredatorTypesBase">
 		<defName>RMSQ_Node_Siren</defName>
-		<label>Predator Type\nSiren</label>
+		<label>Predator Type\nSIREN</label>
 		<description>Everyone knows that sex sells and the Siren uses this to their advantage. Almost exclusively feeding while feigning sex or sexual interest, they utilize Disciplines and seduction to lure away a possible meal. Moving through clubs and one-night stands are skills they've mastered and regardless of how sexy they feel, deep in their darkest moments, they realize at best they are problematic and at worst a serial sexual assaulter. In life, they might have been a scriptwriter, a small time actor who never reached the big screen, a well-known kinkster or even a virgin looking to make up for the lost time.</description>
 		<coordX>3</coordX>
 		<abilityGain>
@@ -94,18 +124,24 @@
 			<li>RMSQ_Node_Farmer</li>
 			<li>RMSQ_Node_Graverobber</li>
 		</exclusiveNodes>
-		<prereqsSkills>
-			<li>
-				<mode>GreaterEqual</mode>
-				<skillReqs>
-					<li><skillDef>Social</skillDef><level>10</level></li>
-				</skillReqs>
-			</li>
-		</prereqsSkills>
+        <prereqMode>Or</prereqMode>
+        <prereqs>
+			<li>RMSQ_Node_Banu</li>
+			<li>RMSQ_Node_Brujah</li>
+			<li>RMSQ_Node_Gangrel</li>
+			<li>RMSQ_Node_Hecata</li>
+			<li>RMSQ_Node_Lasombra</li>
+			<li>RMSQ_Node_Malkavian</li>
+			<li>RMSQ_Node_Ministry</li>
+			<li>RMSQ_Node_Nosferatu</li>
+			<li>RMSQ_Node_Ravnos</li>
+			<li>RMSQ_Node_Salubri</li>
+            <li>RMSQ_Node_Toreador</li>
+			<li>RMSQ_Node_Tremere</li>           
+			<li>RMSQ_Node_Tzimisce</li> 
+			<li>RMSQ_Node_Ventrue</li> 
+			<li>RMSQ_Node_Caitiff</li>
+		</prereqs>
 	</ItsSorceryFramework.LearningTreeNodeDef>
-
-	
-
-	
 
 </Defs>
