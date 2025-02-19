@@ -1,1 +1,1 @@
-Rimasquerade is a Rimworld Mod
+Check the Wiki for thje full info
