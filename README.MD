@@ -11,3 +11,4 @@ The goal is not to turn RimWorld into a completely different game, but to integr
 Rimasquerade is an unofficial fan-made project.
 
 Vampire: The Masquerade and related intellectual property belong to their respective owners. This project is not affiliated with or endorsed by Paradox Interactive, World of Darkness, or any of their affiliates.
+![alt text](image.png)
