@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityCategoryDef>
+    <defName>RMSQ_AuspexAbility</defName>
+    <displayOrder>11000</displayOrder>
+  </AbilityCategoryDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AuspexAbilityOneDot</defName>
+    <label>Auspex (One Dot)</label>
+    <description>Description for Auspex (One Dot)</description>
+    <iconPath>Disciplines/Auspex</iconPath>
+    <category>RMSQ_AuspexAbility</category>
+    <displayOrder>11001</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AuspexAbilityTwoDots</defName>
+    <label>Auspex (Two Dots)</label>
+    <description>Description for Auspex (Two Dots)</description>
+    <iconPath>Disciplines/Auspex</iconPath>
+    <category>RMSQ_AuspexAbility</category>
+    <displayOrder>11002</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AuspexAbilityThreeDots</defName>
+    <label>Auspex (Three Dots)</label>
+    <description>Description for Auspex (Three Dots)</description>
+    <iconPath>Disciplines/Auspex</iconPath>
+    <category>RMSQ_AuspexAbility</category>
+    <displayOrder>11003</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AuspexAbilityFourDots</defName>
+    <label>Auspex (Four Dots)</label>
+    <description>Description for Auspex (Four Dots)</description>
+    <iconPath>Disciplines/Auspex</iconPath>
+    <category>RMSQ_AuspexAbility</category>
+    <displayOrder>11004</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AuspexAbilityFiveDots</defName>
+    <label>Auspex (Five Dots)</label>
+    <description>Description for Auspex (Five Dots)</description>
+    <iconPath>Disciplines/Auspex</iconPath>
+    <category>RMSQ_AuspexAbility</category>
+    <displayOrder>11005</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+</Defs>

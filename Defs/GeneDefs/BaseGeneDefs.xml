@@ -69,7 +69,7 @@
     <label>Eleventh Generation</label>
     <description>Eleventh</description>
     <iconPath>Generations/11th</iconPath>
-    <displayOrderInCategory>-5</displayOrderInCategory>
+    <displayOrderInCategory>-1</displayOrderInCategory>
     
   </GeneDef>
 
@@ -78,7 +78,7 @@
     <label>Tenth Generation</label>
     <description>Tenth</description>
     <iconPath>Generations/10th</iconPath>
-    <displayOrderInCategory>-4</displayOrderInCategory>
+    <displayOrderInCategory>-2</displayOrderInCategory>
     <resourceLossPerDay>0.1</resourceLossPerDay>
     <statOffsets>
       <EBSG_HemogenMaxOffset>0.5</EBSG_HemogenMaxOffset>
@@ -102,7 +102,7 @@
     <label>Eighth Generation</label>
     <description>Eighth</description>
     <iconPath>Generations/8th</iconPath>
-    <displayOrderInCategory>-2</displayOrderInCategory>
+    <displayOrderInCategory>-4</displayOrderInCategory>
     <resourceLossPerDay>0.2</resourceLossPerDay>
     <statOffsets>
       <EBSG_HemogenMaxOffset>1.5</EBSG_HemogenMaxOffset>
@@ -114,7 +114,7 @@
     <label>Seventh Generation</label>
     <description>Seventh</description>
     <iconPath>Generations/7th</iconPath>
-    <displayOrderInCategory>-1</displayOrderInCategory>
+    <displayOrderInCategory>-5</displayOrderInCategory>
     <resourceLossPerDay>0.25</resourceLossPerDay>
     <statOffsets>
       <EBSG_HemogenMaxOffset>2</EBSG_HemogenMaxOffset>
@@ -275,10 +275,12 @@
     <abilities>
       <li>RMSQ_Embrace</li>
       <li>RMSQ_Kiss</li>
+      <li>RMSQ_Mend</li>
     </abilities>
     <descriptionHyperlinks>
       <AbilityDef>RMSQ_Embrace</AbilityDef>
       <AbilityDef>RMSQ_Kiss</AbilityDef>
+      <AbilityDef>RMSQ_Mend</AbilityDef>
     </descriptionHyperlinks>
     <symbolPack>
       <prefixSymbols>

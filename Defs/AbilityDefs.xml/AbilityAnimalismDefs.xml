@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityCategoryDef>
+    <defName>RMSQ_AnimalismAbility</defName>
+    <displayOrder>10000</displayOrder>
+  </AbilityCategoryDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AnimalismAbilityOneDot</defName>
+    <label>Animalism (One Dot)</label>
+    <description>Description for Animalism (One Dot)</description>
+    <iconPath>Disciplines/Animalism</iconPath>
+    <category>RMSQ_AnimalismAbility</category>
+    <displayOrder>10001</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AnimalismAbilityTwoDots</defName>
+    <label>Animalism (Two Dots)</label>
+    <description>Description for Animalism (Two Dots)</description>
+    <iconPath>Disciplines/Animalism</iconPath>
+    <category>RMSQ_AnimalismAbility</category>
+    <displayOrder>10002</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AnimalismAbilityThreeDots</defName>
+    <label>Animalism (Three Dots)</label>
+    <description>Description for Animalism (Three Dots)</description>
+    <iconPath>Disciplines/Animalism</iconPath>
+    <category>RMSQ_AnimalismAbility</category>
+    <displayOrder>10003</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AnimalismAbilityFourDots</defName>
+    <label>Animalism (Four Dots)</label>
+    <description>Description for Animalism (Four Dots)</description>
+    <iconPath>Disciplines/Animalism</iconPath>
+    <category>RMSQ_AnimalismAbility</category>
+    <displayOrder>10004</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RMSQ_AnimalismAbilityFiveDots</defName>
+    <label>Animalism (Five Dots)</label>
+    <description>Description for Animalism (Five Dots)</description>
+    <iconPath>Disciplines/Animalism5</iconPath>
+    <category>RMSQ_AnimalismAbility</category>
+    <displayOrder>10005</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+</Defs>

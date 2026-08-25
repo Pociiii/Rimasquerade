@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <XenotypeDef>
-    <defName>RMSQ_Vampire</defName>
-    <label>Vampire</label>
-    <description>Vampire</description>
-    <descriptionShort>Vampire</descriptionShort>
+    <defName>RMSQ_Kindred</defName>
+    <label>Kindred</label>
+    <description>Kindred</description>
+    <descriptionShort>Kindred</descriptionShort>
     <iconPath>UI/Icons/Xenotypes/Sanguophage</iconPath>
     <soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
     <generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>

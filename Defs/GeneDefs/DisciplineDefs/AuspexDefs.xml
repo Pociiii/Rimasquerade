@@ -2,7 +2,7 @@
 
 <Defs>
 
-    <GeneDef Name="RMSQ_Animalism" Abstract="True">
+    <GeneDef Name="RMSQ_Auspex" Abstract="True">
         <displayOrderInCategory>-12</displayOrderInCategory>
         <minAgeActive>3</minAgeActive>
         <modExtensions>
@@ -11,10 +11,11 @@
             <li>
                 <type>AnyOf</type>
                 <prerequisites>
-                <li>RMSQ_Gangrel</li>
-                <li>RMSQ_Ravnos</li>
-                <li>RMSQ_Tzimisce</li>
-                <li>RMSQ_Nosferatu</li>
+                <li>RMSQ_Hecata</li>
+                <li>RMSQ_Malkavian</li>
+                <li>RMSQ_Salubri</li>
+                <li>RMSQ_Toreador</li>
+                <li>RMSQ_Tremere</li>
                 </prerequisites>
             </li>
             </prerequisiteSets>
@@ -22,83 +23,83 @@
         </modExtensions>
     </GeneDef>
 
-    <GeneDef ParentName="RMSQ_Animalism">
-        <defName>RMSQ_AnimalismOneDot</defName>
-        <label>Animalism (One Dot)</label>
+    <GeneDef ParentName="RMSQ_Auspex">
+        <defName>RMSQ_AuspexOneDot</defName>
+        <label>Auspex (One Dot)</label>
         <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
-        <iconPath>Disciplines/Animalism</iconPath>
+        <iconPath>Disciplines/Auspex</iconPath>
         <displayCategory>RMSQ_Category_OneDot</displayCategory>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <abilities>
-            <li>RMSQ_AnimalismAbilityOneDot</li>
+            <li>RMSQ_AuspexAbilityOneDot</li>
         </abilities>
         <descriptionHyperlinks>
-            <AbilityDef>RMSQ_AnimalismAbilityOneDot</AbilityDef>
+            <AbilityDef>RMSQ_AuspexAbilityOneDot</AbilityDef>
         </descriptionHyperlinks>
     </GeneDef>
 
-    <GeneDef ParentName="RMSQ_Animalism">
-        <defName>RMSQ_AnimalismTwoDot</defName>
-        <label>Animalism (Two Dot)</label>
+    <GeneDef ParentName="RMSQ_Auspex">
+        <defName>RMSQ_AuspexTwoDot</defName>
+        <label>Auspex (Two Dot)</label>
         <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
-        <iconPath>Disciplines/Animalism</iconPath>
+        <iconPath>Disciplines/Auspex</iconPath>
         <displayCategory>RMSQ_Category_TwoDot</displayCategory>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <abilities>
-            <li>RMSQ_AnimalismAbilityTwoDots</li>
+            <li>RMSQ_AuspexAbilityTwoDots</li>
         </abilities>
         <descriptionHyperlinks>
-            <AbilityDef>RMSQ_AnimalismAbilityTwoDots</AbilityDef>
+            <AbilityDef>RMSQ_AuspexAbilityTwoDots</AbilityDef>
         </descriptionHyperlinks>
     </GeneDef>
 
-    <GeneDef ParentName="RMSQ_Animalism">
-        <defName>RMSQ_AnimalismThreeDot</defName>
-        <label>Animalism (Three Dot)</label>
+    <GeneDef ParentName="RMSQ_Auspex">
+        <defName>RMSQ_AuspexThreeDot</defName>
+        <label>Auspex (Three Dot)</label>
         <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
-        <iconPath>Disciplines/Animalism</iconPath>
+        <iconPath>Disciplines/Auspex</iconPath>
         <displayCategory>RMSQ_Category_ThreeDot</displayCategory>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <abilities>
-            <li>RMSQ_AnimalismAbilityThreeDots</li>
+            <li>RMSQ_AuspexAbilityThreeDots</li>
         </abilities>
         <descriptionHyperlinks>
-            <AbilityDef>RMSQ_AnimalismAbilityThreeDots</AbilityDef>
+            <AbilityDef>RMSQ_AuspexAbilityThreeDots</AbilityDef>
         </descriptionHyperlinks>
     </GeneDef>
 
-    <GeneDef ParentName="RMSQ_Animalism">
-        <defName>RMSQ_AnimalismFourDot</defName>
-        <label>Animalism (Four Dot)</label>
+    <GeneDef ParentName="RMSQ_Auspex">
+        <defName>RMSQ_AuspexFourDot</defName>
+        <label>Auspex (Four Dot)</label>
         <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
-        <iconPath>Disciplines/Animalism</iconPath>
+        <iconPath>Disciplines/Auspex</iconPath>
         <displayCategory>RMSQ_Category_FourDot</displayCategory>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <abilities>
-            <li>RMSQ_AnimalismAbilityFourDots</li>
+            <li>RMSQ_AuspexAbilityFourDots</li>
         </abilities>
         <descriptionHyperlinks>
-            <AbilityDef>RMSQ_AnimalismAbilityFourDots</AbilityDef>
+            <AbilityDef>RMSQ_AuspexAbilityFourDots</AbilityDef>
         </descriptionHyperlinks>
     </GeneDef>
 
-    <GeneDef ParentName="RMSQ_Animalism">
-        <defName>RMSQ_AnimalismFiveDot</defName>
-        <label>Animalism (Five Dot)</label>
+    <GeneDef ParentName="RMSQ_Auspex">
+        <defName>RMSQ_AuspexFiveDot</defName>
+        <label>Auspex (Five Dot)</label>
         <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
-        <iconPath>Disciplines/Animalism</iconPath>
+        <iconPath>Disciplines/Auspex</iconPath>
         <displayCategory>RMSQ_Category_FiveDot</displayCategory>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <abilities>
-            <li>RMSQ_AnimalismAbilityFiveDots</li>
+            <li>RMSQ_AuspexAbilityFiveDots</li>
         </abilities>
         <descriptionHyperlinks>
-            <AbilityDef>RMSQ_AnimalismAbilityFiveDots</AbilityDef>
+            <AbilityDef>RMSQ_AuspexAbilityFiveDots</AbilityDef>
         </descriptionHyperlinks>
     </GeneDef>
 

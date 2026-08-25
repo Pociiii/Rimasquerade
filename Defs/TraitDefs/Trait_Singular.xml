@@ -50,7 +50,7 @@
     <commonality>0</commonality>
     <degreeDatas>
       <li>
-        <label>Vampire</label>
+        <label>Gangrel</label>
         <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
         <skillGains>
           <Animals>2</Animals>
