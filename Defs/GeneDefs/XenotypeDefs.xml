@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <XenotypeDef>
+    <defName>RMSQ_Vampire</defName>
+    <label>Vampire</label>
+    <description>Vampire</description>
+    <descriptionShort>Vampire</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Sanguophage</iconPath>
+    <soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
+    <generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>
+    <combatPowerFactor>2.5</combatPowerFactor>
+    <displayPriority>10000</displayPriority>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+
+    <genes>
+      <li>RMSQ_Eleventh</li>
+      <li>RMSQ_DangerOfTheBlood</li>
+      <li>RMSQ_GiftsOfTheBlood</li>
+      <li>ArchiteMetabolism</li>
+      
+
+      <li>Skin_SheerWhite</li>
+      <li>Eyes_Red</li>
+
+    </genes>
+  </XenotypeDef>
+
+</Defs>

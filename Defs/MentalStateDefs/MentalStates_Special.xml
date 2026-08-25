@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalBreakDef>
+    <defName>RMSQ_FireTerror</defName>
+    <label>fire terror</label>
+    <intensity>Minor</intensity>
+    <workerClass>MentalBreakWorker_FireTerror</workerClass>
+    <mentalState>PanicFleeFire</mentalState>
+    <requiredGene>RMSQ_DangerOfTheBlood</requiredGene>
+  </MentalBreakDef>
+
+</Defs>

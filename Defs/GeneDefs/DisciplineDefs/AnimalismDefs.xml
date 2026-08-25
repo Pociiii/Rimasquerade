@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <GeneDef Name="RMSQ_Animalism" Abstract="True">
+        <displayOrderInCategory>-12</displayOrderInCategory>
+        <minAgeActive>3</minAgeActive>
+        <modExtensions>
+        <li Class="BigAndSmall.GenePrerequisites">
+            <prerequisiteSets>
+            <li>
+                <type>AnyOf</type>
+                <prerequisites>
+                <li>RMSQ_Gangrel</li>
+                <li>RMSQ_Ravnos</li>
+                <li>RMSQ_Tzimisce</li>
+                <li>RMSQ_Nosferatu</li>
+                </prerequisites>
+            </li>
+            </prerequisiteSets>
+        </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_Animalism">
+        <defName>RMSQ_AnimalismOneDot</defName>
+        <label>Animalism (One Dot)</label>
+        <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
+        <iconPath>Disciplines/Animalism</iconPath>
+        <displayCategory>RMSQ_Category_OneDot</displayCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_Animalism">
+        <defName>RMSQ_AnimalismTwoDot</defName>
+        <label>Animalism (Two Dot)</label>
+        <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
+        <iconPath>Disciplines/Animalism</iconPath>
+        <displayCategory>RMSQ_Category_TwoDot</displayCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_Animalism">
+        <defName>RMSQ_AnimalismThreeDot</defName>
+        <label>Animalism (Three Dot)</label>
+        <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
+        <iconPath>Disciplines/Animalism</iconPath>
+        <displayCategory>RMSQ_Category_ThreeDot</displayCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_Animalism">
+        <defName>RMSQ_AnimalismFourDot</defName>
+        <label>Animalism (Four Dot)</label>
+        <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
+        <iconPath>Disciplines/Animalism</iconPath>
+        <displayCategory>RMSQ_Category_FourDot</displayCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_Animalism">
+        <defName>RMSQ_AnimalismFiveDot</defName>
+        <label>Animalism (Five Dot)</label>
+        <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
+        <iconPath>Disciplines/Animalism</iconPath>
+        <displayCategory>RMSQ_Category_FiveDot</displayCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+    </GeneDef>
+
+    
+
+</Defs>

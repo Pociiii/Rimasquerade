@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_Generation</defName>
+    <label>Rimasquerade - Generation</label>
+    <displayPriorityInXenotype>10000</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_Blood</defName>
+    <label>Rimasquerade - Blood</label>
+    <displayPriorityInXenotype>9999</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_Clans</defName>
+    <label>Rimasquerade - Clans</label>
+    <displayPriorityInXenotype>9998</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+</Defs>

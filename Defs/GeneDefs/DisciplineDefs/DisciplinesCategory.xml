@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_OneDot</defName>
+    <label>Rimasquerade - One Dot Disciplines</label>
+    <displayPriorityInXenotype>9996</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_TwoDot</defName>
+    <label>Rimasquerade - Two Dot Disciplines</label>
+    <displayPriorityInXenotype>9995</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_ThreeDot</defName>
+    <label>Rimasquerade - Three Dot Disciplines</label>
+    <displayPriorityInXenotype>9994</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_FourDot</defName>
+    <label>Rimasquerade - Four Dot Disciplines</label>
+    <displayPriorityInXenotype>9993</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>RMSQ_Category_FiveDot</defName>
+    <label>Rimasquerade - Five Dot Disciplines</label>
+    <displayPriorityInXenotype>9992</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+</Defs>

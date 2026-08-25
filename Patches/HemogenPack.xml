@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThoughtDef[defName="IngestedHemogenPack"]/nullifyingGenes</xpath>
+        <value>
+            <li>RMSQ_Eleventh</li>
+            <li>RMSQ_Tenth</li>
+            <li>RMSQ_Ninth</li>
+            <li>RMSQ_Eighth</li>
+            <li>RMSQ_Seventh</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThoughtDef[defName="BloodTorch"]/requiredGenes</xpath>
+        <value>
+            <li>RMSQ_Eleventh</li>
+            <li>RMSQ_Tenth</li>
+            <li>RMSQ_Ninth</li>
+            <li>RMSQ_Eighth</li>
+            <li>RMSQ_Seventh</li>
+        </value>
+    </Operation>
+
+</Patch>

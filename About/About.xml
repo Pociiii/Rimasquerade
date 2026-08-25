@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+    <name>Rimasquerade</name>
+
+    <author>Poci</author>
+
+    <packageId>Poci.Rimasquerade</packageId>
+
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+
+    <modDependencies>
+    <li>
+      <packageId>Ludeon.RimWorld.Royalty</packageId>
+      <displayName>Royalty</displayName>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Anomaly</packageId>
+      <displayName>Anomaly</displayName>
+    </li>
+    <li>
+      <packageId>EBSG.Framework</packageId>
+      <displayName>Expanded Biotech Style Genes Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3112549163</steamWorkshopUrl>
+      <downloadUrl>https://github.com/KonradHeinser/EBSGFramework</downloadUrl>
+    </li>
+    <li>
+      <packageId>RedMattis.BetterPrerequisites</packageId>
+      <displayName>Big and Small - Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2925432336</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  
+  <loadAfter>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>EBSG.Framework</li>
+    <li>RedMattis.BetterPrerequisites</li>
+  </loadAfter>
+
+    <description>
+Rimasquerade brings the World of Darkness into RimWorld.
+
+Create and manage vampires, develop Disciplines, feed on mortals, navigate the Masquerade, and survive the eternal struggle between Kindred.
+    </description>
+</ModMetaData>

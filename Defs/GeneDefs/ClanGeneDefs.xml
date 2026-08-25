@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <GeneDef Name="RMSQ_ClansGenes" Abstract="True">
+        <displayCategory>RMSQ_Category_Clans</displayCategory>
+        <geneClass>Gene_Deathless</geneClass>
+        <selectionWeight>0</selectionWeight>
+        <marketValueFactor>2</marketValueFactor>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <prerequisite>RMSQ_GiftsOfTheBlood</prerequisite>
+      
+        <exclusionTags>
+            <li>RMSQ_ClansGenes</li>
+        </exclusionTags>
+        <customEffectDescriptions>
+            <li>Can only die from destruction of brain.</li>
+        </customEffectDescriptions>
+        <symbolPack>
+            <wholeNameSymbols>
+                <li><symbol>immortal</symbol></li>
+            </wholeNameSymbols>
+            <prefixSymbols>
+                <li><symbol>god</symbol></li>
+                <li><symbol>deo</symbol></li>
+                <li><symbol>deu</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>god</symbol></li>
+                <li><symbol>deus</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_BanuHaqim</defName>
+        <label>Banu Haqim</label>
+        <description>Banu Haqim</description>
+        <iconPath>Clans/BanuHaqim</iconPath>
+        <displayOrderInCategory>-14</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitBanuHaqim</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Brujah</defName>
+        <label>Brujah</label>
+        <description>Brujah</description>
+        <iconPath>Clans/Brujah</iconPath>
+        <displayOrderInCategory>-13</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitBrujah</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Gangrel</defName>
+        <label>Gangrel</label>
+        <description>Gangrel</description>
+        <iconPath>Clans/Gangrel</iconPath>
+        <displayOrderInCategory>-12</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitGangrel</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Hecata</defName>
+        <label>Hecata</label>
+        <description>Hecata</description>
+        <iconPath>Clans/Hecata</iconPath>
+        <displayOrderInCategory>-11</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitHecata</def>
+            </li>
+        </forcedTraits>
+
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Lasombra</defName>
+        <label>Lasombra</label>
+        <description>Lasombra</description>
+        <iconPath>Clans/Lasombra</iconPath>
+        <displayOrderInCategory>-10</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitLasombra</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Malkavian</defName>
+        <label>Malkavian</label>
+        <description>Malkavian</description>
+        <iconPath>Clans/Malkavian</iconPath>
+        <displayOrderInCategory>-9</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitMalkavian</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Ministry</defName>
+        <label>The Ministry</label>
+        <description>Ministry</description>
+        <iconPath>Clans/TheMinistry</iconPath>
+        <displayOrderInCategory>-8</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitMinistry</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Nosferatu</defName>
+        <label>Nosferatu</label>
+        <description>Nosferatu</description>
+        <iconPath>Clans/Nosferatu</iconPath>
+        <displayOrderInCategory>-7</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitNosferatu</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Ravnos</defName>
+        <label>Ravnos</label>
+        <description>Ravnos</description>
+        <iconPath>Clans/Ravnos</iconPath>
+        <displayOrderInCategory>-6</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitRavnos</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Salubri</defName>
+        <label>Salubri</label>
+        <description>Salubri</description>
+        <iconPath>Clans/Salubri</iconPath>
+        <displayOrderInCategory>-5</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitSalubri</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Toreador</defName>
+        <label>Toreador</label>
+        <description>Toreador</description>
+        <iconPath>Clans/Toreador</iconPath>
+        <displayOrderInCategory>-4</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitToreador</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Tremere</defName>
+        <label>Tremere</label>
+        <description>Tremere</description>
+        <iconPath>Clans/Tremere</iconPath>
+        <displayOrderInCategory>-3</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitTremere</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Tzimisce</defName>
+        <label>Tzimisce</label>
+        <description>Tzimisce</description>
+        <iconPath>Clans/Tzimisce</iconPath>
+        <displayOrderInCategory>-2</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitTzimisce</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RMSQ_ClansGenes">
+        <defName>RMSQ_Ventrue</defName>
+        <label>Ventrue</label>
+        <description>Ventrue</description>
+        <iconPath>Clans/Ventrue</iconPath>
+        <displayOrderInCategory>-1</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>RMSQ_TraitVentrue</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+</Defs>

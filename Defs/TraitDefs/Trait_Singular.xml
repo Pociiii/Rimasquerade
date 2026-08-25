@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>RMSQ_TraitBanuHaqim</defName>
+    <label>Banu Haqim</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Banu Haqim</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Intellectual>2</Intellectual>
+          <Melee>2</Melee>
+          <Shooting>2</Shooting>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitBrujah</defName>
+    <label>Brujah</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Brujah
+        </label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Social>2</Social>
+          <Melee>2</Melee>
+          <Shooting>2</Shooting>
+    </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitGangrel</defName>
+    <label>Gangrel</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Vampire</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Animals>2</Animals>
+          <Plants>2</Plants>
+          <Melee>2</Melee>
+    </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitHecata</defName>
+    <label>Hecata</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Hecata</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Crafting>2</Crafting>
+          <Intellectual>2</Intellectual>
+          <Medicine>2</Medicine>
+    </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitLasombra</defName>
+    <label>Lasombra</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Lasombra</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Social>2</Social>
+          <Intellectual>2</Intellectual>
+          <Melee>2</Melee>
+    </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitMalkavian</defName>
+    <label>Malkavian</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Malkavian</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Medicine>2</Medicine>
+          <Social>2</Social>
+          <Artistic>2</Artistic>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitMinistry</defName>
+    <label>The Ministry</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>The Ministry</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Animals>2</Animals>
+          <Social>2</Social>
+          <Intellectual>2</Intellectual>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitNosferatu</defName>
+    <label>Nosferatu</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Nosferatu</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Animals>2</Animals>
+          <Construction>2</Construction>
+          <Mining>2</Mining>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitRavnos</defName>
+    <label>Ravnos</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Ravnos</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Animals>2</Animals>
+          <Social>2</Social>
+          <Crafting>2</Crafting>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitSalubri</defName>
+    <label>Salubri</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Salubri</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Medicine>2</Medicine>
+          <Social>2</Social>
+          <Intellectual>2</Intellectual>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitToreador</defName>
+    <label>Toreador</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Toreador</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Artistic>2</Artistic>
+          <Social>2</Social>
+          <Intellectual>2</Intellectual>
+        </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitTremere</defName>
+    <label>Tremere</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Tremere</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Medicine>2</Medicine>
+          <Social>2</Social>
+          <Intellectual>2</Intellectual>
+        </skillGains>
+      </li>
+    </degreeDatas>
+
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitTzimisce</defName>
+    <label>Tzimisce</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Tzimisce</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Animals>2</Animals>
+          <Crafting>2</Crafting>
+          <Social>2</Social>
+    </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RMSQ_TraitVentrue</defName>
+    <label>Ventrue</label>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>Ventrue</label>
+        <description>{PAWN_nameDef} likes to be up during the night, and sleep during the day.\n\n{PAWN_pronoun} gets a mood bonus if awake at night (23h-6h) and mood loss if awake during the day (11h-18h).\n\n{PAWN_pronoun} doesn't get a mood penalty for being in the dark.</description>
+        <skillGains>
+          <Intellectual>2</Intellectual>
+          <Shooting>2</Shooting>
+          <Social>2</Social>
+    </skillGains>
+      </li>
+    </degreeDatas>
+    
+    <conflictingTraits>
+      <li>PsychicSensitivity</li>
+    </conflictingTraits>
+  </TraitDef>
+
+</Defs>

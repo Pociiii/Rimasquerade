@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- GENERATION GENES -->
+  <GeneDef Name="RMSQ_GenerationGenes" Abstract="True">
+    <displayCategory>RMSQ_Category_Generation</displayCategory>
+    <selectionWeight>0</selectionWeight>
+    <geneClass>Gene_Hemogen</geneClass>
+    <deathHistoryEvent>BloodfeederDied</deathHistoryEvent>
+    
+    <resourceGizmoType>GeneGizmo_ResourceHemogen</resourceGizmoType>
+    <resourceLabel>hemogen</resourceLabel>
+    <resourceGizmoThresholds>
+      <li>0.25</li>
+      <li>0.5</li>
+      <li>0.75</li>
+    </resourceGizmoThresholds>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
+    <showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+    <resourceDescription>A reserve of biological strength which can be gained and spent in a variety of ways.\n\nHemogen can be increased by bloodfeeding from a human or consuming hemogen packs. You can obtain hemogen packs using the 'extract hemogen pack' medical operation on a non-hemogenic human.\n\nIf hemogen reaches zero, {PAWN_nameDef} will become very unhappy.</resourceDescription>
+    
+    <biologicalAgeTickFactorFromAgeCurve>
+      <points>
+        <li>(13, 1)</li>
+        <li>(18.5, 0)</li>
+      </points>
+    </biologicalAgeTickFactorFromAgeCurve>
+
+
+    <customEffectDescriptions>
+      <li>Gives hemogen supply.</li>
+    </customEffectDescriptions>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>immortal</symbol></li>
+        <li><symbol>methuselah</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>hemo</symbol></li>
+        <li><symbol>god</symbol></li>
+        <li><symbol>deo</symbol></li>
+        <li><symbol>deu</symbol></li>
+        <li><symbol>methu</symbol></li>
+        <li><symbol>blood</symbol></li>
+        <li><symbol>vamp</symbol></li>
+        <li><symbol>fang</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>god</symbol></li>
+        <li><symbol>deus</symbol></li>
+        <li><symbol>fang</symbol></li>
+        <li><symbol>eater</symbol></li>
+        <li><symbol>ubus</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+    
+    <exclusionTags>
+      <li>RMSQ_Generation</li>
+      <li>FireDamage</li>
+      <li>Immunity</li>
+       <li>ToxResistance</li>
+    </exclusionTags>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+  </GeneDef>
+
+  <GeneDef ParentName="RMSQ_GenerationGenes">
+    <defName>RMSQ_Eleventh</defName>
+    <label>Eleventh Generation</label>
+    <description>Eleventh</description>
+    <iconPath>Generations/11th</iconPath>
+    <displayOrderInCategory>-5</displayOrderInCategory>
+    
+  </GeneDef>
+
+  <GeneDef ParentName="RMSQ_GenerationGenes">
+    <defName>RMSQ_Tenth</defName>
+    <label>Tenth Generation</label>
+    <description>Tenth</description>
+    <iconPath>Generations/10th</iconPath>
+    <displayOrderInCategory>-4</displayOrderInCategory>
+    <resourceLossPerDay>0.1</resourceLossPerDay>
+    <statOffsets>
+      <EBSG_HemogenMaxOffset>0.5</EBSG_HemogenMaxOffset>
+    </statOffsets>
+  </GeneDef>
+
+  <GeneDef ParentName="RMSQ_GenerationGenes">
+    <defName>RMSQ_Ninth</defName>
+    <label>Ninth Generation</label>
+    <description>Ninth</description>
+    <iconPath>Generations/9th</iconPath>
+    <displayOrderInCategory>-3</displayOrderInCategory>
+    <resourceLossPerDay>0.15</resourceLossPerDay>
+    <statOffsets>
+      <EBSG_HemogenMaxOffset>1</EBSG_HemogenMaxOffset>
+    </statOffsets>
+  </GeneDef>
+
+  <GeneDef ParentName="RMSQ_GenerationGenes">
+    <defName>RMSQ_Eighth</defName>
+    <label>Eighth Generation</label>
+    <description>Eighth</description>
+    <iconPath>Generations/8th</iconPath>
+    <displayOrderInCategory>-2</displayOrderInCategory>
+    <resourceLossPerDay>0.2</resourceLossPerDay>
+    <statOffsets>
+      <EBSG_HemogenMaxOffset>1.5</EBSG_HemogenMaxOffset>
+    </statOffsets>
+  </GeneDef>
+
+  <GeneDef ParentName="RMSQ_GenerationGenes">
+    <defName>RMSQ_Seventh</defName>
+    <label>Seventh Generation</label>
+    <description>Seventh</description>
+    <iconPath>Generations/7th</iconPath>
+    <displayOrderInCategory>-1</displayOrderInCategory>
+    <resourceLossPerDay>0.25</resourceLossPerDay>
+    <statOffsets>
+      <EBSG_HemogenMaxOffset>2</EBSG_HemogenMaxOffset>
+    </statOffsets>
+  </GeneDef>
+<!-- GENERATION GENES -->
+
+<!-- BLOOD GENES -->
+  <GeneDef Name="RMSQ_BloodGenes" Abstract="True">
+    <displayCategory>RMSQ_Category_Blood</displayCategory>
+    <marketValueFactor>4</marketValueFactor>
+    <minAgeActive>3</minAgeActive>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+  </GeneDef>
+  
+  <GeneDef ParentName="RMSQ_BloodGenes">
+    <defName>RMSQ_DangerOfTheBlood</defName>
+    <label>danger of the blood</label>
+    <labelShortAdj>draining</labelShortAdj>
+    <description>Carriers lose an additional 8 hemogen per day from biological entropy.</description>
+    <resourceLabel>hemogen</resourceLabel>
+    <geneClass>Gene_HemogenDrain</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_HemogenDrain</iconPath>
+    <displayOrderInCategory>-2</displayOrderInCategory>
+    <resourceLossPerDay>0.1</resourceLossPerDay>
+    <modExtensions>
+      <li Class="EBSGFramework.EBSGExtension">
+        <conflictingGenes>
+          <li>Hemogenic</li>
+          <li>HemogenDrain</li>
+          <li>Deathrest</li> 
+        </conflictingGenes>
+      </li>
+      <li Class="BigAndSmall.GenePrerequisites">
+        <prerequisiteSets>
+          <li>
+            <type>AnyOf</type>
+            <prerequisites>
+              <li>RMSQ_Eleventh</li>
+              <li>RMSQ_Tenth</li>
+              <li>RMSQ_Ninth</li>
+              <li>RMSQ_Eighth</li>
+              <li>RMSQ_Seventh</li>
+            </prerequisites>
+          </li>
+        </prerequisiteSets>
+      </li>
+    </modExtensions>
+    <dislikesSunlight>true</dislikesSunlight>
+    <conditionalStatAffecters>
+      <li Class="ConditionalStatAffecter_InSunlight">
+        <statFactors>
+          <MoveSpeed>0.8</MoveSpeed>
+        </statFactors>
+      </li>
+    </conditionalStatAffecters>
+
+    <statFactors>
+      <Fertility>0</Fertility>
+    </statFactors>
+
+    <suppressedTraits>
+      <li>
+        <def>Pyromaniac</def>
+      </li>
+    </suppressedTraits>
+    <mentalBreakMtbDays>0.1</mentalBreakMtbDays>
+    <mentalBreakDef>RMSQ_FireTerror</mentalBreakDef>
+
+    <damageFactors>
+      <Flame>4</Flame>
+    </damageFactors>
+
+    <forcedTraits>
+      <li>
+        <def>PsychicSensitivity</def>
+        <degree>-2</degree>
+      </li>
+    </forcedTraits>
+
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dry</symbol></li>
+        <li><symbol>tinder</symbol></li>
+        <li><symbol>kindle</symbol></li>
+
+        <li><symbol>dark</symbol></li>
+        <li><symbol>tunnel</symbol></li>
+        <li><symbol>under</symbol></li>
+        <li><symbol>cave</symbol></li>
+        <li><symbol>crypt</symbol></li>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>night</symbol></li>
+
+        <li><symbol>deaf</symbol></li>
+        <li><symbol>blank</symbol></li>
+        <li><symbol>null</symbol></li>
+        <li><symbol>vac</symbol></li>
+        <li><symbol>void</symbol></li>
+        <li><symbol>nego</symbol></li>
+        <li><symbol>nullo</symbol></li>
+
+      </prefixSymbols>
+    </symbolPack>
+    <customEffectDescriptions>
+      <li>Increases hemogen loss.</li>
+      <li>Increases fire damage taken.</li>
+      <li>May have a mental breakdown when near fires.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+  <GeneDef ParentName="RMSQ_BloodGenes">
+    <defName>RMSQ_GiftsOfTheBlood</defName>
+    <label>Gifts of the Blood</label>
+    <description>Gifts of the Blood</description>
+    <geneClass>Gene_Healing</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_Hemogenic</iconPath>
+    <selectionWeight>0</selectionWeight>
+    <prerequisite>RMSQ_DangerOfTheBlood</prerequisite>
+    <displayOrderInCategory>-1</displayOrderInCategory>
+    <statOffsets>
+      <ToxicResistance>1</ToxicResistance>
+    </statOffsets>
+    <immuneToToxGasExposure>true</immuneToToxGasExposure>
+    <statFactors>
+      <InjuryHealingFactor>4</InjuryHealingFactor>
+    </statFactors>
+    <makeImmuneTo>
+      <li>Flu</li>
+      <li>Malaria</li>
+      <li>SleepingSickness</li>
+      <li>Plague</li>
+      <li>WoundInfection</li>
+      <li>LungRot</li>
+      <li>GutWorms</li>
+      <li>MuscleParasites</li>
+      <li>OrganDecay</li>
+    </makeImmuneTo>
+
+    <hediffGiversCannotGive>
+      <li>Carcinoma</li>
+      <li>HeartAttack</li>
+      <li>BadBack</li>
+      <li>Frail</li>
+      <li>Cataract</li>
+      <li>Dementia</li>
+      <li>Alzheimers</li>
+      <li>Asthma</li>
+      <li>HeartArteryBlockage</li>
+    </hediffGiversCannotGive>
+
+    <preventPermanentWounds>true</preventPermanentWounds>
+
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+
+    <abilities>
+      <li>RMSQ_Embrace</li>
+      <li>RMSQ_Kiss</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>RMSQ_Embrace</AbilityDef>
+      <AbilityDef>RMSQ_Kiss</AbilityDef>
+    </descriptionHyperlinks>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>tox</symbol>
+          <weight>3</weight>
+        </li>
+        <li><symbol>stout</symbol></li>
+        <li><symbol>hard</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+    <customEffectDescriptions>
+      <li>Every (*DateTime)15-30 days(/DateTime), one old wound or chronic illness is healed.</li>
+      <li>Tox gas immunity</li>
+    </customEffectDescriptions>
+  </GeneDef>
+<!-- BLOOD GENES -->
+  
+
+</Defs>
+
+<!-- <modExtensions>
+
+      <li Class="BigAndSmall.GenePrerequisites">
+        <prerequisiteSets>
+          <li>
+            <type>NoneOf</type>
+            <prerequisites>
+              <li>VU_UltraRapidAging</li>
+              <li>BS_UltraFastAging</li>
+            </prerequisites>
+          </li>
+        </prerequisiteSets>
+      </li>
+    </modExtensions> -->
+

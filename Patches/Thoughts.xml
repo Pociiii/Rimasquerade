@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThoughtDef[defName="SunlightSensitivity_Major"]/requiredGenes</xpath>
+        <value>
+            <li>RMSQ_DangerOfTheBlood</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThoughtDef[defName="NightOwlDuringTheDay"]/requiredTraits</xpath>
+        <value>
+            <li>RMSQ_TraitBanuHaqim</li>
+            <li>RMSQ_TraitBrujah</li>
+            <li>RMSQ_TraitGangrel</li>
+            <li>RMSQ_TraitHecata</li>
+            <li>RMSQ_TraitLasombra</li>
+            <li>RMSQ_TraitMalkavian</li>
+            <li>RMSQ_TraitMinistry</li>
+            <li>RMSQ_TraitNosferatu</li>
+            <li>RMSQ_TraitRavnos</li>
+            <li>RMSQ_TraitSalubri</li>
+            <li>RMSQ_TraitToreador</li>
+            <li>RMSQ_TraitTremere</li>
+            <li>RMSQ_TraitTzimisce</li>
+            <li>RMSQ_TraitVentrue</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThoughtDef[defName="NightOwlDuringTheNight"]/requiredTraits</xpath>
+        <value>
+            <li>RMSQ_TraitBanuHaqim</li>
+            <li>RMSQ_TraitBrujah</li>
+            <li>RMSQ_TraitGangrel</li>
+            <li>RMSQ_TraitHecata</li>
+            <li>RMSQ_TraitLasombra</li>
+            <li>RMSQ_TraitMalkavian</li>
+            <li>RMSQ_TraitMinistry</li>
+            <li>RMSQ_TraitNosferatu</li>
+            <li>RMSQ_TraitRavnos</li>
+            <li>RMSQ_TraitSalubri</li>
+            <li>RMSQ_TraitToreador</li>
+            <li>RMSQ_TraitTremere</li>
+            <li>RMSQ_TraitTzimisce</li>
+            <li>RMSQ_TraitVentrue</li>
+        </value>
+    </Operation>
+</Patch>
